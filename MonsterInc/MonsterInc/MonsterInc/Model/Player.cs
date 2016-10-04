@@ -8,9 +8,9 @@ namespace MonsterInc
 		public string Name { get; set; }
 		public double Money { get; set; }
 
-		public List<Item> Inventory { get; set; }
+		public List<Tool> Inventory { get; set; }
 
-		public List<Monster> CapturedMonsters { get; set; }
+		public List<Monster> Monsters { get; set; } //Limité à 250
 
 		public Player()
 		{

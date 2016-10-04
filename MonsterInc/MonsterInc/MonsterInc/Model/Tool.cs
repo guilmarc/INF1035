@@ -1,12 +1,17 @@
 ﻿using System;
 namespace MonsterInc
 {
-	public class Item
+	public class Tool
 	{
 		public string Name { get; set; }
 
-		public Item()
+
+		//Strategy
+
+
+		public Tool()
 		{
 		}
+
 	}
 }

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace MonsterInc
 {
@@ -38,7 +40,7 @@ namespace MonsterInc
 
 	public class Monster
 	{
-		public static int MAX_EXP_LEVEL = 50; 
+		public static int MAX_EXP_LEVEL = 20; 
 
 		//Nom de l'événement qui sera accessible de l'extérieur
 		public event EventHandler<ExperienceLevelChangedEventArgs> ExperienceLevelChanged;
@@ -52,13 +54,22 @@ namespace MonsterInc
 
 		public int Scarcity { get; set; }
 
-		//Initialemet à 1 jusqu'à 50
-		public int ExperienceLevel { get; set; } = 1;
-			 
+		public Element Element { get; set; }
 
+		//Initialemet à 1 jusqu'à 50
+		public int ExperienceLevel { get; private set; } = 1;
+
+		static int test = 3;
 		//TODO : //Dans le set de cette variable, utiliser une strategy d'événement qui met à jour automatiquement le ExperienceLevel.
 		//TODO : Exposer un evenement publique qui se déclanchera quand un niveau d'expérience est atteint.
-		public int ExperiencePoint { get; set; }
+		public int ExperiencePoint { get; private set; }
+
+		public MonsterCaracteristic LifePoints = new MonsterCaracteristic(this);
+		public MonsterCaracteristic EnergyPoints = new MonsterCaracteristic();
+		public MonsterCaracteristic RegenerationPoints = new MonsterCaracteristic();
+		public MonsterCaracteristic Attack = new MonsterCaracteristic();
+		public MonsterCaracteristic Defense = new MonsterCaracteristic();
+
 
 		public void IncrementExperiencePointBy(int points)
 		{
@@ -84,6 +95,9 @@ namespace MonsterInc
 
 		protected virtual void OnExperienceLevelChanged(int newExperienceLevel)
 		{
+			//TODO: Looper toutes les caractéristiques et 
+
+
 			if (ExperienceLevelChanged != null)
 				ExperienceLevelChanged(this, new ExperienceLevelChangedEventArgs() { NewExperienceLevel = newExperienceLevel });
 		}

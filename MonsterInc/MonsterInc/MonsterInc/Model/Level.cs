@@ -1,12 +1,13 @@
 ﻿using System;
 namespace MonsterInc
 {
-	public class Element
+	public class Level
 	{
-
 		public string Name { get; set; }
 
-		public Element()
+		//public Reward
+
+		public Level()
 		{
 		}
 	}

@@ -35,10 +35,20 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\Player.cs" />
-    <Compile Include="Model\Item.cs" />
+    <Compile Include="Model\Tool.cs" />
     <Compile Include="Model\Element.cs" />
     <Compile Include="Model\Monster.cs" />
     <Compile Include="Model\ExperienceLevelChangedEventArgs.cs" />
+    <Compile Include="Model\Skill.cs" />
+    <Compile Include="Model\Game.cs" />
+    <Compile Include="Model\Combat.cs" />
+    <Compile Include="Model\Tour.cs" />
+    <Compile Include="Model\MonsterFactory.cs" />
+    <Compile Include="Model\Repository.cs" />
+    <Compile Include="Model\IToolable.cs" />
+    <Compile Include="Model\Level.cs" />
+    <Compile Include="Model\HealingTool.cs" />
+    <Compile Include="Model\MonsterCaracteristic.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />

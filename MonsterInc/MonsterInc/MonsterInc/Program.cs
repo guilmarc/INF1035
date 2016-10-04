@@ -16,8 +16,15 @@ namespace MonsterInc
 			};
 
 			monster.IncrementExperiencePointBy(25);
+
+			Console.WriteLine(monster.LifePoints.Total);
+
 			monster.IncrementExperiencePointBy(5);
+			Console.WriteLine(monster.LifePoints.Total);
+
 			monster.IncrementExperiencePointBy(50);
+
+			Console.WriteLine(monster.LifePoints.Total);
 		}
 	}
 }
