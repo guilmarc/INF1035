@@ -40,35 +40,53 @@ namespace MonsterInc
 
 	public class Monster
 	{
+
 		public static int MAX_EXP_LEVEL = 20; 
+
+		public MonsterTemplate Template { get; set; }
 
 		//Nom de l'événement qui sera accessible de l'extérieur
 		public event EventHandler<ExperienceLevelChangedEventArgs> ExperienceLevelChanged;
 
 		public int ID { get; set; }
 
-		public string Name { get; set; }
-
-		//Devra être refactorisé dans une sous-classe CapturedMonster ???
 		public string NickName { get; set; }
 
-		public int Scarcity { get; set; }
+		public int ExperienceLevel { get; private set; }
 
-		public Element Element { get; set; }
-
-		//Initialemet à 1 jusqu'à 50
-		public int ExperienceLevel { get; private set; } = 1;
-
-		static int test = 3;
-		//TODO : //Dans le set de cette variable, utiliser une strategy d'événement qui met à jour automatiquement le ExperienceLevel.
-		//TODO : Exposer un evenement publique qui se déclanchera quand un niveau d'expérience est atteint.
 		public int ExperiencePoint { get; private set; }
 
-		public MonsterCaracteristic LifePoints = new MonsterCaracteristic(this);
-		public MonsterCaracteristic EnergyPoints = new MonsterCaracteristic();
-		public MonsterCaracteristic RegenerationPoints = new MonsterCaracteristic();
-		public MonsterCaracteristic Attack = new MonsterCaracteristic();
-		public MonsterCaracteristic Defense = new MonsterCaracteristic();
+		public List<MonsterCaracteristic> Caracteristics = new List<MonsterCaracteristic>();
+
+		public void ConsumeItem(Item item)
+		{
+			item.Consume(this);
+		}
+
+
+		public Monster(MonsterTemplate monsterTemplate)
+		{
+			this.Template = monsterTemplate;
+
+			this.ExperienceLevel = monsterTemplate.BaseLevel;
+
+			//Selon la demande de Adam, on relie les caractéristique avec le template
+			foreach (MonsterTemplateCaracteristic monsterTemplateCaracteristic in monsterTemplate.Caracteristics)
+			{
+				this.Caracteristics.Add( new MonsterCaracteristic(monsterTemplateCaracteristic) );
+			}
+
+		}
+
+		/// <summary>
+		/// Méthode retournant la caractéristique de monstre tel que demandée  
+		/// </summary>
+		/// <returns>The caracteristic.</returns>
+		/// <param name="type">Type.</param>
+		public MonsterCaracteristic GetCaracteristic(MonsterTemplateCaracteristicType type)
+		{
+			return Caracteristics.FirstOrDefault(c => c.Type == type);
+		}
 
 
 		public void IncrementExperiencePointBy(int points)
@@ -88,15 +106,14 @@ namespace MonsterInc
 		}
 
 
-		public Monster()
-		{
-			
-		}
 
-		protected virtual void OnExperienceLevelChanged(int newExperienceLevel)
+		protected void OnExperienceLevelChanged(int newExperienceLevel)
 		{
-			//TODO: Looper toutes les caractéristiques et 
-
+			//TODO: Looper toutes les caractéristiques et mettre à jour le total
+			foreach (MonsterCaracteristic caracteristic in this.Caracteristics)
+			{
+				caracteristic.UpdateWithLevel(newExperienceLevel);
+			}
 
 			if (ExperienceLevelChanged != null)
 				ExperienceLevelChanged(this, new ExperienceLevelChangedEventArgs() { NewExperienceLevel = newExperienceLevel });

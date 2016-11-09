@@ -1,7 +1,7 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonsterInc", "MonsterInc\MonsterInc.csproj", "{5E7EB5A1-D5A8-4134-87A4-100010D1D169}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "MonsterInc\Core.csproj", "{5E7EB5A1-D5A8-4134-87A4-100010D1D169}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace MonsterInc
 {
@@ -6,25 +7,15 @@ namespace MonsterInc
 	{
 		public static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+			//Universe.LoadMonsterTemplatesFromXML();
 
-			var monster = new Monster { ID = 1, Name = "Roger" };
+			//Universe.SaveMonsterTemplatesToXML();
 
-			monster.ExperienceLevelChanged += (object sender, ExperienceLevelChangedEventArgs e) =>
-			{
-				Console.WriteLine("New Level :: " + e.NewExperienceLevel);
-			};
+			//Universe.ListMonsterTemplates();
 
-			monster.IncrementExperiencePointBy(25);
+			DataGenerator.GenerateAllXML();
 
-			Console.WriteLine(monster.LifePoints.Total);
-
-			monster.IncrementExperiencePointBy(5);
-			Console.WriteLine(monster.LifePoints.Total);
-
-			monster.IncrementExperiencePointBy(50);
-
-			Console.WriteLine(monster.LifePoints.Total);
+		    Console.ReadLine();
 		}
 	}
 }

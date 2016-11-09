@@ -6,8 +6,8 @@ namespace MonsterInc
 	public class Game
 	{
 		public string Name { get; set; }
-		public DateTime GameTime { get; set; } 
-		public Player Player { get; set; }
+		//public DateTime GameTime { get; set; } 
+		//public Player Player { get; set; }
 
 		public List<Combat> Combats { get; set; }
 
