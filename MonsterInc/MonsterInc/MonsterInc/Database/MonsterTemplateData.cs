@@ -83,7 +83,7 @@ namespace MonsterInc
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 20, Progression = 3},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 20, Progression = 3},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 30, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 20, Progression = 3},
                         }
                     },
 
@@ -94,11 +94,11 @@ namespace MonsterInc
                         Rarity = 35,
                         Element = Element.Earth,
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 30, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 30, Progression = 4},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 30, Progression = 4},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 30, Progression = 4},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 30, Progression = 4},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 30, Progression = 4},
                         }
                     },
 
@@ -128,7 +128,7 @@ namespace MonsterInc
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 20, Progression = 3},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 20, Progression = 3},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 30, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 20, Progression = 3},
                         }
                     },
 
@@ -139,11 +139,11 @@ namespace MonsterInc
                         Rarity = 35,
                         Element = Element.Water,
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 30, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 30, Progression = 4},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 30, Progression = 4},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 30, Progression = 4},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 30, Progression = 4},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 30, Progression = 4},
                         }
                     },
 
@@ -173,7 +173,7 @@ namespace MonsterInc
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 20, Progression = 3},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 20, Progression = 3},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 30, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 20, Progression = 3},
                         }
                     },
 
@@ -184,11 +184,11 @@ namespace MonsterInc
                         Rarity = 35,
                         Element = Element.Air,
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 30, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 30, Progression = 4},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 30, Progression = 4},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 30, Progression = 4},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 30, Progression = 4},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 30, Progression = 4},
                         }
                     },
 
@@ -199,11 +199,11 @@ namespace MonsterInc
                         Rarity = 50,
                         Element = Element.Lava,
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 30, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 25, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 25, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 25, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 25, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 25, Progression = 3},
                         }
                     },
 
@@ -214,11 +214,11 @@ namespace MonsterInc
                         Rarity = 10,
                         Element = Element.Lava,
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 30, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 35, Progression = 4},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 35, Progression = 4},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 35, Progression = 4},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 35, Progression = 4},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 35, Progression = 4},
                         }
                     },
 
@@ -229,11 +229,11 @@ namespace MonsterInc
                         Rarity = 50,
                         Element = Element.Grass,
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 30, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 25, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 25, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 25, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 25, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 25, Progression = 3},
                         }
                     },
 
@@ -244,11 +244,11 @@ namespace MonsterInc
                         Rarity = 10,
                         Element = Element.Grass,
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 30, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 35, Progression = 4},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 35, Progression = 4},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 35, Progression = 4},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 35, Progression = 4},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 35, Progression = 4},
                         }
                     },
 
@@ -259,11 +259,11 @@ namespace MonsterInc
                         Rarity = 50,
                         Element = Element.Ice,
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 30, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 25, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 25, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 25, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 25, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 25, Progression = 3},
                         }
                     },
 
@@ -274,11 +274,11 @@ namespace MonsterInc
                         Rarity = 10,
                         Element = Element.Ice,
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 30, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 35, Progression = 4},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 35, Progression = 4},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 35, Progression = 4},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 35, Progression = 4},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 35, Progression = 4},
                         }
                     },
 
@@ -289,11 +289,11 @@ namespace MonsterInc
                         Rarity = 50,
                         Element = Element.Lightning,
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 30, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 25, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 25, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 25, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 25, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 25, Progression = 3},
                         }
                     },
 
@@ -304,11 +304,11 @@ namespace MonsterInc
                         Rarity = 10,
                         Element = Element.Lightning,
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 30, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 35, Progression = 4},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 35, Progression = 4},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 35, Progression = 4},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 35, Progression = 4},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 35, Progression = 4},
                         }
                     },
 
@@ -319,11 +319,11 @@ namespace MonsterInc
                         Rarity = 50,
                         Element = Element.Fire,
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 30, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 40, Progression = 5},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 40, Progression = 5},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 40, Progression = 5},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 40, Progression = 5},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 40, Progression = 5},
                         }
                     },
 
@@ -334,11 +334,11 @@ namespace MonsterInc
                         Rarity = 50,
                         Element = Element.Water,
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 30, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 40, Progression = 5},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 40, Progression = 5},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 40, Progression = 5},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 40, Progression = 5},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 40, Progression = 5},
                         }
                     },
 
@@ -349,11 +349,11 @@ namespace MonsterInc
                         Rarity = 50,
                         Element = Element.Earth,
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 30, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 40, Progression = 5},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 40, Progression = 5},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 40, Progression = 5},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 40, Progression = 5},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 40, Progression = 5},
                         }
                     },
 
@@ -364,11 +364,11 @@ namespace MonsterInc
                         Rarity = 50,
                         Element = Element.Air,
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 30, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 40, Progression = 5},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 40, Progression = 5},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 40, Progression = 5},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 40, Progression = 5},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 40, Progression = 5},
                         }
                     },
 
@@ -379,11 +379,11 @@ namespace MonsterInc
                         Rarity = 50,
                         Element = Element.Lava,
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 30, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 40, Progression = 5},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 40, Progression = 5},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 40, Progression = 5},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 40, Progression = 5},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 40, Progression = 5},
                         }
                     },
 
@@ -394,11 +394,11 @@ namespace MonsterInc
                         Rarity = 50,
                         Element = Element.Grass,
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 30, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 40, Progression = 5},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 40, Progression = 5},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 40, Progression = 5},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 40, Progression = 5},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 40, Progression = 5},
                         }
                     },
 
@@ -409,11 +409,11 @@ namespace MonsterInc
                         Rarity = 50,
                         Element = Element.Ice,
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 30, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 40, Progression = 5},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 40, Progression = 5},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 40, Progression = 5},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 40, Progression = 5},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 40, Progression = 5},
                         }
                     },
 
@@ -424,11 +424,11 @@ namespace MonsterInc
                         Rarity = 50,
                         Element = Element.Lightning,
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 30, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 40, Progression = 5},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 40, Progression = 5},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 40, Progression = 5},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 40, Progression = 5},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 40, Progression = 5},
                         }
                     },
                 };
