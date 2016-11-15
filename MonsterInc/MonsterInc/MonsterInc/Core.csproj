@@ -34,8 +34,10 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database\DifficultyData.cs" />
     <Compile Include="Database\ItemData.cs" />
     <Compile Include="Database\SkillData.cs" />
+    <Compile Include="Models\Difficulty.cs" />
     <Compile Include="Models\Items\Antidote.cs" />
     <Compile Include="Models\Items\CaptureBall.cs" />
     <Compile Include="Models\Items\EnergyPotion.cs" />
@@ -73,10 +75,6 @@
     <Compile Include="Models\Interfaces\IActionable.cs" />
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <Folder Include="Models\Scopes\" />
-    <Folder Include="Models\Element\" />
-    <Folder Include="Models\Interfaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

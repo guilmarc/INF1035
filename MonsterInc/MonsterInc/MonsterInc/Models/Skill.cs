@@ -14,9 +14,19 @@ namespace MonsterInc
 
 		public int MinimumExperienceLevel { get; set; }
 
-		public List<Scope> Scopes { get; set; }
+        public int Cooldown { get; set; }
 
-		public void Do(Context context, Monster destination)
+        public Element ElementDamage { get; set; }
+
+        public List<MonsterCategory> MonsterCategory { get; set; } // OK si un des éléments est dans la liste, et OK si liste vide
+
+        public List<Element> ElementRequirement { get; set; } // OK si un des éléments est dans la liste, et OK si liste vide
+
+        public List<Scope> Scopes { get; set; }
+
+        //public Effect Effet { get; set; }  a faire si on a le temps car ca va être compliqué de changer la cible, etc
+
+        public void Do(Context context, Monster destination)
 		{
 			
 		}
