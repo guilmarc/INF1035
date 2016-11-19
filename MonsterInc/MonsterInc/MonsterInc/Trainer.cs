@@ -9,7 +9,7 @@ namespace MonsterInc
 	public class Trainer
 	{
 		public string Name { get; set; }
-		public int Money { get; set; }
+		public int Gold { get; set; }
 
 		public List<Item> Inventory { get; set; }
 
@@ -19,5 +19,13 @@ namespace MonsterInc
 		public List<Monster> ActiveMonsters { get; set; }
 
 		public Element Affinity { get; set; }
+
+		public void BuyItem(Item item)
+		{
+			if (item.Cost <= this.Gold)
+			{
+				
+			}
+		}
 	}
 }

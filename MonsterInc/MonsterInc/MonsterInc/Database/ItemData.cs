@@ -17,7 +17,7 @@ namespace MonsterInc
                         Cost = 20,
                         Scopes = new List<Scope>
 						{
-							 new Scope() { Target = Scope.ScopeTarget.Opponent, Duration = 1, Magnitude = 1 } //TODO: Ajouter Effet
+							 new DamageScope() { Target = Scope.ScopeTarget.Opponent, Duration = 1, Magnitude = 1 } //TODO: Ajouter Effet
 						}
                     }
                 };

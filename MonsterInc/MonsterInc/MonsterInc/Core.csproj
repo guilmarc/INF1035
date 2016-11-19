@@ -34,6 +34,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class1.cs" />
     <Compile Include="Database\ItemData.cs" />
     <Compile Include="Database\SkillData.cs" />
     <Compile Include="Models\Items\Antidote.cs" />
@@ -72,11 +73,9 @@
     <Compile Include="Action.cs" />
     <Compile Include="Models\Interfaces\IActionable.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Models\Scopes\" />
-    <Folder Include="Models\Element\" />
-    <Folder Include="Models\Interfaces\" />
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

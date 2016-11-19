@@ -16,7 +16,7 @@ namespace MonsterInc
                         MinimumExperienceLevel = 1,
                         Scopes = new List<Scope>
                         {
-                            new Scope { }
+                            new DamageScope { }
                         }
                     }
                 };

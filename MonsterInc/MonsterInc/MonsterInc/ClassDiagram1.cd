@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="MonsterInc.BaseExperienceLevelStrategy" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="1.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Monster.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MonsterInc.Monster">
+    <Position X="4.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAEgIgAAAAAIAgAAAEAAAAAEIkAAAAAAAAAA=</HashCode>
+      <FileName>Models\Monster.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MonsterInc.Game" Collapsed="true">
+    <Position X="7" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgIAAAAAAAAAAAAAAAAQABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Game.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MonsterInc.Class1">
+    <Position X="2.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="MonsterInc.IExperienceLevelStrategy" Collapsed="true">
+    <Position X="0.5" Y="2.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Monster.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

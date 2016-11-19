@@ -60,8 +60,8 @@ namespace MonsterInc
 
 		public void ConsumeItem(Item item)
 		{
-			item.Consume(this);
-		}
+             //item.Consume(this);
+        }
 
 
 		public Monster(MonsterTemplate monsterTemplate)
@@ -118,5 +118,17 @@ namespace MonsterInc
 			if (ExperienceLevelChanged != null)
 				ExperienceLevelChanged(this, new ExperienceLevelChangedEventArgs() { NewExperienceLevel = newExperienceLevel });
 		}
-	}
+
+        public int test
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+    }
 }

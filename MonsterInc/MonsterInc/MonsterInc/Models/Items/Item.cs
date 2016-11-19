@@ -4,8 +4,8 @@ using System.Security.Policy;
 
 namespace MonsterInc
 {
-	public abstract class Item : IAction
-	{
+	public abstract class Item : IActionable
+    {
 	    public string Name { get; set; }
         public string Description { get; set; }
         
@@ -16,6 +16,6 @@ namespace MonsterInc
 
         public List<Scope> Scopes { get; set; }
 
-		public void Consume();
-	}
+        public abstract void Consume();
+    }
 }

@@ -13,7 +13,7 @@ namespace MonsterInc
 
 			//Universe.ListMonsterTemplates();
 
-			DataGenerator.GenerateAllXML();
+			//DataGenerator.GenerateAllXML();
 
 		    Console.ReadLine();
 		}

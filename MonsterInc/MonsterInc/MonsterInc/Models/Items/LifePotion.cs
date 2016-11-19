@@ -8,10 +8,11 @@ namespace MonsterInc
 	/// </summary>
 	public class LifePotion : Item
 	{
-		public override void Consume(IConsumer consumer )
-		{
-			
-		}
+        public override void Consume()
+        {
+            throw new NotImplementedException();
+        }
+
 	}
 
 }

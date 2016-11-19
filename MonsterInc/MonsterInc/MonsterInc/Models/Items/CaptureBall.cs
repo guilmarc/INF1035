@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 namespace MonsterInc
 {
-	/// <summary>
-	/// Permet de capturer un monstre
-	/// </summary>
-    class CaptureBall : Item
+    /// <summary>
+    /// Permet de capturer un monstre
+    /// </summary>
+    public class CaptureBall : Item
     {
-
+        public override void Consume()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
