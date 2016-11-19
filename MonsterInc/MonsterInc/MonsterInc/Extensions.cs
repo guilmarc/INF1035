@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace Core.Shared
+namespace Core
 {
     public static class Extensions
     {
@@ -19,7 +19,7 @@ namespace Core.Shared
         /// <param name="nameOfFile"></param>
         /// <param name="defaultPath">System.Reflection.Assembly.GetExecutingAssembly().Location</param>
         /// <returns></returns>
-        public static string XmlSerialize<T>(this T objectToSerialize, string nameOfFile, bool defaultPath )
+        public static void XmlSerialize<T>(this T objectToSerialize, string nameOfFile, bool defaultPath )
         {
             if (!nameOfFile.ToLower().Contains(".xml"))
             {
@@ -31,21 +31,22 @@ namespace Core.Shared
                 directory = System.Reflection.Assembly.GetExecutingAssembly().Location;
             }
             string fullPath = $@"{directory}\{nameOfFile}";
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));
-            StringWriter stringWriter = new StringWriter();
-            XmlTextWriter xmlWriter = new XmlTextWriter(stringWriter);
+            ///forstring
+            //XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));
+            //StringWriter stringWriter = new StringWriter();
+            //XmlTextWriter xmlWriter = new XmlTextWriter(stringWriter);
 
-            xmlWriter.Formatting = Formatting.Indented;
-            xmlSerializer.Serialize(xmlWriter, objectToSerialize);
+            //xmlWriter.Formatting = Formatting.Indented;
+            //xmlSerializer.Serialize(xmlWriter, objectToSerialize);
 
-            return stringWriter.ToString();
-
-
+            //return stringWriter.ToString();
 
 
+
+            //todocument
             XmlSerializer serialiser = new XmlSerializer(typeof(T));
             TextWriter Filestream = new StreamWriter(fullPath);
-            serialiser.Serialize(Filestream, );
+            serialiser.Serialize(Filestream, objectToSerialize);
             Filestream.Close();
 
         }

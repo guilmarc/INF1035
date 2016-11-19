@@ -1,8 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
-using MonsterInc;
-using MonsterInc.Shared;
+using Core;
 
 namespace UnitTest
 {
@@ -12,8 +11,9 @@ namespace UnitTest
         [TestMethod]
         public void TestMethod1()
         {
-            List<MonsterInc.Item>  a = MonsterInc.ItemData.Items ;
-            a.XmlSerialize<List<MonsterInc.Item>>("", true);
+            
+            List<Core.Model.Item>  a = Core.Data.ItemData.Items ;
+            a.XmlSerialize<List<Core.Model.Item>>(@"item", true);
             
         }
     }

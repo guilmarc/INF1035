@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="Data\ItemData.cs" />
     <Compile Include="Data\SkillData.cs" />
+    <Compile Include="Extensions.cs" />
     <Compile Include="Model\Items\Antidote.cs" />
     <Compile Include="Model\Items\CaptureBall.cs" />
     <Compile Include="Model\Items\EnergyPotion.cs" />
