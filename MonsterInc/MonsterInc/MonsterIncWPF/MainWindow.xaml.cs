@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Core;
 
 namespace MonsterIncWPF
 {
@@ -20,9 +21,27 @@ namespace MonsterIncWPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        Core.Model.Player player = new Core.Model.Player();
+        
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = player;
+        }
+
+        private void name_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            Engine.Player = player;
+
+            SelectMonster win2 = new SelectMonster();
+            win2.Show();
+            this.Close();
+
         }
     }
 }

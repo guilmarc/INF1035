@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -9,8 +10,19 @@ using System.Xml.Serialization;
 
 namespace Core
 {
+
     public static class Extensions
     {
+
+        public static void OnPropertyCHange(this PropertyChangedEventHandler propertyChanged, object sender, string propertyName)
+        {
+            if (propertyChanged != null)
+            {
+                propertyChanged(sender, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+
+
         /// <summary>
         /// 
         /// </summary>
@@ -49,6 +61,44 @@ namespace Core
             serialiser.Serialize(Filestream, objectToSerialize);
             Filestream.Close();
 
+        }
+
+        public static T Load<T>()
+        {
+
+            if (typeof(T) is Core.Model.Skill)
+            {
+
+            }
+
+            if (typeof(T) is Core.Model.MonsterTemplate)
+            {
+
+            }
+
+            if (typeof(T) is Core.Model.Item)
+            {
+
+            }
+
+
+            throw new NotImplementedException();
+        }
+
+
+        /// <summary>Deserializes an xml string in to an object of Type T</summary>
+        /// <typeparam name="T">Any class type</typeparam>
+        /// <param name="xml">Xml as string to deserialize from</param>
+        /// <returns>A new object of type T is successful, null if failed</returns>
+        public static T XmlDeserialize<T>(this string xml) where T : class, new()
+        {
+            if (xml == null) throw new ArgumentNullException("xml");
+            var serializer = new XmlSerializer(typeof(T));
+            using (var reader = new StringReader(xml))
+            {
+                try { return (T)serializer.Deserialize(reader); }
+                catch { return null; } // Could not be deserialized to this type.
+            }
         }
     }
 

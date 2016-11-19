@@ -1,20 +1,52 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 namespace Core.Model
 {
 	/// <summary>
 	/// Un entraîneur possède une liste de monstres
 	/// </summary>
-	public class Trainer
+	public class Trainer : INotifyPropertyChanged
 	{
 	    private const int INIT_GOLD_VALUE = 1000;
 
-		public string Name { get; set; }
+        public event PropertyChangedEventHandler PropertyChanged;
+        string name;
 
-	    public int Gold { get; set; } = INIT_GOLD_VALUE;
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
 
-		public List<Item> Inventory { get; set; }
+            set
+            {
+                name = value;
+                PropertyChanged.OnPropertyCHange(this, "Name");
+
+            }
+        }
+        int gold = INIT_GOLD_VALUE;
+
+        public int Gold
+        {
+            get
+            {
+                return gold;
+            }
+            set
+            {
+                gold = value;
+                PropertyChanged.OnPropertyCHange(this, "Gold");
+
+            }
+        }
+
+        public ObservableCollection<Monster> SelectTempMonsters { get; set; }
+
+        public List<Item> Inventory { get; set; }
 
 		public List<Monster> Monsters { get; set; } //Limité à 250
 
