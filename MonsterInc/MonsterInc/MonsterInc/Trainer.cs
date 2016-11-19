@@ -8,8 +8,11 @@ namespace MonsterInc
 	/// </summary>
 	public class Trainer
 	{
+	    private const int INIT_GOLD_VALUE = 1000;
+
 		public string Name { get; set; }
-		public int Gold { get; set; }
+
+	    public int Gold { get; set; } = INIT_GOLD_VALUE;
 
 		public List<Item> Inventory { get; set; }
 
