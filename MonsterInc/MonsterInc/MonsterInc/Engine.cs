@@ -2,42 +2,52 @@
 using System.Collections.Generic;
 using Core.Model;
 using Core.Data;
+using System.Linq;
 
 namespace Core
 {
-	/// <summary>
-	/// Classe représentant l'IA de l'application
-	/// </summary>
-	public static class Engine
-	{
-	    private const int INIT_GOLD = 1000;
+    /// <summary>
+    /// Classe représentant l'IA de l'application
+    /// </summary>
+    public static class Engine
+    {
+        private const int INIT_GOLD = 1000;
 
-	    public static Player Player { get; set; }
+        public static Player Player { get; set; }
 
         public static Player Opponent { get; set; }
 
         public static void Run()
-		{
-            
-		}
-    
+        {
+
+        }
+
 
         /// <summary>
         /// Genère les Monstres initiaux (sélectionnnés par le joueur)
         /// </summary>
-	    public static List<Monster> GenerateInitMonsters()
-	    {
-            throw new NotImplementedException();
+        public static List<Monster> GenerateInitMonsters()
+        {
+           var result = new List<Monster>();
+
+           var initMonsterTemplates =  MonsterTemplates.Where(t => t.BaseLevel == 1).ToList();
+
+            foreach (var template in MonsterTemplates)
+            {
+                result.Add(new Monster(template));
+            }
+
+            return result;
         }
 
 
         /// <summary>
         /// Génération d'un groupe de monstres (ou les monstres disponibles selon un niveau d'ex.)
         /// </summary>
-	    public static List<Monster> GenerateOpponents()
-	    {
-	        throw new NotImplementedException();
-	    }
+        public static List<Monster> GenerateOpponents()
+        {
+            throw new NotImplementedException();
+        }
 
 
         /// <summary>
@@ -45,8 +55,8 @@ namespace Core
         /// </summary>
         /// <param name="trainer"></param>
         /// <returns></returns>
-	    public static Monster GenerateMonster(Trainer trainer)
-	    {
+        public static Monster GenerateMonster(Trainer trainer)
+        {
             //Choisir un MonsterTemplate selon une rarete
 
             //Choisir un Monstre selon le niveau d'expérience
@@ -60,10 +70,10 @@ namespace Core
         /// <param name="monster"></param>
         /// <param name="opponent"></param>
         /// <param name="item"></param>
-	    public static void ConsumeItem(Monster monster, Monster opponent, Item item)
-	    {
-	        
-	    }
+        public static void ConsumeItem(Monster monster, Monster opponent, Item item)
+        {
+
+        }
 
 
         //TODO: Trouver quel doit être le réel retour de cette méthode car nous devrons savoir si l'habitlité a fonctionné
@@ -73,25 +83,40 @@ namespace Core
         /// <param name="monster"></param>
         /// <param name="opponent"></param>
         /// <param name="skill"></param>
-	    public static void UseSkill(Monster monster, Monster opponent, Skill skill)
-	    {
-	        
-	    }
+        public static void UseSkill(Monster monster, Monster opponent, Skill skill)
+        {
 
-
-	    private static List<Item> _items { get; set; }
-
-	    public static List<Item> GetAvailableItems()
-	    {
-            //Si _items est vide, lire les items à partir du fichier XML et les enregistrer dans _items
-	        if (_items == null)
-	        {
-	            _items = ItemData.Items;
-	        }
-            //Retourner _items
-	        return _items;
         }
 
 
+        private static List<Item> _items { get; set; }
+
+        public static List<Item> Items
+        {
+            get { 
+            //Si _items est vide, lire les items à partir du fichier XML et les enregistrer dans _items
+            if (_items  == null)
+            {
+                _items = ItemData.Items;
+            }
+        //Retourner _items
+        return _items;
+}
+
+}
+
+	    private static List<MonsterTemplate> _monsterTemplates;
+	    public static List<MonsterTemplate> MonsterTemplates
+	    {
+	        get
+	        {
+                if(_monsterTemplates == null)
+                {
+                    _monsterTemplates = MonsterTemplateData.MonsterTemplates;
+                }
+
+                return _monsterTemplates;
+	        }
+	    }
 	}
 }
