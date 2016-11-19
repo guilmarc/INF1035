@@ -1,5 +1,5 @@
 ﻿using System;
-namespace MonsterInc
+namespace Core
 {
 	public class Reward
 	{

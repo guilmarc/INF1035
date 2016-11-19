@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MonsterInc
+namespace Core
 {
 	//public static class ElementRepository
 	//{
