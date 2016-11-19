@@ -52,6 +52,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\DifficultyData.cs" />
     <Compile Include="Data\ItemData.cs" />
     <Compile Include="Data\SkillData.cs" />
     <Compile Include="Extensions.cs" />

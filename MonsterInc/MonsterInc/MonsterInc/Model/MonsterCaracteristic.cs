@@ -17,12 +17,12 @@ namespace Core.Model
 
         public int Progression { get; set; }
 
-        public MonsterCaracteristic(MonsterTemplateCaracteristic monsterTemplateCaracteristic, int experienceLevel)
+        public MonsterCaracteristic(MonsterTemplateCaracteristic monsterTemplateCaracteristic, int experienceLevel, double factor)
 		{
 			//Copie des caractéristiques 
             this.Type = monsterTemplateCaracteristic.Type;
-            this.Base = HumanizeValue(monsterTemplateCaracteristic.Base);
-		    this.Progression = HumanizeValue(monsterTemplateCaracteristic.Progression);
+            this.Base = HumanizeValue((int)(monsterTemplateCaracteristic.Base * factor));
+		    this.Progression = HumanizeValue((int)(monsterTemplateCaracteristic.Progression));
             this.InitWithLevel(experienceLevel);
 		}
 

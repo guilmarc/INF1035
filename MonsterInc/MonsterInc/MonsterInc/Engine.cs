@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Core.Model;
 using Core.Data;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using MonsterInc.Database;
 
 namespace Core
 {
@@ -17,10 +19,28 @@ namespace Core
 
         public static Player Opponent { get; set; }
 
+        public static Difficulty Difficulty { get; set; }
+
         public static void Run()
         {
-
+            Difficulty = Difficulties[0];       //Met la difficulté par défaut pour fin de test
         }
+
+
+        private static List<Difficulty> difficulties;
+
+        public static List<Difficulty> Difficulties
+        {
+            get
+            {
+                if (difficulties == null)
+                {
+                    difficulties = DifficultyData.Difficulty;
+                }
+                return difficulties;
+            }
+        }
+
 
         private static List<Monster> initMonsters;
         public  static List<Monster> InitMonsters
@@ -51,7 +71,7 @@ namespace Core
         /// <returns></returns>
         public static Trainer GenerateTrainer()
         {
-            throw new NotImplementedException();     
+            return TrainerFactory.GenerateTrainer(Player.Trainer, Difficulty);
         }
 
 
@@ -61,7 +81,7 @@ namespace Core
         /// </summary>
         public static List<Monster> GenerateOpponents()
         {
-           return  MonsterFactory.GenerateMonsters(Player.Trainer);
+           return MonsterFactory.GenerateMonsters(Player.Trainer, Difficulty);
         }
 
 

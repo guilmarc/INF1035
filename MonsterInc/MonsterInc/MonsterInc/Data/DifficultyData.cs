@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MonsterInc.Models;
+using Core.Model;
 
 namespace MonsterInc.Database
 {
@@ -21,7 +21,8 @@ namespace MonsterInc.Database
                         Name = "Newborn",
                         BonusItemRarity = 1,
                         BonusMonsterRarity = 1,
-                        BonusOpponentDamage = -1.3
+                        BonusOpponentDamage = -1.3,
+                        CaracteristicFactor = 1.0
                     },
 
                     new Difficulty
@@ -32,7 +33,8 @@ namespace MonsterInc.Database
                         ItemRarityApplicable = 90,
                         BonusMonsterRarity = 2,
                         MonsterLevelRarityApplicable = 20,
-                        BonusOpponentDamage = -1.15
+                        BonusOpponentDamage = -1.15,
+                        CaracteristicFactor = 1.1
                     },
 
                     new Difficulty
@@ -43,7 +45,8 @@ namespace MonsterInc.Database
                         ItemRarityApplicable = 90,
                         BonusMonsterRarity = 3,
                         MonsterLevelRarityApplicable = 20,
-                        BonusOpponentDamage = 1
+                        BonusOpponentDamage = 1,
+                        CaracteristicFactor = 1.2
                     },
 
                     new Difficulty
@@ -54,7 +57,8 @@ namespace MonsterInc.Database
                         ItemRarityApplicable = 90,
                         BonusMonsterRarity = 2,
                         MonsterLevelRarityApplicable = 20,
-                        BonusOpponentDamage = 1.05
+                        BonusOpponentDamage = 1.05,
+                        CaracteristicFactor = 1.3
                     },
 
                     new Difficulty
@@ -65,7 +69,8 @@ namespace MonsterInc.Database
                         ItemRarityApplicable = 80,
                         BonusMonsterRarity = 3,
                         MonsterLevelRarityApplicable = 40,
-                        BonusOpponentDamage = 1.1
+                        BonusOpponentDamage = 1.1,
+                        CaracteristicFactor = 1.4
                     },
 
                     new Difficulty
@@ -76,7 +81,7 @@ namespace MonsterInc.Database
                         ItemRarityApplicable = 80,
                         BonusMonsterRarity = 5,
                         MonsterLevelRarityApplicable = 40,
-                        BonusOpponentDamage = 1.15
+                        BonusOpponentDamage = 1.5
                     },
 
                     new Difficulty
@@ -87,7 +92,7 @@ namespace MonsterInc.Database
                         ItemRarityApplicable = 50,
                         BonusMonsterRarity = 7,
                         MonsterLevelRarityApplicable = 40,
-                        BonusOpponentDamage = 1.2
+                        BonusOpponentDamage = 1.6
                     },
 
                     new Difficulty
@@ -98,7 +103,7 @@ namespace MonsterInc.Database
                         ItemRarityApplicable = 50,
                         BonusMonsterRarity = 10,
                         MonsterLevelRarityApplicable = 40,
-                        BonusOpponentDamage = 1.3
+                        BonusOpponentDamage = 1.7
                     },
                 };
             }

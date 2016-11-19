@@ -9,12 +9,12 @@ namespace Core.Model
     
         private static Random random = new Random();
 
-	    public static Monster GenerateMonster(int experienceLevel)
+	    public static Monster GenerateMonster(int experienceLevel, Difficulty difficulty)
 	    {
-	        return new Monster( PickRandomMonsterTemplateForLevel(experienceLevel) );
+	        return new Monster( PickRandomMonsterTemplateForLevel(experienceLevel), difficulty.CaracteristicFactor );
 	    }
 
-	    public static List<Monster> GenerateMonsters(Trainer trainer)
+	    public static List<Monster> GenerateMonsters(Trainer trainer, Difficulty difficulty)
 	    {
             //Pour l'instant on ne génère que le même nombre de monstre que le Trainer.
             //Il serait possible de générer des monstre aléatoirement selon le niveau d'énergie total par exemple.
@@ -24,7 +24,7 @@ namespace Core.Model
 
 	        for (var i = 0; i < count; i++)
 	        {
-	            result.Add( GenerateMonster(averageLevel) );
+	            result.Add( GenerateMonster(averageLevel, difficulty) );
 	        }
 
 	        return result;

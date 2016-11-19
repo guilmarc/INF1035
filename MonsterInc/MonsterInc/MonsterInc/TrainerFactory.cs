@@ -4,11 +4,17 @@ namespace Core
 {
     public static class TrainerFactory
     {
-        public static Trainer GenerateTrainer(int difficultyLevel)
+        public static Trainer GenerateTrainer(Trainer trainer, Difficulty difficulty)
         {
-            var result = new Trainer();
+            var newTrainer = new Trainer();
 
-            return null;
+            //TODO: Générer une liste d'achat aléatoire avec l'or disponible
+            //newTrainer.Inventory
+
+            newTrainer.Name = "New Trainer";
+            newTrainer.Monsters = MonsterFactory.GenerateMonsters(trainer, difficulty);
+
+            return newTrainer;
         }
     }
 }

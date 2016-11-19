@@ -52,7 +52,8 @@ namespace Core.Model
         }
 
 
-		public Monster(MonsterTemplate monsterTemplate)
+
+		public Monster(MonsterTemplate monsterTemplate, double CaracteristicFactor = 1.0)
 		{
 			this.Template = monsterTemplate;
 
@@ -61,7 +62,7 @@ namespace Core.Model
 			//Selon la demande de Adam, on relie les caractéristique avec le template
 			foreach (var monsterTemplateCaracteristic in monsterTemplate.Caracteristics)
 			{
-				this.Caracteristics.Add( new MonsterCaracteristic(monsterTemplateCaracteristic, this.ExperienceLevel) );
+				this.Caracteristics.Add( new MonsterCaracteristic(monsterTemplateCaracteristic, this.ExperienceLevel, CaracteristicFactor) );
 			}
 		}
 

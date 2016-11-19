@@ -4,18 +4,42 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.model
+namespace Core.Model
 {
-    class Difficulty
+    public class Difficulty
     {
         public int DifficultyNumber { get; set; }
+
         public string Name { get; set; }
 
-        public double BonusItemRarity { get; set; } //multiplicateur de rareté
-        public int ItemRarityApplicable { get; set; } //rareté sur laquelle le bonus est appliqué ex : 40 pour rareté 1 à 40 (Item.Rarity)
-        public double BonusMonsterRarity { get; set; } //multiplicateur de rareté
-        public int MonsterLevelRarityApplicable { get; set; } //rareté sur laquelle le bonus est appliqué (ex : 20 pour monstres dispo a partir de lvl 20 (MonsterTemplate.BaseLevel)
-        public double BonusOpponentDamage { get; set; } //multiplicateur du dommage
+        /// <summary>
+        /// Multiplicateur de rareté
+        /// </summary>
+        public double BonusItemRarity { get; set; }
 
+        /// <summary>
+        /// Rareté sur laquelle le bonus est appliqué ex : 40 pour rareté 1 à 40 (Item.Rarity)
+        /// </summary>
+        public int ItemRarityApplicable { get; set; }
+
+        /// <summary>
+        /// Multiplicateur de rareté
+        /// </summary>
+        public double BonusMonsterRarity { get; set; } 
+        
+        /// <summary>
+        /// Rareté sur laquelle le bonus est appliqué (ex : 20 pour monstres dispo a partir de lvl 20 (MonsterTemplate.BaseLevel)
+        /// </summary>
+        public int MonsterLevelRarityApplicable { get; set; } 
+        
+        /// <summary>
+        ///  Multiplicateur du dommage
+        /// </summary>
+        public double BonusOpponentDamage { get; set; } 
+
+        /// <summary>
+        /// Multiplicateur de la propriété Base de chacunes des caractéristiques d'un Monstre
+        /// </summary>
+        public double CaracteristicFactor { get; set; }
     }
 }
