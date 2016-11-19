@@ -13,13 +13,183 @@ namespace MonsterInc
 					new CaptureBall
                     {
                         Name = "CBall (low grade)",
-                        Description = "",
+                        Description = "Low grade capture ball",
+                        Rarity = 90,
                         Cost = 20,
                         Scopes = new List<Scope>
 						{
-							 new DamageScope() { Target = Scope.ScopeTarget.Opponent, Duration = 1, Magnitude = 1 } //TODO: Ajouter Effet
+							 new EffectScope() { Target = Scope.ScopeTarget.Opponent, Duration = 1, Magnitude = 0.2 } //TODO: Ajouter Effet ??
 						}
-                    }
+                    },
+
+                    new CaptureBall
+                    {
+                        Name = "CBall (medium grade)",
+                        Description = "Medium grade capture ball",
+                        Rarity = 75,
+                        Cost = 100,
+                        Scopes = new List<Scope>
+                        {
+                             new EffectScope() { Target = Scope.ScopeTarget.Opponent, Duration = 1, Magnitude = 0.4 } 
+						}
+                    },
+
+                    new CaptureBall
+                    {
+                        Name = "CBall (high grade)",
+                        Description = "High grade capture ball",
+                        Rarity = 50,
+                        Cost = 500,
+                        Scopes = new List<Scope>
+                        {
+                             new EffectScope() { Target = Scope.ScopeTarget.Opponent, Duration = 1, Magnitude = 0.6 } 
+						}
+                    },
+
+                    new CaptureBall
+                    {
+                        Name = "CBall (perfect grade)",
+                        Description = "Perfect capture ball",
+                        Rarity = 20,
+                        Cost = 2000,
+                        Scopes = new List<Scope>
+                        {
+                             new EffectScope() { Target = Scope.ScopeTarget.Opponent, Duration = 1, Magnitude = 0.8 } 
+						}
+                    },
+
+                    new Revival
+                    {
+                        Name = "Revival Syringe (5 mL)",
+                        Description = "Revival Syringe",
+                        Rarity = 70,
+                        Cost = 400,
+                        Scopes = new List<Scope>
+                        {
+                             new EffectScope() { Target = Scope.ScopeTarget.Self, Duration = 1, Magnitude = 0.5 }
+                        }
+                    },
+
+                    new Revival
+                    {
+                        Name = "Revival Syringe (10 mL)",
+                        Description = "Large Revival Syringe",
+                        Rarity = 30,
+                        Cost = 1500,
+                        Scopes = new List<Scope>
+                        {
+                             new EffectScope() { Target = Scope.ScopeTarget.Self, Duration = 1, Magnitude = 0.8 }
+                        }
+                    },
+
+                    new LifePotion
+                    {
+                        Name = "Small Life Potion",
+                        Description = "Small Life Potion",
+                        Rarity = 95,
+                        Cost = 5,
+                        Scopes = new List<Scope>
+                        {
+                             new EffectScope() { Target = Scope.ScopeTarget.Self, Duration = 1, Magnitude = 0.015 }
+                        }
+                    },
+
+                    new LifePotion
+                    {
+                        Name = "Medium Life Potion",
+                        Description = "Medium Life Potion",
+                        Rarity = 80,
+                        Cost = 50,
+                        Scopes = new List<Scope>
+                        {
+                             new EffectScope() { Target = Scope.ScopeTarget.Self, Duration = 1, Magnitude = 0.05 }
+                        }
+                    },
+
+                    new LifePotion
+                    {
+                        Name = "Large Life Potion",
+                        Description = "Large Life Potion",
+                        Rarity = 60,
+                        Cost = 200,
+                        Scopes = new List<Scope>
+                        {
+                             new EffectScope() { Target = Scope.ScopeTarget.Self, Duration = 1, Magnitude = 0.15 }
+                        }
+                    },
+
+                    new EnergyPotion
+                    {
+                        Name = "Small Energy Potion",
+                        Description = "Small Energy Potion",
+                        Rarity = 95,
+                        Cost = 5,
+                        Scopes = new List<Scope>
+                        {
+                             new EffectScope() { Target = Scope.ScopeTarget.Self, Duration = 1, Magnitude = 0.015 }
+                        }
+                    },
+
+                    new EnergyPotion
+                    {
+                        Name = "Medium Energy Potion",
+                        Description = "Medium Energy Potion",
+                        Rarity = 80,
+                        Cost = 50,
+                        Scopes = new List<Scope>
+                        {
+                             new EffectScope() { Target = Scope.ScopeTarget.Self, Duration = 1, Magnitude = 0.05 }
+                        }
+                    },
+
+                    new EnergyPotion
+                    {
+                        Name = "Large Energy Potion",
+                        Description = "Large Energy Potion",
+                        Rarity = 60,
+                        Cost = 200,
+                        Scopes = new List<Scope>
+                        {
+                             new EffectScope() { Target = Scope.ScopeTarget.Self, Duration = 1, Magnitude = 0.15 }
+                        }
+                    },
+
+                    new Antidote
+                    {
+                        Name = "Low quality Antidote",
+                        Description = "40% chance to remove negative effect",
+                        Rarity = 95,
+                        Cost = 5,
+                        Scopes = new List<Scope>
+                        {
+                             new EffectScope() { Target = Scope.ScopeTarget.Self, Duration = 1, Magnitude = 0.4 }
+                        }
+                    },
+
+                    new Antidote
+                    {
+                        Name = "Medium quality Antidote",
+                        Description = "65% chance to remove negative effect",
+                        Rarity = 80,
+                        Cost = 50,
+                        Scopes = new List<Scope>
+                        {
+                             new EffectScope() { Target = Scope.ScopeTarget.Self, Duration = 1, Magnitude = 0.65 }
+                        }
+                    },
+
+                    new Antidote
+                    {
+                        Name = "Good quality Antidote",
+                        Description = "90% chance to remove negative effect",
+                        Rarity = 40,
+                        Cost = 200,
+                        Scopes = new List<Scope>
+                        {
+                             new EffectScope() { Target = Scope.ScopeTarget.Self, Duration = 1, Magnitude = 0.9 }
+                        }
+                    },
+
                 };
             }
         }

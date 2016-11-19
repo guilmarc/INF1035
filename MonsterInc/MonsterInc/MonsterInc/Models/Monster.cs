@@ -11,29 +11,17 @@ namespace MonsterInc
 
 	public class BaseExperienceLevelStrategy : IExperienceLevelStrategy
 	{
-		public int EvaluateExperienceLevel(int NewExperiencePoint)
-		{
 
-			if (NewExperiencePoint < 25) return 1;
-			if (NewExperiencePoint < 50) return 2;
-			if (NewExperiencePoint < 75) return 3;
-			if (NewExperiencePoint < 100) return 4;
-			if (NewExperiencePoint < 150) return 5;
-			if (NewExperiencePoint < 200) return 6;
-			if (NewExperiencePoint < 250) return 7;
-			if (NewExperiencePoint < 300) return 8;
-			if (NewExperiencePoint < 350) return 9;
-			if (NewExperiencePoint < 400) return 10;
-			if (NewExperiencePoint < 450) return 11;
-			if (NewExperiencePoint < 500) return 12;
-			if (NewExperiencePoint < 600) return 13;
-			if (NewExperiencePoint < 700) return 14;
-			if (NewExperiencePoint < 800) return 15;
-			if (NewExperiencePoint < 900) return 16;
-			if (NewExperiencePoint < 1000) return 17;
-			if (NewExperiencePoint < 1250) return 18;
-			if (NewExperiencePoint < 1500) return 19;
-			else return 20;
+	
+
+        public int EvaluateExperienceLevel(int NewExperiencePoint)
+		{
+            if (NewExperiencePoint < 250) return ((NewExperiencePoint / 25)+1); //1 à 10
+            if (NewExperiencePoint < 1000) return ((NewExperiencePoint / 50) + 6); //11 à 25
+            if (NewExperiencePoint < 5000) return ((NewExperiencePoint / 200) + 21); //26 à 45 
+            if (NewExperiencePoint < 20000) return ((NewExperiencePoint / 400) + 34); // 46 à 83
+            if (NewExperiencePoint < 32800) return ((NewExperiencePoint / 800) + 59); // 84 à 99
+            return 100;
 		}
 	}
 	//public delegate void ExperienceLevelChangedHandler(Monster m, EventArgs e);

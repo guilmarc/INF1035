@@ -12,7 +12,8 @@ namespace MonsterInc
 	{
 		Ball = 0,
 		Titan,
-		GiantTitan
+		GiantTitan,
+        Dragon
 	}
 
 	public class MonsterTemplate
@@ -24,7 +25,7 @@ namespace MonsterInc
 
 		public int BaseLevel { get; set; }
 
-		public int Scarcity { get; set; }
+		public int Rarity { get; set; } //100 = common, 1 = rare
 
 		public Element Element { get; set; }
 
