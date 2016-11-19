@@ -22,13 +22,15 @@ namespace Core
 
         }
 
-        private static readonly List<Monster> initMonsters = new List<Monster>();
+        private static List<Monster> initMonsters;
         public  static List<Monster> InitMonsters
         {
             get
             {
                 if (initMonsters == null)
                 {
+                    initMonsters = new List<Monster>();
+
                     var initMonsterTemplates = MonsterTemplates.Where(t => t.BaseLevel == 1).ToList();
 
                     foreach (var template in initMonsterTemplates)
@@ -59,7 +61,7 @@ namespace Core
         /// </summary>
         public static List<Monster> GenerateOpponents()
         {
-            throw new NotImplementedException();
+           return  MonsterFactory.GenerateMonsters(Player.Trainer);
         }
 
 

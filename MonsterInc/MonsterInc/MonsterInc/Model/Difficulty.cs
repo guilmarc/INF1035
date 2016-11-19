@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MonsterInc.Models
+namespace Core.model
 {
     class Difficulty
     {
