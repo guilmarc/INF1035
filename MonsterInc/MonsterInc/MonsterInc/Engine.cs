@@ -22,23 +22,36 @@ namespace Core
 
         }
 
+        private static readonly List<Monster> initMonsters = new List<Monster>();
+        public  static List<Monster> InitMonsters
+        {
+            get
+            {
+                if (initMonsters == null)
+                {
+                    var initMonsterTemplates = MonsterTemplates.Where(t => t.BaseLevel == 1).ToList();
+
+                    foreach (var template in initMonsterTemplates)
+                    {
+                        initMonsters.Add(new Monster(template));
+                    }
+                }
+
+                return initMonsters;
+            }
+        }
+
+
 
         /// <summary>
-        /// Genère les Monstres initiaux (sélectionnnés par le joueur)
+        /// Méthode responsable de la générations d'un entraîneur selon un niveau de difficulté
         /// </summary>
-        public static List<Monster> GenerateInitMonsters()
+        /// <returns></returns>
+        public static Trainer GenerateTrainer()
         {
-           var result = new List<Monster>();
-
-           var initMonsterTemplates =  MonsterTemplates.Where(t => t.BaseLevel == 1).ToList();
-
-            foreach (var template in MonsterTemplates)
-            {
-                result.Add(new Monster(template));
-            }
-
-            return result;
+            throw new NotImplementedException();     
         }
+
 
 
         /// <summary>
@@ -88,9 +101,8 @@ namespace Core
 
         }
 
-
+        //TODO: Lire les Items du fichier XML
         private static List<Item> _items { get; set; }
-
         public static List<Item> Items
         {
             get { 
@@ -104,7 +116,7 @@ namespace Core
 }
 
 }
-
+        //TODO: Lire les MonsterTemplates du fichier XML
 	    private static List<MonsterTemplate> _monsterTemplates;
 	    public static List<MonsterTemplate> MonsterTemplates
 	    {

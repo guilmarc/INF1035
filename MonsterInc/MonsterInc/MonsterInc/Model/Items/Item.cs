@@ -17,7 +17,7 @@ namespace Core.Model
         /// <summary>
         /// Coût de l'item en écu d'or
         /// </summary>
-        public int Cost { get; set; }				
+        public int Gold { get; set; }				
 
         public List<Scope> Scopes { get; set; }
 
