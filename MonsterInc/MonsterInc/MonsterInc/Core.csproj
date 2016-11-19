@@ -60,6 +60,7 @@
     <Compile Include="Model\Items\EnergyPotion.cs" />
     <Compile Include="Model\Items\LifePotion.cs" />
     <Compile Include="Model\Items\Revival.cs" />
+    <Compile Include="Exceptions\NotEnoughtGoldException.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\Player.cs" />
@@ -89,6 +90,7 @@
     <Compile Include="Model\Reward.cs" />
     <Compile Include="Model\Action.cs" />
     <Compile Include="Model\Interfaces\IActionable.cs" />
+    <Compile Include="TrainerFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />

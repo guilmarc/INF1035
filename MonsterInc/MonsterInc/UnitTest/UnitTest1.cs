@@ -13,7 +13,7 @@ namespace UnitTest
         {
             
             List<Core.Model.Item>  a = Core.Data.ItemData.Items ;
-            a.XmlSerialize<List<Core.Model.Item>>(@"item", true);
+            //a.XmlSerialize<List<Core.Model.Item>>(@"item", true);
             
         }
     }

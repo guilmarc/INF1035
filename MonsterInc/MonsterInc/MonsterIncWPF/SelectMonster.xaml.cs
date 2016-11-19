@@ -27,7 +27,7 @@ namespace MonsterIncWPF
             InitializeComponent();
             this.DataContext = trainer;
 
-            trainer.SelectTempMonsters = new ObservableCollection<Core.Model.Monster>(Core.Engine.GenerateInitMonsters());
+            trainer.SelectTempMonsters = new ObservableCollection<Core.Model.Monster>(Core.Engine.InitMonsters);
         }
     }
 }

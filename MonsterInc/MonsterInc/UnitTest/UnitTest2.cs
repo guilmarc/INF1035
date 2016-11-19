@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Core;
+using Core.Model;
 
 namespace UnitTest
 {
@@ -16,7 +17,25 @@ namespace UnitTest
         [TestMethod]
         public void TestThereShouldBe4InitMonsters()
         {
-            Assert.AreEqual(Core.Engine.GenerateInitMonsters().Count, 4);
+            Assert.AreEqual(Core.Engine.InitMonsters.Count, 4);
         }
+
+        [TestMethod]
+        public void TestGenerateRandomTemplateMonster()
+        {
+            for (int i = 0; i < 100; i++)
+            {
+               var monsterTemplate =  MonsterFactory.PickRandomMonsterTemplateForLevel(40);
+               Console.WriteLine(monsterTemplate.Name);
+            }
+            
+
+        }
+
+        public void TestOpponentMonstersGeneration()
+        {
+            
+        }
+
     }
 }

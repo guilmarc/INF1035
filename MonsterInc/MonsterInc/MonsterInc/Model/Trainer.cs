@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using MonsterInc;
+
 namespace Core.Model
 {
 	/// <summary>
@@ -51,16 +53,21 @@ namespace Core.Model
 		public List<Monster> Monsters { get; set; } //Limité à 250
 
 		public List<Item> ActiveInventory { get; set; }
+
 		public List<Monster> ActiveMonsters { get; set; }
 
 		public Element Affinity { get; set; }
 
-		public void BuyItem(Item item)
+		public bool BuyItem(Item item)
 		{
-			if (item.Cost <= this.Gold)
+			if (item.Gold > this.Gold)
 			{
-				
+				throw new NotEnoughtGoldException("Vous n'avez assez d'or pour acheter l'item " + item.Name);
 			}
+
+            this.Inventory.Add(item);
+		    this.Gold -= item.Gold;
+		    return true;
 		}
 	}
 }

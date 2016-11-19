@@ -59,12 +59,19 @@ namespace Core.Model
 			this.ExperienceLevel = monsterTemplate.BaseLevel;
 
 			//Selon la demande de Adam, on relie les caractéristique avec le template
-			foreach (MonsterTemplateCaracteristic monsterTemplateCaracteristic in monsterTemplate.Caracteristics)
+			foreach (var monsterTemplateCaracteristic in monsterTemplate.Caracteristics)
 			{
-				this.Caracteristics.Add( new MonsterCaracteristic(monsterTemplateCaracteristic) );
+				this.Caracteristics.Add( new MonsterCaracteristic(monsterTemplateCaracteristic, this.ExperienceLevel) );
 			}
-
 		}
+
+	    public void ResetCaracterictics()
+	    {
+	        foreach (var caracterictic in this.Caracteristics)
+	        {
+	            caracterictic.InitWithLevel(this.ExperienceLevel);
+	        }
+	    }
 
 		/// <summary>
 		/// Méthode retournant la caractéristique de monstre tel que demandée  
@@ -88,35 +95,23 @@ namespace Core.Model
 			if (newExperienceLevel != this.ExperienceLevel)
 			{
 				this.ExperienceLevel = newExperienceLevel;
-				OnExperienceLevelChanged(this.ExperienceLevel);
+				//OnExperienceLevelChanged(this.ExperienceLevel);
 					
 			}
 		}
 
 
 
-		protected void OnExperienceLevelChanged(int newExperienceLevel)
-		{
-			//TODO: Looper toutes les caractéristiques et mettre à jour le total
-			foreach (MonsterCaracteristic caracteristic in this.Caracteristics)
-			{
-				caracteristic.UpdateWithLevel(newExperienceLevel);
-			}
+		//protected void OnExperienceLevelChanged(int newExperienceLevel)
+		//{
+		//	//TODO: Looper toutes les caractéristiques et mettre à jour le total
+		//	foreach (MonsterCaracteristic caracteristic in this.Caracteristics)
+		//	{
+		//		caracteristic.UpdateWithLevel(newExperienceLevel);
+		//	}
 
-			if (ExperienceLevelChanged != null)
-				ExperienceLevelChanged(this, new ExperienceLevelChangedEventArgs() { NewExperienceLevel = newExperienceLevel });
-		}
-
-        public int test
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
+		//	if (ExperienceLevelChanged != null)
+		//		ExperienceLevelChanged(this, new ExperienceLevelChangedEventArgs() { NewExperienceLevel = newExperienceLevel });
+		//}
     }
 }
