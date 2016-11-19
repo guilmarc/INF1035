@@ -1,5 +1,5 @@
 ﻿using System;
-namespace MonsterInc
+namespace Core.Model
 {
 	//Un impact c'est un quadruplet Target, Effet, Magnitude et Durée
 	public abstract class Scope

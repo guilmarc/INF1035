@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MonsterInc
+namespace Core.Model
 {
 	public class Skill : IActionable
 	{
@@ -25,10 +25,5 @@ namespace MonsterInc
         public List<Scope> Scopes { get; set; }
 
         //public Effect Effet { get; set; }  a faire si on a le temps car ca va être compliqué de changer la cible, etc
-
-        public void Do(Context context, Monster destination)
-		{
-			
-		}
 	}
 }

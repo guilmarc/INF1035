@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using Core.Model;
+using Core.Data;
 
-namespace MonsterInc
+namespace Core
 {
-
 	/// <summary>
 	/// Classe représentant l'IA de l'application
 	/// </summary>
-	public static class GameEngine
+	public static class Engine
 	{
 	    private const int INIT_GOLD = 1000;
 
@@ -19,7 +20,7 @@ namespace MonsterInc
 		{
             
 		}
-
+    
 
         /// <summary>
         /// Genère les Monstres initiaux (sélectionnnés par le joueur)
@@ -83,10 +84,12 @@ namespace MonsterInc
 	    public static List<Item> GetAvailableItems()
 	    {
             //Si _items est vide, lire les items à partir du fichier XML et les enregistrer dans _items
-
+	        if (_items == null)
+	        {
+	            _items = ItemData.Items;
+	        }
             //Retourner _items
-
-            throw new NotImplementedException();
+	        return _items;
         }
 
 

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MonsterInc
+namespace Core.Model
 {
 
 	/// <summary>

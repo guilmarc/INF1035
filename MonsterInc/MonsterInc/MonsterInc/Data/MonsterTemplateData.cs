@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using Core.Model;
 
-namespace MonsterInc
+namespace Core.Data
 {
 	//Simulation du fichier XML des MonsterTemplate
 	public static class MonsterTemplateData

@@ -1,5 +1,5 @@
 ﻿using System;
-namespace MonsterInc
+namespace Core.Model
 {
 	public class ExperienceLevelChangedEventArgs : EventArgs
 	{

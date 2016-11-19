@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Core
+namespace Core.Model
 {
 	public class Reward
 	{

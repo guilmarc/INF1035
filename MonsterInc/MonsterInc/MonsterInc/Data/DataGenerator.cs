@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
 using System.Reflection;
+using Core.Model;
 
-namespace MonsterInc
+namespace Core.Data
 {
 	/// <summary>
 	/// Classe responsable de générer les fichiers XML à partir des données dans les classes xxxxData.cs situés dans le même répertoire

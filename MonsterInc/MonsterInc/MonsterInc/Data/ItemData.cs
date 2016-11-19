@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using Core.Model;
 
-namespace MonsterInc
+namespace Core.Data
 {
     public static class ItemData
     {

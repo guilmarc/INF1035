@@ -8,6 +8,21 @@
     <RootNamespace>MonsterInc</RootNamespace>
     <AssemblyName>Core</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -19,8 +34,6 @@
     <WarningLevel>4</WarningLevel>
     <ExternalConsole>true</ExternalConsole>
     <PlatformTarget>x86</PlatformTarget>
-    <DocumentationFile>bin\Debug\Core.XML</DocumentationFile>
-    <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <Optimize>true</Optimize>
@@ -39,49 +52,57 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="Database\ItemData.cs" />
-    <Compile Include="Database\SkillData.cs" />
-    <Compile Include="Models\Items\Antidote.cs" />
-    <Compile Include="Models\Items\CaptureBall.cs" />
-    <Compile Include="Models\Items\EnergyPotion.cs" />
-    <Compile Include="Models\Items\LifePotion.cs" />
-    <Compile Include="Models\Items\Revival.cs" />
+    <Compile Include="Data\ItemData.cs" />
+    <Compile Include="Data\SkillData.cs" />
+    <Compile Include="Model\Items\Antidote.cs" />
+    <Compile Include="Model\Items\CaptureBall.cs" />
+    <Compile Include="Model\Items\EnergyPotion.cs" />
+    <Compile Include="Model\Items\LifePotion.cs" />
+    <Compile Include="Model\Items\Revival.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Models\Player.cs" />
-    <Compile Include="Models\Monster.cs" />
-    <Compile Include="Models\ExperienceLevelChangedEventArgs.cs" />
-    <Compile Include="Models\Skill.cs" />
-    <Compile Include="Models\Game.cs" />
-    <Compile Include="Models\Combat.cs" />
-    <Compile Include="Models\Turn.cs" />
-    <Compile Include="Models\MonsterFactory.cs" />
-    <Compile Include="Models\Repository.cs" />
-    <Compile Include="Models\Level.cs" />
-    <Compile Include="Models\MonsterCaracteristic.cs" />
-    <Compile Include="Models\Universe.cs" />
-    <Compile Include="Models\Items\Item.cs" />
-    <Compile Include="Models\MonsterTemplate.cs" />
+    <Compile Include="Model\Player.cs" />
+    <Compile Include="Model\Monster.cs" />
+    <Compile Include="Model\ExperienceLevelChangedEventArgs.cs" />
+    <Compile Include="Model\Skill.cs" />
+    <Compile Include="Model\Game.cs" />
+    <Compile Include="Model\Combat.cs" />
+    <Compile Include="Model\Turn.cs" />
+    <Compile Include="Model\MonsterFactory.cs" />
+    <Compile Include="Model\Repository.cs" />
+    <Compile Include="Model\Level.cs" />
+    <Compile Include="Model\MonsterCaracteristic.cs" />
+    <Compile Include="Model\Universe.cs" />
+    <Compile Include="Model\Items\Item.cs" />
+    <Compile Include="Model\MonsterTemplate.cs" />
     <Compile Include="Archives\ElementRepository.cs" />
-    <Compile Include="Database\MonsterTemplateData.cs" />
-    <Compile Include="Models\MonsterTemplateCaracteristic.cs" />
-    <Compile Include="Database\DataGenerator.cs" />
-    <Compile Include="Models\Scopes\Scope.cs" />
-    <Compile Include="Models\Scopes\EffectScope.cs" />
-    <Compile Include="Models\Scopes\DamageScope.cs" />
+    <Compile Include="Data\MonsterTemplateData.cs" />
+    <Compile Include="Model\MonsterTemplateCaracteristic.cs" />
+    <Compile Include="Data\DataGenerator.cs" />
+    <Compile Include="Model\Scopes\Scope.cs" />
+    <Compile Include="Model\Scopes\EffectScope.cs" />
+    <Compile Include="Model\Scopes\DamageScope.cs" />
     <Compile Include="Engine.cs" />
-    <Compile Include="Models\Element\Element.cs" />
-    <Compile Include="Context.cs" />
-    <Compile Include="Shared\Extensions.cs" />
-    <Compile Include="Trainer.cs" />
-    <Compile Include="Reward.cs" />
-    <Compile Include="Action.cs" />
-    <Compile Include="Models\Interfaces\IActionable.cs" />
+    <Compile Include="Model\Element\Element.cs" />
+    <Compile Include="Model\Trainer.cs" />
+    <Compile Include="Model\Reward.cs" />
+    <Compile Include="Model\Action.cs" />
+    <Compile Include="Model\Interfaces\IActionable.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

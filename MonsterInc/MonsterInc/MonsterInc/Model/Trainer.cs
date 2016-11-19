@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MonsterInc
+namespace Core.Model
 {
 	/// <summary>
 	/// Un entraîneur possède une liste de monstres

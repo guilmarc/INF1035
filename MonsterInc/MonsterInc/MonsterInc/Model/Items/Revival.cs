@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MonsterInc
+namespace Core.Model
 {
     /// <summary>
     /// Seringue qui redonne la vie à un monstre mort

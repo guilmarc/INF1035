@@ -5,7 +5,9 @@ using System.Xml.Linq;
 using System.Linq;
 using System.Xml.Serialization;
 
-namespace MonsterInc
+using Core.Data;
+
+namespace Core.Model
 {
 
 	public enum Element

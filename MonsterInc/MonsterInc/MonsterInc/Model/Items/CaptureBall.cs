@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MonsterInc
+namespace Core.Model
 {
     /// <summary>
     /// Permet de capturer un monstre

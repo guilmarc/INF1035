@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Security.Policy;
 
-namespace MonsterInc
+namespace Core.Model
 {
 	public abstract class Item : IActionable
     {
