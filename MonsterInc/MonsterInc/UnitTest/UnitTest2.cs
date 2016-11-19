@@ -17,6 +17,8 @@ namespace UnitTest
         [TestMethod]
         public void TestThereShouldBe4InitMonsters()
         {
+            var init = Core.Engine.InitMonsters;
+        
             Assert.AreEqual(Core.Engine.InitMonsters.Count, 4);
         }
 
