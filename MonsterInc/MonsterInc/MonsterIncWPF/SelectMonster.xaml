@@ -24,7 +24,8 @@
         <ComboBox x:Name="ListAffinity" ItemsSource="{Binding Affinity }"  HorizontalAlignment="Left" Width="102" Margin="10,180,0,69">
 
         </ComboBox>
-        <GroupBox x:Name="groupBox" Header="Gold" HorizontalAlignment="Left" Margin="121,10,0,0" VerticalAlignment="Top" Height="44" Width="62">
+        <GroupBox x:Name="groupBox" Header="Gold" HorizontalAlignment="Left" Margin="121,10,0,0" VerticalAlignment="Top" Height="44" Width="161">
+            <Label x:Name="label_Gold"  Content="{Binding Gold}"  Height="23" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="117" />
 
         </GroupBox>
         <GroupBox x:Name="groupBox_Copy" Header="Nom de l'entraineur" HorizontalAlignment="Left" Margin="121,54,0,0" VerticalAlignment="Top" Height="55" Width="161">

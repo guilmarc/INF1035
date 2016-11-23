@@ -29,9 +29,9 @@ namespace MonsterIncWPF
             InitializeComponent();
             this.DataContext = trainer;
 
-            trainer.SelectTempMonsters = new ObservableCollection<Core.Model.Monster>(Core.Engine.InitMonsters);
+            trainer.SelectTempMonsters = new ObservableCollection<Core.Model.Monster>(Core.Universe.InitMonsters);
 
-            ListAffinity.ItemsSource = Enum<Core.Model.Element>.GetNames();
+            ListAffinity.ItemsSource = Enum<Core.Element>.GetNames();
 
             
             //ListSelectTempMonsters.ItemsSource = trainer.SelectTempMonsters;
@@ -49,7 +49,7 @@ namespace MonsterIncWPF
         {
             try
             {
-                trainer.Affinity = Core.Extensions.ToEnum<Core.Model.Element>(ListAffinity.SelectedValue.ToString());
+                trainer.Affinity = Core.Extensions.ToEnum<Core.Element>(ListAffinity.SelectedValue.ToString());
                 trainer.ActiveMonsters = new List<Core.Model.Monster>();
                 trainer.ActiveMonsters.Add((Core.Model.Monster)ListSelectTempMonsters.SelectedValue);
 

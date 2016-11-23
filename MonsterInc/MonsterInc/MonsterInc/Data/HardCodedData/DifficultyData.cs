@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Core.Model;
 
-namespace MonsterInc.Database
+namespace Core.Database
 {
     class DifficultyData
     {

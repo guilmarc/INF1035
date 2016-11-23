@@ -17,9 +17,9 @@ namespace UnitTest
         [TestMethod]
         public void TestThereShouldBe4InitMonsters()
         {
-            var init = Core.Engine.InitMonsters;
+            var init = Core.Universe.InitMonsters;
         
-            Assert.AreEqual(Core.Engine.InitMonsters.Count, 4);
+            Assert.AreEqual(Core.Universe.InitMonsters.Count, 4);
         }
 
         [TestMethod]
@@ -34,9 +34,20 @@ namespace UnitTest
 
         }
 
+        [TestMethod]
         public void TestOpponentMonstersGeneration()
         {
             
+        }
+
+        [TestMethod]
+        public void TestDifficultyListGeneration()
+        {
+
+            Console.WriteLine( Universe.Difficulties.Count );
+
+            Console.WriteLine(Universe.Difficulties.Count);
+
         }
 
     }

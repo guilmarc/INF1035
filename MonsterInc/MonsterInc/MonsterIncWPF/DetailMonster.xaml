@@ -4,12 +4,88 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MonsterIncWPF"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="DetailMonster" Height="300" Width="300">
-    <Grid>
-        <GroupBox x:Name="groupBox" Header="Nom" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="48" Width="144">
-            <Label x:Name="label" Content="{Binding Template.Name}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        Title="Detail Monster" Height="259.581" Width="487.724">
+    <Grid Margin="0,0,2,0" RenderTransformOrigin="0.498,0.851">
+        <GroupBox x:Name="DetailMonster_Name" Header="Monster" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="48" Width="144">
+            <Label x:Name="label_name" Content="{Binding Template.Name}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         </GroupBox>
+
+        <GroupBox x:Name="DetailMonster_NickName" Header="Name" HorizontalAlignment="Left" Margin="10,57,0,0" VerticalAlignment="Top" Height="48" Width="144">
+            <Label x:Name="label_nickname" Content="{Binding NickName}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </GroupBox>
+
+        <GroupBox x:Name="DetailMonster_Category" Header="Category" HorizontalAlignment="Left" Margin="10,153,0,0" VerticalAlignment="Top" Height="48" Width="144">
+            <Label x:Name="label_category" Content="{Binding Template.Category}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </GroupBox>
+        <GroupBox x:Name="DetailMonster_Element" Header="Element" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top" Height="48" Width="144">
+            <Label x:Name="label_rarity1" Content="{Binding Template.Element}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </GroupBox>
+
+        <TextBlock x:Name="Types" HorizontalAlignment="Left" Margin="174,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="134" Width="144">
+            <TextBlock.Text>
+                <MultiBinding StringFormat="{}{0}{5}{1}{5}{2}{5}{3}{5}{4}">
+                    <Binding Path="Caracteristics[0].Type"/>
+                    <Binding Path="Caracteristics[1].Type"/>
+                    <Binding Path="Caracteristics[2].Type"/>
+                    <Binding Path="Caracteristics[3].Type"/>
+                    <Binding Path="Caracteristics[4].Type"/>
+                    <Binding Source="{x:Static System:Environment.NewLine}"/>
+                </MultiBinding>
+            </TextBlock.Text>
+        </TextBlock>
+
+        <TextBlock x:Name="ValeursTypes" HorizontalAlignment="Left" Margin="323,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="134" Width="99">
+            <TextBlock.Text>
+                <MultiBinding StringFormat="{}{6} / {0}{5}{7} / {1}{5}{2}{5}{3}{5}{4}">
+                    <Binding Path="Caracteristics[0].Total"/>
+                    <Binding Path="Caracteristics[1].Total"/>
+                    <Binding Path="Caracteristics[2].Total"/>
+                    <Binding Path="Caracteristics[3].Total"/>
+                    <Binding Path="Caracteristics[4].Total"/>
+                    <Binding Source="{x:Static System:Environment.NewLine}"/>
+                    <Binding Path="Caracteristics[0].Actual"/>
+                    <Binding Path="Caracteristics[0].Actual"/>
+                </MultiBinding>
+            </TextBlock.Text>
+        </TextBlock>
+
+        <TextBlock x:Name="Experience" HorizontalAlignment="Left" Margin="174,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="144">
+            <TextBlock.Text>
+                <MultiBinding StringFormat="Niveau : {0}{2}Expérience : {1}">
+                    <Binding Path="ExperienceLevel"/>
+                    <Binding Path="ExperiencePoint"/>
+                    <Binding Source="{x:Static System:Environment.NewLine}"/>
+                </MultiBinding>
+            </TextBlock.Text>
+        </TextBlock>
+
+        
+
+
+        <!--
+        <ListBox x:Name="Caracteristics" ItemsSource="{Binding Caracteristics}" HorizontalAlignment="Left" Height="182" Margin="172,20,0,0" VerticalAlignment="Top" Width="121">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Type}" Margin="2" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <ListBox x:Name="Total_Value" ItemsSource="{Binding Caracteristics}" HorizontalAlignment="Left" Height="182" Margin="336,20,0,0" VerticalAlignment="Top" Width="41" BorderThickness="0">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Total}" Margin="2" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBox x:Name="LifePtsActual" Text="{Binding Caracteristics[0].Actual}" HorizontalAlignment="Left" Height="23" Margin="298,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="33" BorderThickness="0"/>
+        <TextBox x:Name="EnergyPtsActual" Text="{Binding Caracteristics[1].Actual}" HorizontalAlignment="Left" Height="23" Margin="298,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="33" BorderThickness="0"/>-->
 
     </Grid>
 </Window>
