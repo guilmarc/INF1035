@@ -58,9 +58,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DetailMonster.xaml.cs">
+      <DependentUpon>DetailMonster.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SelectMonster.xaml.cs">
       <DependentUpon>SelectMonster.xaml</DependentUpon>
     </Compile>
+    <Page Include="DetailMonster.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
