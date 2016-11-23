@@ -1,14 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace Core.Model
 {
-	public class Skill : IActionable
+	public class Skill : IActionable, INotifyPropertyChanged
 	{
+        string name;
 
-		public string Name { get; set; }
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
 
-		public Element Element { get; set; }
+            set
+            {
+                name = value;
+                PropertyChanged.OnPropertyCHange(this, "Name");
+            }
+        }
+
+        public Element Element { get; set; }
 
 		public int EnergyPointCost { get; set; }
 
@@ -24,6 +38,8 @@ namespace Core.Model
 
         public List<Scope> Scopes { get; set; }
 
+        public event PropertyChangedEventHandler PropertyChanged;
+
         //public Effect Effet { get; set; }  a faire si on a le temps car ca va être compliqué de changer la cible, etc
-	}
+    }
 }
