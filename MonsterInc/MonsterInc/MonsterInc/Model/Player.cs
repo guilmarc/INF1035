@@ -34,6 +34,7 @@ namespace Core.Model
 	        this.name = name;
 	    }
 
+
         public event PropertyChangedEventHandler PropertyChanged;
     }
 }

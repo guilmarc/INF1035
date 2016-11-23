@@ -1,6 +1,7 @@
 ﻿using System;
 namespace Core.Model
 {
+    [Serializable]
 	public class MonsterCaracteristic
 	{
 		//readonly MonsterTemplateCaracteristic _monsterTemplateCaracteristic;
@@ -17,6 +18,13 @@ namespace Core.Model
 
         public int Progression { get; set; }
 
+        /// <summary>
+        /// Default constructor for serialisation
+        /// </summary>
+        public MonsterCaracteristic()
+        {
+
+        }
         public MonsterCaracteristic(MonsterTemplateCaracteristic monsterTemplateCaracteristic, int experienceLevel, double factor)
 		{
 			//Copie des caractéristiques 

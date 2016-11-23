@@ -2,6 +2,7 @@
 namespace Core.Model
 {
 	//Un impact c'est un quadruplet Target, Effet, Magnitude et Durée
+    [Serializable]
 	public abstract class Scope
 	{
 		public enum ScopeTarget

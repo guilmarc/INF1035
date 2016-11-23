@@ -1,3 +1,4 @@
+
 ﻿using Core.Data;
 using Core.Model;
 
@@ -31,7 +32,5 @@ namespace Core
             return newTrainer;
         }
 
-
-      
     }
 }

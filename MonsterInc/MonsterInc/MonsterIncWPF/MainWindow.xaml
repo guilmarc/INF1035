@@ -6,12 +6,26 @@
         xmlns:local="clr-namespace:MonsterIncWPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        <WrapPanel HorizontalAlignment="Left" Height="100" Margin="87,60,0,0" VerticalAlignment="Top" Width="148">
+    <Grid Margin="0,0,2,-1">
+        <WrapPanel HorizontalAlignment="Left" Height="100" Margin="4,5,0,0" VerticalAlignment="Top" Width="148">
             <Label x:Name="label" Content="Votre nom" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
 
-            <TextBox x:Name="name" Text="{Binding Name}" Height="23" TextWrapping="Wrap" Width="120" TextChanged="name_TextChanged"/>
-            <Button x:Name="button" Content="Button" Width="75" Click="button_Click"/>
+            <TextBox x:Name="name" Text="{Binding Name}" Height="23" TextWrapping="Wrap" Width="120" />
+            <Button x:Name="button" Content="Nouvelle Partie" Width="119" Click="button_Click"/>
+        </WrapPanel>
+        <WrapPanel HorizontalAlignment="Left" Height="100" Margin="324,4,0,0" VerticalAlignment="Top" Width="148">
+            <Label x:Name="label2" Content="Charger" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="145"/>
+            <ListBox x:Name="ListSavedGames"   HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="100" >
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Name}" Margin="2" />
+                            <!--<TextBlock Text="{Binding Surname}" Margin="2" />-->
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <Button x:Name="Load" Content="Charger partie" Width="119" Click="Load_Click"/>
         </WrapPanel>
 
     </Grid>

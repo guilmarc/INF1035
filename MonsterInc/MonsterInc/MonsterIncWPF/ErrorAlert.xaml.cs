@@ -15,15 +15,13 @@ using System.Windows.Shapes;
 namespace MonsterIncWPF
 {
     /// <summary>
-    /// Interaction logic for DetailMonster.xaml
+    /// Interaction logic for ErrorAlert.xaml
     /// </summary>
-    public partial class DetailMonster : Window
+    public partial class ErrorAlert : Window
     {
-        public DetailMonster(Core.Model.Monster monster)
+        public ErrorAlert()
         {
-            this.DataContext = monster;
             InitializeComponent();
-
         }
     }
 }
