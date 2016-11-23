@@ -44,7 +44,7 @@ namespace Core.Model
 
 		public int ExperiencePoint { get; private set; }
 
-		public List<MonsterCaracteristic> Caracteristics = new List<MonsterCaracteristic>();
+		public List<MonsterCaracteristic> Caracteristics { get; set; } = new List<MonsterCaracteristic>();
 
 		public void ConsumeItem(Item item)
 		{
