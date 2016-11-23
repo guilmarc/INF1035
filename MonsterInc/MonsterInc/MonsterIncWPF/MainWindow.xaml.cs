@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.ComponentModel;
 using Core;
 
 namespace MonsterIncWPF
@@ -52,8 +53,8 @@ namespace MonsterIncWPF
 
             SavedGames.Games.Add(Engine.Player);
             SavedGames.Games.XmlSerialize(SavedGameXMLname, true);
-            SwitchToNextWindow(Action.New);
-
+            //SwitchToNextWindow(Action.New);
+            List1Layer.Visibility = Visibility.Visible;
 
 
 
@@ -66,7 +67,7 @@ namespace MonsterIncWPF
 
             Engine.Player = SavedGames.Games.Single(x => x.Name == selectedPlayer.Name);
 
-            this.SwitchToNextWindow(Action.Load);
+            //this.SwitchToNextWindow(Action.Load);
 
         }
 
@@ -76,20 +77,20 @@ namespace MonsterIncWPF
             Load=2
         }
 
-        private void SwitchToNextWindow(Action action)
-        {
-            switch (action)
-            {
-                case Action.New:
-                    var win2 = new SelectMonster();
-                    win2.Show();
-                    break;
-                case Action.Load:
-                    throw new NotImplementedException();
-                    //break;
-            }
+        //private void SwitchToNextWindow(Action action)
+        //{
+        //    switch (action)
+        //    {
+        //        case Action.New:
+        //            var win2 = new SelectMonster();
+        //            win2.Show();
+        //            break;
+        //        case Action.Load:
+        //            throw new NotImplementedException();
+        //            //break;
+        //    }
 
-            this.Close();
-        }
+        //    this.Close();
+        //}
     }
 }
