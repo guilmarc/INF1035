@@ -1,4 +1,5 @@
-﻿using Core.Model;
+﻿using Core.Data;
+using Core.Model;
 
 namespace Core
 {
@@ -11,7 +12,7 @@ namespace Core
             //TODO: Générer une liste d'achat aléatoire avec l'or disponible
             //newTrainer.Inventory
 
-            newTrainer.Name = "New Trainer";
+            newTrainer.Name = TrainerData.GetRandomTrainerName();
             newTrainer.Monsters = MonsterFactory.GenerateMonsters(trainer, difficulty);
 
             return newTrainer;

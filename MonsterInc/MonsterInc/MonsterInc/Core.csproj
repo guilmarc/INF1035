@@ -52,10 +52,16 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\DifficultyData.cs" />
-    <Compile Include="Data\ItemData.cs" />
-    <Compile Include="Data\SkillData.cs" />
-    <Compile Include="Extensions.cs" />
+    <Compile Include="Data\DataAdaptor.cs" />
+    <Compile Include="Data\HardCodedData\DifficultyData.cs" />
+    <Compile Include="Data\HardCodedDataAdaptor.cs" />
+    <Compile Include="Data\IDataAdaptor.cs" />
+    <Compile Include="Data\HardCodedData\ItemData.cs" />
+    <Compile Include="Data\HardCodedData\SkillData.cs" />
+    <Compile Include="Data\HardCodedData\TrainerData.cs" />
+    <Compile Include="Data\XMLDataAdaptor.cs" />
+    <Compile Include="Utils\Extensions.cs" />
+    <Compile Include="Factories\InventoryFactory.cs" />
     <Compile Include="Model\Difficulty.cs" />
     <Compile Include="Model\Items\Antidote.cs" />
     <Compile Include="Model\Items\CaptureBall.cs" />
@@ -72,15 +78,14 @@
     <Compile Include="Model\Game.cs" />
     <Compile Include="Model\Combat.cs" />
     <Compile Include="Model\Turn.cs" />
-    <Compile Include="Model\MonsterFactory.cs" />
+    <Compile Include="Factories\MonsterFactory.cs" />
     <Compile Include="Model\Repository.cs" />
     <Compile Include="Model\Level.cs" />
     <Compile Include="Model\MonsterCaracteristic.cs" />
-    <Compile Include="Model\Universe.cs" />
+    <Compile Include="Universe.cs" />
     <Compile Include="Model\Items\Item.cs" />
     <Compile Include="Model\MonsterTemplate.cs" />
-    <Compile Include="Archives\ElementRepository.cs" />
-    <Compile Include="Data\MonsterTemplateData.cs" />
+    <Compile Include="Data\HardCodedData\MonsterTemplateData.cs" />
     <Compile Include="Model\MonsterTemplateCaracteristic.cs" />
     <Compile Include="Data\DataGenerator.cs" />
     <Compile Include="Model\Scopes\Scope.cs" />
@@ -92,7 +97,7 @@
     <Compile Include="Model\Reward.cs" />
     <Compile Include="Model\Action.cs" />
     <Compile Include="Model\Interfaces\IActionable.cs" />
-    <Compile Include="TrainerFactory.cs" />
+    <Compile Include="Factories\TrainerFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
@@ -109,5 +114,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

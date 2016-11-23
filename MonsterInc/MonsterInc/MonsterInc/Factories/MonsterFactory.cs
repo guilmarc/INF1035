@@ -39,7 +39,7 @@ namespace Core.Model
 	    public static MonsterTemplate PickRandomMonsterTemplateForLevel(int level)
 	    {
 	        const int LEVEL_THRESHOLD = 15;
-	        var availableMonsters = Engine.MonsterTemplates.Where(t => t.BaseLevel >= (level - LEVEL_THRESHOLD) && t.BaseLevel <= (level + LEVEL_THRESHOLD)).ToList();
+	        var availableMonsters = Universe.MonsterTemplates.Where(t => t.BaseLevel >= (level - LEVEL_THRESHOLD) && t.BaseLevel <= (level + LEVEL_THRESHOLD)).ToList();
             var totalRarity = availableMonsters.Sum(x => x.Rarity);
 
             var rnd = random.Next(1, totalRarity);

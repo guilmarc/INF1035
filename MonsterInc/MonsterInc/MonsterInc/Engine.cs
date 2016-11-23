@@ -4,7 +4,6 @@ using Core.Model;
 using Core.Data;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using MonsterInc.Database;
 
 namespace Core
 {
@@ -23,46 +22,8 @@ namespace Core
 
         public static void Run()
         {
-            Difficulty = Difficulties[0];       //Met la difficulté par défaut pour fin de test
+            Difficulty = Universe.Difficulties[0];       //Met la difficulté par défaut pour fin de test
         }
-
-
-        private static List<Difficulty> difficulties;
-
-        public static List<Difficulty> Difficulties
-        {
-            get
-            {
-                if (difficulties == null)
-                {
-                    difficulties = DifficultyData.Difficulty;
-                }
-                return difficulties;
-            }
-        }
-
-
-        private static List<Monster> initMonsters;
-        public  static List<Monster> InitMonsters
-        {
-            get
-            {
-                if (initMonsters == null)
-                {
-                    initMonsters = new List<Monster>();
-
-                    var initMonsterTemplates = MonsterTemplates.Where(t => t.BaseLevel == 1).ToList();
-
-                    foreach (var template in initMonsterTemplates)
-                    {
-                        initMonsters.Add(new Monster(template));
-                    }
-                }
-
-                return initMonsters;
-            }
-        }
-
 
 
         /// <summary>
@@ -73,8 +34,6 @@ namespace Core
         {
             return TrainerFactory.GenerateTrainer(Player.Trainer, Difficulty);
         }
-
-
 
         /// <summary>
         /// Génération d'un groupe de monstres (ou les monstres disponibles selon un niveau d'ex.)
@@ -122,35 +81,7 @@ namespace Core
         {
 
         }
-
-        //TODO: Lire les Items du fichier XML
-        private static List<Item> _items { get; set; }
-        public static List<Item> Items
-        {
-            get { 
-            //Si _items est vide, lire les items à partir du fichier XML et les enregistrer dans _items
-            if (_items  == null)
-            {
-                _items = ItemData.Items;
-            }
-        //Retourner _items
-        return _items;
+    }
+       
 }
 
-}
-        //TODO: Lire les MonsterTemplates du fichier XML
-	    private static List<MonsterTemplate> _monsterTemplates;
-	    public static List<MonsterTemplate> MonsterTemplates
-	    {
-	        get
-	        {
-                if(_monsterTemplates == null)
-                {
-                    _monsterTemplates = MonsterTemplateData.MonsterTemplates;
-                }
-
-                return _monsterTemplates;
-	        }
-	    }
-	}
-}
