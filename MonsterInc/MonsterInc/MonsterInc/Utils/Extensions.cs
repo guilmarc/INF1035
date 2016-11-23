@@ -101,7 +101,5 @@ namespace Core
             }
         }
     }
-
-
 }
 

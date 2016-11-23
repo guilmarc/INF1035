@@ -25,7 +25,10 @@ namespace Core.Data
 							new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 10, Progression = 2},
 							new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 10, Progression = 2},
 							new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 10, Progression = 2},
-						}
+						},
+
+                        
+
 					},
 
 					new MonsterTemplate {

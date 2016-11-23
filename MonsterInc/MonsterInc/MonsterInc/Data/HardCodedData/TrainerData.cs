@@ -26,8 +26,7 @@ namespace Core.Data
 
         public static string GetRandomTrainerName()
         {
-            int index = (new Random()).Next(0, TrainerNames.Count - 1);
-            return TrainerNames[index];
+            return TrainerNames[Utils.Random(TrainerNames.Count - 1)];
         }
     }
 }

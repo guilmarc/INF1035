@@ -1,15 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 
 namespace Core.Model
 {
 	public static class MonsterFactory
 	{
-    
-        private static Random random = new Random();
 
-	    public static Monster GenerateMonster(int experienceLevel, Difficulty difficulty)
+	    public static List<Monster> GenerateDummyMonsters()
+	    {
+	        return new List<Monster> {GenerateMonster(1, Universe.Difficulties[0])};
+	    }
+
+        public static Monster GenerateMonster(int experienceLevel, Difficulty difficulty)
 	    {
 	        return new Monster( PickRandomMonsterTemplateForLevel(experienceLevel), difficulty.CaracteristicFactor );
 	    }
@@ -42,7 +46,7 @@ namespace Core.Model
 	        var availableMonsters = Universe.MonsterTemplates.Where(t => t.BaseLevel >= (level - LEVEL_THRESHOLD) && t.BaseLevel <= (level + LEVEL_THRESHOLD)).ToList();
             var totalRarity = availableMonsters.Sum(x => x.Rarity);
 
-            var rnd = random.Next(1, totalRarity);
+            var rnd = Utils.Random(1, totalRarity);
             
             foreach(var template in availableMonsters)
             {

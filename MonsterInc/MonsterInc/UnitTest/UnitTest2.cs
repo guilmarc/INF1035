@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Core;
 using Core.Model;
@@ -45,9 +46,24 @@ namespace UnitTest
         {
 
             Console.WriteLine( Universe.Difficulties.Count );
-
             Console.WriteLine(Universe.Difficulties.Count);
 
+        }
+
+        [TestMethod]
+        public void TestTrainerGeneration()
+        {
+            List<Trainer> trainers = new List<Trainer>();
+            for (var i = 0; i < 100; i++)
+            {
+                trainers.Add( Engine.GenerateTrainer() );
+            }
+        }
+
+        [TestMethod]
+        public void TestRunDummyGame()
+        {
+            Core.Engine.RunDummyGame();
         }
 
     }

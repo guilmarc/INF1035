@@ -12,6 +12,12 @@ namespace Core
     /// </summary>
     public static class Engine
     {
+        static Engine()
+        {
+            Difficulty = Universe.Difficulties[0];
+        }
+
+
         private const int INIT_GOLD = 1000;
 
         public static Player Player { get; set; }
@@ -20,10 +26,25 @@ namespace Core
 
         public static Difficulty Difficulty { get; set; }
 
-        public static void Run()
+
+        public static void RunDummyGame()
         {
-            Difficulty = Universe.Difficulties[0];       //Met la difficulté par défaut pour fin de test
+            Difficulty = Universe.Difficulties[0];
+            Player = Universe.DummyPlayer;
+            Opponent = Universe.GenerateOpponent(Player, Difficulty);
+
+            Console.WriteLine("Hé bin !");
         }
+
+        public static void InitGame(Player player, Difficulty difficulty)
+        {
+            
+        }
+
+        // public static void Run()
+        //{
+        //    Difficulty = Universe.Difficulties[0];       //Met la difficulté par défaut pour fin de test
+        //}
 
 
         /// <summary>

@@ -16,6 +16,13 @@ namespace Core.Model
         public event PropertyChangedEventHandler PropertyChanged;
         string name;
 
+
+	    public Trainer(string name, Element element)
+	    {
+	        this.Name = name;
+	        this.Affinity = element;
+	    }
+
         public string Name
         {
             get
@@ -48,13 +55,13 @@ namespace Core.Model
 
         public ObservableCollection<Monster> SelectTempMonsters { get; set; }
 
-        public List<Item> Inventory { get; set; }
+        public List<Item> Inventory { get; set; }  = new List<Item>();
 
-		public List<Monster> Monsters { get; set; } //Limité à 250
+		public List<Monster> Monsters { get; set; } = new List<Monster>();
 
-		public List<Item> ActiveInventory { get; set; }
+		public List<Item> ActiveInventory { get; set; } = new List<Item>();
 
-		public List<Monster> ActiveMonsters { get; set; }
+		public List<Monster> ActiveMonsters { get; set; } = new List<Monster>();
 
 		public Element Affinity { get; set; }
 

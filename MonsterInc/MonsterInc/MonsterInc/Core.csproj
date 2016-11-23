@@ -55,11 +55,13 @@
     <Compile Include="Data\DataAdaptor.cs" />
     <Compile Include="Data\HardCodedData\DifficultyData.cs" />
     <Compile Include="Data\HardCodedDataAdaptor.cs" />
+    <Compile Include="Data\HardCodedData\PlayerData.cs" />
     <Compile Include="Data\IDataAdaptor.cs" />
     <Compile Include="Data\HardCodedData\ItemData.cs" />
     <Compile Include="Data\HardCodedData\SkillData.cs" />
     <Compile Include="Data\HardCodedData\TrainerData.cs" />
     <Compile Include="Data\XMLDataAdaptor.cs" />
+    <Compile Include="Factories\PlayerFactory.cs" />
     <Compile Include="Utils\Extensions.cs" />
     <Compile Include="Factories\InventoryFactory.cs" />
     <Compile Include="Model\Difficulty.cs" />
@@ -98,6 +100,7 @@
     <Compile Include="Model\Action.cs" />
     <Compile Include="Model\Interfaces\IActionable.cs" />
     <Compile Include="Factories\TrainerFactory.cs" />
+    <Compile Include="Utils\Utils.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />

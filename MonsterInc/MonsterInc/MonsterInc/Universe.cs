@@ -7,6 +7,7 @@ using System.Xml.Serialization;
 
 using Core.Data;
 using Core.Model;
+using MonsterInc.Factories;
 
 namespace Core
 {
@@ -31,6 +32,8 @@ namespace Core
         private static List<Item> _items;
         private static List<Monster> _initMonsters;
         private static List<Difficulty> _difficulties;
+        private static Player _dummyPlayer;
+
 
         public static readonly int[,] ElementMatrix =
         {
@@ -110,6 +113,17 @@ namespace Core
             }
         }
 
+        public static Player DummyPlayer
+        {
+            get
+            {
+                return _dummyPlayer = _dummyPlayer ?? PlayerFactory.GenerateDummyPlayer();
+            }
+        }
 
+        public static Player GenerateOpponent(Player player, Difficulty difficulty)
+        {
+            return PlayerFactory.GenerateOpponent(player, difficulty);
+        }
     }
 }

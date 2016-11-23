@@ -31,6 +31,8 @@ namespace Core.Model
 
 		public List<MonsterTemplateCaracteristic> Caracteristics = new List<MonsterTemplateCaracteristic>();
 
+        public List<Skill> Skills = new List<Skill>();
+
 	    public override string ToString()
 	    {
 	        return "Template Monster :: " + Name ;

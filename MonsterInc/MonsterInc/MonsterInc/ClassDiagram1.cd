@@ -1,40 +1,355 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
-  <Class Name="MonsterInc.BaseExperienceLevelStrategy" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="0.5" Y="1.5" Width="2" />
+  <Class Name="Core.Data.DataAdaptor&lt;T&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\Monster.cs</FileName>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\DataAdaptor.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="MonsterInc.Monster">
-    <Position X="4.75" Y="1.75" Width="1.5" />
+  <Class Name="Core.Data.DataGenerator" Collapsed="true">
+    <Position X="19.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AABAAAAAAEgIgAAAAAIAgAAAEAAAAAEIkAAAAAAAAAA=</HashCode>
-      <FileName>Models\Monster.cs</FileName>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAAAAgBAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\DataGenerator.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MonsterInc.Game" Collapsed="true">
-    <Position X="7" Y="3" Width="1.5" />
+  <Class Name="Core.Data.ItemData" Collapsed="true">
+    <Position X="14" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\HardCodedData\ItemData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Data.MonsterTemplateData" Collapsed="true">
+    <Position X="17.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Data\HardCodedData\MonsterTemplateData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Data.SkillData" Collapsed="true">
+    <Position X="17.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\HardCodedData\SkillData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Data.TrainerData" Collapsed="true">
+    <Position X="21" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\HardCodedData\TrainerData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Data.HardCodedDataAdaptor&lt;T&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="21" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\HardCodedDataAdaptor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Core.Database.DifficultyData" Collapsed="true">
+    <Position X="12.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\HardCodedData\DifficultyData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MonsterInc.Data.XMLDataAdaptor&lt;T&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\XMLDataAdaptor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Core.Engine" Collapsed="true">
+    <Position X="14" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAQAAAABAEAAQBAAAgAAAEAAAAQAAAAI=</HashCode>
+      <FileName>Engine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.InventoryFactory" Collapsed="true">
+    <Position X="12.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Factories\InventoryFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.TrainerFactory" Collapsed="true">
+    <Position X="12.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Factories\TrainerFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.MainClass" Collapsed="true">
+    <Position X="17.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Universe" Collapsed="true">
+    <Position X="15.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAACBAAAAAAAAIAQBAACAAEAAAAABAAAAA=</HashCode>
+      <FileName>Universe.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Extensions" Collapsed="true">
+    <Position X="17.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAkAAAAACAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Utils\Extensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MonsterInc.NotEnoughtGoldException" Collapsed="true">
+    <Position X="19.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\NotEnoughtGoldException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Model.MonsterFactory" Collapsed="true">
+    <Position X="12.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAACAAAAAAAQAAgAAAAA=</HashCode>
+      <FileName>Factories\MonsterFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Model.Action" Collapsed="true">
+    <Position X="12.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Model\Action.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Model.Combat" Collapsed="true">
+    <Position X="15.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAEAAAQAAAQA=</HashCode>
+      <FileName>Model\Combat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Model.Difficulty" Collapsed="true">
+    <Position X="21" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAIAAEBAgAAAAAAAQAAAAAAEAAAAAAAAAAABA=</HashCode>
+      <FileName>Model\Difficulty.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Model.ExperienceLevelChangedEventArgs" Collapsed="true">
+    <Position X="15.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\ExperienceLevelChangedEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Model.Game" Collapsed="true">
+    <Position X="19.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAgIAAAAAAAAAAAAAAAAQABAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\Game.cs</FileName>
+      <FileName>Model\Game.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MonsterInc.Class1">
-    <Position X="2.75" Y="2.5" Width="1.5" />
+  <Class Name="Core.Model.Antidote" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
-      <FileName>Class1.cs</FileName>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Items\Antidote.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="MonsterInc.IExperienceLevelStrategy" Collapsed="true">
-    <Position X="0.5" Y="2.75" Width="2" />
+  <Class Name="Core.Model.CaptureBall" Collapsed="true">
+    <Position X="7.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Items\CaptureBall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Model.EnergyPotion" Collapsed="true">
+    <Position X="9.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Items\EnergyPotion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Model.Item" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAgACAAAAAAAAQAAAAAQAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Model\Items\Item.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Core.Model.LifePotion" Collapsed="true">
+    <Position X="0.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Items\LifePotion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Model.Revival" Collapsed="true">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Items\Revival.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Model.Level" Collapsed="true">
+    <Position X="15.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Level.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Model.BaseExperienceLevelStrategy" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\Monster.cs</FileName>
+      <FileName>Model\Monster.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Core.Model.Monster" Collapsed="true">
+    <Position X="19.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAEgKgAAAAAIAgAAAEAAAAAEAkAAAAAAAAAA=</HashCode>
+      <FileName>Model\Monster.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Model.MonsterCaracteristic" Collapsed="true">
+    <Position X="21" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAEAIAAAAAAAAAAQAAAARAAAAAAQAA=</HashCode>
+      <FileName>Model\MonsterCaracteristic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Model.MonsterTemplate" Collapsed="true">
+    <Position X="14" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAEAAgAAAQAEAAAQAAAAAAAAAAACAA=</HashCode>
+      <FileName>Model\MonsterTemplate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Model.MonsterTemplateCaracteristic" Collapsed="true">
+    <Position X="15.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAQAAAAAAQAA=</HashCode>
+      <FileName>Model\MonsterTemplateCaracteristic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Model.Player" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="21" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAgACEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Player.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Core.Model.Repository" Collapsed="true">
+    <Position X="12.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Repository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Model.Reward" Collapsed="true">
+    <Position X="14" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Reward.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Model.DamageScope" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Model\Scopes\DamageScope.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Model.EffectScope" Collapsed="true">
+    <Position X="2.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Model\Scopes\EffectScope.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Model.Scope" Collapsed="true">
+    <Position X="1.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAACAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Model\Scopes\Scope.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Model.Skill" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="15.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAACAAAAiAAAQAgAAEQAAgAAAAgAQAAAA=</HashCode>
+      <FileName>Model\Skill.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Core.Model.Trainer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gABAAQACAAAAAAQAAAAAAAQAgAAEAQAACAAAAgAIAAE=</HashCode>
+      <FileName>Model\Trainer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Core.Model.Turn" Collapsed="true">
+    <Position X="14" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAKBAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Turn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Core.Data.IDataAdaptor&lt;T&gt;" Collapsed="true">
+    <Position X="14" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\IDataAdaptor.cs</FileName>
     </TypeIdentifier>
   </Interface>
+  <Interface Name="Core.Model.IActionable" Collapsed="true">
+    <Position X="12.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Interfaces\IActionable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Core.Model.IExperienceLevelStrategy" Collapsed="true">
+    <Position X="15.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Monster.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Core.Element" Collapsed="true">
+    <Position X="12.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAEAAAAAAAIAQAAAAAAAAAkAAAQAAAAAAAAQAA=</HashCode>
+      <FileName>Universe.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Core.Model.MonsterCategory" Collapsed="true">
+    <Position X="14" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAABgAAAIA=</HashCode>
+      <FileName>Model\MonsterTemplate.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Core.Model.MonsterTemplateCaracteristicType" Collapsed="true">
+    <Position X="15.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAQAAAAAAAgAAAAAIAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Model\MonsterTemplateCaracteristic.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
