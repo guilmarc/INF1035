@@ -4,6 +4,7 @@ using System.ComponentModel;
 
 namespace Core.Model
 {
+    [Serializable]
 	public class Skill : IActionable, INotifyPropertyChanged
 	{
         string name;

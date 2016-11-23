@@ -4,6 +4,7 @@ using System.Security.Policy;
 
 namespace Core.Model
 {
+    [Serializable]
 	public abstract class Item : IActionable
     {
 	    public string Name { get; set; }

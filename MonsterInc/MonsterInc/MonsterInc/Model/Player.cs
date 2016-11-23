@@ -29,6 +29,7 @@ namespace Core.Model
         /// </summary>
         public Trainer Trainer { get; set; }
 
+
         public event PropertyChangedEventHandler PropertyChanged;
     }
 }

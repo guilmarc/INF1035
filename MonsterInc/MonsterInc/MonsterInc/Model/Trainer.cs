@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using MonsterInc;
+using System.Xml.Serialization;
 
 namespace Core.Model
 {
-	/// <summary>
-	/// Un entraîneur possède une liste de monstres
-	/// </summary>
-	public class Trainer : INotifyPropertyChanged
+    /// <summary>
+    /// Un entraîneur possède une liste de monstres
+    /// </summary>
+    [Serializable]
+    public class Trainer : INotifyPropertyChanged
 	{
 	    private const int INIT_GOLD_VALUE = 1000;
 
@@ -45,7 +47,7 @@ namespace Core.Model
 
             }
         }
-
+        [XmlIgnore]
         public ObservableCollection<Monster> SelectTempMonsters { get; set; }
 
         public List<Item> Inventory { get; set; }
@@ -55,10 +57,23 @@ namespace Core.Model
 		public List<Item> ActiveInventory { get; set; }
 
 		public List<Monster> ActiveMonsters { get; set; }
+        Element affinity;
 
-		public Element Affinity { get; set; }
+        public Element Affinity
+        {
+            get
+            {
+                return affinity;
+            }
 
-		public bool BuyItem(Item item)
+            set
+            {
+                affinity = value;
+                //PropertyChanged.OnPropertyCHange(this, "Affinity");
+            }
+        }
+
+        public bool BuyItem(Item item)
 		{
 			if (item.Gold > this.Gold)
 			{

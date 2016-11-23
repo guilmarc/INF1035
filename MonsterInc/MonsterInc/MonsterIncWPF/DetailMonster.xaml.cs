@@ -19,7 +19,6 @@ namespace MonsterIncWPF
     /// </summary>
     public partial class DetailMonster : Window
     {
-        private Core.Model.Monster monsterContext = null;
         public DetailMonster(Core.Model.Monster monster)
         {
             this.DataContext = monster;

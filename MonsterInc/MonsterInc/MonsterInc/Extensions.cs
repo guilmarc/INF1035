@@ -40,7 +40,7 @@ namespace Core
             string directory ="";
             if (defaultPath)
             {
-                directory = System.Reflection.Assembly.GetExecutingAssembly().Location;
+                directory = System.AppDomain.CurrentDomain.BaseDirectory;
             }
             string fullPath = $@"{directory}\{nameOfFile}";
             ///forstring
@@ -63,42 +63,33 @@ namespace Core
 
         }
 
-        public static T Load<T>()
+        public static T XmlToObject<T>(string nameOfFile, bool defaultPath)
         {
-
-            if (typeof(T) is Core.Model.Skill)
+            if (!nameOfFile.ToLower().Contains(".xml"))
             {
-
+                nameOfFile = nameOfFile + ".xml";
             }
-
-            if (typeof(T) is Core.Model.MonsterTemplate)
+            string directory = "";
+            if (defaultPath)
             {
-
+                directory = System.AppDomain.CurrentDomain.BaseDirectory; 
             }
+            string fullPath = $@"{directory}\{nameOfFile}";
 
-            if (typeof(T) is Core.Model.Item)
-            {
-
-            }
-
-
-            throw new NotImplementedException();
+            T returnObject = default(T);
+            StreamReader xmlStream = new StreamReader(fullPath);
+            XmlSerializer serializer = new XmlSerializer(typeof(T));
+            returnObject = (T)serializer.Deserialize(xmlStream);
+            xmlStream.Close();
+            return returnObject;
         }
 
 
-        /// <summary>Deserializes an xml string in to an object of Type T</summary>
-        /// <typeparam name="T">Any class type</typeparam>
-        /// <param name="xml">Xml as string to deserialize from</param>
-        /// <returns>A new object of type T is successful, null if failed</returns>
-        public static T XmlDeserialize<T>(this string xml) where T : class, new()
+
+
+        public static T ToEnum<T>(this string value)
         {
-            if (xml == null) throw new ArgumentNullException("xml");
-            var serializer = new XmlSerializer(typeof(T));
-            using (var reader = new StringReader(xml))
-            {
-                try { return (T)serializer.Deserialize(reader); }
-                catch { return null; } // Could not be deserialized to this type.
-            }
+            return (T)Enum.Parse(typeof(T), value, true);
         }
     }
 

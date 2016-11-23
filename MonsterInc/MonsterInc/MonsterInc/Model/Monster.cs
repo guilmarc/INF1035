@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Xml.Serialization;
 
 namespace Core.Model
 {
@@ -25,13 +26,17 @@ namespace Core.Model
 		}
 	}
 	//public delegate void ExperienceLevelChangedHandler(Monster m, EventArgs e);
-
+    [Serializable]
 	public class Monster
 	{
+        public Monster()
+        {
 
-		public static int MAX_EXP_LEVEL = 20; 
+        }
+		public static int MAX_EXP_LEVEL = 20;
 
-		public MonsterTemplate Template { get; set; }
+        [XmlIgnore]
+        public MonsterTemplate Template { get; set; }
 
 		//Nom de l'événement qui sera accessible de l'extérieur
 		public event EventHandler<ExperienceLevelChangedEventArgs> ExperienceLevelChanged;
@@ -40,9 +45,9 @@ namespace Core.Model
 
 		public string NickName { get; set; }
 
-		public int ExperienceLevel { get; private set; }
+		public int ExperienceLevel { get; set; }
 
-		public int ExperiencePoint { get; private set; }
+		public int ExperiencePoint { get; set; }
 
 		public List<MonsterCaracteristic> Caracteristics = new List<MonsterCaracteristic>();
 
