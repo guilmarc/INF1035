@@ -5,14 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MonsterIncWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="600" Width="1024">
+    
     <Grid>
+    <Grid x:Name="GridStart">
         <WrapPanel HorizontalAlignment="Left" Height="100" Margin="87,60,0,0" VerticalAlignment="Top" Width="148">
             <Label x:Name="label" Content="Votre nom" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
-
             <TextBox x:Name="name" Text="{Binding Name}" Height="23" TextWrapping="Wrap" Width="120" TextChanged="name_TextChanged"/>
             <Button x:Name="button" Content="Button" Width="75" Click="button_Click"/>
         </WrapPanel>
+    </Grid>
 
+    <Grid x:Name="GridSelectMonster" Visibility="Hidden">
+        <ListBox x:Name="ListSelectTempMonsters"  ItemsSource="{Binding SelectTempMonsters}"  HorizontalAlignment="Left" Height="165" Margin="32,43,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="ListSelectTempMonsters_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Template.Name}" Margin="2" />
+                        <!--<TextBlock Text="{Binding Surname}" Margin="2" />-->
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
     </Grid>
 </Window>

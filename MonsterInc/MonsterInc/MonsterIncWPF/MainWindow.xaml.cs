@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,8 +22,10 @@ namespace MonsterIncWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        Core.Model.Player player = new Core.Model.Player();
-        
+        private Core.Model.Player player = new Core.Model.Player();
+        private Core.Model.Trainer trainer = new Core.Model.Trainer();
+        private DetailMonster detailWindowOpen = null;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -38,10 +41,29 @@ namespace MonsterIncWPF
         {
             Engine.Player = player;
 
-            SelectMonster win2 = new SelectMonster();
-            win2.Show();
-            this.Close();
+            //SelectMonster win2 = new SelectMonster();
+            //win2.Show();
+            //this.Close();
+            GridStart.Visibility = Visibility.Hidden;
+            //trainer.SelectTempMonsters = new ObservableCollection<Core.Model.Monster>(Core.Engine.InitMonsters);
+            this.DataContext = trainer;
+            GridSelectMonster.Visibility = Visibility.Visible;
+        }
 
+        public void SelectMonster()
+        {
+            //InitializeComponent();
+            //this.DataContext = trainer;
+
+            //trainer.SelectTempMonsters = new ObservableCollection<Core.Model.Monster>(Core.Engine.InitMonsters);
+            //ListSelectTempMonsters.ItemsSource = trainer.SelectTempMonsters;
+        }
+
+        private void ListSelectTempMonsters_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            detailWindowOpen?.Close();
+            detailWindowOpen = new DetailMonster(trainer.SelectTempMonsters[ListSelectTempMonsters.SelectedIndex]);
+            detailWindowOpen.Show();
         }
     }
 }
