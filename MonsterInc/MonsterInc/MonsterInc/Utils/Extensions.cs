@@ -85,8 +85,8 @@ namespace Core
         }
 
 
-
-
+        //TODO: Cette extension ne build plus depuis le dernier sync !
+        /*
         public static T ToEnum<T>(this string value)
         {
             if (xml == null) throw new ArgumentNullException("xml");
@@ -97,6 +97,7 @@ namespace Core
                 catch { return null; } // Could not be deserialized to this type.
             }
         }
+        */
     }
 }
 

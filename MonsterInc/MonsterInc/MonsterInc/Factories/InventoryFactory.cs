@@ -1,5 +1,6 @@
 
-﻿using System.Collections.Generic;
+﻿using System;
+ using System.Collections.Generic;
 using System.Linq;
 using Core.Model;
 
@@ -14,8 +15,15 @@ namespace Core
             do
             {
                 item = PickRandomItemWithGold(trainer.Gold);
+                if (item != null)
+                {
+                    trainer.BuyItem(item);
+                }
+
             } while ( item != null );
 
+            System.Diagnostics.Debug.WriteLine("Inventory Generated2 !");
+            Console.WriteLine("Inventory Generated !");
         }
 
         private static Item PickRandomItemWithGold(int Gold)

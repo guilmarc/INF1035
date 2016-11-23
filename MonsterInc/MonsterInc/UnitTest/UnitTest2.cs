@@ -51,16 +51,6 @@ namespace UnitTest
         }
 
         [TestMethod]
-        public void TestTrainerGeneration()
-        {
-            List<Trainer> trainers = new List<Trainer>();
-            for (var i = 0; i < 100; i++)
-            {
-                trainers.Add( Engine.GenerateTrainer() );
-            }
-        }
-
-        [TestMethod]
         public void TestRunDummyGame()
         {
             Core.Engine.RunDummyGame();
