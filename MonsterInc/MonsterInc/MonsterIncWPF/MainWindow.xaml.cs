@@ -52,7 +52,9 @@ namespace MonsterIncWPF
 
             SavedGames.Games.Add(Engine.Player);
             SavedGames.Games.XmlSerialize(SavedGameXMLname, true);
-            SwitchToNextWindow(Action.New);
+            Home.Visibility = Visibility.Collapsed;
+            NewGamePage.Visibility = Visibility.Visible;
+            //SwitchToNextWindow(Action.New);
 
 
 
