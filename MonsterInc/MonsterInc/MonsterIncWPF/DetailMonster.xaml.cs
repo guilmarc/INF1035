@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,7 @@ namespace MonsterIncWPF
     /// <summary>
     /// Interaction logic for DetailMonster.xaml
     /// </summary>
-    public partial class DetailMonster : Window
+    public partial class DetailMonster : UserControl
     {
         public DetailMonster(Core.Model.Monster monster)
         {

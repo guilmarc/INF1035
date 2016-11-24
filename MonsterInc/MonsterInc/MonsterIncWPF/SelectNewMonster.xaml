@@ -17,19 +17,21 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Label x:Name="label" Content="Choose a monster :" HorizontalAlignment="Left" Margin="14,197,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy" Content="Choose your affinity :&#xD;&#xA;(Bonus to your monsters of &#xD;&#xA;the same element)" HorizontalAlignment="Left" Margin="14,408,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="MonsterLabel" Content="Choose a monster :" HorizontalAlignment="Left" Margin="14,197,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="AffinityLabel" Content="Choose your affinity :&#xD;&#xA;(Bonus to your monsters of &#xD;&#xA;the same element)" HorizontalAlignment="Left" Margin="14,408,0,0" VerticalAlignment="Top"/>
         <GroupBox x:Name="GoldGroupBox" Header="Gold" HorizontalAlignment="Left" Margin="190,108,0,0" VerticalAlignment="Top" Height="44" Width="161">
-            <Label x:Name="label_Gold"  Content="{Binding Gold}"  Height="23" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="117" />
+            <Label x:Name="GoldLabel"  Content="{Binding Gold}"  Height="23" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="117" />
 
         </GroupBox>
         <GroupBox x:Name="TrainerGroupBox" Header="Trainer name :" HorizontalAlignment="Left" Margin="10,108,0,0" VerticalAlignment="Top" Height="68" Width="161">
-            <TextBox x:Name="textBox" HorizontalAlignment="Left" Text="{Binding Name}"  Height="23" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Margin="10,10,0,0"/>
+            <TextBox x:Name="TrainerTextBox" HorizontalAlignment="Left" Text="{Binding Name}"  Height="23" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Margin="10,10,0,0"/>
         </GroupBox>
         <Button x:Name="Create" Content="Create" Background="#FF5FD35F" HorizontalAlignment="Left" VerticalAlignment="Top" Width="110" Margin="206,506,0,0" Click="Create_Click" Height="42" FontSize="20"/>
         <ComboBox x:Name="ListAffinity" HorizontalAlignment="Left" Margin="190,408,0,0" VerticalAlignment="Top" Width="140" ItemsSource="{Binding Affinity }" Height="34"/>
         <Label x:Name="PlayerName" DataContext="{Binding Core.Model.Player}" Content="Nom Joueur" HorizontalContentAlignment="Center"  HorizontalAlignment="Left" Margin="30,40,0,0" VerticalAlignment="Top" FontSize="30" Width="300" Height="48"/>
         <Button x:Name="Cancel" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="110" Margin="30,506,0,0" Click="Cancel_Click" Height="42" FontSize="20" Background="#FFDC4848"/>
-
+        <Label x:Name="MonsterNameLabel" Content="Name your monster :" HorizontalAlignment="Left" Margin="14,318,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="MonsterNameTextBox" HorizontalAlignment="Left" Height="37" TextWrapping="Wrap"  VerticalAlignment="Top" Width="140" Margin="190,321,0,0"/>
+        <local:MonsterDetails x:Name="DetailsControl" Param1="a"  Visibility="Hidden" HorizontalAlignment="Left" Margin="479,40,0,0" VerticalAlignment="Top" Height="500" Width="500"/>
     </Grid>
 </UserControl>

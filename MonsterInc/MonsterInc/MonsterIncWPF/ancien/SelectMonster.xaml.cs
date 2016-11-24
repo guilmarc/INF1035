@@ -39,10 +39,10 @@ namespace MonsterIncWPF
 
         private void ListSelectTempMonsters_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            detailWindowOpen?.Close();
+            //detailWindowOpen?.Close();
 
-            detailWindowOpen = new DetailMonster(trainer.SelectTempMonsters[ListSelectTempMonsters.SelectedIndex]);
-            detailWindowOpen.Show();
+            //detailWindowOpen = new DetailMonster(trainer.SelectTempMonsters[ListSelectTempMonsters.SelectedIndex]);
+            //detailWindowOpen.Show();
         }
 
         private void button_Click(object sender, RoutedEventArgs e)

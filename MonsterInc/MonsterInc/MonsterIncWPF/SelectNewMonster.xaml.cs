@@ -31,15 +31,23 @@ namespace MonsterIncWPF
             ListAffinity.ItemsSource = Enum<Core.Element>.GetNames();
         }
         private Core.Model.Trainer trainer = new Core.Model.Trainer();
-        private DetailMonster detailWindowOpen;
+        private MonsterDetails detailControlOpen;
 
 
         private void ListSelectTempMonsters_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            detailWindowOpen?.Close();
+            //Core.Model.Monster monster = new Core.Model.Monster();
+           // monster = trainer.SelectTempMonsters[ListSelectTempMonsters.SelectedIndex];
+            Core.Model.Monster monsterContext = new Core.Model.Monster();
+            this.DataContext = monsterContext;
+            detailControlOpen = new MonsterDetails();
+            //(trainer.SelectTempMonsters[ListSelectTempMonsters.SelectedIndex]).
+            DetailsControl = detailControlOpen;
+            DetailsControl.Visibility=Visibility.Visible;
+            //detailWindowOpen?.Close();
 
-            detailWindowOpen = new DetailMonster(trainer.SelectTempMonsters[ListSelectTempMonsters.SelectedIndex]);
-            detailWindowOpen.Show();
+            // detailWindowOpen = new DetailMonster(trainer.SelectTempMonsters[ListSelectTempMonsters.SelectedIndex]);
+            // detailWindowOpen.Show();
         }
 
         private void Create_Click(object sender, RoutedEventArgs e)
