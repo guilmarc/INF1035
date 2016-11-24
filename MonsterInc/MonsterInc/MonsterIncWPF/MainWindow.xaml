@@ -5,28 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MonsterIncWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="600" Width="1024">
     <Grid Margin="0,0,2,-1">
-        <WrapPanel HorizontalAlignment="Left" Height="100" Margin="4,5,0,0" VerticalAlignment="Top" Width="148">
-            <Label x:Name="label" Content="Votre nom" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
 
-            <TextBox x:Name="name" Text="{Binding Name}" Height="23" TextWrapping="Wrap" Width="120" />
-            <Button x:Name="button" Content="Nouvelle Partie" Width="119" Click="button_Click"/>
-        </WrapPanel>
-        <WrapPanel HorizontalAlignment="Left" Height="100" Margin="324,4,0,0" VerticalAlignment="Top" Width="148">
-            <Label x:Name="label2" Content="Charger" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="145"/>
-            <ListBox x:Name="ListSavedGames"   HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="100" >
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding Name}" Margin="2" />
-                            <!--<TextBlock Text="{Binding Surname}" Margin="2" />-->
-                        </StackPanel>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-            <Button x:Name="Load" Content="Charger partie" Width="119" Click="Load_Click"/>
-        </WrapPanel>
+        <Label x:Name="label" Content="Please enter your name :" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="212,255,0,0"/>
+
+        <TextBox x:Name="name" Text="{Binding Name}" TextWrapping="Wrap" Margin="212,286,662,250" />
+        <Button x:Name="NewGame" Content="Create Game" Click="NewGame_Click" Margin="220,344,676,187"/>
+
+
+
+        <ListBox x:Name="ListSavedGames"   HorizontalAlignment="Center" Height="129" VerticalAlignment="Top" Width="202" Margin="560,240,241,0" SelectedIndex="0" BorderThickness="2" Padding="2" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Name}" Margin="2" />
+                        <!--<TextBlock Text="{Binding Surname}" Margin="2" />-->
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button x:Name="Load" Content="Load Game" Click="Load_Click" Margin="605,390,281,141"/>
+
+        <Label x:Name="LoadGame_Label" Content="LOAD GAME" HorizontalAlignment="Center" Margin="568,185,244,0" VerticalAlignment="Top" FontSize="30" FontWeight="Bold" Width="202" RenderTransformOrigin="-0.012,0.41"/>
+        <Label x:Name="NewGame_Label" Content="NEW GAME" HorizontalAlignment="Left" Margin="194,185,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Bold"/>
+        <Label x:Name="NewGame_Label_Copy" Content="MONSTER INC" HorizontalAlignment="Left" Margin="307,48,0,0" VerticalAlignment="Top" FontSize="48" FontWeight="Bold"/>
 
     </Grid>
 </Window>

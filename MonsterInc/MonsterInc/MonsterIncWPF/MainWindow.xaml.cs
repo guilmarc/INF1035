@@ -46,7 +46,7 @@ namespace MonsterIncWPF
 
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void NewGame_Click(object sender, RoutedEventArgs e)
         {
             Engine.Player = player;
 
