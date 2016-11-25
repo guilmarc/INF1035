@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace MonsterIncWPF
 {
 
-    
+
     /// <summary>
     /// Logique d'interaction pour MonsterDetails.xaml
     /// </summary>
@@ -30,10 +30,13 @@ namespace MonsterIncWPF
             this.DataContext = monster;
 
         }
+
         private Core.Model.Monster monster = new Core.Model.Monster();
         private Core.Model.Trainer trainer = new Core.Model.Trainer();
 
-        public string Param1 = "";
-    }
 
+        public Core.Model.Monster Param1 { get; set; }
+
+
+    }
 }

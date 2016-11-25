@@ -38,9 +38,10 @@ namespace MonsterIncWPF
         {
             //Core.Model.Monster monster = new Core.Model.Monster();
            // monster = trainer.SelectTempMonsters[ListSelectTempMonsters.SelectedIndex];
-            Core.Model.Monster monsterContext = new Core.Model.Monster();
-            this.DataContext = monsterContext;
-            detailControlOpen = new MonsterDetails();
+            //Core.Model.Monster monsterContext = new Core.Model.Monster();
+            //this.DataContext = monsterContext;
+            MonsterDetails detailControlOpen = new MonsterDetails();
+            detailControlOpen.Param1 = trainer.SelectTempMonsters[ListSelectTempMonsters.SelectedIndex];
             //(trainer.SelectTempMonsters[ListSelectTempMonsters.SelectedIndex]).
             DetailsControl = detailControlOpen;
             DetailsControl.Visibility=Visibility.Visible;
