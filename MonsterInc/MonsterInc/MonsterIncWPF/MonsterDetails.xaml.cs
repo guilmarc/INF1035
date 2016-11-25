@@ -27,15 +27,20 @@ namespace MonsterIncWPF
             InitializeComponent();
             //this.DataContext = trainer;
             //trainer.SelectTempMonsters[ListSelectTempMonsters.SelectedIndex];
-            this.DataContext = monster;
+            //this.DataContext = monster;
 
+        }
+
+        public MonsterDetails(Core.Model.Monster monster) : this()
+        {
+            this.DataContext = monster;
         }
 
         private Core.Model.Monster monster = new Core.Model.Monster();
         private Core.Model.Trainer trainer = new Core.Model.Trainer();
 
 
-        public Core.Model.Monster Param1 { get; set; }
+        //public Core.Model.Monster Param1 { get; set; }
 
 
     }

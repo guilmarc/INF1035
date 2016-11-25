@@ -36,19 +36,11 @@ namespace MonsterIncWPF
 
         private void ListSelectTempMonsters_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //Core.Model.Monster monster = new Core.Model.Monster();
-           // monster = trainer.SelectTempMonsters[ListSelectTempMonsters.SelectedIndex];
-            //Core.Model.Monster monsterContext = new Core.Model.Monster();
-            //this.DataContext = monsterContext;
-            MonsterDetails detailControlOpen = new MonsterDetails();
-            detailControlOpen.Param1 = trainer.SelectTempMonsters[ListSelectTempMonsters.SelectedIndex];
-            //(trainer.SelectTempMonsters[ListSelectTempMonsters.SelectedIndex]).
-            DetailsControl = detailControlOpen;
-            DetailsControl.Visibility=Visibility.Visible;
-            //detailWindowOpen?.Close();
+            MonsterDetails detailControlOpen = new MonsterDetails(trainer.SelectTempMonsters[ListSelectTempMonsters.SelectedIndex]);
 
-            // detailWindowOpen = new DetailMonster(trainer.SelectTempMonsters[ListSelectTempMonsters.SelectedIndex]);
-            // detailWindowOpen.Show();
+            DetailsControl.Content = detailControlOpen;
+
+            DetailsControl.Visibility=Visibility.Visible;
         }
 
         private void Create_Click(object sender, RoutedEventArgs e)
