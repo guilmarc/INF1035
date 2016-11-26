@@ -5,9 +5,18 @@ using System.ComponentModel;
 
 namespace Core.Model
 {
+
+    public enum PlayerType
+    {
+        Human,
+        Robot
+    }
+
     [Serializable]
 	public class Player: INotifyPropertyChanged
 	{
+	    public PlayerType PlayerType { get; set; }
+
         string name;
 
         public string Name
@@ -29,11 +38,27 @@ namespace Core.Model
         /// </summary>
         public Trainer Trainer { get; set; }
 
-	    public Player(String name)
+        /// <summary>
+        /// L'entraîneur actif associé à ce joueur
+        /// </summary>
+        /// En programmant ainsi, il sera facile dans le futur d'implémenter le multi-entraîneur
+	    public Trainer ActiveTrainer
 	    {
-	        this.name = name;
+	        get { return Trainer; }
 	    }
 
+
+        public Player(String name, PlayerType type)
+	    {
+	        this.name = name;
+	        this.PlayerType = type;
+	    }
+
+	    public Usable PickUsable(Player opponent)
+	    {
+            //TODO: Changer la stratégie de base pour la stratégie intelligente (après le cours d'intelligence artificielle)
+	        return new BasicPickUsableStrategy().PickUsable(this, opponent);
+	    }
 
         public event PropertyChangedEventHandler PropertyChanged;
     }

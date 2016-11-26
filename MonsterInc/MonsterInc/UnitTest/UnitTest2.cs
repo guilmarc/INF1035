@@ -45,7 +45,7 @@ namespace UnitTest
         public void TestDifficultyListGeneration()
         {
 
-            Console.WriteLine( Universe.Difficulties.Count );
+            Console.WriteLine(Universe.Difficulties.Count);
             Console.WriteLine(Universe.Difficulties.Count);
 
         }
@@ -54,6 +54,11 @@ namespace UnitTest
         public void TestRunDummyGame()
         {
             Core.Engine.RunDummyGame();
+
+            var monsters = Core.Engine.Opponent.Trainer.Monsters.Count;
+
+            Console.WriteLine();
+
         }
 
     }
