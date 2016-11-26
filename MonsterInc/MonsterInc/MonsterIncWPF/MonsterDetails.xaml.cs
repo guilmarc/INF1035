@@ -37,7 +37,7 @@ namespace MonsterIncWPF
         }
 
         private Core.Model.Monster monster = new Core.Model.Monster();
-        private Core.Model.Trainer trainer = new Core.Model.Trainer();
+        //private Core.Model.Trainer trainer = new Core.Model.Trainer("Jean", 0);
 
 
         //public Core.Model.Monster Param1 { get; set; }

@@ -17,11 +17,11 @@ using System.Windows.Shapes;
 namespace MonsterIncWPF
 {
     /// <summary>
-    /// Interaction logic for SelectMonster.xaml
+    /// Interaction logic for SelectMonster.xaml   NE PLUS SE SERVIR DE CE FICHIER
     /// </summary>
     public partial class SelectMonster : Window
     {
-        private Core.Model.Trainer trainer = new Core.Model.Trainer();
+        private Core.Model.Trainer trainer = new Core.Model.Trainer("Jean", 0);
         private DetailMonster detailWindowOpen;
 
         public SelectMonster()
@@ -49,12 +49,12 @@ namespace MonsterIncWPF
         {
             try
             {
-                trainer.Affinity = Core.Extensions.ToEnum<Core.Element>(ListAffinity.SelectedValue.ToString());
-                trainer.ActiveMonsters = new List<Core.Model.Monster>();
-                trainer.ActiveMonsters.Add((Core.Model.Monster)ListSelectTempMonsters.SelectedValue);
+                //trainer.Affinity = Core.Extensions.ToEnum<Core.Element>(ListAffinity.SelectedValue.ToString());
+                //trainer.ActiveMonsters = new List<Core.Model.Monster>();
+                //trainer.ActiveMonsters.Add((Core.Model.Monster)ListSelectTempMonsters.SelectedValue);
 
-                trainer.Monsters = new List<Core.Model.Monster>();
-                trainer.Monsters.Add((Core.Model.Monster)ListSelectTempMonsters.SelectedValue);
+                //trainer.Monsters = new List<Core.Model.Monster>();
+                //trainer.Monsters.Add((Core.Model.Monster)ListSelectTempMonsters.SelectedValue);
             }
             catch (Exception)
             {

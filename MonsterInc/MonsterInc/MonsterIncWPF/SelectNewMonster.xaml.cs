@@ -30,7 +30,7 @@ namespace MonsterIncWPF
 
             ListAffinity.ItemsSource = Enum<Core.Element>.GetNames();
         }
-        private Core.Model.Trainer trainer = new Core.Model.Trainer();
+        private Core.Model.Trainer trainer = new Core.Model.Trainer("Jean", 0);
         private MonsterDetails detailControlOpen;
 
 
@@ -47,12 +47,12 @@ namespace MonsterIncWPF
         {
             try
             {
-                trainer.Affinity = Core.Extensions.ToEnum<Core.Element>(ListAffinity.SelectedValue.ToString());
-                trainer.ActiveMonsters = new List<Core.Model.Monster>();
-                trainer.ActiveMonsters.Add((Core.Model.Monster)ListSelectTempMonsters.SelectedValue);
+                //trainer.Affinity = Core.Extensions.ToEnum<Core.Element>(ListAffinity.SelectedValue.ToString());
+                //trainer.ActiveMonsters = new List<Core.Model.Monster>();
+                //trainer.ActiveMonsters.Add((Core.Model.Monster)ListSelectTempMonsters.SelectedValue);
 
-                trainer.Monsters = new List<Core.Model.Monster>();
-                trainer.Monsters.Add((Core.Model.Monster)ListSelectTempMonsters.SelectedValue);
+                //trainer.Monsters = new List<Core.Model.Monster>();
+                //trainer.Monsters.Add((Core.Model.Monster)ListSelectTempMonsters.SelectedValue);
             }
             catch (Exception)
             {

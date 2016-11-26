@@ -21,7 +21,7 @@ namespace MonsterIncWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        Core.Model.Player player = new Core.Model.Player();
+        Core.Model.Player player = new Core.Model.Player("Jean");
         const string SavedGameXMLname = "SavedGames";
         
         public MainWindow()
