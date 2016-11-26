@@ -29,6 +29,11 @@ namespace Core.Model
         /// </summary>
         public Trainer Trainer { get; set; }
 
+        public Player()
+        {
+
+        }
+
 	    public Player(String name)
 	    {
 	        this.name = name;

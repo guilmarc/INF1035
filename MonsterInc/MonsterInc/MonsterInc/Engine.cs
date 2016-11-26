@@ -87,7 +87,7 @@ namespace Core
         /// <param name="item"></param>
         public static void ConsumeItem(Monster monster, Monster opponent, Item item)
         {
-
+            item.Consume(Engine.Player.Trainer);
         }
 
 

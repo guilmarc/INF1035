@@ -91,7 +91,7 @@ namespace Core.Data
                         Gold = 5,
                         Scopes = new List<Scope>
                         {
-                             new EffectScope() { Target = Scope.ScopeTarget.Self, Duration = 1, Magnitude = 0.015 }
+                             new EffectScope() { Target = Scope.ScopeTarget.Self, Duration = 1, Magnitude = 0.30 }
                         }
                     },
 
@@ -103,7 +103,7 @@ namespace Core.Data
                         Gold = 50,
                         Scopes = new List<Scope>
                         {
-                             new EffectScope() { Target = Scope.ScopeTarget.Self, Duration = 1, Magnitude = 0.05 }
+                             new EffectScope() { Target = Scope.ScopeTarget.Self, Duration = 1, Magnitude = 0.60 }
                         }
                     },
 
@@ -115,7 +115,7 @@ namespace Core.Data
                         Gold = 200,
                         Scopes = new List<Scope>
                         {
-                             new EffectScope() { Target = Scope.ScopeTarget.Self, Duration = 1, Magnitude = 0.15 }
+                             new EffectScope() { Target = Scope.ScopeTarget.Self, Duration = 1, Magnitude = 0.90 }
                         }
                     },
 

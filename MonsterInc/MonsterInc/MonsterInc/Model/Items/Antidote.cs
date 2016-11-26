@@ -8,7 +8,8 @@ namespace Core.Model
     /// </summary>
     public class Antidote : Item
     {
-        public override void Consume()
+
+        public override void Consume(Trainer trainer)
         {
             throw new NotImplementedException();
         }

@@ -11,7 +11,7 @@ namespace Core.Model
     /// </summary>
     public class CaptureBall : Item
     {
-        public override void Consume()
+        public override void Consume(Trainer trainer)
         {
             throw new NotImplementedException();
         }

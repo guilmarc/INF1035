@@ -18,6 +18,10 @@ namespace Core.Model
         public event PropertyChangedEventHandler PropertyChanged;
         string name;
 
+        public Trainer()
+        {
+
+        }
 
 	    public Trainer(string name, Element element)
 	    {
@@ -59,7 +63,9 @@ namespace Core.Model
 
         public List<Item> Inventory { get; set; }  = new List<Item>();
 
-		public List<Monster> Monsters { get; set; } = new List<Monster>();
+        public Monster ActiveMonster { get; set; } = null;
+
+        public List<Monster> Monsters { get; set; } = new List<Monster>();
 
 		public List<Item> ActiveInventory { get; set; } = new List<Item>();
 

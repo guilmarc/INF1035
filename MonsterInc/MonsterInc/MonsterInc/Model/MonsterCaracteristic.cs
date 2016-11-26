@@ -11,8 +11,24 @@ namespace Core.Model
 	    public MonsterTemplateCaracteristicType Type { get; set; }
 
         public int Total { get; set; }
+        int actual;
 
-        public int Actual { get; set; }
+        public int Actual
+        {
+            get
+            {
+                //On s'assure que la valeur actuelle ne peu pas dépasser le maximum (base)
+                if (this.actual > this.Base )
+                {
+                    this.actual = this.Base;
+                }
+                return this.actual;
+            }
+            set
+            {
+                this.actual = value;
+            }
+        }
 
         public int Base { get; set; }                   //Valeur de base de cette caractérsitique
 

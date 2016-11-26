@@ -7,7 +7,8 @@ namespace Core.Model
     /// </summary>
     public class Revival : Item
     {
-        public override void Consume()
+
+        public override void Consume(Trainer trainer)
         {
             throw new NotImplementedException();
         }
