@@ -17,28 +17,22 @@ namespace Core
             Difficulty = Universe.Difficulties[0];
         }
 
-        public static Player Player { get; set; }
-
-        public static Player Opponent { get; set; }
-
         public static Difficulty Difficulty { get; set; }
 
         private static Player CurrentPlayer { get; set; }
 
         private static Player CurrentOpponent { get; set; }
 
-        public static List<Player> Players { get; set; }
+        public static List<Player> Players { get; set; } = new List<Player>();
 
         public static int Tour { get; set; } = 1;
        
         public static void RunDummyGame()
         {
             Difficulty = Universe.Difficulties[0];
-            //Player = Universe.DummyPlayer;
-            //Opponent = Universe.GenerateOpponent(Player, Difficulty);
-
+           
             Players.Add( Universe.DummyPlayer );
-            Players.Add( Universe.GenerateOpponent(Player, Difficulty) );
+            Players.Add( Universe.GenerateOpponent( Universe.DummyPlayer, Difficulty ) );
 
             do
             {
@@ -47,7 +41,7 @@ namespace Core
                     CurrentPlayer = player;
                     CurrentOpponent = PickRandomOpponent();
                     var usable = CurrentPlayer.PickUsable(CurrentOpponent);
-
+                    //usable.Consume(CurrentPlayer, CurrentOpponent);
                 }
 
                 Tour++;
@@ -56,6 +50,7 @@ namespace Core
 
             //Le combat est terminé car tous les Opponents sont morts
             //Le gagnant c'est CurrentPlayer
+            Console.WriteLine(CurrentPlayer + " Wins");
         }
 
         public static int OpponentLifePoints
