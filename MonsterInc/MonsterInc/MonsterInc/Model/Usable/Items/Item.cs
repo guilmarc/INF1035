@@ -17,7 +17,13 @@ namespace Core.Model
         /// </summary>
         public int Gold { get; set; }
 
-        //
+        protected void InventoryDeduction(Player player)
+        {
+            player.Trainer.ActiveInventory.Remove(this);
+            player.Trainer.Inventory.Remove(this);
+
+        }
+
 
     }
 }

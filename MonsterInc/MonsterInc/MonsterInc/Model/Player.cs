@@ -47,8 +47,15 @@ namespace Core.Model
             get { return Trainer; }
         }
 
+        public Player()
+        {
+            
+        }
+        public Player(string name)
+        {
 
-        public Player(String name, PlayerType type)
+        }
+        public Player(string name, PlayerType type)
         {
             this.name = name;
             this.PlayerType = type;

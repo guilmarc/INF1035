@@ -1,16 +1,22 @@
 ﻿using System;
+using System.Linq;
 
 namespace Core.Model
 {
     /// <summary>
     /// Seringue qui redonne la vie à un monstre mort
     /// </summary>
-    public class Revival : Item
+    public class Revival : LifePotion
     {
 
         public override void Consume(Player player, Player opponent)
         {
-            throw new NotImplementedException();
+            
+            var carac  = player.ActiveTrainer.ActiveMonster.Caracteristics.First(x => x.Type == MonsterTemplateCaracteristicType.LifePoints);
+            carac.Actual = 1;
+            base.Consume(player, opponent);
+
+
         }
     }
 }

@@ -11,18 +11,22 @@ namespace Core.Model
 	{
         public override void Consume(Player player, Player opponent)
         {
+
             var carac = player.ActiveTrainer.ActiveMonster.Caracteristics.Where(c => c.Type == MonsterTemplateCaracteristicType.LifePoints).Single();
 
+            if (carac.Actual > 0)
+            {
+                EffectScope scope = this.Scopes.OfType<EffectScope>().First();
 
-            EffectScope scope = this.Scopes.OfType<EffectScope>().First();
+                //monstre a 100 de vie et une potion qui heal de 15% (0.15) = + 15pv
+                double lifeAdded = carac.Total * scope.Magnitude;
+                int roundedLifeAdded = (int)lifeAdded;
 
-            //monstre a 100 de vie et une potion qui heal de 15% (0.15) = + 15pv
-            double lifeAdded =carac.Base *scope.Magnitude;
-            int roundedLifeAdded = int.Parse(lifeAdded.ToString());
-            //subit des dégats/ met le monstre a 1 life 
-            carac.Actual = 1;
 
-            carac.Actual = carac.Actual + roundedLifeAdded;
+                carac.Actual = carac.Actual + roundedLifeAdded;
+
+                this.InventoryDeduction(player);
+            }
 
 
         }
