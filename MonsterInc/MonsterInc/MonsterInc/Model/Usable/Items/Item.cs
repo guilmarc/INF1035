@@ -5,11 +5,8 @@ using System.Security.Policy;
 namespace Core.Model
 {
     [Serializable]
-	public abstract class Item : IActionable
+	public abstract class Item : Usable
     {
-	    public string Name { get; set; }
-        public string Description { get; set; }
-
         /// <summary>
         /// Rareté de l'item. 100 = commun, 1=rare
         /// </summary>
@@ -18,10 +15,9 @@ namespace Core.Model
         /// <summary>
         /// Coût de l'item en écu d'or
         /// </summary>
-        public int Gold { get; set; }				
+        public int Gold { get; set; }
 
-        public List<Scope> Scopes { get; set; }
+        //
 
-        public abstract void Consume(Trainer trainer);
     }
 }
