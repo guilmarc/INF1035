@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using MonsterInc;
 using System.Xml.Serialization;
 
@@ -61,7 +62,7 @@ namespace Core.Model
         [XmlIgnore]
         public ObservableCollection<Monster> SelectTempMonsters { get; set; }
 
-        public List<Item> Inventory { get; set; }  = new List<Item>();
+        public List<Item> Inventory { get; set; } = new List<Item>();
 
         public Monster ActiveMonster { get; set; } = null;
 
@@ -70,6 +71,20 @@ namespace Core.Model
 		public List<Item> ActiveInventory { get; set; } = new List<Item>();
 
 		public List<Monster> ActiveMonsters { get; set; } = new List<Monster>();
+
+	    public int LifePoints { get { return GetActualValue(MonsterTemplateCaracteristicType.LifePoints); } }
+
+        /// <summary>
+        /// Effectue la somme des valeurs actuelles d'une caractéristique donnée
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns>Somme des valeurs Actual</returns>
+	    public int GetActualValue(MonsterTemplateCaracteristicType type)
+	    {
+            return ActiveMonsters.Sum(x => x.GetCaracteristic(type).Actual);
+        }
+
+
         Element affinity;
 
         public Element Affinity
@@ -97,5 +112,9 @@ namespace Core.Model
 		    this.Gold -= item.Gold;
 		    return true;
 		}
+
+	    
+
+
 	}
 }
