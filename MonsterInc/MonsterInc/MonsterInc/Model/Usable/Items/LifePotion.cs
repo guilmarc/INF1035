@@ -9,9 +9,9 @@ namespace Core.Model
 	/// </summary>
 	public class LifePotion : Item
 	{
-        public override void Consume(Trainer trainer)
+        public override void Consume(Player player, Player opponent)
         {
-            var carac = trainer.ActiveMonster.Caracteristics.Where(c => c.Type == MonsterTemplateCaracteristicType.LifePoints).Single();
+            var carac = player.ActiveTrainer.ActiveMonster.Caracteristics.Where(c => c.Type == MonsterTemplateCaracteristicType.LifePoints).Single();
 
 
             EffectScope scope = this.Scopes.OfType<EffectScope>().First();

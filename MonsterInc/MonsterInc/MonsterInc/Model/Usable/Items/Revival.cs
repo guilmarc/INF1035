@@ -8,7 +8,7 @@ namespace Core.Model
     public class Revival : Item
     {
 
-        public override void Consume(Trainer trainer)
+        public override void Consume(Player player, Player opponent)
         {
             throw new NotImplementedException();
         }

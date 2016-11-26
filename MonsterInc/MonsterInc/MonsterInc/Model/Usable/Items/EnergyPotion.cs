@@ -7,7 +7,7 @@ namespace Core.Model
     /// </summary>
     public class EnergyPotion : Item
     {
-          public override void Consume(Trainer trainer)
+          public override void Consume(Player player, Player opponent)
         {
             throw new NotImplementedException();
         }

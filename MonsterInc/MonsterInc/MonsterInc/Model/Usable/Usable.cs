@@ -11,6 +11,6 @@ namespace Core.Model
 
         public List<Scope> Scopes { get; set; }
 
-        public abstract void Consume();
+        public abstract void Consume(Player player, Player opponent);
     }
 }

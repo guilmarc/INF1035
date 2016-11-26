@@ -21,7 +21,7 @@ namespace Core.Model
 
         public List<Element> ElementRequirement { get; set; } // OK si un des éléments est dans la liste, et OK si liste vide
 
-        public override void Consume()
+        public override void Consume(Player player, Player opponent)
         {
             throw new NotImplementedException();
         }
