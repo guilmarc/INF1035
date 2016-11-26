@@ -18,6 +18,8 @@ namespace UnitTest
             //a.XmlSerialize<List<Core.Model.Item>>(@"item", true);
 
             //Create new player/trainer
+
+            /*
             Engine.Player = new Core.Model.Player();
             Engine.Player.Name = "test";
             Engine.Player.Trainer = new Core.Model.Trainer();
@@ -40,7 +42,7 @@ namespace UnitTest
 
             var actual = Engine.Player.Trainer.ActiveMonster;
             var expected = Engine.Player.Trainer.ActiveMonsters[1];
-
+            */
         }
     }
 

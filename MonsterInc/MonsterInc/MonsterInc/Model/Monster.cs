@@ -51,12 +51,15 @@ namespace Core.Model
 
 		public List<MonsterCaracteristic> Caracteristics { get; set; } = new List<MonsterCaracteristic>();
 
-		public void ConsumeItem(Item item)
-		{
-             //item.Consume(this);
-        }
+        public List<Skill> Skills { get; set; } = new List<Skill>();
 
-
+	    public List<Skill> ActiveSkills
+	    {
+	        get
+	        {
+	            return Skills.Where(x =>  this.ExperienceLevel >= x.MinimumExperienceLevel).ToList();
+	        }
+	    }
 
 		public Monster(MonsterTemplate monsterTemplate, double CaracteristicFactor = 1.0)
 		{

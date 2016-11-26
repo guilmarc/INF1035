@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Core
 {
@@ -21,7 +22,13 @@ namespace Core
             var values = Enum.GetValues(typeof(Element));
             return (Element) values.GetValue(Random(values.Length - 1));
         }
+
+        public static class Constants
+        {
+            public const int ActiveInventoryCount = 5;
+            public const int InitGoldCount = 1000;
+        }
+
     }
 
-    
 }

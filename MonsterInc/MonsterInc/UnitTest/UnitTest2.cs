@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Core;
 using Core.Model;
+using System.Diagnostics;
 
 namespace UnitTest
 {
@@ -51,13 +52,21 @@ namespace UnitTest
         }
 
         [TestMethod]
+        public void TestDummyPlayer()
+        {
+           var player = Core.Universe.DummyPlayer;
+           Assert.AreNotEqual(player, null);
+        }
+
+        [TestMethod]
         public void TestRunDummyGame()
         {
             Core.Engine.RunDummyGame();
 
-            var monsters = Core.Engine.Opponent.Trainer.Monsters.Count;
+            //Trace.Listeners.Add(new TextWriterTraceListener(Console.Out));
+            //Trace.WriteLine("Hello World");
 
-            Console.WriteLine();
+            //Console.WriteLine();
 
         }
 

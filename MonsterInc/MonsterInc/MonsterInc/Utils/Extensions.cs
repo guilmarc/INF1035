@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Serialization;
+using Core.Model;
 
 namespace Core
 {
@@ -98,6 +99,12 @@ namespace Core
             }
         }
         */
+
+        private static readonly Random _random = new Random();
+        public static T Random<T>(this List<T> objects)
+        {
+            return objects.Count == 0 ? default(T) : objects[_random.Next(objects.Count - 1)];
+        }
     }
 }
 
