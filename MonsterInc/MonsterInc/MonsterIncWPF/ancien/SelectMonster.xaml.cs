@@ -67,6 +67,7 @@ namespace MonsterIncWPF
 
             Core.Engine.Player.Trainer = trainer;
 
+            
 
         }
     }
