@@ -67,11 +67,11 @@
       <DependentUpon>MonsterDetails.xaml</DependentUpon>
     </Compile>
     <Compile Include="SavedGames.cs" />
-    <Compile Include="ancien\SelectMonster.xaml.cs">
-      <DependentUpon>SelectMonster.xaml</DependentUpon>
-    </Compile>
     <Compile Include="SelectNewMonster.xaml.cs">
       <DependentUpon>SelectNewMonster.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TrainerHome.xaml.cs">
+      <DependentUpon>TrainerHome.xaml</DependentUpon>
     </Compile>
     <Page Include="DetailMonster.xaml">
       <SubType>Designer</SubType>
@@ -89,15 +89,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="ancien\SelectMonster.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MonsterDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SelectNewMonster.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TrainerHome.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

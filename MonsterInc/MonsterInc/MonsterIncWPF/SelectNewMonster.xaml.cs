@@ -31,7 +31,7 @@ namespace MonsterIncWPF
             ListAffinity.ItemsSource = Enum<Core.Element>.GetNames();
         }
         private Core.Model.Trainer trainer = new Core.Model.Trainer("Jean", 0);
-        private MonsterDetails detailControlOpen;
+        //private MonsterDetails detailControlOpen;
 
 
         private void ListSelectTempMonsters_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -63,7 +63,7 @@ namespace MonsterIncWPF
 
 
 
-            Core.Engine.Player.Trainer = trainer;
+            //Core.Engine.Trainer = trainer;
 
 
         }

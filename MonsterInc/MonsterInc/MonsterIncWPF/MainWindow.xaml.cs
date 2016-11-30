@@ -21,13 +21,13 @@ namespace MonsterIncWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        Core.Model.Player player = new Core.Model.Player("Jean");
+        //Core.Model.Player player = new Core.Model.Player("jean"); 
         const string SavedGameXMLname = "SavedGames";
         
         public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = player;
+            //this.DataContext = player;
 
 
             try
@@ -48,9 +48,12 @@ namespace MonsterIncWPF
 
         private void NewGame_Click(object sender, RoutedEventArgs e)
         {
-            Engine.Player = player;
+            Core.Model.Player player = new Core.Model.Player(PlayerName.Text);
+            this.DataContext = player;
 
-            SavedGames.Games.Add(Engine.Player);
+            //Engine.Player = player;
+
+            //SavedGames.Games.Add(Engine.Player);
             SavedGames.Games.XmlSerialize(SavedGameXMLname, true);
             Home.Visibility = Visibility.Collapsed;
             NewGamePage.Visibility = Visibility.Visible;
@@ -66,7 +69,7 @@ namespace MonsterIncWPF
 
             var selectedPlayer = (Core.Model.Player)ListSavedGames.SelectedItem;
 
-            Engine.Player = SavedGames.Games.Single(x => x.Name == selectedPlayer.Name);
+            //Engine.Player = SavedGames.Games.Single(x => x.Name == selectedPlayer.Name);
 
             this.SwitchToNextWindow(Action.Load);
 
@@ -83,8 +86,8 @@ namespace MonsterIncWPF
             switch (action)
             {
                 case Action.New:
-                    var win2 = new SelectMonster();
-                    win2.Show();
+                    var win2 = new SelectNewMonster();
+                   // win2.Show();
                     break;
                 case Action.Load:
                     throw new NotImplementedException();
