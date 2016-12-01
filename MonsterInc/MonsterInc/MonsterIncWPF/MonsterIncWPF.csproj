@@ -67,6 +67,9 @@
       <DependentUpon>MonsterDetails.xaml</DependentUpon>
     </Compile>
     <Compile Include="SavedGames.cs" />
+    <Compile Include="SelectActiveMonster.xaml.cs">
+      <DependentUpon>SelectActiveMonster.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SelectNewMonster.xaml.cs">
       <DependentUpon>SelectNewMonster.xaml</DependentUpon>
     </Compile>
@@ -90,6 +93,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="MonsterDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SelectActiveMonster.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

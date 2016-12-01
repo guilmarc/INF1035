@@ -40,19 +40,31 @@ namespace MonsterIncWPF
 
             DetailsControl.Content = detailControlOpen;
 
-            DetailsControl.Visibility=Visibility.Visible;
+            DetailsControl.Visibility = Visibility.Visible;
         }
 
         private void Create_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                //trainer.Affinity = Core.Extensions.ToEnum<Core.Element>(ListAffinity.SelectedValue.ToString());
-                //trainer.ActiveMonsters = new List<Core.Model.Monster>();
-                //trainer.ActiveMonsters.Add((Core.Model.Monster)ListSelectTempMonsters.SelectedValue);
+                if(ListSelectTempMonsters.SelectedItem == null) MessageBox.Show("Please select your new monster");
+                else if (MonsterNameTextBox.Text == "")MessageBox.Show("Please enter a name for your new monster");
+                else if (ListAffinity.SelectedItem == null) MessageBox.Show("Please choose your affinity");
+                else 
+                {
+                    //trainer.Affinity = Core.Extensions.ToEnum<Core.Element>(ListAffinity.SelectedValue.ToString());
+                    //trainer.ActiveMonsters = new List<Core.Model.Monster>();
+                    //trainer.ActiveMonsters.Add((Core.Model.Monster)ListSelectTempMonsters.SelectedValue);
 
-                //trainer.Monsters = new List<Core.Model.Monster>();
-                //trainer.Monsters.Add((Core.Model.Monster)ListSelectTempMonsters.SelectedValue);
+                    //trainer.Monsters = new List<Core.Model.Monster>();
+                    //trainer.Monsters.Add((Core.Model.Monster)ListSelectTempMonsters.SelectedValue);
+                    this.Visibility = Visibility.Collapsed;
+                    ((MainWindow)System.Windows.Application.Current.MainWindow).TrainerHome.Visibility = Visibility.Visible;
+                    //this.Visibility = Visibility.Collapsed;
+
+                }
+                
+
             }
             catch (Exception)
             {
@@ -72,7 +84,7 @@ namespace MonsterIncWPF
         {
             //DependencyObject parentObject = VisualTreeHelper.GetParent(this);
             ((MainWindow)System.Windows.Application.Current.MainWindow).Home.Visibility = Visibility.Visible;
-            this.Visibility=Visibility.Collapsed;
+            this.Visibility = Visibility.Collapsed;
         }
     }
 }

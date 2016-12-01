@@ -24,5 +24,16 @@ namespace MonsterIncWPF
         {
             InitializeComponent();
         }
+
+        private void MenuQuitBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ((MainWindow)System.Windows.Application.Current.MainWindow).Home.Visibility = Visibility.Visible;
+            this.Visibility = Visibility.Collapsed;
+        }
+
+        private void ActiveMonsterBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
