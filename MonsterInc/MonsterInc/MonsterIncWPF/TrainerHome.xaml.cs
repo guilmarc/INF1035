@@ -35,5 +35,11 @@ namespace MonsterIncWPF
         {
 
         }
+
+        private void MenuArenaBtn_Click(object sender, RoutedEventArgs e)
+        {
+            DifficultyGrid.Visibility = Visibility.Visible;
+            MenuGrid.Visibility = Visibility.Collapsed;
+        }
     }
 }

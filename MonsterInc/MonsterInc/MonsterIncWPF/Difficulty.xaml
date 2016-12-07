@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="MonsterIncWPF.Difficulty"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MonsterIncWPF"
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="360">
+
+    <Grid Background="White" OpacityMask="White">
+
+        <Button x:Name="DifficultyButton1" Content="Newborn" HorizontalAlignment="Left" Margin="50,50,0,0" VerticalAlignment="Top" Width="260" Height="45"/>
+        <Button x:Name="DifficultyButton2" Content="Difficulty 2" HorizontalAlignment="Left" Margin="50,100,0,0" VerticalAlignment="Top" Width="260" Height="45"/>
+        <Button x:Name="DifficultyButton3" Content="Difficulty 3" HorizontalAlignment="Left" Margin="50,150,0,0" VerticalAlignment="Top" Width="260" Height="45"/>
+        <Button x:Name="DifficultyButton4" Content="Difficulty 4" HorizontalAlignment="Left" Margin="50,200,0,0" VerticalAlignment="Top" Width="260" Height="45"/>
+        <Button x:Name="DifficultyButton5" Content="Difficulty 5" HorizontalAlignment="Left" Margin="50,250,0,0" VerticalAlignment="Top" Width="260" Height="45"/>
+        <Button x:Name="DifficultyButton6" Content="Difficulty 6" HorizontalAlignment="Left" Margin="50,300,0,0" VerticalAlignment="Top" Width="260" Height="45"/>
+        <Button x:Name="DifficultyButton7" Content="Difficulty 7" HorizontalAlignment="Left" Margin="50,350,0,0" VerticalAlignment="Top" Width="260" Height="45"/>
+        <Button x:Name="DifficultyButton8" Content="Difficulty 8" HorizontalAlignment="Left" Margin="50,400,0,0" VerticalAlignment="Top" Width="260" Height="45"/>
+        <Button x:Name="CancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="50,450,0,0" VerticalAlignment="Top" Width="260" Height="45" Click="CancelButton_Click"/>
+        <Rectangle HorizontalAlignment="Left" Height="550" Stroke="Black" VerticalAlignment="Top" Width="360"/>
+
+
+
+
+    </Grid>
+</UserControl>
