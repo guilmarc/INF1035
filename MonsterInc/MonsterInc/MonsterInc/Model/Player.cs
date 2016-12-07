@@ -15,7 +15,7 @@ namespace Core.Model
     [Serializable]
     public class Player : INotifyPropertyChanged
     {
-        public PlayerType PlayerType { get; set; }
+        public PlayerType Type { get; set; }
 
         string name;
 
@@ -58,7 +58,12 @@ namespace Core.Model
         public Player(string name, PlayerType type)
         {
             this.name = name;
-            this.PlayerType = type;
+            this.Type = type;
+        }
+
+        public void ResetActiveTrainer()
+        {
+            //ActiveTrainer.
         }
 
         public Usable PickUsable(Player opponent)
@@ -68,5 +73,11 @@ namespace Core.Model
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public override string ToString()
+        {
+            return this.Name;
+        }
+
     }
 }

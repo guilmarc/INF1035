@@ -34,6 +34,7 @@ namespace Core
         private static List<Monster> _initMonsters;
         private static List<Difficulty> _difficulties;
         private static Player _dummyPlayer;
+        private static List<Skill> _skills;
 
 
         public static readonly int[,] ElementMatrix =
@@ -88,10 +89,12 @@ namespace Core
 
         public static List<Difficulty> Difficulties
         {
-            get
-            {
-                return _difficulties = _difficulties ?? new DataAdaptor<Difficulty>().getObjects();
-            }
+            get { return _difficulties = _difficulties ?? new DataAdaptor<Difficulty>().getObjects(); }
+        }
+
+        public static List<Skill> Skills
+        {
+            get { return _skills = _skills ?? new DataAdaptor<Skill>().getObjects(); }
         }
 
         public static List<Monster> InitMonsters

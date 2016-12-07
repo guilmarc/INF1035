@@ -19,9 +19,17 @@ namespace Core
        
         public static void RunDummyGame()
         {
+            Console.WriteLine("Test d'écriture à la console");
+            System.Diagnostics.Trace.WriteLine("Test d'écriture dans Trace");
+            System.Diagnostics.Debug.WriteLine("Test d'écriture dans Debug"); 
+
             new Game(Universe.DummyPlayer).Run();
         }
 
+        public static Game NewGame(Player player)
+        {
+            return new Game(player);
+        }
 
         public static void ConsumeUsable(Player player, Player opponent, Usable usable)
         {

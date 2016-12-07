@@ -8,7 +8,7 @@ namespace Core.Model
     /// </summary>
     public class EnergyPotion : Item
     {
-          public override void Consume(Player player, Player opponent)
+        public override void Consume(Player player, Player opponent)
         {
             var carac = player.ActiveTrainer.ActiveMonster.Caracteristics.First(x => x.Type == MonsterTemplateCaracteristicType.EnergyPoints);
             var scope =  (EffectScope)this.Scopes.First();

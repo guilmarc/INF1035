@@ -1,5 +1,6 @@
 
-﻿using System.Linq;
+﻿using System;
+ using System.Linq;
  using Core.Data;
 using Core.Model;
 
@@ -15,8 +16,10 @@ namespace Core
             var newTrainer = new Trainer("DummyTrainer", element);
 
             newTrainer.Monsters = MonsterFactory.GenerateDummyMonsters();
-            InventoryFactory.GenerateInventoryForTrainer(newTrainer);
+            InitActiveMonsters(newTrainer);
+            InitActiveMonster(newTrainer);
 
+            InventoryFactory.GenerateInventoryForTrainer(newTrainer);
             InitActiveInventory(newTrainer);
 
             return newTrainer;
@@ -31,8 +34,11 @@ namespace Core
             var newTrainer = new Trainer(name, element);
 
             newTrainer.Monsters = MonsterFactory.GenerateMonsters(trainer, difficulty);
-            InventoryFactory.GenerateInventoryForTrainer(newTrainer);
+            
+            InitActiveMonsters(newTrainer);
+            InitActiveMonster(newTrainer);
 
+            InventoryFactory.GenerateInventoryForTrainer(newTrainer);
             InitActiveInventory(newTrainer);
 
             return newTrainer;
@@ -48,6 +54,25 @@ namespace Core
                 trainer.ActiveInventory.Add(item);
             }
 
+        }
+
+        /// <summary>
+        /// Sélection des 
+        /// </summary>
+        /// <param name="trainer"></param>
+        private static void InitActiveMonsters(Trainer trainer)
+        {
+            var activeMonstersCount = Math.Min(trainer.Monsters.Count, Utils.Constants.MaxActiveMonstersCount);
+            for (var i = 0; i < activeMonstersCount; i++)
+            {
+                var selectedMonster = trainer.Monsters.Where(x => !trainer.ActiveMonsters.Contains(x)).ToList().Random();
+                trainer.ActiveMonsters.Add(selectedMonster);
+            }
+        }
+
+        private static void InitActiveMonster(Trainer trainer)
+        {
+            trainer.ActiveMonster = trainer.ActiveMonsters.Random();
         }
 
     }

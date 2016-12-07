@@ -38,8 +38,20 @@ namespace Core.Model
 
 	    public void Run()
 	    {
-	        var combat = new Combat(this, Universe.Difficulties[0]);
-	        combat.Run();
+	        do
+	        {
+                //Demander le niveau de difficulté à l'utilisateur
+	            var difficulty = Universe.Difficulties[0];
+                Console.WriteLine("Début d'un nouveau combat au niveau de difficulté " + difficulty);
+
+                var combat = new Combat(this, Universe.Difficulties[0]);
+	            combat.Run();
+
+	            //Réinitialise les caractéristiques des monstres encore en vie
+	            var count = HumanPlayer.ActiveTrainer.ActiveMonsters.Reset();
+                //count Monsters ont été réinitialités
+
+	        } while (HumanPlayer.ActiveTrainer.ActiveMonsters.Count > 0);
 	    }
 
 		public void Save()

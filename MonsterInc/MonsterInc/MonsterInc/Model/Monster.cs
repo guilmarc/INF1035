@@ -51,14 +51,22 @@ namespace Core.Model
 
 		public List<MonsterCaracteristic> Caracteristics { get; set; } = new List<MonsterCaracteristic>();
 
-        public List<Skill> Skills { get; set; } = new List<Skill>();
-
 	    public List<Skill> ActiveSkills
 	    {
 	        get
 	        {
-	            return Skills.Where(x =>  this.ExperienceLevel >= x.MinimumExperienceLevel).ToList();
+                //return Universe.Skills.Where(x => this.ExperienceLevel >= x.MinimumExperienceLevel)
+                //    .Where(y => y.ElementRequirement.Contains(this.Af))
+
+
+                //return Skills.Where(x =>  this.ExperienceLevel >= x.MinimumExperienceLevel).ToList();
+	            return null;
 	        }
+	    }
+
+	    public bool isAlive
+	    {
+	        get { return this.GetCaracteristic(MonsterTemplateCaracteristicType.LifePoints).Actual > 0; }
 	    }
 
 		public Monster(MonsterTemplate monsterTemplate, double CaracteristicFactor = 1.0)

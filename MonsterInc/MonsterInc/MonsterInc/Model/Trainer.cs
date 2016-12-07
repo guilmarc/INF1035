@@ -112,9 +112,6 @@ namespace Core.Model
 		    this.Gold -= item.Gold;
 		    return true;
 		}
-
 	    
-
-
 	}
 }

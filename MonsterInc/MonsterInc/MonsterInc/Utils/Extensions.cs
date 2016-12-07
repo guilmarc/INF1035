@@ -105,6 +105,17 @@ namespace Core
         {
             return objects.Count == 0 ? default(T) : objects[_random.Next(objects.Count - 1)];
         }
+
+        public static List<Monster> Alive(this List<Monster> list)
+        {
+            return list.Where(x => x.GetCaracteristic(MonsterTemplateCaracteristicType.LifePoints).Actual > 0).ToList();
+        }
+
+        public static int Reset(this List<Monster> list)
+        {
+            list.ForEach(x => x.ResetCaracterictics());
+            return list.Count;
+        }
     }
 }
 

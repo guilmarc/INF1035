@@ -27,6 +27,7 @@ namespace Core
         {
             public const int ActiveInventoryCount = 5;
             public const int InitGoldCount = 1000;
+            public const int MaxActiveMonstersCount = 5;
         }
 
     }

@@ -63,6 +63,7 @@
     <Compile Include="Data\XMLDataAdaptor.cs" />
     <Compile Include="Exceptions\InvalidUsableChoiceExecption.cs" />
     <Compile Include="Factories\PlayerFactory.cs" />
+    <Compile Include="Model\Impact.cs" />
     <Compile Include="Model\Implementations\BasicPickUsableStrategy.cs" />
     <Compile Include="Model\Implementations\IntelligentPickUsableStrategy.cs" />
     <Compile Include="Model\Interfaces\IPickUsableStrategy.cs" />

@@ -33,15 +33,24 @@ namespace Core.Model
             this.GenerateOpponents(_game.HumanPlayer, difficulty, opponentsCount);
 		}
 
-	    private void GenerateOpponents(Player HumanPlayer, Difficulty difficulty,  int opponentsCount)
+        /// <summary>
+        /// Méthode utile lorsqu'un joueur humain désire se battre contre plusieurs opposants
+        /// </summary>
+        /// <param name="humanPlayer">Le joueur représenté par un humain</param>
+        /// <param name="difficulty">Le niveau de difficulté demandé par le joueur humain</param>
+        /// <param name="opponentsCount">Le nombre d'opposants demandés par le joueur humain</param>
+	    private void GenerateOpponents(Player humanPlayer, Difficulty difficulty,  int opponentsCount)
 	    {
 	        for (var i =0; i < opponentsCount; i++)
 	        {
-                var newOpponent = Universe.GenerateOpponent(HumanPlayer, difficulty);
+                var newOpponent = Universe.GenerateOpponent(humanPlayer, difficulty);
                 this.Players.Add(newOpponent);
             }
 	    }
 
+        /// <summary>
+        /// Méthode principale d'exécution d'un combat
+        /// </summary>
 	    public void Run()
 	    {
             do
@@ -50,24 +59,59 @@ namespace Core.Model
                 {
                     CurrentPlayer = player;
                     CurrentOpponent = PickRandomOpponent();
-                    var usable = CurrentPlayer.PickUsable(CurrentOpponent);
-                    //usable.Consume(CurrentPlayer, CurrentOpponent);
+
+                    Usable usable = null;
+
+                    if (CurrentPlayer.Type == PlayerType.Human)
+                    {
+                        //Lancer un delegate sync
+                    }
+                    else
+                    {
+                        usable = CurrentPlayer.PickUsable(CurrentOpponent);
+                    }
+
+                    if (usable != null)
+                    {
+                        foreach (var scope in usable.Scopes)
+                        {
+                            Console.WriteLine(Tour + ":: " + CurrentPlayer.Name + " utilise " + usable.Name + " sur " +
+                                              ((scope.Target == Scope.ScopeTarget.Self)
+                                                  ? CurrentPlayer.Name
+                                                  : CurrentOpponent.Name));
+                        }
+                    }
+                    else
+                    {
+                        //Plus aucun utilisable de disponible !!!
+                        Console.WriteLine("Aucun utilisable de disponible pour " + CurrentPlayer);
+                    }
                 }
 
                 Tour++;
 
-            } while (OpponentLifePoints == 0);
+            } while (OpponentLifePoints != 0 && Tour <= 1000); //1000 = SafetyPipe pour les tests
 
             //Le combat est terminé car tous les Opponents sont morts
             //Le gagnant c'est CurrentPlayer
-            Console.WriteLine(CurrentPlayer + " Wins");
+            Console.WriteLine(CurrentPlayer.Name + " Wins");
         }
 
+
+        /// <summary>
+        /// Retourne le total des points de vie des monstres de tous les opposants
+        /// </summary>
         public int OpponentLifePoints
         {
             get { return Players.Where(x => x != CurrentPlayer).Sum(y => y.ActiveTrainer.LifePoints); }
         }
 
+
+        /// <summary>
+        /// Sélectionne un opposant au hasard parmis la liste.
+        /// S'il y a qu'un seul opposant, retournera toujours le même 
+        /// </summary>
+        /// <returns></returns>
         public Player PickRandomOpponent()
         {
             var availableOpponents = Players.Where(x => x != CurrentPlayer).ToList();

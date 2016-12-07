@@ -15,12 +15,7 @@ namespace Core.Data
                         Name = "Roll",
                         EnergyPointCost = 5,
                         MinimumExperienceLevel = 1,
-                        Cooldown = 1,
-                        //ElementDamage = type de l'élément du monstre se servant de l'attaque,
-                        MonsterCategory = new List<MonsterCategory>
-                        {
-                            MonsterCategory.Ball
-                        },
+
                         Scopes = new List<Scope>
                         {
                             new DamageScope {Target = Scope.ScopeTarget.Opponent, Duration = 1, Magnitude = 10}
@@ -32,8 +27,7 @@ namespace Core.Data
                         Name = "Tornado",
                         EnergyPointCost = 20,
                         MinimumExperienceLevel = 10,
-                        Cooldown = 3,
-                        ElementDamage = Element.Air,
+                        Element = Element.Air,
                         ElementRequirement = new List<Element>
                         {
                             Element.Air, Element.Grass
@@ -49,8 +43,7 @@ namespace Core.Data
                         Name = "FireBolt",
                         EnergyPointCost = 7,
                         MinimumExperienceLevel = 1,
-                        Cooldown = 1,
-                        ElementDamage = Element.Fire,
+                        Element = Element.Fire,
                         ElementRequirement = new List<Element>
                         {
                             Element.Fire, Element.Lava
@@ -65,8 +58,7 @@ namespace Core.Data
                         Name = "IceArrow",
                         EnergyPointCost = 10,
                         MinimumExperienceLevel = 5,
-                        Cooldown = 2,
-                        ElementDamage = Element.Ice,
+                        Element = Element.Ice,
                         ElementRequirement = new List<Element>
                         {
                             Element.Ice
@@ -81,12 +73,6 @@ namespace Core.Data
                         Name = "Kick",
                         EnergyPointCost = 4,
                         MinimumExperienceLevel = 20,
-                        Cooldown = 1,
-                        //ElementDamage = type de l'élément du monstre se servant de l'attaque,
-                        MonsterCategory = new List<MonsterCategory>
-                        {
-                            MonsterCategory.Titan, MonsterCategory.GiantTitan, MonsterCategory.Dragon
-                        },
                         Scopes = new List<Scope>
                         {
                             new DamageScope {Target = Scope.ScopeTarget.Opponent, Duration = 1, Magnitude = 12}
@@ -97,8 +83,7 @@ namespace Core.Data
                         Name = "PowerHit",
                         EnergyPointCost = 3,
                         MinimumExperienceLevel = 1,
-                        Cooldown = 1,
-                        //ElementDamage = type de l'élément du monstre se servant de l'attaque,
+                        //Element = type de l'élément du monstre se servant de l'attaque,
                         Scopes = new List<Scope>
                         {
                             new DamageScope {Target = Scope.ScopeTarget.Opponent, Duration = 1, Magnitude = 8}

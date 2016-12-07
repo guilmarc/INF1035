@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Core.Model;
 
 namespace MonsterIncConsole
 {
@@ -11,6 +12,10 @@ namespace MonsterIncConsole
         static void Main(string[] args)
         {
             Core.Engine.RunDummyGame();
+
+            //var newPlayer = new Core.Model.Player();
+            //newPlayer.PlayerType = PlayerType.Human;
+
             Console.ReadLine();
         }
     }
