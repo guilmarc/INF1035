@@ -14,7 +14,7 @@ namespace Core.Model
             //player.ActiveTrainer.
 
 
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
     }
 }

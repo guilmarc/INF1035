@@ -57,7 +57,8 @@ namespace Core.Model
 
 		public void InitWithLevel(int experienceLevel)
 		{
-		    this.Total = this.Base + (experienceLevel * this.Progression);
+            //Ici on fait -1 car on je veux pas débuter avec un ExperienceLevel = 0 mais 1
+		    this.Total = this.Base + ((experienceLevel - 1) * this.Progression);
 		    this.Actual = this.Total;
 		}
 	}

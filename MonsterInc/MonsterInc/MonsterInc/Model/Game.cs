@@ -6,10 +6,12 @@ namespace Core.Model
 {
 	public class Game
 	{
-		public string Name { get; set; }
+
+        public static event EventHandler GameCompleted;
+
+        public string Name { get; set; }
 	    public DateTime StartTime { get; private set; } = DateTime.Now;
         public DateTime EndTime { get; private set; }
-
 	    public Player HumanPlayer { get; set; }
 
 	    /*
@@ -51,7 +53,9 @@ namespace Core.Model
 	            var count = HumanPlayer.ActiveTrainer.ActiveMonsters.Reset();
                 //count Monsters ont été réinitialités
 
-	        } while (HumanPlayer.ActiveTrainer.ActiveMonsters.Count > 0);
+
+       } while (1 == 2);
+       // } while (HumanPlayer.ActiveTrainer.ActiveMonsters.Count > 0);
 	    }
 
 		public void Save()

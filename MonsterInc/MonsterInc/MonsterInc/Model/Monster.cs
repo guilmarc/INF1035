@@ -13,8 +13,6 @@ namespace Core.Model
 	public class BaseExperienceLevelStrategy : IExperienceLevelStrategy
 	{
 
-	
-
         public int EvaluateExperienceLevel(int NewExperiencePoint)
 		{
             if (NewExperiencePoint < 250) return ((NewExperiencePoint / 25)+1); //1 à 10
@@ -55,12 +53,8 @@ namespace Core.Model
 	    {
 	        get
 	        {
-                //return Universe.Skills.Where(x => this.ExperienceLevel >= x.MinimumExperienceLevel)
-                //    .Where(y => y.ElementRequirement.Contains(this.Af))
-
-
-                //return Skills.Where(x =>  this.ExperienceLevel >= x.MinimumExperienceLevel).ToList();
-	            return null;
+                //Console.WriteLine(this.Template.Element.ToString());
+                return Universe.Skills.Where(x => this.ExperienceLevel >= x.MinimumExperienceLevel).Where(y => (y.ElementRequirement.Count == 0) || y.ElementRequirement.Contains(this.Template.Element)).ToList();
 	        }
 	    }
 

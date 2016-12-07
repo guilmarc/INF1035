@@ -65,6 +65,7 @@ namespace Core.Model
                     if (CurrentPlayer.Type == PlayerType.Human)
                     {
                         //Lancer un delegate sync
+                        usable = CurrentPlayer.PickUsable(CurrentOpponent);
                     }
                     else
                     {
@@ -73,12 +74,14 @@ namespace Core.Model
 
                     if (usable != null)
                     {
+                        usable.Consume(CurrentPlayer, CurrentOpponent);
+
                         foreach (var scope in usable.Scopes)
                         {
-                            Console.WriteLine(Tour + ":: " + CurrentPlayer.Name + " utilise " + usable.Name + " sur " +
+                            Console.WriteLine(Tour + ":: " + CurrentPlayer + " utilise " + usable + " sur " +
                                               ((scope.Target == Scope.ScopeTarget.Self)
-                                                  ? CurrentPlayer.Name
-                                                  : CurrentOpponent.Name));
+                                                  ? CurrentPlayer
+                                                  : CurrentOpponent));
                         }
                     }
                     else

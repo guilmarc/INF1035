@@ -12,5 +12,10 @@ namespace Core.Model
         public List<Scope> Scopes { get; set; }
 
         public abstract void Consume(Player player, Player opponent);
+
+        public override string ToString()
+        {
+            return this.Name;
+        }
     }
 }

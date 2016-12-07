@@ -13,11 +13,12 @@ namespace Core.Model
 
 	    public Element Element { get; set; }
 
-        public List<Element> ElementRequirement { get; set; } // OK si un des éléments est dans la liste, et OK si liste vide
+        public List<Element> ElementRequirement { get; set; } = new List<Element>(); // OK si un des éléments est dans la liste, et OK si liste vide
 
         public override void Consume(Player player, Player opponent)
         {
             //throw new NotImplementedException();
+            opponent.ActiveTrainer.ActiveMonster.GetCaracteristic(MonsterTemplateCaracteristicType.LifePoints).Actual--;
         }
-    }
+	}
 }

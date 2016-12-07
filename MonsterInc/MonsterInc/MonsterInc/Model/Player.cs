@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 
 namespace Core.Model
@@ -76,7 +77,7 @@ namespace Core.Model
 
         public override string ToString()
         {
-            return this.Name;
+            return this.Name + " LP=" + this.ActiveTrainer.ActiveMonster.GetCaracteristic(MonsterTemplateCaracteristicType.LifePoints).Actual;
         }
 
     }
