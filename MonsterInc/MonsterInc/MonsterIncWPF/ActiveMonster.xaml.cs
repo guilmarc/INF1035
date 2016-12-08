@@ -16,19 +16,13 @@ using System.Windows.Shapes;
 namespace MonsterIncWPF
 {
     /// <summary>
-    /// Logique d'interaction pour CombatMain.xaml
+    /// Interaction logic for ActiveMonster.xaml
     /// </summary>
-    public partial class CombatMain : UserControl
+    public partial class ActiveMonster : UserControl
     {
-        public CombatMain()
+        public ActiveMonster()
         {
             InitializeComponent();
-        }
-
-        private void ChangeButton_Click(object sender, RoutedEventArgs e)
-        {
-            ChooseMonsterControl.Visibility = Visibility.Visible;
-            ActionGrid.Visibility = Visibility.Collapsed;
         }
     }
 }

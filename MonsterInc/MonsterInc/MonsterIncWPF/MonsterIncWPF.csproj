@@ -59,6 +59,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ActiveMonster.xaml.cs">
+      <DependentUpon>ActiveMonster.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CombatMain.xaml.cs">
       <DependentUpon>CombatMain.xaml</DependentUpon>
     </Compile>
@@ -68,6 +71,9 @@
     <Compile Include="EnumBindingSourceExtension.cs" />
     <Compile Include="DetailMonster.xaml.cs">
       <DependentUpon>DetailMonster.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ItemShop.xaml.cs">
+      <DependentUpon>ItemShop.xaml</DependentUpon>
     </Compile>
     <Compile Include="MonsterDetails.xaml.cs">
       <DependentUpon>MonsterDetails.xaml</DependentUpon>
@@ -82,6 +88,10 @@
     <Compile Include="TrainerHome.xaml.cs">
       <DependentUpon>TrainerHome.xaml</DependentUpon>
     </Compile>
+    <Page Include="ActiveMonster.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CombatMain.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -91,6 +101,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Difficulty.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ItemShop.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

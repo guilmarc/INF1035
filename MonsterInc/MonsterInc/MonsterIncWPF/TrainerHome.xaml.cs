@@ -41,5 +41,11 @@ namespace MonsterIncWPF
             DifficultyGrid.Visibility = Visibility.Visible;
             MenuGrid.Visibility = Visibility.Collapsed;
         }
+
+        private void MenuStoreBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ItemShopGrid.Visibility = Visibility.Visible;
+            TrainerHomeGrid.Visibility = Visibility.Collapsed;
+        }
     }
 }

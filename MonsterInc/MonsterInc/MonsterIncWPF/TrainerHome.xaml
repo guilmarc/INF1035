@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="570" d:DesignWidth="1014">
     <Grid Background="White" OpacityMask="White">
-        <Grid>
+        <Grid x:Name="TrainerHomeGrid">
             <Label x:Name="TrainerNameLabel" Content="Trainer name" HorizontalAlignment="Left" HorizontalContentAlignment="Center"  Margin="191,20,0,0" VerticalAlignment="Top" Width="244" Height="52" FontWeight="Bold" FontSize="24"/>
             <Label x:Name="ActiveMonstersLabel" Content="Active monsters :" HorizontalAlignment="Left" Margin="55,154,0,364" Width="244" FontWeight="Bold" FontSize="20"/>
             <Label x:Name="ActiveMonstersNoticeLabel" Content="(Press to select new active monster)" HorizontalAlignment="Left" Margin="220,156,0,364" Width="250" FontWeight="Light" FontSize="16"/>
@@ -89,7 +89,7 @@
                 <Button x:Name="MenuQuickSaveBtn" Content="Quick Save" HorizontalAlignment="Center" Margin="73,397,63,0" VerticalAlignment="Top" Width="244" Height="45" FontSize="20"/>
                 <Button x:Name="MenuSaveBtn" Content="Save As" HorizontalAlignment="Center" Margin="73,447,63,0" VerticalAlignment="Top" Width="244" Height="45" FontSize="20"/>
                 <Button x:Name="MenuQuitBtn" Content="Quit" HorizontalAlignment="Center" Margin="73,497,63,0" VerticalAlignment="Top" Width="244" Height="45" FontSize="20" Click="MenuQuitBtn_Click"/>
-                <Button x:Name="MenuStoreBtn" Content="Item Shop" HorizontalAlignment="Center" Margin="10,181,0,0" VerticalAlignment="Top" Width="244" Height="45" FontSize="20"/>
+                <Button x:Name="MenuStoreBtn" Content="Item Shop" HorizontalAlignment="Center" Margin="10,181,0,0" VerticalAlignment="Top" Width="244" Height="45" FontSize="20" Click="MenuStoreBtn_Click"/>
                 <Button x:Name="MenuArenaBtn" Content="FIGHT ARENA" HorizontalAlignment="Center" Margin="73,231,63,0" VerticalAlignment="Top" Width="244" Height="161" FontSize="28" Click="MenuArenaBtn_Click"/>
             </Grid>
             <Label x:Name="GoldLabel" Content="Gold :" HorizontalAlignment="Left" Margin="55,89,0,0" VerticalAlignment="Top" FontSize="18"/>
@@ -104,6 +104,9 @@
         <Grid x:Name="ActiveGrid">
             <local:SelectActiveMonster x:Name="SelectActiveMonsterGrid" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="570" Width="1014" Visibility="Collapsed"/>
             <local:Difficulty x:Name="DifficultyGrid" HorizontalAlignment="Left" Margin="624,10,0,0" VerticalAlignment="Top" Height="550" Width="360" Visibility="Collapsed"/>
+            <local:CombatMain x:Name="CombatGrid" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Collapsed"/>
+            <local:ItemShop x:Name="ItemShopGrid" HorizontalAlignment="Left" VerticalAlignment="Top" Height="570" Width="1014" Visibility="Collapsed"/>
+
 
         </Grid>
     </Grid>

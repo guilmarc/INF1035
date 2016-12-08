@@ -9,7 +9,12 @@
 
     <Grid Background="White" OpacityMask="White">
 
-        <Button x:Name="DifficultyButton1" Content="Newborn" HorizontalAlignment="Left" Margin="50,50,0,0" VerticalAlignment="Top" Width="260" Height="45"/>
+        <Rectangle HorizontalAlignment="Left" Height="550" Stroke="Black" VerticalAlignment="Top" Width="360"/>
+
+
+
+
+        <Button x:Name="DifficultyButton1"  Content="{Binding Core.Universe.Difficulties[0].Name}" HorizontalAlignment="Left" Margin="50,50,0,0" VerticalAlignment="Top" Width="260" Height="45" Click="DifficultyButton1_Click"/>
         <Button x:Name="DifficultyButton2" Content="Difficulty 2" HorizontalAlignment="Left" Margin="50,100,0,0" VerticalAlignment="Top" Width="260" Height="45"/>
         <Button x:Name="DifficultyButton3" Content="Difficulty 3" HorizontalAlignment="Left" Margin="50,150,0,0" VerticalAlignment="Top" Width="260" Height="45"/>
         <Button x:Name="DifficultyButton4" Content="Difficulty 4" HorizontalAlignment="Left" Margin="50,200,0,0" VerticalAlignment="Top" Width="260" Height="45"/>
@@ -18,7 +23,6 @@
         <Button x:Name="DifficultyButton7" Content="Difficulty 7" HorizontalAlignment="Left" Margin="50,350,0,0" VerticalAlignment="Top" Width="260" Height="45"/>
         <Button x:Name="DifficultyButton8" Content="Difficulty 8" HorizontalAlignment="Left" Margin="50,400,0,0" VerticalAlignment="Top" Width="260" Height="45"/>
         <Button x:Name="CancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="50,450,0,0" VerticalAlignment="Top" Width="260" Height="45" Click="CancelButton_Click"/>
-        <Rectangle HorizontalAlignment="Left" Height="550" Stroke="Black" VerticalAlignment="Top" Width="360"/>
 
 
 

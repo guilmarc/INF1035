@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="MonsterIncWPF.ActiveMonster"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MonsterIncWPF"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="550">
+    <Grid Background="White" OpacityMask="White">
+        <Grid x:Name="ActiveMonstersGrid" HorizontalAlignment="Left" Height="217" Margin="10,-35,0,0" VerticalAlignment="Top" Width="530">
+
+            <Button x:Name="MonsterBtn1" Content="&lt;Empty>" HorizontalAlignment="Left" Margin="5,46,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+            <Button x:Name="MonsterBtn2" Content="&lt;Empty&gt;" HorizontalAlignment="Left" Margin="110,46,0,0" VerticalAlignment="Top" Width="100" Height="100"/>
+            <Button x:Name="MonsterBtn3" Content="&lt;Empty&gt;" HorizontalAlignment="Left" Margin="215,46,0,0" VerticalAlignment="Top" Width="100" Height="100"/>
+            <Button x:Name="MonsterBtn4" Content="&lt;Empty&gt;" HorizontalAlignment="Left" Margin="320,46,0,0" VerticalAlignment="Top" Width="100" Height="100"/>
+            <Button x:Name="MonsterBtn5" Content="&lt;Empty&gt;" HorizontalAlignment="Left" Margin="425,46,-1,0" VerticalAlignment="Top" Width="100" Height="100"/>
+
+            <Label x:Name="MonsterLevelLabel1" Content="Level : " HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top" Height="26" Width="46"/>
+            <Label x:Name="MonsterElementLabel1" Content="Type : " HorizontalAlignment="Left" Margin="10,170,0,0" VerticalAlignment="Top" Height="26" Width="44"/>
+            <Label x:Name="MonsterHPLabel1" Content="Life : " HorizontalAlignment="Left" Margin="10,190,0,0" VerticalAlignment="Top" Height="26" Width="38"/>
+            <Label x:Name="MonsterEnergyLabel1" Content="Energy : " HorizontalAlignment="Left" Margin="10,210,0,0" VerticalAlignment="Top" Height="26" Width="55"/>
+
+            <Label x:Name="MonsterLevelValue1" Content="Lvl" HorizontalAlignment="Left" Margin="55,150,0,0" VerticalAlignment="Top" Height="26" Width="46"/>
+            <Label x:Name="MonsterElementValue1" Content="Type" HorizontalAlignment="Left" Margin="55,170,0,0" VerticalAlignment="Top" Height="26" Width="44"/>
+            <Label x:Name="MonsterHPValue1" Content="Life" HorizontalAlignment="Left" Margin="55,190,0,0" VerticalAlignment="Top" Height="26" Width="38"/>
+            <Label x:Name="MonsterEnergyValue1" Content="Energy" HorizontalAlignment="Left" Margin="55,210,0,0" VerticalAlignment="Top" Height="26" Width="55"/>
+
+            <Label x:Name="MonsterLevelLabel2" Content="Level : " HorizontalAlignment="Left" Margin="110,150,0,0" VerticalAlignment="Top" Height="26" Width="46"/>
+            <Label x:Name="MonsterElementLabel2" Content="Type : " HorizontalAlignment="Left" Margin="110,170,0,0" VerticalAlignment="Top" Height="26" Width="44"/>
+            <Label x:Name="MonsterHPLabel2" Content="Life : " HorizontalAlignment="Left" Margin="110,190,0,0" VerticalAlignment="Top" Height="26" Width="38"/>
+            <Label x:Name="MonsterEnergyLabel2" Content="Energy : " HorizontalAlignment="Left" Margin="110,210,0,0" VerticalAlignment="Top" Height="26" Width="55"/>
+
+            <Label x:Name="MonsterLevelValue2" Content="Lvl" HorizontalAlignment="Left" Margin="160,150,0,0" VerticalAlignment="Top" Height="26" Width="46"/>
+            <Label x:Name="MonsterElementValue2" Content="Type" HorizontalAlignment="Left" Margin="160,170,0,0" VerticalAlignment="Top" Height="26" Width="44"/>
+            <Label x:Name="MonsterHPValue2" Content="Life" HorizontalAlignment="Left" Margin="160,190,0,0" VerticalAlignment="Top" Height="26" Width="38"/>
+            <Label x:Name="MonsterEnergyValue2" Content="Energy" HorizontalAlignment="Left" Margin="160,210,0,0" VerticalAlignment="Top" Height="26" Width="55"/>
+
+            <Label x:Name="MonsterLevelLabel3" Content="Level : " HorizontalAlignment="Left" Margin="215,150,0,0" VerticalAlignment="Top" Height="26" Width="46"/>
+            <Label x:Name="MonsterElementLabel3" Content="Type : " HorizontalAlignment="Left" Margin="215,170,0,0" VerticalAlignment="Top" Height="26" Width="44"/>
+            <Label x:Name="MonsterHPLabel3" Content="Life : " HorizontalAlignment="Left" Margin="215,190,0,0" VerticalAlignment="Top" Height="26" Width="38"/>
+            <Label x:Name="MonsterEnergyLabel3" Content="Energy : " HorizontalAlignment="Left" Margin="215,210,0,0" VerticalAlignment="Top" Height="26" Width="55"/>
+
+            <Label x:Name="MonsterLevelValue3" Content="Lvl" HorizontalAlignment="Left" Margin="265,150,0,0" VerticalAlignment="Top" Height="26" Width="46"/>
+            <Label x:Name="MonsterElementValue3" Content="Type" HorizontalAlignment="Left" Margin="265,170,0,0" VerticalAlignment="Top" Height="26" Width="44"/>
+            <Label x:Name="MonsterHPValue3" Content="Life" HorizontalAlignment="Left" Margin="265,190,0,0" VerticalAlignment="Top" Height="26" Width="38"/>
+            <Label x:Name="MonsterEnergyValue3" Content="Energy" HorizontalAlignment="Left" Margin="265,210,0,0" VerticalAlignment="Top" Height="26" Width="55"/>
+
+            <Label x:Name="MonsterLevelLabel4" Content="Level : " HorizontalAlignment="Left" Margin="320,150,0,0" VerticalAlignment="Top" Height="26" Width="46"/>
+            <Label x:Name="MonsterElementLabel4" Content="Type : " HorizontalAlignment="Left" Margin="320,170,0,0" VerticalAlignment="Top" Height="26" Width="44"/>
+            <Label x:Name="MonsterHPLabel4" Content="Life : " HorizontalAlignment="Left" Margin="320,190,0,0" VerticalAlignment="Top" Height="26" Width="38"/>
+            <Label x:Name="MonsterEnergyLabel4" Content="Energy : " HorizontalAlignment="Left" Margin="320,210,0,0" VerticalAlignment="Top" Height="26" Width="55"/>
+
+            <Label x:Name="MonsterLevelValue4" Content="Lvl" HorizontalAlignment="Left" Margin="370,150,0,0" VerticalAlignment="Top" Height="26" Width="46"/>
+            <Label x:Name="MonsterElementValue4" Content="Type" HorizontalAlignment="Left" Margin="370,170,0,0" VerticalAlignment="Top" Height="26" Width="44"/>
+            <Label x:Name="MonsterHPValue4" Content="Life" HorizontalAlignment="Left" Margin="370,190,0,0" VerticalAlignment="Top" Height="26" Width="38"/>
+            <Label x:Name="MonsterEnergyValue4" Content="Energy" HorizontalAlignment="Left" Margin="370,210,0,0" VerticalAlignment="Top" Height="26" Width="55"/>
+
+            <Label x:Name="MonsterLevelLabel5" Content="Level : " HorizontalAlignment="Left" Margin="425,150,0,0" VerticalAlignment="Top" Height="26" Width="46"/>
+            <Label x:Name="MonsterElementLabel5" Content="Type : " HorizontalAlignment="Left" Margin="425,170,0,0" VerticalAlignment="Top" Height="26" Width="44"/>
+            <Label x:Name="MonsterHPLabel5" Content="Life : " HorizontalAlignment="Left" Margin="425,190,0,0" VerticalAlignment="Top" Height="26" Width="38"/>
+            <Label x:Name="MonsterEnergyLabel5" Content="Energy : " HorizontalAlignment="Left" Margin="425,210,0,0" VerticalAlignment="Top" Height="26" Width="55"/>
+
+            <Label x:Name="MonsterLevelValue5" Content="Lvl" HorizontalAlignment="Left" Margin="475,150,0,0" VerticalAlignment="Top" Height="26" Width="46"/>
+            <Label x:Name="MonsterElementValue5" Content="Type" HorizontalAlignment="Left" Margin="475,170,0,0" VerticalAlignment="Top" Height="26" Width="44"/>
+            <Label x:Name="MonsterHPValue5" Content="Life" HorizontalAlignment="Left" Margin="475,190,0,0" VerticalAlignment="Top" Height="26" Width="38"/>
+            <Label x:Name="MonsterEnergyValue5" Content="Energy" HorizontalAlignment="Left" Margin="475,210,0,0" VerticalAlignment="Top" Height="26" Width="55"/>
+        </Grid>
+    </Grid>
+</UserControl>

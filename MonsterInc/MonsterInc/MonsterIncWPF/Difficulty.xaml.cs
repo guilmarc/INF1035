@@ -20,8 +20,9 @@ namespace MonsterIncWPF
     /// </summary>
     public partial class Difficulty : UserControl
     {
-        public Difficulty()
+        public Difficulty()//Core.Universe.Difficulties difficulty
         {
+            //this.DataContext = difficulty;
             InitializeComponent();
         }
 
@@ -29,6 +30,12 @@ namespace MonsterIncWPF
         {
             ((MainWindow)System.Windows.Application.Current.MainWindow).TrainerHome.MenuGrid.Visibility = Visibility.Visible;
             this.Visibility = Visibility.Collapsed;
+        }
+
+        private void DifficultyButton1_Click(object sender, RoutedEventArgs e)
+        {
+            ((MainWindow)System.Windows.Application.Current.MainWindow).TrainerHome.TrainerHomeGrid.Visibility = Visibility.Collapsed;
+            ((MainWindow)System.Windows.Application.Current.MainWindow).TrainerHome.CombatGrid.Visibility = Visibility.Visible;
         }
     }
 }

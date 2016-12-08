@@ -41,5 +41,11 @@ namespace Core.Model
         /// Multiplicateur de la propriété Base de chacunes des caractéristiques d'un Monstre
         /// </summary>
         public double CaracteristicFactor { get; set; }
+
+        public string toString()
+        {
+            return Name;
+        }
+
     }
 }
