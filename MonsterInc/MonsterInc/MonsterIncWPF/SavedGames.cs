@@ -9,6 +9,9 @@ namespace MonsterIncWPF
 {
     public static class SavedGames
     {
+        public static MainWindow mainWindow = ((MainWindow) System.Windows.Application.Current.MainWindow);
+        public static int trainerHomeForm = 0;
+
         public const string XMLName = "SavedGames";
 
         public static List<Core.Model.Player> Games { get; set; } = new List<Core.Model.Player>();

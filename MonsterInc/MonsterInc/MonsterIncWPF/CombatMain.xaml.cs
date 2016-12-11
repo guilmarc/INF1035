@@ -23,6 +23,7 @@ namespace MonsterIncWPF
         public CombatMain()
         {
             InitializeComponent();
+            this.DataContext = SavedGames.LoadedPlayer;
         }
 
         private void ChangeButton_Click(object sender, RoutedEventArgs e)

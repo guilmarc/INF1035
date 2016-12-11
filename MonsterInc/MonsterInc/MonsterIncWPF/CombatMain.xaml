@@ -8,9 +8,9 @@
              d:DesignHeight="570" d:DesignWidth="1014">
 
     <Grid Background="White" OpacityMask="White">
-        <Label x:Name="FriendlyMonster" Content="Nom monstre allié" HorizontalAlignment="Left" Margin="50,23,0,0" VerticalAlignment="Top" FontSize="28" FontWeight="Bold"/>
+        <Label x:Name="FriendlyMonster" Content="{Binding Trainer.ActiveMonster.NickName}" HorizontalAlignment="Left" Margin="50,23,0,0" VerticalAlignment="Top" FontSize="28" FontWeight="Bold"/>
         <Label x:Name="EnemyMonster" Content="Nom monstre enemi" HorizontalAlignment="Right" Margin="0,23,50,0" VerticalAlignment="Top" FontSize="28" FontWeight="Bold"/>
-        <Label x:Name="FriendlyMonsterType" Content="type monstre" HorizontalAlignment="Left" Margin="50,60,0,0" VerticalAlignment="Top" FontSize="24"/>
+        <Label x:Name="FriendlyMonsterType" Content="{Binding Trainer.ActiveMonster.Template.Name}" HorizontalAlignment="Left" Margin="50,60,0,0" VerticalAlignment="Top" FontSize="24"/>
         <Label x:Name="EnemyMonsterType" Content="type monstre" HorizontalAlignment="Right" Margin="0,60,50,0" VerticalAlignment="Top" FontSize="24"/>
 
         <Grid x:Name="ActionGrid" HorizontalAlignment="Left" Height="155" Margin="10,405,0,0" VerticalAlignment="Top" Width="994">
@@ -22,17 +22,20 @@
 
         </Grid>
         <Label x:Name="FriendlyMonsterLP" Content="Life : " HorizontalAlignment="Left" Margin="50,102,0,0" VerticalAlignment="Top" FontSize="24"/>
+        <Label x:Name="FriendlyMonsterLPActual" Content="{Binding Trainer.ActiveMonster.Caracteristics[0].Actual}" HorizontalAlignment="Left" Margin="141,102,0,0" VerticalAlignment="Top" FontSize="24" Height="42" Width="77"/>
         <Label x:Name="FriendlyMonsterEP" Content="Energy : " HorizontalAlignment="Left" Margin="50,131,0,0" VerticalAlignment="Top" FontSize="24"/>
         <Label x:Name="EnemyMonsterLP" Content="Life : " HorizontalAlignment="Left" Margin="707,102,0,0" VerticalAlignment="Top" FontSize="24"/>
         <Label x:Name="EnemyMonsterEP" Content="Energy : " HorizontalAlignment="Left" Margin="707,131,0,0" VerticalAlignment="Top" FontSize="24"/>
+
         <Separator HorizontalAlignment="Left" Height="100" Margin="50,173,0,0" VerticalAlignment="Top" Width="914"/>
         <Separator HorizontalAlignment="Left" Height="100" Margin="50,349,0,0" VerticalAlignment="Top" Width="914"/>
 
         <ScrollViewer Margin="0,228,50,170">
             <TextBlock x:Name="CombatTextBlock" HorizontalAlignment="Left" Margin="50,0,0,0" TextWrapping="Wrap" Text="Start!" VerticalAlignment="Top" Height="160" Width="914"/>
         </ScrollViewer>
-        
+
         <local:ActiveMonster x:Name="ChooseMonsterControl" HorizontalAlignment="Left" Margin="194,383,0,0" VerticalAlignment="Top" Visibility="Collapsed"/>
+
 
 
     </Grid>

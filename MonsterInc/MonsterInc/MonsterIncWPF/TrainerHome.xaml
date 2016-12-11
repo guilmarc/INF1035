@@ -81,17 +81,10 @@
 
             </Grid>
 
-            <Grid x:Name="MenuGrid" HorizontalAlignment="Left" Margin="614,0,0,0"  VerticalAlignment="Top"  Width="380" Height="570">
-                <Rectangle HorizontalAlignment="Left" Height="550" Margin="10,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="360"/>
-                <Label x:Name="MenuLabel" Content="MENU" HorizontalAlignment="Center" Margin="10,24,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="244" Height="52" FontWeight="Bold" FontSize="26"/>
-                <Button x:Name="MenuMonsterBtn" Content="Monsters" HorizontalAlignment="Center" Margin="10,81,0,0" VerticalAlignment="Top" Width="244" Height="45" FontSize="20"/>
-                <Button x:Name="MenuItemBtn" Content="Items" HorizontalAlignment="Center" Margin="10,131,0,0" VerticalAlignment="Top" Width="244" Height="45" FontSize="20"/>
-                <Button x:Name="MenuQuickSaveBtn" Content="Quick Save" HorizontalAlignment="Center" Margin="73,397,63,0" VerticalAlignment="Top" Width="244" Height="45" FontSize="20"/>
-                <Button x:Name="MenuSaveBtn" Content="Save As" HorizontalAlignment="Center" Margin="73,447,63,0" VerticalAlignment="Top" Width="244" Height="45" FontSize="20"/>
-                <Button x:Name="MenuQuitBtn" Content="Quit" HorizontalAlignment="Center" Margin="73,497,63,0" VerticalAlignment="Top" Width="244" Height="45" FontSize="20" Click="MenuQuitBtn_Click"/>
-                <Button x:Name="MenuStoreBtn" Content="Item Shop" HorizontalAlignment="Center" Margin="10,181,0,0" VerticalAlignment="Top" Width="244" Height="45" FontSize="20" Click="MenuStoreBtn_Click"/>
-                <Button x:Name="MenuArenaBtn" Content="FIGHT ARENA" HorizontalAlignment="Center" Margin="73,231,63,0" VerticalAlignment="Top" Width="244" Height="161" FontSize="28" Click="MenuArenaBtn_Click"/>
-            </Grid>
+            <!--<Grid x:Name="MenuGrid" HorizontalAlignment="Left" Margin="614,0,0,0"  VerticalAlignment="Top"  Width="380" Height="570" Visibility="Hidden">
+
+            </Grid>-->
+
             <Label x:Name="GoldLabel" Content="Gold :" HorizontalAlignment="Left" Margin="55,89,0,0" VerticalAlignment="Top" FontSize="18"/>
             <Label x:Name="WinLabel" Content="Wins :" HorizontalAlignment="Left" Margin="220,89,0,0" VerticalAlignment="Top" FontSize="18"/>
             <Label x:Name="LossLabel" Content="Loss :" HorizontalAlignment="Left" Margin="381,89,0,0" VerticalAlignment="Top" FontSize="18"/>
@@ -99,7 +92,37 @@
             <Label x:Name="GoldValue" Content="{Binding Trainer.Gold}" HorizontalAlignment="Left" Margin="110,89,0,0" VerticalAlignment="Top" FontSize="18"/>
             <Label x:Name="WinValue" Content="0" HorizontalAlignment="Left" Margin="280,89,0,0" VerticalAlignment="Top" FontSize="18"/>
             <Label x:Name="LossValue" Content="0" HorizontalAlignment="Left" Margin="435,89,0,0" VerticalAlignment="Top" FontSize="18"/>
+
         </Grid>
+
+        <StackPanel  x:Name="MenuPanel" HorizontalAlignment="Left" Margin="614,0,0,0"  VerticalAlignment="Top"  Width="380" Height="570" Visibility="Visible">
+            <!--<Rectangle HorizontalAlignment="Left" Height="550" Margin="10,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="360"/>-->
+            <Label x:Name="MenuLabel" Content="MENU" HorizontalAlignment="Center" Margin="73,20,63,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="244" Height="40" FontWeight="Bold" FontSize="26"/>
+            <Button x:Name="MenuMonsterBtn" Content="Monsters" HorizontalAlignment="Center" Margin="10,0,0,0" VerticalAlignment="Top" Width="244" Height="45" FontSize="20"/>
+            <Button x:Name="MenuItemBtn" Content="Items" HorizontalAlignment="Center" Margin="10,10,0,0" VerticalAlignment="Top" Width="244" Height="45" FontSize="20"/>
+            <Button x:Name="MenuStoreBtn" Content="Item Shop" HorizontalAlignment="Center" Margin="10,10,0,0" VerticalAlignment="Top" Width="244" Height="45" FontSize="20" Click="MenuStoreBtn_Click"/>
+            <Button x:Name="MenuArenaBtn" Content="FIGHT ARENA" HorizontalAlignment="Center" Margin="73,10,63,0" VerticalAlignment="Top" Width="244" Height="161" FontSize="28" Click="MenuArenaBtn_Click"/>
+            <Button x:Name="MenuQuickSaveBtn" Content="Quick Save" HorizontalAlignment="Center" Margin="73,10,63,0" VerticalAlignment="Top" Width="244" Height="45" FontSize="20"/>
+            <Button x:Name="MenuSaveBtn" Content="Save As" HorizontalAlignment="Center" Margin="73,10,63,0" VerticalAlignment="Top" Width="244" Height="45" FontSize="20"/>
+            <Button x:Name="MenuQuitBtn" Content="Quit" HorizontalAlignment="Center" Margin="73,10,63,0" VerticalAlignment="Top" Width="244" Height="45" FontSize="20" Click="MenuQuitBtn_Click"/>
+        </StackPanel>
+
+        <StackPanel  x:Name="DifficultyPanel" HorizontalAlignment="Left" Margin="614,0,0,0"  VerticalAlignment="Top"  Width="380" Height="570" Visibility="Collapsed">
+            <ListBox x:Name="DifficultyListBox" HorizontalAlignment="Left"  HorizontalContentAlignment="Center" Height="380" Margin="50,50,0,0" VerticalAlignment="Top" Width="260" SelectionChanged="DifficultyListBox_SelectionChanged">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="0,2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{Binding Name}" FontSize="22" FontWeight="Bold" />
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <Button x:Name="CancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="50,20,0,0" VerticalAlignment="Top" Width="260" Height="45" Click="CancelButton_Click"/>
+        </StackPanel>
+
 
         <Grid x:Name="ActiveGrid">
             <local:SelectActiveMonster x:Name="SelectActiveMonsterGrid" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="570" Width="1014" Visibility="Collapsed"/>
