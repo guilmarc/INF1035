@@ -69,8 +69,13 @@ namespace MonsterIncWPF
             var selectedPlayer = (Core.Model.Player)ListSavedGames.SelectedItem;
 
             SavedGames.LoadedPlayer = SavedGames.Games.Single(x => x.Name == selectedPlayer.Name);
+            this.DataContext = SavedGames.LoadedPlayer;
 
-            this.SwitchToNextWindow(Action.Load);
+            Home.Visibility = Visibility.Collapsed;
+            AppGrid.Children.Remove(TrainerHome);
+            AppGrid.Children.Add(new TrainerHome(true) { Name = "TrainerHome", Visibility = Visibility.Visible });
+
+            //this.SwitchToNextWindow(Action.Load);
 
         }
 
