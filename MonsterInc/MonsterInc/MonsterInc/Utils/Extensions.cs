@@ -80,7 +80,7 @@ namespace Core
             T returnObject = default(T);
             StreamReader xmlStream = new StreamReader(fullPath);
 
-            Type[] types = new Type[] { typeof(T) };
+            Type[] types = new Type[] { typeof(T), typeof(Core.Model.DamageScope) };
             XmlSerializer serializer = new XmlSerializer(typeof(T), types);
             returnObject = (T)serializer.Deserialize(xmlStream);
             xmlStream.Close();

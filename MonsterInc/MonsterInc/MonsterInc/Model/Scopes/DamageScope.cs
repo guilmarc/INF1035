@@ -9,10 +9,11 @@ namespace Core.Model
     /// Damage scope.
     /// </summary>
     //[Serializable]
-    [XmlInclude(typeof(Scope))]
-    [XmlRoot(Namespace = "Core.Model")]
+    //[XmlInclude(typeof(Scope))]
+    //[XmlRoot(Namespace = "Core.Model")]
     public class DamageScope : Scope 
 	{
+        //[XmlIgnore]
 		public new int Magnitude { get; set; }
 	}
 }

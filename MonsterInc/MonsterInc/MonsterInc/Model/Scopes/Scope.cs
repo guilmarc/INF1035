@@ -4,9 +4,9 @@ using System.Xml.Serialization;
 namespace Core.Model
 {
 	//Un impact c'est un quadruplet Target, Effet, Magnitude et Durée
-    [Serializable]
-    [XmlRoot(Namespace = "Core.Model")]
-    [XmlInclude(typeof(Scope))]
+    //[Serializable]
+    //[XmlRoot(Namespace = "Core.Model")]
+    //[XmlInclude(typeof(Scope))]
     public abstract class Scope
 	{
 		public enum ScopeTarget
@@ -18,6 +18,7 @@ namespace Core.Model
 		public ScopeTarget Target { get; set; } = ScopeTarget.Opponent;
 		//public Effect Effect { get; set; }
 
+        //[XmlIgnore]
 		public virtual double Magnitude { get; set; }
 
 		public int Duration { get; set; } = 1;

@@ -1,14 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 
 namespace Core.Model
 {
+
     public abstract class Usable
     {
         public string Name { get; set; }
 
         public string Description { get; set; }
 
+        
+        [XmlIgnore]
         public List<Scope> Scopes { get; set; }
 
         public abstract void Consume(Player player, Player opponent);

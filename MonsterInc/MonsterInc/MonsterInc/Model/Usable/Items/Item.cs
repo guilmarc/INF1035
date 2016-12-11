@@ -4,7 +4,7 @@ using System.Security.Policy;
 
 namespace Core.Model
 {
-    [Serializable]
+    //[Serializable]
 	public abstract class Item : Usable
     {
         /// <summary>

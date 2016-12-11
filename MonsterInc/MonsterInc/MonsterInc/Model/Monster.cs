@@ -49,7 +49,8 @@ namespace Core.Model
 
 		public List<MonsterCaracteristic> Caracteristics { get; set; } = new List<MonsterCaracteristic>();
 
-	    public List<Skill> ActiveSkills
+        [XmlIgnore]
+        public List<Skill> ActiveSkills
 	    {
 	        get
 	        {

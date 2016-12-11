@@ -44,7 +44,10 @@ namespace MonsterIncWPF
 
         private void MenuStoreBtn_Click(object sender, RoutedEventArgs e)
         {
-            ItemShopGrid.Visibility = Visibility.Visible;
+            //ItemShopGrid.Visibility = Visibility.Visible;
+
+            ActiveGrid.Children.Add(new ItemShop() { Visibility = Visibility.Visible });
+
             TrainerHomeGrid.Visibility = Visibility.Collapsed;
 
         }

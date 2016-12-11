@@ -45,5 +45,11 @@ namespace MonsterIncWPF
             this.Visibility = Visibility.Hidden;
             ((MainWindow)System.Windows.Application.Current.MainWindow).TrainerHome.TrainerHomeGrid.Visibility = Visibility.Visible;
         }
+
+        private void BuyItemsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var t =  (sender as ComboBox).SelectedItem as Item;
+            ListCart.Items.Add(sender);
+        }
     }
 }
