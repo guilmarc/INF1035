@@ -12,8 +12,36 @@
         <Label x:Name="GoldLabel" Content="Golds" HorizontalAlignment="Left" Margin="917,10,0,0" VerticalAlignment="Top"/>
         <Label x:Name="GoldValueLabel" Content="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Margin="0,10,102,0" VerticalAlignment="Top" Width="92"/>
         <Button x:Name="BackButton" Content="Back" HorizontalAlignment="Left" Margin="19,16,0,0" VerticalAlignment="Top" Width="90" Height="29" Click="BackButton_Click"/>
-        <ListBox x:Name="BuyItemsListBox" HorizontalAlignment="Left" Height="338" Margin="19,99,0,0" VerticalAlignment="Top" Width="452"/>
-        <ListBox x:Name="SellItemsListBox" HorizontalAlignment="Left" Height="406" Margin="19,99,0,0" VerticalAlignment="Top" Width="452" Visibility="Collapsed"/>
+        <ListBox x:Name="BuyItemsListBox" HorizontalAlignment="Left" Height="338" Margin="19,99,0,0" VerticalAlignment="Top" Width="452">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="100" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding Name}" />
+                        <TextBlock Text="{Binding Gold}" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+
+        <ListBox x:Name="SellItemsListBox" ItemsSource="{Binding Inventory}" HorizontalAlignment="Left" Height="406" Margin="19,99,0,0" VerticalAlignment="Top" Width="452" Visibility="Collapsed">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="100" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding Name}" />
+                        <TextBlock Text="{Binding Gold}" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
         <RadioButton Style="{StaticResource {x:Type ToggleButton}}" x:Name="BuyButton" GroupName="BuySell" Content="Buy" HorizontalAlignment="Left" Margin="19,79,0,0" VerticalAlignment="Top" Width="75" IsChecked="True" Checked="BuyButton_Checked"/>
         <RadioButton Style="{StaticResource {x:Type ToggleButton}}" x:Name="SellButton" GroupName="BuySell" Content="Sell" HorizontalAlignment="Left" Margin="94,79,0,0" VerticalAlignment="Top" Width="75" Checked="SellButton_Checked"/>
         <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="338" Margin="536,99,0,0" VerticalAlignment="Top" Width="421"/>

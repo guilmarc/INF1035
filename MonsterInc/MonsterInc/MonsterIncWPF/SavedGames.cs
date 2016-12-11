@@ -9,5 +9,8 @@ namespace MonsterIncWPF
     public static class SavedGames
     {
         public static List<Core.Model.Player> Games { get; set; } = new List<Core.Model.Player>();
+
+        public static Core.Model.Player LoadedPlayer = null;
+
     }
 }
