@@ -22,7 +22,7 @@ namespace MonsterIncWPF
     public partial class MainWindow : Window
     {
         //Core.Model.Player player = new Core.Model.Player("jean"); 
-        const string SavedGameXMLname = "SavedGames";
+        //const string XMLName = "SavedGames";
         
         public MainWindow()
         {
@@ -32,7 +32,7 @@ namespace MonsterIncWPF
 
             try
             {
-                SavedGames.Games = Extensions.XmlToObject<List<Core.Model.Player>>(SavedGameXMLname,true);
+                SavedGames.Games = Extensions.XmlToObject<List<Core.Model.Player>>(SavedGames.XMLName,true);
                 ListSavedGames.ItemsSource = SavedGames.Games;
             }
             catch (Exception ex )// no item yet 
@@ -48,15 +48,14 @@ namespace MonsterIncWPF
 
         private void NewGame_Click(object sender, RoutedEventArgs e)
         {
-            Core.Model.Player player = new Core.Model.Player(PlayerName.Text);
-            this.DataContext = player;
+            //Core.Model.Player player = new Core.Model.Player(PlayerName.Text);
+            SavedGames.LoadedPlayer = new Core.Model.Player(PlayerName.Text);
+            this.DataContext = SavedGames.LoadedPlayer;
 
-            //Unive.Player = player;
-
-            //SavedGames.Games.Add(Engine.Player);
-            SavedGames.Games.XmlSerialize(SavedGameXMLname, true);
+            SavedGames.Games.Add(SavedGames.LoadedPlayer);
+            SavedGames.Games.XmlSerialize(SavedGames.XMLName, true);
             Home.Visibility = Visibility.Collapsed;
-            NewGamePage.Visibility = Visibility.Visible;
+            AppGrid.Children.Add(new SelectNewMonster(true) { Visibility = Visibility.Visible });
             //SwitchToNextWindow(Action.New);
 
 
@@ -69,7 +68,7 @@ namespace MonsterIncWPF
 
             var selectedPlayer = (Core.Model.Player)ListSavedGames.SelectedItem;
 
-            //Save = SavedGames.Games.Single(x => x.Name == selectedPlayer.Name);
+            SavedGames.LoadedPlayer = SavedGames.Games.Single(x => x.Name == selectedPlayer.Name);
 
             this.SwitchToNextWindow(Action.Load);
 

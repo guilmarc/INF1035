@@ -21,7 +21,6 @@ namespace Core.Model
 
         public Trainer()
         {
-
         }
 
 	    public Trainer(string name, Element element)
