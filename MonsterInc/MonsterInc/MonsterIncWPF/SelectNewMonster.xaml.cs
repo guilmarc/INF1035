@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Core;
 
 namespace MonsterIncWPF
 {
@@ -21,22 +22,33 @@ namespace MonsterIncWPF
     /// </summary>
     public partial class SelectNewMonster : UserControl
     {
+
+
+
         public SelectNewMonster()
         {
-            InitializeComponent();
-            this.DataContext = trainer;
+        }
 
-            trainer.SelectTempMonsters = new ObservableCollection<Core.Model.Monster>(Core.Universe.InitMonsters);
+        public SelectNewMonster(bool affiche)
+        {
+            InitializeComponent();
+            SavedGames.LoadedPlayer.Trainer = new Core.Model.Trainer();
+
+            SavedGames.LoadedPlayer.Trainer.SelectTempMonsters = new ObservableCollection<Core.Model.Monster>(Core.Universe.InitMonsters);
+            this.DataContext = SavedGames.LoadedPlayer;
+
+
+            
 
             ListAffinity.ItemsSource = Enum<Core.Element>.GetNames();
         }
-        private Core.Model.Trainer trainer = new Core.Model.Trainer("Jean", 0);
+        //private Core.Model.Trainer trainer = new Core.Model.Trainer("Jean", 0);
         //private MonsterDetails detailControlOpen;
 
 
         private void ListSelectTempMonsters_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            MonsterDetails detailControlOpen = new MonsterDetails(trainer.SelectTempMonsters[ListSelectTempMonsters.SelectedIndex]);
+            MonsterDetails detailControlOpen = new MonsterDetails(SavedGames.LoadedPlayer.ActiveTrainer.SelectTempMonsters[ListSelectTempMonsters.SelectedIndex]);
 
             DetailsControl.Content = detailControlOpen;
 
@@ -52,23 +64,28 @@ namespace MonsterIncWPF
                 else if (ListAffinity.SelectedItem == null) MessageBox.Show("Please choose your affinity");
                 else 
                 {
-                    //trainer.Affinity = Core.Extensions.ToEnum<Core.Element>(ListAffinity.SelectedValue.ToString());
-                    //trainer.ActiveMonsters = new List<Core.Model.Monster>();
-                    //trainer.ActiveMonsters.Add((Core.Model.Monster)ListSelectTempMonsters.SelectedValue);
+                    SavedGames.LoadedPlayer.Trainer.Affinity = Core.Extensions.ToEnum<Core.Element>(ListAffinity.SelectedValue.ToString());
+                    SavedGames.LoadedPlayer.Trainer.ActiveMonsters = new List<Core.Model.Monster>();
+                    SavedGames.LoadedPlayer.Trainer.ActiveMonsters.Add((Core.Model.Monster)ListSelectTempMonsters.SelectedValue);
 
-                    //trainer.Monsters = new List<Core.Model.Monster>();
-                    //trainer.Monsters.Add((Core.Model.Monster)ListSelectTempMonsters.SelectedValue);
+                    SavedGames.LoadedPlayer.Trainer.Monsters = new List<Core.Model.Monster>();
+                    SavedGames.LoadedPlayer.Trainer.Monsters.Add((Core.Model.Monster)ListSelectTempMonsters.SelectedValue);
+                    SavedGames.Games.XmlSerialize(SavedGames.XMLName, true);
+
+
+
+
                     this.Visibility = Visibility.Collapsed;
                     ((MainWindow)System.Windows.Application.Current.MainWindow).TrainerHome.Visibility = Visibility.Visible;
-                    //this.Visibility = Visibility.Collapsed;
+
 
                 }
                 
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                var a = "plante ici";
                 throw;
             }
 

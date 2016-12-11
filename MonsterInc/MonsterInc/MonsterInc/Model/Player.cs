@@ -52,9 +52,9 @@ namespace Core.Model
         {
             
         }
-        public Player(string name)
+        public Player(string name):this(name,PlayerType.Human)
         {
-
+            
         }
         public Player(string name, PlayerType type)
         {

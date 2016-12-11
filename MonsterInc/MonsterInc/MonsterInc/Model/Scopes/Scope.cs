@@ -1,9 +1,13 @@
 ﻿using System;
+using System.Xml.Serialization;
+
 namespace Core.Model
 {
 	//Un impact c'est un quadruplet Target, Effet, Magnitude et Durée
     [Serializable]
-	public abstract class Scope
+    [XmlRoot(Namespace = "Core.Model")]
+    [XmlInclude(typeof(Scope))]
+    public abstract class Scope
 	{
 		public enum ScopeTarget
 		{
