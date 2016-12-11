@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Core.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,8 @@ namespace MonsterIncWPF
         public ItemShop()
         {
             InitializeComponent();
+            this.DataContext = SavedGames.LoadedPlayer;
+            BuyItemsListBox.ItemsSource = Core.Universe.Items;
         }
 
         private void SellButton_Checked(object sender, RoutedEventArgs e)

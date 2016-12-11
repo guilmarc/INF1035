@@ -46,6 +46,7 @@ namespace MonsterIncWPF
         {
             ItemShopGrid.Visibility = Visibility.Visible;
             TrainerHomeGrid.Visibility = Visibility.Collapsed;
+
         }
     }
 }
