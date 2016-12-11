@@ -12,7 +12,7 @@
         <Rectangle HorizontalAlignment="Left" Height="550" Stroke="Black" VerticalAlignment="Top" Width="360"/>
 
         <Button x:Name="CancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="50,450,0,0" VerticalAlignment="Top" Width="260" Height="45" Click="CancelButton_Click"/>
-        <ListBox x:Name="DifficultyListBox" HorizontalAlignment="Left"  HorizontalContentAlignment="Center" Height="380" Margin="50,50,0,0" VerticalAlignment="Top" Width="260">
+        <ListBox x:Name="DifficultyListBox" HorizontalAlignment="Left"  HorizontalContentAlignment="Center" Height="380" Margin="50,50,0,0" VerticalAlignment="Top" Width="260" SelectionChanged="DifficultyListBox_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="0,2">

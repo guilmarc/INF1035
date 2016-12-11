@@ -8,9 +8,9 @@
              d:DesignHeight="570" d:DesignWidth="1014">
 
     <Grid Background="White" OpacityMask="White">
-        <Label x:Name="FriendlyMonster" Content="Nom monstre allié" HorizontalAlignment="Left" Margin="50,23,0,0" VerticalAlignment="Top" FontSize="28" FontWeight="Bold"/>
+        <Label x:Name="FriendlyMonster" Content="{Binding Trainer.Monsters[0].NickName}" HorizontalAlignment="Left" Margin="50,23,0,0" VerticalAlignment="Top" FontSize="28" FontWeight="Bold"/>
         <Label x:Name="EnemyMonster" Content="Nom monstre enemi" HorizontalAlignment="Right" Margin="0,23,50,0" VerticalAlignment="Top" FontSize="28" FontWeight="Bold"/>
-        <Label x:Name="FriendlyMonsterType" Content="type monstre" HorizontalAlignment="Left" Margin="50,60,0,0" VerticalAlignment="Top" FontSize="24"/>
+        <Label x:Name="FriendlyMonsterType" Content="{Binding Trainer.Monsters[0].Type}" HorizontalAlignment="Left" Margin="50,60,0,0" VerticalAlignment="Top" FontSize="24"/>
         <Label x:Name="EnemyMonsterType" Content="type monstre" HorizontalAlignment="Right" Margin="0,60,50,0" VerticalAlignment="Top" FontSize="24"/>
 
         <Grid x:Name="ActionGrid" HorizontalAlignment="Left" Height="155" Margin="10,405,0,0" VerticalAlignment="Top" Width="994">

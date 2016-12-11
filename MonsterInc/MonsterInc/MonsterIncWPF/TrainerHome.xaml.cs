@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Core.Database;
 
 namespace MonsterIncWPF
 {
@@ -28,6 +29,7 @@ namespace MonsterIncWPF
         {
             InitializeComponent();
             this.DataContext = SavedGames.LoadedPlayer;
+            DifficultyListBox.ItemsSource = DifficultyData.Difficulty;
         }
 
         private void MenuQuitBtn_Click(object sender, RoutedEventArgs e)
@@ -43,18 +45,29 @@ namespace MonsterIncWPF
 
         private void MenuArenaBtn_Click(object sender, RoutedEventArgs e)
         {
-            DifficultyGrid.Visibility = Visibility.Visible;
-            MenuGrid.Visibility = Visibility.Collapsed;
+            DifficultyPanel.Visibility = Visibility.Visible;
+            MenuPanel.Visibility = Visibility.Collapsed;
         }
 
         private void MenuStoreBtn_Click(object sender, RoutedEventArgs e)
         {
-            //ItemShopGrid.Visibility = Visibility.Visible;
-
             ActiveGrid.Children.Add(new ItemShop() { Visibility = Visibility.Visible });
 
             TrainerHomeGrid.Visibility = Visibility.Collapsed;
 
+        }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            MenuPanel.Visibility = Visibility.Visible;
+            DifficultyPanel.Visibility = Visibility.Collapsed;
+        }
+
+        private void DifficultyListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var t = SavedGames.mainWindow.AppGrid.Children[SavedGames.trainerHomeForm];
+            ((TrainerHome)t).TrainerHomeGrid.Visibility = Visibility.Collapsed;
+            ((TrainerHome)t).CombatGrid.Visibility = Visibility.Visible;
         }
     }
 }
