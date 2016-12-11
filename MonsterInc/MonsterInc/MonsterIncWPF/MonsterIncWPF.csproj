@@ -41,6 +41,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -74,6 +76,9 @@
     </Compile>
     <Compile Include="Exception.xaml.cs">
       <DependentUpon>Exception.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ItemsForm.xaml.cs">
+      <DependentUpon>ItemsForm.xaml</DependentUpon>
     </Compile>
     <Compile Include="ItemShop.xaml.cs">
       <DependentUpon>ItemShop.xaml</DependentUpon>
@@ -111,6 +116,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Exception.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ItemsForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

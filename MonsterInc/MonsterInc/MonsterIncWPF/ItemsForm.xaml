@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="MonsterIncWPF.ItemsForm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MonsterIncWPF"
+             mc:Ignorable="d" 
+             d:DesignHeight="570" d:DesignWidth="1014">
+    <UserControl.Resources>
+        <DataTemplate x:Key="usableTemplate">
+            <Grid Margin="0,2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25" />
+                    <ColumnDefinition Width="250" />
+
+                    <ColumnDefinition Width="100" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="{Binding Gold}" />
+
+                <TextBlock Grid.Column="1" Text="{Binding Description}" />
+                <TextBlock Grid.Column="2" Text="{Binding Scopes[0].Magnitude}" />
+
+            </Grid>
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid Background="White" OpacityMask="White">
+        <Label x:Name="ItemShopLabel" Content="Item SHOP" HorizontalAlignment="Center" Margin="446,10,422,0" VerticalAlignment="Top" FontSize="26" FontWeight="Bold" Width="146"/>
+        <Label x:Name="GoldLabel" Content="Golds" HorizontalAlignment="Left" Margin="917,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="GoldValueLabel" Content="{Binding Trainer.Gold}" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Margin="0,10,102,0" VerticalAlignment="Top" Width="92"/>
+        <Button x:Name="BackButton" Content="Back" HorizontalAlignment="Left" Margin="19,16,0,0" VerticalAlignment="Top" Width="90" Height="29" Click="BackButton_Click"/>
+
+
+
+        <ListBox x:Name="ActiveItemsListBox" ItemsSource="{Binding ActiveInventory}" ItemTemplate="{StaticResource usableTemplate}" HorizontalAlignment="Left" Height="406" Margin="19,104,0,0" VerticalAlignment="Top" Width="452" >
+        </ListBox>
+        <ListBox x:Name="ItemsListBox" ItemsSource="{Binding Inventory}" ItemTemplate="{StaticResource usableTemplate}" HorizontalAlignment="Left" Height="406" Margin="505,104,0,0" VerticalAlignment="Top" Width="452" >
+        </ListBox>
+
+    </Grid>
+</UserControl>

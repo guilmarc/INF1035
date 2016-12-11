@@ -59,7 +59,11 @@ namespace MonsterIncWPF
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             this.Visibility = Visibility.Hidden;
-            ((MainWindow)System.Windows.Application.Current.MainWindow).TrainerHome.TrainerHomeGrid.Visibility = Visibility.Visible;
+            //((MainWindow)System.Windows.Application.Current.MainWindow).TrainerHome.TrainerHomeGrid.Visibility = Visibility.Visible;
+            var t = SavedGames.mainWindow.AppGrid.Children[SavedGames.trainerHomeForm];
+            ((TrainerHome)t).TrainerHomeGrid.Visibility = Visibility.Visible;
+            //((TrainerHome)t).TVisibility = Visibility.Collapsed;
+
         }
 
         private void BuyItemsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
