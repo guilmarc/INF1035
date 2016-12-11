@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Core.Database;
 
 namespace MonsterIncWPF
 {
@@ -20,10 +21,13 @@ namespace MonsterIncWPF
     /// </summary>
     public partial class Difficulty : UserControl
     {
-        public Difficulty()//Core.Universe.Difficulties difficulty
+        public Difficulty()// difficulty
         {
-            //this.DataContext = difficulty;
+            //Core.Database.DifficultyData difficultyData = new DifficultyData();
+            
+            //this.DataContext = Core.Universe.Difficulties;
             InitializeComponent();
+            DifficultyListBox.ItemsSource = DifficultyData.Difficulty;
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)

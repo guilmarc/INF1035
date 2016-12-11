@@ -11,18 +11,23 @@
 
         <Rectangle HorizontalAlignment="Left" Height="550" Stroke="Black" VerticalAlignment="Top" Width="360"/>
 
-
-
-
-        <Button x:Name="DifficultyButton1"  Content="{Binding Core.Universe.Difficulties[0].Name}" HorizontalAlignment="Left" Margin="50,50,0,0" VerticalAlignment="Top" Width="260" Height="45" Click="DifficultyButton1_Click"/>
-        <Button x:Name="DifficultyButton2" Content="Difficulty 2" HorizontalAlignment="Left" Margin="50,100,0,0" VerticalAlignment="Top" Width="260" Height="45"/>
-        <Button x:Name="DifficultyButton3" Content="Difficulty 3" HorizontalAlignment="Left" Margin="50,150,0,0" VerticalAlignment="Top" Width="260" Height="45"/>
-        <Button x:Name="DifficultyButton4" Content="Difficulty 4" HorizontalAlignment="Left" Margin="50,200,0,0" VerticalAlignment="Top" Width="260" Height="45"/>
-        <Button x:Name="DifficultyButton5" Content="Difficulty 5" HorizontalAlignment="Left" Margin="50,250,0,0" VerticalAlignment="Top" Width="260" Height="45"/>
-        <Button x:Name="DifficultyButton6" Content="Difficulty 6" HorizontalAlignment="Left" Margin="50,300,0,0" VerticalAlignment="Top" Width="260" Height="45"/>
-        <Button x:Name="DifficultyButton7" Content="Difficulty 7" HorizontalAlignment="Left" Margin="50,350,0,0" VerticalAlignment="Top" Width="260" Height="45"/>
-        <Button x:Name="DifficultyButton8" Content="Difficulty 8" HorizontalAlignment="Left" Margin="50,400,0,0" VerticalAlignment="Top" Width="260" Height="45"/>
         <Button x:Name="CancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="50,450,0,0" VerticalAlignment="Top" Width="260" Height="45" Click="CancelButton_Click"/>
+        <ListBox x:Name="DifficultyListBox" HorizontalAlignment="Left"  HorizontalContentAlignment="Center" Height="380" Margin="50,50,0,0" VerticalAlignment="Top" Width="260">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding Name}" FontSize="22" FontWeight="Bold" />
+
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+
+
+        </ListBox>
 
 
 

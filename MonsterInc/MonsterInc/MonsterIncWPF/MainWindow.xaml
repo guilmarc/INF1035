@@ -9,24 +9,12 @@
     <Grid Margin="0,0,2,-1">
         <Grid x:Name="Home">
             <Label x:Name="NewPlayerLabel" Content="Please enter your name :" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="212,255,0,0"/>
-            <Label x:Name="LoadPlayerLabel" Content="Player name :" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="554,240,0,0"/>
 
             <!--<TextBox x:Name="PlayerName" Text="{Binding Name}" TextWrapping="Wrap" Margin="212,286,662,250" />-->
             <TextBox x:Name="PlayerName" Text="" TextWrapping="Wrap" Margin="212,286,662,250" />
             <Button x:Name="NewGame" Content="Create Game" Click="NewGame_Click" Margin="220,344,676,187"/>
 
-            <ListBox x:Name="ListSavedPlayers"   HorizontalAlignment="Center" Height="129" VerticalAlignment="Top" Width="128" Margin="554,270,332,0" SelectedIndex="0" BorderThickness="2" Padding="2" >
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding Name}" Margin="2" />
-                            <!--<TextBlock Text="{Binding Surname}" Margin="2" />-->
-                        </StackPanel>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-
-            <ListBox x:Name="ListSavedGames"   HorizontalAlignment="Center" Height="129" VerticalAlignment="Top" Width="202" Margin="718,270,94,0" SelectedIndex="0" BorderThickness="2" Padding="2" >
+            <ListBox x:Name="ListSavedGames"   HorizontalAlignment="Center" Height="129" VerticalAlignment="Top" Width="202" Margin="606,271,206,0" SelectedIndex="0" BorderThickness="2" Padding="2" >
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
@@ -41,7 +29,7 @@
             <Label x:Name="LoadGameLabel" Content="LOAD GAME" HorizontalAlignment="Center" Margin="606,185,206,0" VerticalAlignment="Top" FontSize="30" FontWeight="Bold" Width="202" RenderTransformOrigin="-0.012,0.41"/>
             <Label x:Name="NewGameLabel" Content="NEW GAME" HorizontalAlignment="Left" Margin="194,185,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Bold"/>
             <Label x:Name="TitleLabel" Content="MONSTER INC" HorizontalAlignment="Left" Margin="343,48,0,0" VerticalAlignment="Top" FontSize="48" FontWeight="Bold"/>
-            <Label x:Name="PlayerGameLabel" Content="Saved games :" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="718,240,0,0"/>
+            <Label x:Name="PlayerGameLabel" Content="Saved games :" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="606,240,0,0"/>
         </Grid>
         <local:SelectNewMonster x:Name="NewGamePage" Visibility="Collapsed" HorizontalAlignment="Left" Width="1014" Height="570" VerticalAlignment="Top" />
         <local:TrainerHome x:Name="TrainerHome" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1014" Height="570" Visibility="Collapsed"/>

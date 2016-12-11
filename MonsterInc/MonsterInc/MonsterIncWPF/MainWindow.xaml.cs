@@ -51,7 +51,7 @@ namespace MonsterIncWPF
             Core.Model.Player player = new Core.Model.Player(PlayerName.Text);
             this.DataContext = player;
 
-            //Engine.Player = player;
+            //Unive.Player = player;
 
             //SavedGames.Games.Add(Engine.Player);
             SavedGames.Games.XmlSerialize(SavedGameXMLname, true);
@@ -69,7 +69,7 @@ namespace MonsterIncWPF
 
             var selectedPlayer = (Core.Model.Player)ListSavedGames.SelectedItem;
 
-            //Engine.Player = SavedGames.Games.Single(x => x.Name == selectedPlayer.Name);
+            //Save = SavedGames.Games.Single(x => x.Name == selectedPlayer.Name);
 
             this.SwitchToNextWindow(Action.Load);
 

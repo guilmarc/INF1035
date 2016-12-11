@@ -7,7 +7,7 @@ using Core.Model;
 
 namespace Core.Database
 {
-    class DifficultyData
+    public class DifficultyData
     {
         public static List<Difficulty> Difficulty
         {
