@@ -85,20 +85,11 @@ namespace Core
             return returnObject;
         }
 
-
-        //TODO: Cette extension ne build plus depuis le dernier sync !
-        /*
         public static T ToEnum<T>(this string value)
         {
-            if (xml == null) throw new ArgumentNullException("xml");
-            var serializer = new XmlSerializer(typeof(T));
-            using (var reader = new StringReader(xml))
-            {
-                try { return (T)serializer.Deserialize(reader); }
-                catch { return null; } // Could not be deserialized to this type.
-            }
+            return (T) Enum.Parse(typeof(T), value, true);
         }
-        */
+        
 
         private static readonly Random _random = new Random();
         public static T Random<T>(this List<T> objects)
