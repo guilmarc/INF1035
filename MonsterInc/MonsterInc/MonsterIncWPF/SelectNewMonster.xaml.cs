@@ -70,7 +70,9 @@ namespace MonsterIncWPF
                     SavedGames.LoadedPlayer.Trainer.Monsters = new List<Core.Model.Monster>();
                     SavedGames.LoadedPlayer.Trainer.Monsters.Add((Core.Model.Monster)ListSelectTempMonsters.SelectedValue);
                     SavedGames.LoadedPlayer.Trainer.Monsters[0].NickName = MonsterNameTextBox.Text;
-                    SavedGames.Games.XmlSerialize(SavedGames.XMLName, true);
+                    SavedGames.LoadedPlayer.Trainer.ActiveMonsters[0] = SavedGames.LoadedPlayer.Trainer.Monsters[0];
+                    SavedGames.LoadedPlayer.Trainer.ActiveMonster = SavedGames.LoadedPlayer.Trainer.Monsters[0];
+                   SavedGames.Games.XmlSerialize(SavedGames.XMLName, true);
 
 
 
