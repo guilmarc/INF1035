@@ -5,6 +5,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "MonsterInc\Core.csproj", "{5E7EB5A1-D5A8-4134-87A4-100010D1D169}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonsterIncWPF", "MonsterIncWPF\MonsterIncWPF.csproj", "{BC7D840F-F9FF-4E98-8C93-E031D46CFC76}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5E7EB5A1-D5A8-4134-87A4-100010D1D169} = {5E7EB5A1-D5A8-4134-87A4-100010D1D169}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{EB265A2C-4F18-443B-8B32-6B3862A5DE36}"
 EndProject

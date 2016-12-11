@@ -79,7 +79,9 @@ namespace Core
 
             T returnObject = default(T);
             StreamReader xmlStream = new StreamReader(fullPath);
-            XmlSerializer serializer = new XmlSerializer(typeof(T));
+
+            Type[] types = new Type[] { typeof(T) };
+            XmlSerializer serializer = new XmlSerializer(typeof(T), types);
             returnObject = (T)serializer.Deserialize(xmlStream);
             xmlStream.Close();
             return returnObject;
