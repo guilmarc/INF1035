@@ -22,7 +22,12 @@ namespace MonsterIncWPF
     {
         public TrainerHome()
         {
+            
+        }
+        public TrainerHome(bool affiche)
+        {
             InitializeComponent();
+            this.DataContext = SavedGames.LoadedPlayer;
         }
 
         private void MenuQuitBtn_Click(object sender, RoutedEventArgs e)

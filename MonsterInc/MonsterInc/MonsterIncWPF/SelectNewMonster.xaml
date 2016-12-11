@@ -24,7 +24,7 @@
 
         </GroupBox>
         <GroupBox x:Name="TrainerGroupBox" Header="Trainer name :" HorizontalAlignment="Left" Margin="10,108,0,0" VerticalAlignment="Top" Height="68" Width="161">
-            <TextBox x:Name="TrainerTextBox" HorizontalAlignment="Left" Text="player par defaut"  Height="23" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Margin="10,10,0,0"/>
+            <TextBox x:Name="TrainerTextBox" HorizontalAlignment="Left" Text="{Binding Name}" Height="23" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Margin="10,10,0,0"/>
         </GroupBox>
         <Button x:Name="Create" Content="Create" Background="#FF5FD35F" HorizontalAlignment="Left" VerticalAlignment="Top" Width="110" Margin="206,506,0,0" Click="Create_Click" Height="42" FontSize="20"/>
         <ComboBox x:Name="ListAffinity" HorizontalAlignment="Left" Margin="190,408,0,0" VerticalAlignment="Top" Width="140" ItemsSource="{Binding Trainer.Affinity }" Height="34"/>

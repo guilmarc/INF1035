@@ -32,13 +32,13 @@ namespace MonsterIncWPF
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
-            ((MainWindow)System.Windows.Application.Current.MainWindow).TrainerHome.MenuGrid.Visibility = Visibility.Visible;
+            ((MainWindow)System.Windows.Application.Current.MainWindow).TrainerHome.Visibility = Visibility.Visible;
             this.Visibility = Visibility.Collapsed;
         }
 
         private void DifficultyButton1_Click(object sender, RoutedEventArgs e)
         {
-            ((MainWindow)System.Windows.Application.Current.MainWindow).TrainerHome.TrainerHomeGrid.Visibility = Visibility.Collapsed;
+            ((MainWindow)System.Windows.Application.Current.MainWindow).TrainerHome.Visibility = Visibility.Collapsed;
             ((MainWindow)System.Windows.Application.Current.MainWindow).TrainerHome.CombatGrid.Visibility = Visibility.Visible;
         }
     }

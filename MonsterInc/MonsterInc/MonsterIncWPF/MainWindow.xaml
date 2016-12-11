@@ -33,10 +33,10 @@
         </Grid>
         <!--<local:SelectNewMonster x:Name="NewGamePage" Visibility="Collapsed" HorizontalAlignment="Left" Width="1014" Height="570" VerticalAlignment="Top" />-->
         <Grid x:Name="AppGrid">
-        
+            <local:TrainerHome x:Name="TrainerHome" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1014" Height="570" Visibility="Collapsed"/>
         </Grid>
 
-    <local:TrainerHome x:Name="TrainerHome" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1014" Height="570" Visibility="Collapsed"/>
+        <!--<local:TrainerHome x:Name="TrainerHome" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1014" Height="570" Visibility="Collapsed"/>-->
 
     </Grid>
 </Window>
