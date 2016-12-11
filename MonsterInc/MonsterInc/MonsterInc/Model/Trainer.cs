@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using MonsterInc;
 using System.Xml.Serialization;
+using Core.Exceptions;
 
 namespace Core.Model
 {
@@ -104,13 +105,35 @@ namespace Core.Model
 		{
 			if (item.Gold > this.Gold)
 			{
-				throw new NotEnoughtGoldException("Vous n'avez assez d'or pour acheter l'item " + item.Name);
+				throw new NotEnoughtGoldException(this,item);
 			}
 
             this.Inventory.Add(item);
+
+            if (this.ActiveInventory.Count < 5)
+            {
+                this.ActiveInventory.Add(item);
+            }
+
 		    this.Gold -= item.Gold;
 		    return true;
 		}
-	    
-	}
+
+        public bool SellItem(Item item)
+        {
+
+
+            if (this.Inventory.Remove(item))
+            {
+                this.ActiveInventory.Remove(item);
+                this.Gold += item.Gold;
+
+            }
+
+
+
+            return true;
+        }
+
+    }
 }

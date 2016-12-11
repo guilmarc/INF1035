@@ -10,19 +10,23 @@
         <DataTemplate x:Key="usableTemplate">
             <Grid Margin="0,2">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="50" />
-                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition Width="25" />
+                    <ColumnDefinition Width="250" />
+
+                    <ColumnDefinition Width="100" />
                 </Grid.ColumnDefinitions>
                 <TextBlock Grid.Column="0" Text="{Binding Gold}" />
 
-                <TextBlock Grid.Column="1" Text="{Binding Name}" />
+                <TextBlock Grid.Column="1" Text="{Binding Description}" />
+                <TextBlock Grid.Column="2" Text="{Binding Scopes[0].Magnitude}" />
+
             </Grid>
         </DataTemplate>
     </UserControl.Resources>
     <Grid Background="White" OpacityMask="White">
         <Label x:Name="ItemShopLabel" Content="Item SHOP" HorizontalAlignment="Center" Margin="446,10,422,0" VerticalAlignment="Top" FontSize="26" FontWeight="Bold" Width="146"/>
         <Label x:Name="GoldLabel" Content="Golds" HorizontalAlignment="Left" Margin="917,10,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="GoldValueLabel" Content="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Margin="0,10,102,0" VerticalAlignment="Top" Width="92"/>
+        <Label x:Name="GoldValueLabel" Content="{Binding Trainer.Gold}" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Margin="0,10,102,0" VerticalAlignment="Top" Width="92"/>
         <Button x:Name="BackButton" Content="Back" HorizontalAlignment="Left" Margin="19,16,0,0" VerticalAlignment="Top" Width="90" Height="29" Click="BackButton_Click"/>
         <ListBox x:Name="BuyItemsListBox" HorizontalAlignment="Left" Height="338" Margin="19,99,0,0" VerticalAlignment="Top" Width="452" ItemTemplate="{StaticResource usableTemplate}" SelectionChanged="BuyItemsListBox_SelectionChanged">
             
@@ -34,11 +38,15 @@
         </ListBox>
         <RadioButton Style="{StaticResource {x:Type ToggleButton}}" x:Name="BuyButton" GroupName="BuySell" Content="Buy" HorizontalAlignment="Left" Margin="19,79,0,0" VerticalAlignment="Top" Width="75" IsChecked="True" Checked="BuyButton_Checked"/>
         <RadioButton Style="{StaticResource {x:Type ToggleButton}}" x:Name="SellButton" GroupName="BuySell" Content="Sell" HorizontalAlignment="Left" Margin="94,79,0,0" VerticalAlignment="Top" Width="75" Checked="SellButton_Checked"/>
-        <ListBox x:Name="ListCart" HorizontalAlignment="Left" Height="338" Margin="536,99,0,0" VerticalAlignment="Top" Width="421"/>
+        <ListBox x:Name="ListCart" HorizontalAlignment="Left" ItemTemplate="{StaticResource usableTemplate}" Height="338" Margin="536,99,0,0" VerticalAlignment="Top" Width="421" />
         <Label x:Name="CartLabel" Content="Cart" HorizontalAlignment="Left" Margin="536,73,0,0" VerticalAlignment="Top" Width="74"/>
         <Label x:Name="TotalLabel" Content="Total :" HorizontalAlignment="Left" Margin="536,442,0,0" VerticalAlignment="Top" Width="74"/>
-        <Button x:Name="ConfirmButton" Content="Confirm" HorizontalAlignment="Left" Margin="784,490,0,0" VerticalAlignment="Top" Width="76"/>
+        <Label x:Name="TotalLabelValue" Content="0" HorizontalAlignment="Left" Margin="574,442,0,0" VerticalAlignment="Top" Width="74"/>
+
+        <Button x:Name="ConfirmButton" Content="Confirm" HorizontalAlignment="Left" Margin="784,490,0,0" VerticalAlignment="Top" Width="76" Click="ConfirmButton_Click"/>
         <Button x:Name="ClearButton" Content="Clear cart" HorizontalAlignment="Left" Margin="630,490,0,0" VerticalAlignment="Top" Width="74"/>
+        <Button x:Name="button" Content="Remove" HorizontalAlignment="Left" Margin="476,261,0,0" VerticalAlignment="Top" Width="55" Height="30" Click="button_Click"/>
+        <Button x:Name="SellingButton" Content="Sell" HorizontalAlignment="Left" Margin="784,490,0,0" VerticalAlignment="Top" Width="76" Visibility="Collapsed" Click="SellingButton_Click"/>
 
 
 
