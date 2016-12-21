@@ -109,6 +109,12 @@ namespace Core
             list.ForEach(x => x.ResetCaracterictics());
             return list.Count;
         }
+
+        public static int Energize(this List<Monster> list)
+        {
+            list.ForEach(x => x.Energize());
+            return list.Count;
+        }
     }
 }
 

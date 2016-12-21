@@ -4,6 +4,6 @@ namespace Core.Data
 {
     public interface IDataAdaptor<T>
     {
-        List<T> getObjects();
+        List<T> GetObjects();
     }
 }

@@ -93,14 +93,25 @@ namespace Core.Model
                     }
                 }
 
+                //Regénération de l'énergie des Monstres
+                this.Players.ForEach(x => x.ActiveTrainer.ActiveMonsters.Alive().Energize());
+
                 Tour++;
 
             } while (OpponentLifePoints != 0 && Tour <= 1000); //1000 = SafetyPipe pour les tests
 
             //Le combat est terminé car tous les Opponents sont morts
             //Le gagnant c'est CurrentPlayer
-            Console.WriteLine(CurrentPlayer.Name + " Wins");
+	        Player winner = CurrentPlayer;
+
+            Console.WriteLine(winner.Name + " Wins");
+            captureOpponentsItems(winner);
         }
+
+	    public void captureOpponentsItems(Player player)
+	    {
+	        //TODO: Mettre le code de capture de tous les opponents ici
+	    }
 
 
         /// <summary>

@@ -5,24 +5,7 @@ using System.Xml.Serialization;
 
 namespace Core.Model
 {
-	public interface IExperienceLevelStrategy
-	{
-		int EvaluateExperienceLevel(int NewExperiencePoint);
-	}
 
-	public class BaseExperienceLevelStrategy : IExperienceLevelStrategy
-	{
-
-        public int EvaluateExperienceLevel(int NewExperiencePoint)
-		{
-            if (NewExperiencePoint < 250) return ((NewExperiencePoint / 25)+1); //1 à 10
-            if (NewExperiencePoint < 1000) return ((NewExperiencePoint / 50) + 6); //11 à 25
-            if (NewExperiencePoint < 5000) return ((NewExperiencePoint / 200) + 21); //26 à 45 
-            if (NewExperiencePoint < 20000) return ((NewExperiencePoint / 400) + 34); // 46 à 83
-            if (NewExperiencePoint < 32800) return ((NewExperiencePoint / 800) + 59); // 84 à 99
-            return 100;
-		}
-	}
 	//public delegate void ExperienceLevelChangedHandler(Monster m, EventArgs e);
     [Serializable]
 	public class Monster
@@ -64,7 +47,7 @@ namespace Core.Model
 	        get { return this.GetCaracteristic(MonsterTemplateCaracteristicType.LifePoints).Actual > 0; }
 	    }
 
-		public Monster(MonsterTemplate monsterTemplate, double CaracteristicFactor = 1.0)
+	    public Monster(int id, MonsterTemplate monsterTemplate, double CaracteristicFactor = 1.0)
 		{
 			this.Template = monsterTemplate;
 
@@ -76,6 +59,11 @@ namespace Core.Model
 				this.Caracteristics.Add( new MonsterCaracteristic(monsterTemplateCaracteristic, this.ExperienceLevel, CaracteristicFactor) );
 			}
 		}
+
+	    public void Energize()
+        { 
+	        this.GetCaracteristic(MonsterTemplateCaracteristicType.EnergyPoints).Actual += this.GetCaracteristic(MonsterTemplateCaracteristicType.RegenerationPoints).Actual;
+	    }
 
 	    public void ResetCaracterictics()
 	    {

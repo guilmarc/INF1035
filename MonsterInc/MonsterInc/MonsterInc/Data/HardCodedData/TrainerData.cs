@@ -24,10 +24,5 @@ namespace Core.Data
                 };
             }
         }
-
-        public static string GetRandomTrainerName()
-        {
-            return TrainerNames[Utils.Random(TrainerNames.Count - 1)];
-        }
     }
 }

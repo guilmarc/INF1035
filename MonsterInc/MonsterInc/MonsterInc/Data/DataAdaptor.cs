@@ -5,9 +5,9 @@ namespace Core.Data
 {
     public class DataAdaptor<T> : IDataAdaptor<T>
     {
-        public List<T> getObjects()
+        public List<T> GetObjects()
         {
-            return new HardCodedDataAdaptor<T>().getObjects();
+            return new HardCodedDataAdaptor<T>().GetObjects();
         }
     }
 }

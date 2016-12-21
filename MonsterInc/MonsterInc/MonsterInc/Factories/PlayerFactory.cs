@@ -16,7 +16,7 @@ namespace MonsterInc.Factories
         public static Player GenerateOpponent(Player player, Difficulty difficulty)
         {
             var newOpponent = new Player("Opponent", PlayerType.Robot); //
-            newOpponent.Trainer = TrainerFactory.GenerateTrainer(player.Trainer, difficulty);
+            newOpponent.Trainer = TrainerFactory.GenerateRandomTrainer(player.Trainer, difficulty);
             return newOpponent;
         }
     }

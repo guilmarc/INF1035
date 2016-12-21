@@ -6,7 +6,7 @@ namespace MonsterInc.Data
 {
     public class XMLDataAdaptor<T> : IDataAdaptor<T>
     {
-        public List<T> getObjects()
+        public List<T> GetObjects()
         {
             throw new NotImplementedException();
         }

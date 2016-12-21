@@ -17,6 +17,13 @@ namespace Core
             return _random.Next(min, max);
         }
 
+        public static float HumanizeRatio()
+        {
+            var humanizeValue = (int) (Constants.HumanizeFactor*100);
+            var result = (float)Random(humanizeValue + 1) - (humanizeValue/2f);
+            return result + 1;
+        }
+
         public static Element GetRandomElement()
         {
             var values = Enum.GetValues(typeof(Element));
@@ -28,6 +35,7 @@ namespace Core
             public const int ActiveInventoryCount = 5;
             public const int InitGoldCount = 1000;
             public const int MaxActiveMonstersCount = 5;
+            public const float HumanizeFactor = 0.2f;
         }
 
     }

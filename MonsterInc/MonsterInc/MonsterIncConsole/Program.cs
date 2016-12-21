@@ -11,12 +11,17 @@ namespace MonsterIncConsole
     {
         static void Main(string[] args)
         {
-            Core.Engine.RunDummyGame();
+            //Core.Engine.RunDummyGame();
 
             //var newPlayer = new Core.Model.Player();
             //newPlayer.PlayerType = PlayerType.Human;
 
-            Console.ReadLine();
+            while (true)
+            {
+               Console.WriteLine(Core.Utils.HumanizeRatio()); 
+            }
+
+            //Console.ReadLine();
         }
     }
 }

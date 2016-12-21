@@ -7,7 +7,7 @@ namespace Core.Data
 {
     public class HardCodedDataAdaptor<T> : IDataAdaptor<T>
     {
-        public List<T> getObjects()
+        public List<T> GetObjects()
         {
             switch (typeof(T).Name)
             {

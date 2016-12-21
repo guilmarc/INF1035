@@ -11,22 +11,17 @@ namespace Core.Model
 	    public MonsterTemplateCaracteristicType Type { get; set; }
 
         public int Total { get; set; }
-        int actual;
 
+        int _actual;
         public int Actual
         {
             get
             {
-                //On s'assure que la valeur actuelle ne peu pas dépasser le maximum (base)
-                if (this.actual > this.Base )
-                {
-                    this.actual = this.Base;
-                }
-                return this.actual;
+                return this._actual;
             }
             set
             {
-                this.actual = value;
+                this._actual = value > this.Total ? this.Total : value;
             }
         }
 

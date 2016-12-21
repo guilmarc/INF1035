@@ -1,5 +1,5 @@
-
-﻿using System;
+﻿
+ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Xml.Linq;
@@ -75,7 +75,7 @@ namespace Core
         {
             get
             {
-                return _monsterTemplates = _monsterTemplates ?? new DataAdaptor<MonsterTemplate>().getObjects();
+                return _monsterTemplates = _monsterTemplates ?? new DataAdaptor<MonsterTemplate>().GetObjects();
             }
         }
 
@@ -83,37 +83,25 @@ namespace Core
         {
             get
             {
-                return _items = _items ?? new DataAdaptor<Item>().getObjects();
+                return _items = _items ?? new DataAdaptor<Item>().GetObjects();
             }
         }
 
         public static List<Difficulty> Difficulties
         {
-            get { return _difficulties = _difficulties ?? new DataAdaptor<Difficulty>().getObjects(); }
+            get { return _difficulties = _difficulties ?? new DataAdaptor<Difficulty>().GetObjects(); }
         }
 
         public static List<Skill> Skills
         {
-            get { return _skills = _skills ?? new DataAdaptor<Skill>().getObjects(); }
+            get { return _skills = _skills ?? new DataAdaptor<Skill>().GetObjects(); }
         }
 
         public static List<Monster> InitMonsters
         {
             get
             {
-                if (_initMonsters == null)
-                {
-                    _initMonsters = new List<Monster>();
-
-                    var initMonsterTemplates = MonsterTemplates.Where(t => t.BaseLevel == 1).ToList();
-
-                    foreach (var template in initMonsterTemplates)
-                    {
-                        _initMonsters.Add(new Monster(template));
-                    }
-                }
-
-                return _initMonsters;
+                return _initMonsters = _initMonsters ?? MonsterFactory.GenerateInitMonsters();
             }
         }
 

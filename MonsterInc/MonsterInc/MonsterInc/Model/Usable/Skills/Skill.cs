@@ -17,8 +17,42 @@ namespace Core.Model
 
         public override void Consume(Player player, Player opponent)
         {
-            //throw new NotImplementedException();
-            opponent.ActiveTrainer.ActiveMonster.GetCaracteristic(MonsterTemplateCaracteristicType.LifePoints).Actual--;
+            foreach (var scope in Scopes)
+            {
+                var target = scope.Target == Scope.ScopeTarget.Self ? player : opponent;
+
+                int playerElementID = (int)player.ActiveTrainer.ActiveMonster.Template.Element;
+                int opponentElementID = (int)target.ActiveTrainer.ActiveMonster.Template.Element;
+
+                float elementRatio = Universe.ElementMatrix[playerElementID, opponentElementID] / 100f;
+                int attack = player.ActiveTrainer.ActiveMonster.GetCaracteristic(MonsterTemplateCaracteristicType.AttackPoints).Actual;
+                int defence = target.ActiveTrainer.ActiveMonster.GetCaracteristic(MonsterTemplateCaracteristicType.DefensePoints).Actual;
+                int diff = attack - defence;
+
+                int impact = 0;
+                if (scope is DamageScope)
+                {
+                    var damageScope = scope as DamageScope;
+                    var strenghtDiff = 
+                    impact = (int)((damageScope.Magnitude + diff) * elementRatio * Utils.HumanizeRatio());
+                }
+                if (scope is EffectScope)
+                {
+                    var effectScope = scope as EffectScope;
+                    var impactRatio = effectScope.Magnitude * elementRatio * Utils.HumanizeRatio();
+                    var actual = opponent.ActiveTrainer.ActiveMonster.GetCaracteristic(MonsterTemplateCaracteristicType.LifePoints).Actual;
+                    impact = ((int)(actual * impactRatio)) + diff; 
+                }
+
+                target.ActiveTrainer.ActiveMonster.GetCaracteristic(MonsterTemplateCaracteristicType.LifePoints).Actual -= impact;
+
+            }
+
+            //TODO: Ici on pourrait creer un objet d'impact et le retourner à l'interface
+
+            //Diminue l'énergie du monstre selon l'énergie nécessaire à l'utilisation de ce Skill
+            player.ActiveTrainer.ActiveMonster.GetCaracteristic(MonsterTemplateCaracteristicType.EnergyPoints).Actual -= EnergyPointCost;
+
         }
 	}
 }

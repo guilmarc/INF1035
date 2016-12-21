@@ -1,5 +1,5 @@
-
-﻿using System;
+﻿
+ using System;
  using System.Linq;
  using Core.Data;
 using Core.Model;
@@ -26,14 +26,14 @@ namespace Core
         }
 
 
-        public static Trainer GenerateTrainer(Trainer trainer, Difficulty difficulty)
+        public static Trainer GenerateRandomTrainer(Trainer trainer, Difficulty difficulty)
         {
-            var name = TrainerData.GetRandomTrainerName();
+            var randomName = TrainerData.TrainerNames.Random();
             var element = Utils.GetRandomElement();
 
-            var newTrainer = new Trainer(name, element);
+            var newTrainer = new Trainer(randomName, element);
 
-            newTrainer.Monsters = MonsterFactory.GenerateMonsters(trainer, difficulty);
+            newTrainer.Monsters = MonsterFactory.GenerateRandomMonsters(trainer, difficulty);
             
             InitActiveMonsters(newTrainer);
             InitActiveMonster(newTrainer);
