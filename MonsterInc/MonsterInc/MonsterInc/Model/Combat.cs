@@ -17,13 +17,15 @@ namespace Core.Model
 
         public  Difficulty Difficulty { get; set; }
 
-        private  Player CurrentPlayer { get; set; }
+        public  Player CurrentPlayer { get; set; }
 
-        private  Player CurrentOpponent { get; set; }
+        public  Player CurrentOpponent { get; set; }
 
         public List<Player> Players { get; set; } = new List<Player>();
 
         public static int Tour { get; set; } = 1;
+
+        public Combat() { }
 
         public Combat(Game game, Difficulty difficulty, int opponentsCount = 1)
 		{

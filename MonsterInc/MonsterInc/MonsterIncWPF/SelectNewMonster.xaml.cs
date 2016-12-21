@@ -23,7 +23,7 @@ namespace MonsterIncWPF
     public partial class SelectNewMonster : UserControl
     {
 
-        
+
 
         public SelectNewMonster()
         {
@@ -36,7 +36,7 @@ namespace MonsterIncWPF
             SavedGames.LoadedPlayer.Trainer = new Core.Model.Trainer();
 
             SavedGames.LoadedPlayer.Trainer.SelectTempMonsters = new ObservableCollection<Core.Model.Monster>(Core.Universe.InitMonsters);
-            this.DataContext = SavedGames.LoadedPlayer;   
+            this.DataContext = SavedGames.LoadedPlayer;
             ListAffinity.ItemsSource = Enum<Core.Element>.GetNames();
             TrainerTextBox.Text = nomPlayer;
         }
@@ -58,10 +58,10 @@ namespace MonsterIncWPF
         {
             try
             {
-                if(ListSelectTempMonsters.SelectedItem == null) MessageBox.Show("Please select your new monster");
-                else if (MonsterNameTextBox.Text == "")MessageBox.Show("Please enter a name for your new monster");
+                if (ListSelectTempMonsters.SelectedItem == null) MessageBox.Show("Please select your new monster");
+                else if (MonsterNameTextBox.Text == "") MessageBox.Show("Please enter a name for your new monster");
                 else if (ListAffinity.SelectedItem == null) MessageBox.Show("Please choose your affinity");
-                else 
+                else
                 {
                     SavedGames.LoadedPlayer.Trainer.Affinity = Core.Extensions.ToEnum<Core.Element>(ListAffinity.SelectedValue.ToString());
                     SavedGames.LoadedPlayer.Trainer.ActiveMonsters = new List<Core.Model.Monster>();
@@ -72,18 +72,18 @@ namespace MonsterIncWPF
                     SavedGames.LoadedPlayer.Trainer.Monsters[0].NickName = MonsterNameTextBox.Text;
                     SavedGames.LoadedPlayer.Trainer.ActiveMonsters[0] = SavedGames.LoadedPlayer.Trainer.Monsters[0];
                     SavedGames.LoadedPlayer.Trainer.ActiveMonster = SavedGames.LoadedPlayer.Trainer.Monsters[0];
-                   SavedGames.Games.XmlSerialize(SavedGames.XMLName, true);
+                    SavedGames.Games.XmlSerialize(SavedGames.XMLName, true);
 
 
 
 
                     this.Visibility = Visibility.Collapsed;
 
-                    SavedGames.trainerHomeForm=((MainWindow)System.Windows.Application.Current.MainWindow).AppGrid.Children.Add(new TrainerHome(true) {Name="TrainerHome2", Visibility = Visibility.Visible });
-                   
+                    SavedGames.trainerHomeForm = ((MainWindow)System.Windows.Application.Current.MainWindow).AppGrid.Children.Add(new TrainerHome(true) { Name = "TrainerHome2", Visibility = Visibility.Visible });
+
 
                 }
-                
+
 
             }
             catch (Exception ex)

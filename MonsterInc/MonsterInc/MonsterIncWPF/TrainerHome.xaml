@@ -126,8 +126,8 @@
 
         <Grid x:Name="ActiveGrid">
             <local:SelectActiveMonster x:Name="SelectActiveMonsterGrid" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="570" Width="1014" Visibility="Collapsed"/>
-            <local:Difficulty x:Name="DifficultyGrid" HorizontalAlignment="Left" Margin="624,10,0,0" VerticalAlignment="Top" Height="550" Width="360" Visibility="Collapsed"/>
-            <local:CombatMain x:Name="CombatGrid" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Collapsed"/>
+            
+            <!--<local:CombatMain x:Name="CombatGrid" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Collapsed"/>-->
             <!--<local:ItemShop x:Name="ItemShopGrid" HorizontalAlignment="Left" VerticalAlignment="Top" Height="570" Width="1014" Visibility="Collapsed"/>-->
 
 

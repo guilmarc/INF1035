@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Core.Model;
 
 namespace MonsterIncWPF
 {
@@ -23,13 +24,23 @@ namespace MonsterIncWPF
         public CombatMain()
         {
             InitializeComponent();
-            this.DataContext = SavedGames.LoadedPlayer;
+            this.DataContext = SavedGames.LoadedCombat;
+
+            Trainer gentilTrainer = SavedGames.LoadedCombat.Players.Where(x => x.Type == PlayerType.Human).First().Trainer;
+            Trainer mechantTrainer = SavedGames.LoadedCombat.Players.Where(x => x.Type == PlayerType.Robot).First().Trainer;
+            FriendlyMonster.Content = gentilTrainer.ActiveMonster.NickName;
+            EnemyMonster.Content = mechantTrainer.ActiveMonster.NickName;
+            //FriendlyMonsterType.Content = gentilTrainer.ActiveMonster.;
+            //EnemyMonsterType.Content = mechantTrainer.ActiveMonster.;
         }
+
+
 
         private void ChangeButton_Click(object sender, RoutedEventArgs e)
         {
             ChooseMonsterControl.Visibility = Visibility.Visible;
             ActionGrid.Visibility = Visibility.Collapsed;
         }
+
     }
 }

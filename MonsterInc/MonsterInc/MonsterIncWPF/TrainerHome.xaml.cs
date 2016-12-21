@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Core.Database;
+using Core.Model;
 
 namespace MonsterIncWPF
 {
@@ -66,8 +67,13 @@ namespace MonsterIncWPF
         private void DifficultyListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var t = SavedGames.mainWindow.AppGrid.Children[SavedGames.trainerHomeForm];
+            Combat combat = new Combat(SavedGames.LoadedGame, (Core.Model.Difficulty)DifficultyListBox.SelectedValue);
+            
+            SavedGames.LoadedCombat = combat;
+            //CancelButton.Content = SavedGames.LoadedCombat.Players.Where(x => x.Type== PlayerType.Human).First().Trainer.Name;
             ((TrainerHome)t).TrainerHomeGrid.Visibility = Visibility.Collapsed;
-            ((TrainerHome)t).CombatGrid.Visibility = Visibility.Visible;
+            //((TrainerHome)t).CombatGrid.Visibility = Visibility.Visible;
+            ActiveGrid.Children.Add(new CombatMain { Visibility = Visibility.Visible });
         }
     }
 }

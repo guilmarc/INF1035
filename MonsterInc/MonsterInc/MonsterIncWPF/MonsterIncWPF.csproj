@@ -67,9 +67,6 @@
     <Compile Include="CombatMain.xaml.cs">
       <DependentUpon>CombatMain.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Difficulty.xaml.cs">
-      <DependentUpon>Difficulty.xaml</DependentUpon>
-    </Compile>
     <Compile Include="EnumBindingSourceExtension.cs" />
     <Compile Include="DetailMonster.xaml.cs">
       <DependentUpon>DetailMonster.xaml</DependentUpon>
@@ -108,10 +105,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DetailMonster.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Difficulty.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
