@@ -6,12 +6,29 @@
              xmlns:local="clr-namespace:MonsterIncWPF"
              mc:Ignorable="d" 
              d:DesignHeight="570" d:DesignWidth="1014">
-    <Grid Background="White" OpacityMask="White">
-        <ListBox x:Name="MonsterListBox" HorizontalAlignment="Left" Height="441" Margin="51,90,0,0" VerticalAlignment="Top" Width="459" SelectionChanged="MonsterListBox_SelectionChanged"/>
+    <UserControl.Resources>
+        <DataTemplate x:Key="usableTemplate">
+            <Grid Margin="0,2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition Width="50" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="{Binding NickName}" />
+                <TextBlock Grid.Column="1" Text="{Binding Template.Name}" />
+                <TextBlock Grid.Column="2" Text="Level : " />
+                <TextBlock Grid.Column="3" Text="{Binding ExperienceLevel}" />
+
+            </Grid>
+        </DataTemplate>
+        </UserControl.Resources>
+        <Grid Background="White" OpacityMask="White">
+        <ListBox x:Name="MonsterListBox" HorizontalAlignment="Left" Height="441" Margin="51,90,0,0" VerticalAlignment="Top" Width="459" SelectionChanged="MonsterListBox_SelectionChanged" ItemTemplate="{StaticResource usableTemplate}"/>
         <Label x:Name="MonsterListLabel" Content="Monster list" HorizontalAlignment="Left" Margin="51,45,0,0" VerticalAlignment="Top" FontSize="25"/>
         <Label x:Name="MonsterDetailsLabel" Content="Monster details" HorizontalAlignment="Left" Margin="534,45,0,0" VerticalAlignment="Top" FontSize="25"/>
-        <local:MonsterDetails x:Name="MonsterDetailsControl" HorizontalAlignment="Left" Margin="534,90,0,0" VerticalAlignment="Top" Visibility="Collapsed"/>
-        <Button x:Name="OkButton" Content="Ok" HorizontalAlignment="Left" Margin="795,435,0,0" VerticalAlignment="Top" Width="100" Height="45"/>
+        <local:MonsterDetails x:Name="MonsterDetailsControl"  HorizontalAlignment="Left" Margin="534,90,0,0" VerticalAlignment="Top" Visibility="Collapsed"/>
+        <Button x:Name="OkButton" Content="Ok" HorizontalAlignment="Left" Margin="795,435,0,0" VerticalAlignment="Top" Width="100" Height="45" Click="OkButton_Click"/>
         <Button x:Name="CancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="626,435,0,0" VerticalAlignment="Top" Width="100" Height="45" Click="CancelButton_Click"/>
 
 

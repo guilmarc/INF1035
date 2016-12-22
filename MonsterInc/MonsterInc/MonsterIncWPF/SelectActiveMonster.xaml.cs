@@ -23,11 +23,21 @@ namespace MonsterIncWPF
     public partial class SelectActiveMonster : UserControl
     {
         Trainer trainer = SavedGames.LoadedPlayer.Trainer;
+        private int i = 0;
         public SelectActiveMonster()
         {
             InitializeComponent();
             this.DataContext = trainer;
-           // MonsterListBox.ItemsSource = trainer.Monsters.;
+            MonsterListBox.ItemsSource = trainer.Monsters;
+            
+
+        }
+        public SelectActiveMonster(int i)
+        {
+            InitializeComponent();
+            this.DataContext = trainer;
+            MonsterListBox.ItemsSource = trainer.Monsters;
+            this.i = i;
 
         }
 
@@ -43,6 +53,14 @@ namespace MonsterIncWPF
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             this.Visibility=Visibility.Collapsed;
+        }
+
+        private void OkButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (i > trainer.ActiveMonsters.Count -1) trainer.ActiveMonsters.Add(trainer.SelectTempMonsters[MonsterListBox.SelectedIndex]);
+            trainer.ActiveMonsters[i] = trainer.SelectTempMonsters[MonsterListBox.SelectedIndex];
+            this.Visibility = Visibility.Collapsed;
+            //MainWindow.Refresh();
         }
     }
 }

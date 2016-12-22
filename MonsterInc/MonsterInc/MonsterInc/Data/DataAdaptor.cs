@@ -7,8 +7,8 @@ namespace Core.Data
     {
         public List<T> GetObjects()
         {
-            //return new HardCodedDataAdaptor<T>().GetObjects();
-            return new XMLDataAdaptor<T>().GetObjects();
+            return new HardCodedDataAdaptor<T>().GetObjects();
+            //return new XMLDataAdaptor<T>().GetObjects();
         }
     }
 }

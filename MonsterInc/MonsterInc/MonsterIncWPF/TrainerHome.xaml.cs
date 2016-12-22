@@ -152,8 +152,12 @@ namespace MonsterIncWPF
 
         private void MonsterBtn1_Click(object sender, RoutedEventArgs e)
         {
-            SelectActiveMonsterGrid.Visibility = Visibility.Visible;
+            ActiveGrid.Children.Add(new SelectActiveMonster(0) { Visibility = Visibility.Visible, HorizontalAlignment = HorizontalAlignment.Left,  VerticalAlignment =VerticalAlignment.Top, Height = 570, Width = 1014 });
+        }
 
+        private void MonsterBtn2_Click(object sender, RoutedEventArgs e)
+        {
+            ActiveGrid.Children.Add(new SelectActiveMonster(1) { Visibility = Visibility.Visible, HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Top, Height = 570, Width = 1014 });
         }
     }
 
