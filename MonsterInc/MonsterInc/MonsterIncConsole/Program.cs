@@ -15,14 +15,19 @@ namespace MonsterIncConsole
 
             //Core.Data.XmlGenerator.GenerateAllXml();
 
-
-            foreach (var monsterTemplate in Core.Universe.MonsterTemplates)
-            {
-                Console.WriteLine(monsterTemplate.Name);
-            }
+            var game = Core.Engine.NewGame(Core.Universe.DummyPlayer);
+            game.Save();
 
             //var newPlayer = new Core.Model.Player();
             //newPlayer.PlayerType = PlayerType.Human;
+            Core.Universe.SavedGameFiles.ForEach(x => Console.WriteLine(x));
+
+
+            var firstSavedGame = Core.Universe.SavedGameFiles[0];
+            var loadedgame = Core.Engine.LoadGameFromFile(firstSavedGame);
+
+            Console.Write(loadedgame);
+
 
             //while (true)
             //{

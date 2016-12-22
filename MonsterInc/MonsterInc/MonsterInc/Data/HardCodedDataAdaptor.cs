@@ -19,10 +19,5 @@ namespace Core.Data
                 default: return null;
             }
         }
-
-        public void SaveXML<T>()
-        {
-            
-        }
     }
 }

@@ -25,17 +25,10 @@ namespace Core.Data
         //TODO: Changer les méthodes statiques par un Generic
         //https://dzone.com/articles/c-%E2%80%93-generic-serialization
 
-        //private static void GenerateXML<T>(T type, string XMLFileName)
-        //{
-        //	XmlSerializer serialiser = new XmlSerializer(type);
-        //	TextWriter Filestream = new StreamWriter(XMLFileName);
-        //	serialiser.Serialize(Filestream, MonsterTemplates);
-        //	Filestream.Close();
-        //}
-
         private static void GenerateXml<T>()
         {
-            using (var stream = new System.IO.StreamWriter("C:/xml/" + typeof(T).Name + ".xml"))
+            var filePath = Constants.UniverseDataPath + typeof(T).Name + Constants.SavedGameFileExtension;
+            using (var stream = new System.IO.StreamWriter(filePath))
             {
                 var serializer = new XmlSerializer(typeof(List<T>));
                 serializer.Serialize(stream, new HardCodedDataAdaptor<T>().GetObjects());

@@ -9,7 +9,8 @@ namespace Core.Data
     {
         public List<T> GetObjects()
         {
-            using (var stream = System.IO.File.OpenRead("C:/xml/" + typeof(T).Name + ".xml"))
+            var filePath = Constants.UniverseDataPath + typeof(T).Name + ".xml";
+            using (var stream = System.IO.File.OpenRead(filePath))
             {
                 var serializer = new XmlSerializer(typeof(List<T>));
                 return serializer.Deserialize(stream) as List<T>;

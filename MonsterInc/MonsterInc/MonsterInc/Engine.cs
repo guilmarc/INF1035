@@ -36,7 +36,11 @@ namespace Core
             usable.Consume(player, opponent);
         }
 
+        public static Game LoadGameFromFile(String gameName)
+        {
+            var filePath = Constants.SavedGamePath + gameName + Constants.SavedGameFileExtension;
+            return Utils.Serializer.Binary.ReadFromBinaryFile<Game>(filePath);
+        }
     }
-       
 }
 

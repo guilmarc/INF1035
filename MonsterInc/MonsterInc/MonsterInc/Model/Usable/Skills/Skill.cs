@@ -4,7 +4,7 @@ using System.ComponentModel;
 
 namespace Core.Model
 {
-    //[Serializable]
+    [Serializable]
 	public class Skill : Usable
 	{
 		public int EnergyPointCost { get; set; }

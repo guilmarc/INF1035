@@ -4,12 +4,13 @@ using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace Core.Model
 {
-	public class Game
+    [Serializable]
+    public class Game
 	{
 
         public static event EventHandler GameCompleted;
 
-        public string Name { get; set; }
+	    public string Name { get; set; } = "NewGame";
 	    public DateTime StartTime { get; private set; } = DateTime.Now;
         public DateTime EndTime { get; private set; }
 	    public Player HumanPlayer { get; set; }
@@ -62,12 +63,13 @@ namespace Core.Model
 
 		public void Save()
 		{
-			
+		    SaveWithName(this.Name + "_" + StartTime.ToString("yyyyMMddHHmmss"));
 		}
 
-		public void Load()
-		{
-			
-		}
+        public void SaveWithName(string gameName)
+        {
+            var filePath = Constants.SavedGamePath + gameName + Constants.SavedGameFileExtension;
+            Utils.Serializer.Binary.WriteToBinaryFile(filePath, this);
+        }
 	}
 }

@@ -69,6 +69,7 @@
     <Compile Include="Implementations\IntelligentPickUsableStrategy.cs" />
     <Compile Include="Interfaces\IExperienceLevelStrategy.cs" />
     <Compile Include="Interfaces\IPickUsableStrategy.cs" />
+    <Compile Include="Utils\Constants.cs" />
     <Compile Include="Utils\Extensions.cs" />
     <Compile Include="Factories\InventoryFactory.cs" />
     <Compile Include="Model\Difficulty.cs" />
@@ -107,6 +108,10 @@
     <Compile Include="Model\Usable\Usable.cs" />
     <Compile Include="Interfaces\IActionable.cs" />
     <Compile Include="Factories\TrainerFactory.cs" />
+    <Compile Include="Utils\Serializer\Binary.cs" />
+    <Compile Include="Utils\Serializer\Json.cs" />
+    <Compile Include="Utils\Serializer\Serializer.cs" />
+    <Compile Include="Utils\Serializer\Xml.cs" />
     <Compile Include="Utils\Utils.cs" />
   </ItemGroup>
   <ItemGroup>

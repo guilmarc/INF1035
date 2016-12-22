@@ -114,6 +114,18 @@ namespace Core
             }
         }
 
+        public static List<String> SavedGameFiles
+        {
+            get
+            {
+                var array = from fullFilename
+                    in Directory.EnumerateFiles(Constants.SavedGamePath, "*" + Constants.SavedGameFileExtension)
+                    select Path.GetFileNameWithoutExtension(String.Concat((object) fullFilename));
+
+                return new List<string>(array);
+            }
+        }
+
         public static Player GenerateOpponent(Player player, Difficulty difficulty)
         {
             return PlayerFactory.GenerateOpponent(player, difficulty);

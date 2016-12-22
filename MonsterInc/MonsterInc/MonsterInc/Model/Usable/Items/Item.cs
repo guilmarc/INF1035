@@ -18,6 +18,7 @@ namespace Core.Model
         /// </summary>
         public int Rarity { get; set; }
 
+
         /// <summary>
         /// Coût de l'item en écu d'or
         /// </summary>

@@ -46,7 +46,7 @@ namespace Core
 
         private static void InitActiveInventory(Trainer trainer)
         {
-            var itemCount = trainer.Inventory.Count >= Utils.Constants.ActiveInventoryCount ? Utils.Constants.ActiveInventoryCount : trainer.Inventory.Count;
+            var itemCount = trainer.Inventory.Count >= Constants.ActiveInventoryCount ? Constants.ActiveInventoryCount : trainer.Inventory.Count;
 
             for (var i = 0; i < itemCount; i++)
             {
@@ -62,7 +62,7 @@ namespace Core
         /// <param name="trainer"></param>
         private static void InitActiveMonsters(Trainer trainer)
         {
-            var activeMonstersCount = Math.Min(trainer.Monsters.Count, Utils.Constants.MaxActiveMonstersCount);
+            var activeMonstersCount = Math.Min(trainer.Monsters.Count, Constants.MaxActiveMonstersCount);
             for (var i = 0; i < activeMonstersCount; i++)
             {
                 var selectedMonster = trainer.Monsters.Where(x => !trainer.ActiveMonsters.Contains(x)).ToList().Random();
