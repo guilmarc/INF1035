@@ -54,8 +54,10 @@ namespace Core.Model
                 //count Monsters ont été réinitialités
 
 
-       } while (1 == 2);
-       // } while (HumanPlayer.ActiveTrainer.ActiveMonsters.Count > 0);
+                //On crée un nouveau Combat tant qu'on a encore un Monstre Actif
+            } while (HumanPlayer.ActiveTrainer.ActiveMonsters.Count > 0);
+
+            //ICI LE JOUEUR HUMAIN EST MORT
 	    }
 
 		public void Save()

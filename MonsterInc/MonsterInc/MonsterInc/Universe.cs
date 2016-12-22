@@ -90,6 +90,7 @@ namespace Core
         public static List<Difficulty> Difficulties
         {
             get { return _difficulties = _difficulties ?? new DataAdaptor<Difficulty>().GetObjects(); }
+            set { new XMLDataAdaptor<Skill>().SetObjects(value); }
         }
 
         public static List<Skill> Skills

@@ -6,6 +6,7 @@ namespace Core.Model
     /// <summary>
     /// Seringue qui redonne la vie à un monstre mort
     /// </summary>
+    [Serializable]
     public class Revival : LifePotion
     {
 

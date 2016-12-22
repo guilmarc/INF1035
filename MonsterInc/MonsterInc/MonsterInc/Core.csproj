@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProjectGuid>{5E7EB5A1-D5A8-4134-87A4-100010D1D169}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>MonsterInc</RootNamespace>
+    <RootNamespace>Core</RootNamespace>
     <AssemblyName>Core</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <PublishUrl>publish\</PublishUrl>
@@ -96,7 +96,7 @@
     <Compile Include="Model\MonsterTemplate.cs" />
     <Compile Include="Data\HardCodedData\MonsterTemplateData.cs" />
     <Compile Include="Model\MonsterTemplateCaracteristic.cs" />
-    <Compile Include="Data\DataGenerator.cs" />
+    <Compile Include="Data\XmlGenerator.cs" />
     <Compile Include="Model\Scopes\Scope.cs" />
     <Compile Include="Model\Scopes\EffectScope.cs" />
     <Compile Include="Model\Scopes\DamageScope.cs" />

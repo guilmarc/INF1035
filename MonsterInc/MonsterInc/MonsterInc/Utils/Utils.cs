@@ -20,7 +20,7 @@ namespace Core
         public static float HumanizeRatio()
         {
             var humanizeValue = (int) (Constants.HumanizeFactor*100);
-            var result = (float)Random(humanizeValue + 1) - (humanizeValue/2f);
+            var result = ((float)Random(humanizeValue + 1) - (humanizeValue/2f)) / 100f;
             return result + 1;
         }
 

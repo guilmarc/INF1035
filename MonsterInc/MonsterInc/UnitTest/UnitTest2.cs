@@ -63,6 +63,9 @@ namespace UnitTest
         {
             Core.Engine.RunDummyGame();
 
+            var dummyplayer = Universe.DummyPlayer;
+            var game = new Game(dummyplayer, 1);
+            
             //Trace.Listeners.Add(new TextWriterTraceListener(Console.Out));
             //Trace.WriteLine("Hello World");
 
