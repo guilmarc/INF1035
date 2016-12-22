@@ -23,6 +23,7 @@ namespace MonsterIncWPF
     public partial class TrainerHome : UserControl
     {
         List<Button> listeButtons = new List<Button>();
+        List<Button> listeBeltButtons = new List<Button>();
         List<Label> listeLvl = new List<Label>();
         List<Label> listeType = new List<Label>();
         List<Label> listeLife = new List<Label>();
@@ -61,8 +62,18 @@ namespace MonsterIncWPF
                     listeEnergy[i].Content ="";
                 }
             }
-        }
 
+            int nbActiveItems = trainer.ActiveInventory.Count;
+            for (int i = 0; i < 5; i++)
+            {
+                if (i < nbActiveItems)
+                {
+                    listeBeltButtons[i].Content = trainer.ActiveInventory[i].Name;
+                }
+                else listeBeltButtons[i].Content = "<empty>";
+
+            }
+        }
         private void MenuQuitBtn_Click(object sender, RoutedEventArgs e)
         {
             ((MainWindow)System.Windows.Application.Current.MainWindow).Home.Visibility = Visibility.Visible;
@@ -132,8 +143,18 @@ namespace MonsterIncWPF
             listeEnergy.Add(MonsterEnergyValue3);
             listeEnergy.Add(MonsterEnergyValue4);
             listeEnergy.Add(MonsterEnergyValue5);
+            listeBeltButtons.Add(BeltBtn1);
+            listeBeltButtons.Add(BeltBtn2);
+            listeBeltButtons.Add(BeltBtn3);
+            listeBeltButtons.Add(BeltBtn4);
+            listeBeltButtons.Add(BeltBtn5);
         }
 
+        private void MonsterBtn1_Click(object sender, RoutedEventArgs e)
+        {
+            SelectActiveMonsterGrid.Visibility = Visibility.Visible;
+
+        }
     }
 
 

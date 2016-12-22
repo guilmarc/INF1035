@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Core.Model;
 
 namespace MonsterIncWPF
 {
@@ -21,13 +22,13 @@ namespace MonsterIncWPF
     /// </summary>
     public partial class SelectActiveMonster : UserControl
     {
-        private Core.Model.Trainer trainer = new Core.Model.Trainer("Jean", 0);
+        Trainer trainer = SavedGames.LoadedPlayer.Trainer;
         public SelectActiveMonster()
         {
             InitializeComponent();
             this.DataContext = trainer;
+           // MonsterListBox.ItemsSource = trainer.Monsters.;
 
-            trainer.SelectTempMonsters = new ObservableCollection<Core.Model.Monster>(Core.Universe.InitMonsters);
         }
 
         private void MonsterListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -37,6 +38,11 @@ namespace MonsterIncWPF
             MonsterDetailsControl.Content = detailControlOpen;
 
             MonsterDetailsControl.Visibility = Visibility.Visible;
+        }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Visibility=Visibility.Collapsed;
         }
     }
 }

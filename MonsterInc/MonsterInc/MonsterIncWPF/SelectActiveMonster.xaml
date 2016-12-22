@@ -12,7 +12,7 @@
         <Label x:Name="MonsterDetailsLabel" Content="Monster details" HorizontalAlignment="Left" Margin="534,45,0,0" VerticalAlignment="Top" FontSize="25"/>
         <local:MonsterDetails x:Name="MonsterDetailsControl" HorizontalAlignment="Left" Margin="534,90,0,0" VerticalAlignment="Top" Visibility="Collapsed"/>
         <Button x:Name="OkButton" Content="Ok" HorizontalAlignment="Left" Margin="795,435,0,0" VerticalAlignment="Top" Width="100" Height="45"/>
-        <Button x:Name="CancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="626,435,0,0" VerticalAlignment="Top" Width="100" Height="45"/>
+        <Button x:Name="CancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="626,435,0,0" VerticalAlignment="Top" Width="100" Height="45" Click="CancelButton_Click"/>
 
 
     </Grid>
