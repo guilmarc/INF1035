@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProjectGuid>{5E7EB5A1-D5A8-4134-87A4-100010D1D169}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>MonsterInc</RootNamespace>
+    <RootNamespace>Core</RootNamespace>
     <AssemblyName>Core</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <PublishUrl>publish\</PublishUrl>
@@ -69,6 +69,7 @@
     <Compile Include="Implementations\IntelligentPickUsableStrategy.cs" />
     <Compile Include="Interfaces\IExperienceLevelStrategy.cs" />
     <Compile Include="Interfaces\IPickUsableStrategy.cs" />
+    <Compile Include="Utils\Constants.cs" />
     <Compile Include="Utils\Extensions.cs" />
     <Compile Include="Factories\InventoryFactory.cs" />
     <Compile Include="Model\Difficulty.cs" />
@@ -96,7 +97,7 @@
     <Compile Include="Model\MonsterTemplate.cs" />
     <Compile Include="Data\HardCodedData\MonsterTemplateData.cs" />
     <Compile Include="Model\MonsterTemplateCaracteristic.cs" />
-    <Compile Include="Data\DataGenerator.cs" />
+    <Compile Include="Data\XmlGenerator.cs" />
     <Compile Include="Model\Scopes\Scope.cs" />
     <Compile Include="Model\Scopes\EffectScope.cs" />
     <Compile Include="Model\Scopes\DamageScope.cs" />
@@ -107,6 +108,10 @@
     <Compile Include="Model\Usable\Usable.cs" />
     <Compile Include="Interfaces\IActionable.cs" />
     <Compile Include="Factories\TrainerFactory.cs" />
+    <Compile Include="Utils\Serializer\Binary.cs" />
+    <Compile Include="Utils\Serializer\Json.cs" />
+    <Compile Include="Utils\Serializer\Serializer.cs" />
+    <Compile Include="Utils\Serializer\Xml.cs" />
     <Compile Include="Utils\Utils.cs" />
   </ItemGroup>
   <ItemGroup>

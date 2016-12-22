@@ -1,14 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using Core.Data;
+using Core.Model;
+using System.Xml.Serialization;
 
-namespace MonsterInc.Data
+namespace Core.Data
 {
     public class XMLDataAdaptor<T> : IDataAdaptor<T>
     {
         public List<T> GetObjects()
         {
-            throw new NotImplementedException();
+            var filePath = Constants.UniverseDataPath + typeof(T).Name + ".xml";
+            using (var stream = System.IO.File.OpenRead(filePath))
+            {
+                var serializer = new XmlSerializer(typeof(List<T>));
+                return serializer.Deserialize(stream) as List<T>;
+            }
+        }
+
+        public void SetObjects<TObjects>(TObjects objects)
+        {
+            //Non utilisé
         }
     }
 }

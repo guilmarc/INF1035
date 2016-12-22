@@ -21,7 +21,7 @@ namespace Core.Database
                         Name = "Newborn",
                         BonusItemRarity = 1,
                         BonusMonsterRarity = 1,
-                        BonusOpponentDamage = -1.3,
+                        BonusOpponentDamage = 0.75,
                         CaracteristicFactor = 1.0
                     },
 
@@ -33,7 +33,7 @@ namespace Core.Database
                         ItemRarityApplicable = 90,
                         BonusMonsterRarity = 2,
                         MonsterLevelRarityApplicable = 20,
-                        BonusOpponentDamage = -1.15,
+                        BonusOpponentDamage = 0.9,
                         CaracteristicFactor = 1.1
                     },
 

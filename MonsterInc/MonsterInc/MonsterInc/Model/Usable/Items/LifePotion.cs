@@ -4,10 +4,11 @@ using System.Linq;
 namespace Core.Model
 {
 
-	/// <summary>
-	/// Item qui ajoute des points de vie
-	/// </summary>
-	public class LifePotion : Item
+    /// <summary>
+    /// Item qui ajoute des points de vie
+    /// </summary>
+    [Serializable]
+    public class LifePotion : Item
 	{
         public override void Consume(Player player, Player opponent)
         {
