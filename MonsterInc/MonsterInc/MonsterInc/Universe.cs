@@ -90,6 +90,7 @@ namespace Core
         public static List<Difficulty> Difficulties
         {
             get { return _difficulties = _difficulties ?? new DataAdaptor<Difficulty>().GetObjects(); }
+            set { new XMLDataAdaptor<Skill>().SetObjects(value); }
         }
 
         public static List<Skill> Skills
@@ -110,6 +111,18 @@ namespace Core
             get
             {
                 return _dummyPlayer = _dummyPlayer ?? PlayerFactory.GenerateDummyPlayer();
+            }
+        }
+
+        public static List<String> SavedGameFiles
+        {
+            get
+            {
+                var array = from fullFilename
+                    in Directory.EnumerateFiles(Constants.SavedGamePath, "*" + Constants.SavedGameFileExtension)
+                    select Path.GetFileNameWithoutExtension(String.Concat((object) fullFilename));
+
+                return new List<string>(array);
             }
         }
 

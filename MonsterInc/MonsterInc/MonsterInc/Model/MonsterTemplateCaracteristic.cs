@@ -10,7 +10,8 @@ namespace Core.Model
 		DefensePoints
 	}
 
-	public class MonsterTemplateCaracteristic
+    [Serializable]
+    public class MonsterTemplateCaracteristic
 	{
 		//public string Name { get; set; }
 		public MonsterTemplateCaracteristicType Type { get; set; }

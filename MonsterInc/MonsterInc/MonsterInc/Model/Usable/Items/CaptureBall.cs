@@ -9,6 +9,7 @@ namespace Core.Model
     /// <summary>
     /// Permet de capturer un monstre
     /// </summary>
+    [Serializable]
     public class CaptureBall : Item
     {
         public override void Consume(Player player, Player opponent)

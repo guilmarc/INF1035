@@ -13,15 +13,28 @@ namespace MonsterIncConsole
         {
             //Core.Engine.RunDummyGame();
 
+            //Core.Data.XmlGenerator.GenerateAllXml();
+
+            var game = Core.Engine.NewGame(Core.Universe.DummyPlayer);
+            game.Save();
+
             //var newPlayer = new Core.Model.Player();
             //newPlayer.PlayerType = PlayerType.Human;
+            Core.Universe.SavedGameFiles.ForEach(x => Console.WriteLine(x));
 
-            while (true)
-            {
-               Console.WriteLine(Core.Utils.HumanizeRatio()); 
-            }
 
-            //Console.ReadLine();
+            var firstSavedGame = Core.Universe.SavedGameFiles[0];
+            var loadedgame = Core.Engine.LoadGameFromFile(firstSavedGame);
+
+            Console.Write(loadedgame);
+
+
+            //while (true)
+            //{
+            //   Console.WriteLine(Core.Utils.HumanizeRatio()); 
+            //}
+
+            Console.ReadLine();
         }
     }
 }

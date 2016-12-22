@@ -42,6 +42,8 @@ namespace Core.Model
         /// </summary>
         public double CaracteristicFactor { get; set; }
 
+        public int GoldReward { get; set; }
+
         public string toString()
         {
             return Name;

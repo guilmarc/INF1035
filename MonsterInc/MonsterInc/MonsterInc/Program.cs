@@ -13,7 +13,7 @@ namespace Core
 
 			//Universe.ListMonsterTemplates();
 
-			//DataGenerator.GenerateAllXML();
+			//XmlGenerator.GenerateAllXML();
 
 		    Console.ReadLine();
 		}

@@ -16,7 +16,8 @@ namespace Core.Model
         Dragon
 	}
 
-	public class MonsterTemplate
+    [Serializable]
+    public class MonsterTemplate
 	{
 
 		public string Name { get; set; }
