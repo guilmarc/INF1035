@@ -46,7 +46,7 @@
                     <Binding Path="Caracteristics[4].Total"/>
                     <Binding Source="{x:Static System:Environment.NewLine}"/>
                     <Binding Path="Caracteristics[0].Actual"/>
-                    <Binding Path="Caracteristics[0].Actual"/>
+                    <Binding Path="Caracteristics[1].Actual"/>
                 </MultiBinding>
             </TextBlock.Text>
         </TextBlock>

@@ -27,10 +27,18 @@ namespace MonsterIncWPF
             this.DataContext = SavedGames.LoadedCombat;
 
             Trainer gentilTrainer = SavedGames.LoadedCombat.Players.Where(x => x.Type == PlayerType.Human).First().Trainer;
-            Trainer mechantTrainer = SavedGames.LoadedCombat.Players.Where(x => x.Type == PlayerType.Robot).First().Trainer;
             FriendlyMonster.Content = gentilTrainer.ActiveMonster.NickName;
-            EnemyMonster.Content = mechantTrainer.ActiveMonster.NickName;
-            //FriendlyMonsterType.Content = gentilTrainer.ActiveMonster.;
+            FriendlyMonsterType.Content = gentilTrainer.ActiveMonster.Template.Name;
+            FriendlyMonsterLPActual.Content = gentilTrainer.ActiveMonster.Caracteristics[0].Actual + " / " + gentilTrainer.ActiveMonster.Caracteristics[0].Total;
+            FriendlyMonsterEPActual.Content = gentilTrainer.ActiveMonster.Caracteristics[1].Actual + " / " + gentilTrainer.ActiveMonster.Caracteristics[1].Total;
+
+            //Trainer mechantTrainer = SavedGames.LoadedCombat.Players.Where(x => x.Type == PlayerType.Robot).First().Trainer;
+            Trainer mechantTrainer = SavedGames.LoadedCombat.Players[1].Trainer;
+            Player mechant = SavedGames.LoadedCombat.Players[1];
+
+            
+            EnemyMonster.Content = mechant.Trainer.ActiveMonster.Template.Name;
+            
             //EnemyMonsterType.Content = mechantTrainer.ActiveMonster.;
         }
 

@@ -5,21 +5,21 @@ using System.Linq;
 namespace Core.Model
 {
 
-	/// <summary>
-	/// 
-	/// </summary>
-	public class Combat
-	{
-		Game _game;
-		public Reward Reward { get; set; }
+    /// <summary>
+    /// 
+    /// </summary>
+    public class Combat
+    {
+        Game _game;
+        public Reward Reward { get; set; }
 
-		public List<Turn> Turns { get; set; }
+        public List<Turn> Turns { get; set; }
 
-        public  Difficulty Difficulty { get; set; }
+        public Difficulty Difficulty { get; set; }
 
-        public  Player CurrentPlayer { get; set; }
+        public Player CurrentPlayer { get; set; }
 
-        public  Player CurrentOpponent { get; set; }
+        public Player CurrentOpponent { get; set; }
 
         public List<Player> Players { get; set; } = new List<Player>();
 
@@ -28,12 +28,13 @@ namespace Core.Model
         public Combat() { }
 
         public Combat(Game game, Difficulty difficulty, int opponentsCount = 1)
-		{
-			this._game = game;
-		    this.Difficulty = difficulty;
+        {
+            this._game = game;
+            this.Difficulty = difficulty;
             this.Players.Add(game.HumanPlayer);
             this.GenerateOpponents(_game.HumanPlayer, difficulty, opponentsCount);
-		}
+
+        }
 
         /// <summary>
         /// Méthode utile lorsqu'un joueur humain désire se battre contre plusieurs opposants
@@ -41,20 +42,20 @@ namespace Core.Model
         /// <param name="humanPlayer">Le joueur représenté par un humain</param>
         /// <param name="difficulty">Le niveau de difficulté demandé par le joueur humain</param>
         /// <param name="opponentsCount">Le nombre d'opposants demandés par le joueur humain</param>
-	    private void GenerateOpponents(Player humanPlayer, Difficulty difficulty,  int opponentsCount)
-	    {
-	        for (var i =0; i < opponentsCount; i++)
-	        {
+	    private void GenerateOpponents(Player humanPlayer, Difficulty difficulty, int opponentsCount)
+        {
+            for (var i = 0; i < opponentsCount; i++)
+            {
                 var newOpponent = Universe.GenerateOpponent(humanPlayer, difficulty);
                 this.Players.Add(newOpponent);
             }
-	    }
+        }
 
         /// <summary>
         /// Méthode principale d'exécution d'un combat
         /// </summary>
 	    public void Run()
-	    {
+        {
             do
             {
                 foreach (var player in Players)
@@ -102,16 +103,16 @@ namespace Core.Model
 
             //Le combat est terminé car tous les Opponents sont morts
             //Le gagnant c'est CurrentPlayer
-	        Player winner = CurrentPlayer;
+            Player winner = CurrentPlayer;
 
             Console.WriteLine(winner.Name + " Wins");
             captureOpponentsItems(winner);
         }
 
-	    public void captureOpponentsItems(Player player)
-	    {
-	        //TODO: Mettre le code de capture de tous les opponents ici
-	    }
+        public void captureOpponentsItems(Player player)
+        {
+            //TODO: Mettre le code de capture de tous les opponents ici
+        }
 
 
         /// <summary>
@@ -133,5 +134,13 @@ namespace Core.Model
             var availableOpponents = Players.Where(x => x != CurrentPlayer).ToList();
             return availableOpponents[Utils.Random(availableOpponents.Count)];
         }
-    } 
+
+        /// <summary>
+        /// Besoin d'initialiser 1er monstre adverse au player adverse    inutile pour l instant
+        /// </summary>
+        public void AssignFistOpponent()
+        {
+            CurrentOpponent = PickRandomOpponent();
+        }
+    }
 }

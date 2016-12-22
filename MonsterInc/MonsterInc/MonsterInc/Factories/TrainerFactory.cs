@@ -34,7 +34,8 @@ namespace Core
             var newTrainer = new Trainer(randomName, element);
 
             newTrainer.Monsters = MonsterFactory.GenerateRandomMonsters(trainer, difficulty);
-            
+            //newTrainer.Monsters = MonsterFactory.GenerateDummyMonsters();
+
             InitActiveMonsters(newTrainer);
             InitActiveMonster(newTrainer);
 
