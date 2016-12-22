@@ -9,11 +9,11 @@
     <Grid Background="White" OpacityMask="White">
         <Grid x:Name="ActiveMonstersGrid" HorizontalAlignment="Left" Height="217" Margin="10,-35,0,0" VerticalAlignment="Top" Width="530">
 
-            <Button x:Name="MonsterBtn1" Content="&lt;Empty>" HorizontalAlignment="Left" Margin="5,46,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-            <Button x:Name="MonsterBtn2" Content="&lt;Empty&gt;" HorizontalAlignment="Left" Margin="110,46,0,0" VerticalAlignment="Top" Width="100" Height="100"/>
-            <Button x:Name="MonsterBtn3" Content="&lt;Empty&gt;" HorizontalAlignment="Left" Margin="215,46,0,0" VerticalAlignment="Top" Width="100" Height="100"/>
-            <Button x:Name="MonsterBtn4" Content="&lt;Empty&gt;" HorizontalAlignment="Left" Margin="320,46,0,0" VerticalAlignment="Top" Width="100" Height="100"/>
-            <Button x:Name="MonsterBtn5" Content="&lt;Empty&gt;" HorizontalAlignment="Left" Margin="425,46,-1,0" VerticalAlignment="Top" Width="100" Height="100"/>
+            <Button x:Name="MonsterBtn1" Content="&lt;Empty>" HorizontalAlignment="Left" Margin="5,46,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="MonsterBtn1_Click" />
+            <Button x:Name="MonsterBtn2" Content="&lt;Empty&gt;" HorizontalAlignment="Left" Margin="110,46,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="MonsterBtn2_Click"/>
+            <Button x:Name="MonsterBtn3" Content="&lt;Empty&gt;" HorizontalAlignment="Left" Margin="215,46,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="MonsterBtn3_Click"/>
+            <Button x:Name="MonsterBtn4" Content="&lt;Empty&gt;" HorizontalAlignment="Left" Margin="320,46,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="MonsterBtn4_Click"/>
+            <Button x:Name="MonsterBtn5" Content="&lt;Empty&gt;" HorizontalAlignment="Left" Margin="425,46,-1,0" VerticalAlignment="Top" Width="100" Height="100" Click="MonsterBtn5_Click"/>
 
             <Label x:Name="MonsterLevelLabel1" Content="Level : " HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top" Height="26" Width="46"/>
             <Label x:Name="MonsterElementLabel1" Content="Type : " HorizontalAlignment="Left" Margin="10,170,0,0" VerticalAlignment="Top" Height="26" Width="44"/>

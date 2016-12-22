@@ -28,27 +28,93 @@ namespace MonsterIncWPF
 
             Trainer gentilTrainer = SavedGames.LoadedCombat.Players.Where(x => x.Type == PlayerType.Human).First().Trainer;
             FriendlyMonster.Content = gentilTrainer.ActiveMonster.NickName;
-            FriendlyMonsterType.Content = gentilTrainer.ActiveMonster.Template.Name;
+            FriendlyMonsterType.Content = gentilTrainer.ActiveMonster.Template.Name + " - Level : " + gentilTrainer.ActiveMonster.ExperienceLevel;
             FriendlyMonsterLPActual.Content = gentilTrainer.ActiveMonster.Caracteristics[0].Actual + " / " + gentilTrainer.ActiveMonster.Caracteristics[0].Total;
             FriendlyMonsterEPActual.Content = gentilTrainer.ActiveMonster.Caracteristics[1].Actual + " / " + gentilTrainer.ActiveMonster.Caracteristics[1].Total;
 
-            //Trainer mechantTrainer = SavedGames.LoadedCombat.Players.Where(x => x.Type == PlayerType.Robot).First().Trainer;
-            Trainer mechantTrainer = SavedGames.LoadedCombat.Players[1].Trainer;
-            Player mechant = SavedGames.LoadedCombat.Players[1];
+            Trainer mechantTrainer = SavedGames.LoadedCombat.Players.Where(x => x.Type == PlayerType.Robot).First().Trainer;
+            EnemyMonster.Content = mechantTrainer.ActiveMonster.Template.Name;
+            EnemyMonsterType.Content = "Level : " + mechantTrainer.ActiveMonster.ExperienceLevel;
+            EnemyMonsterLPActual.Content = mechantTrainer.ActiveMonster.Caracteristics[0].Actual + " / " + mechantTrainer.ActiveMonster.Caracteristics[0].Total;
+            EnemyMonsterEPActual.Content = mechantTrainer.ActiveMonster.Caracteristics[1].Actual + " / " + mechantTrainer.ActiveMonster.Caracteristics[1].Total;
 
-            
-            EnemyMonster.Content = mechant.Trainer.ActiveMonster.Template.Name;
-            
-            //EnemyMonsterType.Content = mechantTrainer.ActiveMonster.;
+
+            AttackList.DataContext = gentilTrainer.ActiveMonster;
+
         }
 
 
+        bool isChecked = false;
+        private void ChangeButton_Checked(object sender, RoutedEventArgs e)
+        {
+            ChooseMonsterControl.Visibility = Visibility.Visible;
+            isChecked = true;
+        }
+
+        
+        private void AttackButton_Checked(object sender, RoutedEventArgs e)
+        {
+            AttackList.Visibility = Visibility.Visible;
+            isChecked = true;
+        }
+
+        private void DefendButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void ItemsButton_Checked(object sender, RoutedEventArgs e)
+        {
+            //AttackList.Visibility = Visibility.Visible;
+            isChecked = true;
+        }
+
+
+
+        private void AttackButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            if (AttackButton.IsChecked == true && !isChecked)
+            {
+                AttackButton.IsChecked = false;
+                AttackList.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                AttackButton.IsChecked = true;
+                isChecked = false;
+            }
+        }
+
+
+        private void ItemsButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            if (ItemsButton.IsChecked == true && !isChecked)
+            {
+                ItemsButton.IsChecked = false;
+                //AttackList.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                ItemsButton.IsChecked = true;
+                isChecked = false;
+            }
+        }
 
         private void ChangeButton_Click(object sender, RoutedEventArgs e)
         {
-            ChooseMonsterControl.Visibility = Visibility.Visible;
-            ActionGrid.Visibility = Visibility.Collapsed;
+            if (ChangeButton.IsChecked == true && !isChecked)
+            {
+                ChangeButton.IsChecked = false;
+                ChooseMonsterControl.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                ChangeButton.IsChecked = true;
+                isChecked = false;
+            }
         }
+
+        
 
     }
 }

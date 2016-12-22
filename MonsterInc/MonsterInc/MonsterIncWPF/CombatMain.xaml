@@ -6,9 +6,24 @@
              xmlns:local="clr-namespace:MonsterIncWPF"
              mc:Ignorable="d" 
              d:DesignHeight="570" d:DesignWidth="1014">
+    <UserControl.Resources>
+        <DataTemplate x:Key="usableTemplate">
+            <Grid Margin="0,2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="100" />
 
+                    <ColumnDefinition Width="50" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="2" Text="{Binding EnergyPointCost}" />
+                <TextBlock Grid.Column="1" Text="{Binding Element}" />
+                <TextBlock Grid.Column="0" Text="{Binding Name}" />
+
+            </Grid>
+        </DataTemplate>
+    </UserControl.Resources>
+    
     <Grid Background="White" OpacityMask="White">
-        <Label x:Name="label" Content="" HorizontalAlignment="Left" Margin="462,191,0,0" VerticalAlignment="Top"/>
         <Label x:Name="FriendlyMonster" Content="nickname" HorizontalAlignment="Left" Margin="50,23,0,0" VerticalAlignment="Top" FontSize="28" FontWeight="Bold"/>
         <Label x:Name="EnemyMonster" Content="nickname" HorizontalAlignment="Right" Margin="0,23,50,0" VerticalAlignment="Top" FontSize="28" FontWeight="Bold"/>
         <Label x:Name="FriendlyMonsterType" Content="name" HorizontalAlignment="Left" Margin="50,60,0,0" VerticalAlignment="Top" FontSize="24"/>
@@ -16,16 +31,30 @@
 
         <Grid x:Name="ActionGrid" HorizontalAlignment="Left" Height="155" Margin="10,405,0,0" VerticalAlignment="Top" Width="994">
 
-            <Button x:Name="AttackButton" Content="Attack" HorizontalAlignment="Left" Margin="114,10,0,0" VerticalAlignment="Top" Width="270" Height="60" FontSize="20"/>
-            <Button x:Name="DefendButton" Content="Defense" HorizontalAlignment="Left" Margin="114,83,0,0" VerticalAlignment="Top" Width="270" Height="60" FontSize="20"/>
-            <Button x:Name="ItemsButton" Content="Items" HorizontalAlignment="Left" Margin="558,10,0,0" VerticalAlignment="Top" Width="270" Height="60" FontSize="20"/>
-            <Button x:Name="ChangeButton" Content="Change monster" HorizontalAlignment="Left" Margin="558,83,0,0" VerticalAlignment="Top" Width="270" Height="60" FontSize="20" Click="ChangeButton_Click"/>
+            <RadioButton Style="{StaticResource {x:Type ToggleButton}}" x:Name="AttackButton" GroupName="Action" Content="Attack" HorizontalAlignment="Left" Margin="114,10,0,0" VerticalAlignment="Top" Width="270" Height="60" FontSize="20" IsChecked="False" Checked="AttackButton_Checked" Click="AttackButton_OnClick"/>
+            <Button x:Name="DefendButton"  Content="Defend" HorizontalAlignment="Left" Margin="114,83,0,0" VerticalAlignment="Top" Width="270" Height="60" FontSize="20" Click="DefendButton_Click"/>
+            <RadioButton Style="{StaticResource {x:Type ToggleButton}}" x:Name="ItemsButton" GroupName="Action" Content="Items" HorizontalAlignment="Left" Margin="558,10,0,0" VerticalAlignment="Top" Width="270" Height="60" FontSize="20" IsChecked="False" Checked="ItemsButton_Checked" Click="ItemsButton_OnClick"/>
+            <RadioButton Style="{StaticResource {x:Type ToggleButton}}" x:Name="ChangeButton" GroupName="Action" Content="Change monster" HorizontalAlignment="Left" Margin="558,83,0,0" VerticalAlignment="Top" Width="270" Height="60" FontSize="20" IsChecked="False" Checked="ChangeButton_Checked" Click="ChangeButton_Click"/>
 
+            <ListBox x:Name="AttackList" HorizontalAlignment="Left" Height="155" Margin="400,0,0,0" VerticalAlignment="Top" Width="428" Visibility="Collapsed" ItemsSource="{Binding ActiveSkills}" ItemTemplate="{StaticResource usableTemplate}"/>
+            <!--<ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                            <TextBlock x:Name="AttackListText"   Text="{Binding Nickname}" FontSize="22" FontWeight="Bold" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            </ListBox>-->
         </Grid>
         <Label x:Name="FriendlyMonsterLP" Content="Life : " HorizontalAlignment="Left" Margin="50,102,0,0" VerticalAlignment="Top" FontSize="24"/>
         <Label x:Name="FriendlyMonsterLPActual" Content="" HorizontalAlignment="Left" Margin="141,102,0,0" VerticalAlignment="Top" FontSize="22" Height="42" Width="225"/>
+        <Label x:Name="EnemyMonsterLPActual" Content="" HorizontalAlignment="Left" Margin="804,107,0,0" VerticalAlignment="Top" FontSize="22" Height="42" Width="180"/>
         <Label x:Name="FriendlyMonsterEP" Content="Energy : " HorizontalAlignment="Left" Margin="50,131,0,0" VerticalAlignment="Top" FontSize="24"/>
         <Label x:Name="FriendlyMonsterEPActual" Content="" HorizontalAlignment="Left" Margin="141,135,0,0" VerticalAlignment="Top" FontSize="22" Height="42" Width="225"/>
+        <Label x:Name="EnemyMonsterEPActual" Content="" HorizontalAlignment="Left" Margin="804,135,0,0" VerticalAlignment="Top" FontSize="22" Height="42" Width="180"/>
         <Label x:Name="EnemyMonsterLP" Content="Life : " HorizontalAlignment="Left" Margin="707,102,0,0" VerticalAlignment="Top" FontSize="24"/>
         <Label x:Name="EnemyMonsterEP" Content="Energy : " HorizontalAlignment="Left" Margin="707,131,0,0" VerticalAlignment="Top" FontSize="24"/>
 
@@ -36,8 +65,10 @@
             <TextBlock x:Name="CombatTextBlock" HorizontalAlignment="Left" Margin="50,0,0,0" TextWrapping="Wrap" Text="Start!" VerticalAlignment="Top" Height="160" Width="914"/>
         </ScrollViewer>
 
-        <local:ActiveMonster x:Name="ChooseMonsterControl" HorizontalAlignment="Left" Margin="194,383,0,0" VerticalAlignment="Top" Visibility="Collapsed"/>
+
+        <local:ActiveMonster x:Name="ChooseMonsterControl" HorizontalAlignment="Left" Margin="22,387,0,0" VerticalAlignment="Top" Visibility="Collapsed"/>
         
+
 
 
 
