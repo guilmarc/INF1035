@@ -23,6 +23,12 @@ namespace MonsterIncWPF
         public ItemsForm()
         {
             InitializeComponent();
+
+            //ActiveItemsListBox
+
+            this.DataContext = SavedGames.LoadedPlayer;
+            ActiveItemsListBox.ItemsSource = SavedGames.LoadedPlayer.ActiveTrainer.ActiveInventory;
+            ItemsListBox.ItemsSource = Core.Universe.Items;
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)

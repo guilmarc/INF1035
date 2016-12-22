@@ -99,7 +99,7 @@
             <!--<Rectangle HorizontalAlignment="Left" Height="550" Margin="10,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="360"/>-->
             <Label x:Name="MenuLabel" Content="MENU" HorizontalAlignment="Center" Margin="73,20,63,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="244" Height="40" FontWeight="Bold" FontSize="26"/>
             <Button x:Name="MenuMonsterBtn" Content="Monsters" HorizontalAlignment="Center" Margin="10,0,0,0" VerticalAlignment="Top" Width="244" Height="45" FontSize="20"/>
-            <Button x:Name="MenuItemBtn" Content="Items" HorizontalAlignment="Center" Margin="10,10,0,0" VerticalAlignment="Top" Width="244" Height="45" FontSize="20"/>
+            <Button x:Name="MenuItemBtn" Content="Items" HorizontalAlignment="Center" Margin="10,10,0,0" VerticalAlignment="Top" Width="244" Height="45" FontSize="20" Click="MenuItemBtn_Click"/>
             <Button x:Name="MenuStoreBtn" Content="Item Shop" HorizontalAlignment="Center" Margin="10,10,0,0" VerticalAlignment="Top" Width="244" Height="45" FontSize="20" Click="MenuStoreBtn_Click"/>
             <Button x:Name="MenuArenaBtn" Content="FIGHT ARENA" HorizontalAlignment="Center" Margin="73,10,63,0" VerticalAlignment="Top" Width="244" Height="161" FontSize="28" Click="MenuArenaBtn_Click"/>
             <Button x:Name="MenuQuickSaveBtn" Content="Quick Save" HorizontalAlignment="Center" Margin="73,10,63,0" VerticalAlignment="Top" Width="244" Height="45" FontSize="20"/>

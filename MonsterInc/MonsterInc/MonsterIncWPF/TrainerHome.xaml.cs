@@ -134,6 +134,11 @@ namespace MonsterIncWPF
             listeEnergy.Add(MonsterEnergyValue5);
         }
 
+        private void MenuItemBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ActiveGrid.Children.Add(new ItemsForm() { Visibility = Visibility.Visible });
+            TrainerHomeGrid.Visibility = Visibility.Collapsed;
+        }
     }
 
 
