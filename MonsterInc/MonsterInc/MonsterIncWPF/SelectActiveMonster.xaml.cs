@@ -59,7 +59,7 @@ namespace MonsterIncWPF
         private void OkButton_Click(object sender, RoutedEventArgs e)
         {
             if (i > trainer.ActiveMonsters.Count -1) trainer.ActiveMonsters.Add(trainer.SelectTempMonsters[MonsterListBox.SelectedIndex]);
-            trainer.ActiveMonsters[i] = trainer.SelectTempMonsters[MonsterListBox.SelectedIndex];
+            if(MonsterListBox.SelectedIndex != -1) trainer.ActiveMonsters[i] = trainer.SelectTempMonsters[MonsterListBox.SelectedIndex];
             this.Visibility = Visibility.Collapsed;
             //MainWindow.Refresh();
         }

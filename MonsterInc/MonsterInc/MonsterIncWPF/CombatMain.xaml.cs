@@ -84,6 +84,8 @@ namespace MonsterIncWPF
                 currentPlayer.ActiveTrainer.ActiveMonster.ExperienceLevel + 1;
             CombatTextBlock.Text += currentPlayer.ActiveTrainer.ActiveMonster.NickName + " is defending\n";
             isChecked = true;
+            DoEnemyTurn();
+            DefendButton.IsChecked = false;
             Refresh();
             CombatTextScroll.UpdateLayout();
             CombatTextScroll.ScrollToVerticalOffset(double.MaxValue);
@@ -93,12 +95,12 @@ namespace MonsterIncWPF
         {
             if (DefendButton.IsChecked == true && !isChecked)
             {
-                DefendButton.IsChecked = false;
+                //DefendButton.IsChecked = false;
                 AttackList.Visibility = Visibility.Collapsed;
             }
             else
             {
-                DefendButton.IsChecked = true;
+                //DefendButton.IsChecked = true;
                 AttackList.Visibility = Visibility.Collapsed;
                 isChecked = false;
             }
@@ -167,7 +169,7 @@ namespace MonsterIncWPF
             if (AttackList.SelectedIndex != -1)
             {
                 Turn tour = new Turn(currentPlayer, ennemyPlayer, gentilTrainer.ActiveMonster.ActiveSkills[AttackList.SelectedIndex], SavedGames.LoadedCombat);
-                string tourFait = tour.DoTurn;
+                string tourFait = tour.DoTurn();
                 
                 CombatTextBlock.Text += tourFait;
                 Refresh();
@@ -183,21 +185,18 @@ namespace MonsterIncWPF
             }
         }
 
-        private void DoDefense()
+        private void DoEnemyTurn()
         {
             {
-               // Turn tour = new Turn(currentPlayer, ennemyPlayer, SavedGames.LoadedCombat);
-                //string tourFait = tour.;
-                //CombatTextBlock.Text += tourFait;
+                Turn tour = new Turn(currentPlayer, ennemyPlayer, SavedGames.LoadedCombat);
+                string tourFait = tour.DoEnemyTurn();
+                CombatTextBlock.Text += tourFait;
                 Refresh();
                 CombatTextScroll.UpdateLayout();
                 CombatTextScroll.ScrollToVerticalOffset(double.MaxValue);
 
                 //cache liste d'attaque
-                AttackButton.IsChecked = false;
-                AttackList.UnselectAll();
-                AttackList.Visibility = Visibility.Collapsed;
-
+                DefendButton.IsChecked = false;
                 CheckWin();
 
             }
@@ -208,7 +207,7 @@ namespace MonsterIncWPF
             if (ItemList.SelectedIndex != -1)
             {
                 Turn tour = new Turn(currentPlayer, ennemyPlayer, gentilTrainer.ActiveInventory[ItemList.SelectedIndex], SavedGames.LoadedCombat);
-                string tourFait = tour.DoTurn;
+                string tourFait = tour.DoTurn();
                 CombatTextBlock.Text += tourFait;
                 Refresh();
                 CombatTextScroll.UpdateLayout();

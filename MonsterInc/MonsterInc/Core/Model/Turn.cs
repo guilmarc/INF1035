@@ -70,7 +70,7 @@ namespace Core.Model
             combat.Tour++;
 
             //tour de l'adversaire
-            //resultat += DoEnemyTurn2();
+            resultat += DoEnemyTurn();
 
             //opponentUsable = currentOpponent.PickUsable(currentPlayer);
             //ongoingUsable = opponentUsable;
@@ -112,12 +112,12 @@ namespace Core.Model
             if (!HasEnoughtEnergyEnemy)
             {
                 resultat += currentOpponent.ActiveTrainer.ActiveMonster.Template.Name +
-                            " don t have enough energy to use " + opponentUsable + "\n";
+                            " don t have enough energy to use " + opponentUsable + "and skip his turn\n";
                 return resultat;
             }
             opponentUsable.Consume(currentOpponent, currentPlayer);
 
-            foreach (var scope in usable.Scopes)
+            foreach (var scope in opponentUsable.Scopes)
             {
 
                 resultat += (combat.Tour + ":: " + currentOpponent.ActiveTrainer.ActiveMonster.Template.Name + " uses " + opponentUsable + " on " +

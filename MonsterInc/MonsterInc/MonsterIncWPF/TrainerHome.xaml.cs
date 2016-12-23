@@ -182,19 +182,13 @@ namespace MonsterIncWPF
 
         private void MenuSaveBtn_Click(object sender, RoutedEventArgs e)
         {
-            //SaveFileDialog d = new SaveFileDialog();
-            //d.InitialDirectory = Core.Constants.SavedGamePath;
-            //d.ShowDialog();
-            SavedGames.LoadedGame.Save("stringdetest");
-            MessageBox.Show("Correctly saved");
-
+            SaveGrid.Visibility=Visibility.Visible;
         }
 
         private void MenuQuickSaveBtn_Click(object sender, RoutedEventArgs e)
-        {
+        {            
             SavedGames.LoadedGame.Save();
             MessageBox.Show("Correctly saved");
-
         }
 
         public void HideDifficulty()
@@ -202,6 +196,13 @@ namespace MonsterIncWPF
             MenuPanel.Visibility = Visibility.Visible;
             DifficultyPanel.Visibility = Visibility.Collapsed;
             CombatGrid.Children.Clear();
+        }
+
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            SavedGames.LoadedGame.Save(SaveBox.Text);
+            MessageBox.Show("Correctly saved");
+            SaveGrid.Visibility = Visibility.Collapsed;
         }
     }
 
