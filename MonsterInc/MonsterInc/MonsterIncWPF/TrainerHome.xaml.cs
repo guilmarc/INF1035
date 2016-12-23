@@ -182,10 +182,10 @@ namespace MonsterIncWPF
 
         private void MenuSaveBtn_Click(object sender, RoutedEventArgs e)
         {
-            SaveFileDialog d = new SaveFileDialog();
-            d.InitialDirectory = Core.Constants.SavedGamePath;
-            d.ShowDialog();
-            SavedGames.LoadedGame.Save(System.IO.Path.GetFileNameWithoutExtension(d.FileName));
+            //SaveFileDialog d = new SaveFileDialog();
+            //d.InitialDirectory = Core.Constants.SavedGamePath;
+            //d.ShowDialog();
+            SavedGames.LoadedGame.Save("stringdetest");
             MessageBox.Show("Correctly saved");
 
         }

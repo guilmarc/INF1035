@@ -52,6 +52,7 @@ namespace MonsterIncWPF
 
             this.DataContext = SavedGames.LoadedGame.HumanPlayer;
             SavedGames.LoadedGame.Save();
+            SavedGames.LoadedGame.Save("jean");
 
             Home.Visibility = Visibility.Collapsed;
             AppGrid.Children.Add(new SelectNewMonster(true) { Visibility = Visibility.Visible });
