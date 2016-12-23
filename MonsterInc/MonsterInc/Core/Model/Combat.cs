@@ -5,9 +5,6 @@ using System.Linq;
 namespace Core.Model
 {
 
-    /// <summary>
-    /// 
-    /// </summary>
     public class Combat
     {
         Game _game;

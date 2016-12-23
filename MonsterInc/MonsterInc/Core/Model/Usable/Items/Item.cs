@@ -5,12 +5,12 @@ using System.Xml.Serialization;
 
 namespace Core.Model
 {
+    [Serializable]
     [XmlInclude(typeof(Antidote))]
     [XmlInclude(typeof(CaptureBall))]
     [XmlInclude(typeof(EnergyPotion))]
     [XmlInclude(typeof(LifePotion))]
     [XmlInclude(typeof(Revival))]
-    [Serializable]
     public abstract class Item : Usable
     {
         /// <summary>

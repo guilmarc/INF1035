@@ -4,11 +4,6 @@ using System.Xml.Serialization;
 namespace Core.Model
 {
 
-    /// <summary>
-    ///
-    /// </summary>
-    //[XmlInclude(typeof(EffectScope))]
-    //[XmlRoot(Namespace = "Core.Model")]
     [Serializable]
     public class EffectScope : Scope
 	{

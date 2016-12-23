@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Xml.Serialization;
 
 namespace Core.Model
 {
     [Serializable]
-	public class Skill : Usable
+    [XmlInclude(typeof(Item))]
+    [XmlInclude(typeof(Skill))]
+    public class Skill : Usable
 	{
 		public int EnergyPointCost { get; set; }
 

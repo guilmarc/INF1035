@@ -4,13 +4,7 @@ using System.Xml.Serialization;
 
 namespace Core.Model
 {
-
-    /// <summary>
-    /// Damage scope.
-    /// </summary>
-    //[Serializable]
-    //[XmlInclude(typeof(Scope))]
-    //[XmlRoot(Namespace = "Core.Model")]
+    [Serializable]
     public class DamageScope : Scope 
 	{
         //[XmlIgnore]
