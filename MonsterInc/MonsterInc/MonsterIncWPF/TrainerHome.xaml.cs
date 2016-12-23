@@ -40,8 +40,14 @@ namespace MonsterIncWPF
             this.DataContext = SavedGames.LoadedGame.HumanPlayer;
             Trainer trainer = SavedGames.LoadedGame.HumanPlayer.Trainer;
             DifficultyListBox.ItemsSource = DifficultyData.Difficulty;
-            InitListes();
+            InitListes();   
+            TrainerHomeRefresh();
+            
+        }
 
+        public void TrainerHomeRefresh()
+        {
+            Trainer trainer = SavedGames.LoadedGame.HumanPlayer.Trainer;
 
             int nbActiveMonster = trainer.ActiveMonsters.Count;
             for (int i = 0; i < 5; i++)
@@ -63,13 +69,8 @@ namespace MonsterIncWPF
                     listeEnergy[i].Content = "";
                 }
             }
-            TrainerHomeRefresh();
-            
-        }
 
-        public void TrainerHomeRefresh()
-        {
-            Trainer trainer = SavedGames.LoadedGame.HumanPlayer.Trainer;
+
             int nbActiveItems = trainer.ActiveInventory.Count;
             for (int i = 0; i < 5; i++)
             {

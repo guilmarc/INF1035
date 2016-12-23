@@ -58,9 +58,11 @@ namespace MonsterIncWPF
 
         private void OkButton_Click(object sender, RoutedEventArgs e)
         {
+            var t = SavedGames.mainWindow.AppGrid.Children[SavedGames.trainerHomeForm];
             if (i > trainer.ActiveMonsters.Count -1) trainer.ActiveMonsters.Add(trainer.SelectTempMonsters[MonsterListBox.SelectedIndex]);
             trainer.ActiveMonsters[i] = trainer.SelectTempMonsters[MonsterListBox.SelectedIndex];
             this.Visibility = Visibility.Collapsed;
+            ((TrainerHome)t).TrainerHomeRefresh();
             //MainWindow.Refresh();
         }
     }

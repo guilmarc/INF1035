@@ -49,7 +49,10 @@ namespace MonsterIncWPF
             EnemyMonsterLPActual.Content = mechantTrainer.ActiveMonster.Caracteristics[0].Actual + " / " + mechantTrainer.ActiveMonster.Caracteristics[0].Total;
             EnemyMonsterEPActual.Content = mechantTrainer.ActiveMonster.Caracteristics[1].Actual + " / " + mechantTrainer.ActiveMonster.Caracteristics[1].Total;
 
-            
+            ItemList.DataContext = gentilTrainer;
+            ItemList.ItemsSource = gentilTrainer.ActiveInventory;
+            AttackList.DataContext = gentilTrainer.ActiveMonster;
+            AttackList.ItemsSource = gentilTrainer.ActiveMonster.ActiveSkills;
         }
 
         private void DeleteChooseMonsterControl()
@@ -68,10 +71,9 @@ namespace MonsterIncWPF
         }
 
 
-
-
         private void AttackButton_Checked(object sender, RoutedEventArgs e)
         {
+            Refresh();
             AttackList.Visibility = Visibility.Visible;
             isChecked = true;
         }
@@ -95,12 +97,10 @@ namespace MonsterIncWPF
         {
             if (DefendButton.IsChecked == true && !isChecked)
             {
-                //DefendButton.IsChecked = false;
                 AttackList.Visibility = Visibility.Collapsed;
             }
             else
             {
-                //DefendButton.IsChecked = true;
                 AttackList.Visibility = Visibility.Collapsed;
                 isChecked = false;
             }
@@ -109,8 +109,10 @@ namespace MonsterIncWPF
 
         private void ItemsButton_Checked(object sender, RoutedEventArgs e)
         {
-            ItemList.Visibility=Visibility.Visible;
+            Refresh();
             ItemList.UpdateLayout();
+            ItemList.Visibility=Visibility.Visible;
+            
             isChecked = true;
         }
 
@@ -217,6 +219,7 @@ namespace MonsterIncWPF
                 ItemsButton.IsChecked = false;
                 ItemList.UnselectAll();
                 ItemList.Visibility = Visibility.Collapsed;
+                ItemList.UpdateLayout();
 
                 CheckWin();
             }
@@ -251,6 +254,7 @@ namespace MonsterIncWPF
             var t = SavedGames.mainWindow.AppGrid.Children[SavedGames.trainerHomeForm];
             ((TrainerHome)t).TrainerHomeGrid.Visibility = Visibility.Visible;
             ((TrainerHome)t).HideDifficulty();
+            ((TrainerHome)t).TrainerHomeRefresh();
         }
     }
 }
