@@ -71,8 +71,8 @@ namespace Core.Model
         public void Save(string gameName)
         {
             var filePath = Constants.SavedGamePath + gameName + Constants.SavedGameFileExtension;
-            //Utils.Serializer.Binary.WriteToBinaryFile(filePath, this);
-            Utils.Serializer.Xml.WriteToXmlFile(filePath, this);
+            Utils.Serializer.Binary.WriteToBinaryFile(filePath, this);
+            //Utils.Serializer.Xml.WriteToXmlFile(filePath, this);
         }
 	}
 }

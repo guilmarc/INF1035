@@ -37,122 +37,116 @@ namespace Core.Model
             this.combat = combat;
         }
 
-        public string DoTurn
+        public string DoTurn()
         {
-            get
+            string resultat = "";
+
+            //tour du joueur
+            ongoingUsable = usable;
+            if (!HasEnougthEnergy)
             {
-                string resultat = "";
-
-                //tour du joueur
-                ongoingUsable = usable;
-                if (!CheckEnergy)
-                {
-                    resultat += currentPlayer.ActiveTrainer.ActiveMonster.NickName +
-                                " don t have enough energy to use " + usable + "\n";
-                    return resultat;
-                }
-                usable.Consume(currentPlayer, currentOpponent);
-
-                foreach (var scope in usable.Scopes)
-                {
-                    resultat = (combat.Tour + ":: " + currentPlayer.ActiveTrainer.ActiveMonster.NickName + " uses " + usable + " on " +
-                                      ((scope.Target == Scope.ScopeTarget.Self)
-                                          ? currentPlayer.ActiveTrainer.ActiveMonster.NickName
-                                          : currentOpponent.ActiveTrainer.ActiveMonster.Template.Name) + "\n");
-                }
-                if (currentOpponent.ActiveTrainer.ActiveMonster.Caracteristics[0].Actual < 0)
-                {
-                    currentOpponent.ActiveTrainer.ActiveMonster.Caracteristics[0].Actual = 0;
-                    resultat += currentOpponent.ActiveTrainer.ActiveMonster.Template.Name + " defeated! \n";
-                    combat.Tour++;
-
-                    return resultat;
-                }
-                currentOpponent.ActiveTrainer.ActiveMonster.Energize();
-                combat.Tour++;
-
-                //tour de l'adversaire
-                //resultat += DoEnemyTurn2();
-
-                //opponentUsable = currentOpponent.PickUsable(currentPlayer);
-                //ongoingUsable = opponentUsable;
-                //if (!CheckEnemyEnergy)
-                //{
-                //    resultat += currentOpponent.ActiveTrainer.ActiveMonster.Template.Name +
-                //                " don t have enough energy to use " + opponentUsable + "\n";
-                //    return resultat;
-                //}
-                //opponentUsable.Consume(currentOpponent, currentPlayer);
-
-                //foreach (var scope in usable.Scopes)
-                //{
-
-                //        resultat += (combat.Tour + ":: " + currentOpponent.ActiveTrainer.ActiveMonster.Template.Name + " uses " + opponentUsable + " on " +
-                //            ((scope.Target == Scope.ScopeTarget.Self)
-                //            ? currentOpponent.ActiveTrainer.ActiveMonster.Template.Name
-                //            : currentPlayer.ActiveTrainer.ActiveMonster.NickName) + "\n");
-
-
-                //}
-                //if (currentPlayer.ActiveTrainer.ActiveMonster.Caracteristics[0].Actual < 0)
-                //{
-                //    currentPlayer.ActiveTrainer.ActiveMonster.Caracteristics[0].Actual = 0;
-                //    resultat += currentPlayer.ActiveTrainer.ActiveMonster.NickName + " defeated! \n";
-                //    combat.Tour++;
-                //    return resultat;
-                //}
-                //currentPlayer.ActiveTrainer.ActiveMonster.Energize();
-                //combat.Tour++;
+                resultat += currentPlayer.ActiveTrainer.ActiveMonster.NickName +
+                            " don t have enough energy to use " + usable + "\n";
                 return resultat;
             }
+            usable.Consume(currentPlayer, currentOpponent);
 
+            foreach (var scope in usable.Scopes)
+            {
+                resultat = (combat.Tour + ":: " + currentPlayer.ActiveTrainer.ActiveMonster.NickName + " uses " + usable + " on " +
+                                  ((scope.Target == Scope.ScopeTarget.Self)
+                                      ? currentPlayer.ActiveTrainer.ActiveMonster.NickName
+                                      : currentOpponent.ActiveTrainer.ActiveMonster.Template.Name) + "\n");
+            }
+            if (currentOpponent.ActiveTrainer.ActiveMonster.Caracteristics[0].Actual < 0)
+            {
+                currentOpponent.ActiveTrainer.ActiveMonster.Caracteristics[0].Actual = 0;
+                resultat += currentOpponent.ActiveTrainer.ActiveMonster.Template.Name + " defeated! \n";
+                combat.Tour++;
+
+                return resultat;
+            }
+            currentOpponent.ActiveTrainer.ActiveMonster.Energize();
+            combat.Tour++;
+
+            //tour de l'adversaire
+            //resultat += DoEnemyTurn2();
+
+            //opponentUsable = currentOpponent.PickUsable(currentPlayer);
+            //ongoingUsable = opponentUsable;
+            //if (!HasEnoughtEnergyEnemy)
+            //{
+            //    resultat += currentOpponent.ActiveTrainer.ActiveMonster.Template.Name +
+            //                " don t have enough energy to use " + opponentUsable + "\n";
+            //    return resultat;
+            //}
+            //opponentUsable.Consume(currentOpponent, currentPlayer);
+
+            //foreach (var scope in usable.Scopes)
+            //{
+
+            //        resultat += (combat.Tour + ":: " + currentOpponent.ActiveTrainer.ActiveMonster.Template.Name + " uses " + opponentUsable + " on " +
+            //            ((scope.Target == Scope.ScopeTarget.Self)
+            //            ? currentOpponent.ActiveTrainer.ActiveMonster.Template.Name
+            //            : currentPlayer.ActiveTrainer.ActiveMonster.NickName) + "\n");
+
+
+            //}
+            //if (currentPlayer.ActiveTrainer.ActiveMonster.Caracteristics[0].Actual < 0)
+            //{
+            //    currentPlayer.ActiveTrainer.ActiveMonster.Caracteristics[0].Actual = 0;
+            //    resultat += currentPlayer.ActiveTrainer.ActiveMonster.NickName + " defeated! \n";
+            //    combat.Tour++;
+            //    return resultat;
+            //}
+            //currentPlayer.ActiveTrainer.ActiveMonster.Energize();
+            //combat.Tour++;
+            return resultat;
         }
 
-        public string DoEnemyTurn
+        public string DoEnemyTurn()
         {
-            get
+            string resultat = "";
+            opponentUsable = currentOpponent.PickUsable(currentPlayer);
+            ongoingUsable = opponentUsable;
+            if (!HasEnoughtEnergyEnemy)
             {
-                string resultat = "";
-                opponentUsable = currentOpponent.PickUsable(currentPlayer);
-                ongoingUsable = opponentUsable;
-                if (!CheckEnemyEnergy)
-                {
-                    resultat += currentOpponent.ActiveTrainer.ActiveMonster.Template.Name +
-                                " don t have enough energy to use " + opponentUsable + "\n";
-                    return resultat;
-                }
-                opponentUsable.Consume(currentOpponent, currentPlayer);
+                resultat += currentOpponent.ActiveTrainer.ActiveMonster.Template.Name +
+                            " don t have enough energy to use " + opponentUsable + "\n";
+                return resultat;
+            }
+            opponentUsable.Consume(currentOpponent, currentPlayer);
 
-                foreach (var scope in usable.Scopes)
-                {
+            foreach (var scope in usable.Scopes)
+            {
 
-                    resultat += (combat.Tour + ":: " + currentOpponent.ActiveTrainer.ActiveMonster.Template.Name + " uses " + opponentUsable + " on " +
-                        ((scope.Target == Scope.ScopeTarget.Self)
-                        ? currentOpponent.ActiveTrainer.ActiveMonster.Template.Name
-                        : currentPlayer.ActiveTrainer.ActiveMonster.NickName) + "\n");
+                resultat += (combat.Tour + ":: " + currentOpponent.ActiveTrainer.ActiveMonster.Template.Name + " uses " + opponentUsable + " on " +
+                    ((scope.Target == Scope.ScopeTarget.Self)
+                    ? currentOpponent.ActiveTrainer.ActiveMonster.Template.Name
+                    : currentPlayer.ActiveTrainer.ActiveMonster.NickName) + "\n");
 
 
-                }
-                if (currentPlayer.ActiveTrainer.ActiveMonster.Caracteristics[0].Actual < 0)
-                {
-                    currentPlayer.ActiveTrainer.ActiveMonster.Caracteristics[0].Actual = 0;
-                    resultat += currentPlayer.ActiveTrainer.ActiveMonster.NickName + " defeated! \n";
-                    combat.Tour++;
-                    return resultat;
-                }
-                currentPlayer.ActiveTrainer.ActiveMonster.Energize();
+            }
+            if (currentPlayer.ActiveTrainer.ActiveMonster.Caracteristics[0].Actual < 0)
+            {
+                currentPlayer.ActiveTrainer.ActiveMonster.Caracteristics[0].Actual = 0;
+                resultat += currentPlayer.ActiveTrainer.ActiveMonster.NickName + " defeated! \n";
                 combat.Tour++;
                 return resultat;
-            } 
+            }
+            currentPlayer.ActiveTrainer.ActiveMonster.Energize();
+            combat.Tour++;
+            return resultat;
         }
 
-        public bool CheckEnergy
+
+        public bool HasEnougthEnergy
         {
             get
             {
                 if (ongoingUsable is Skill)
                 {
-                    var skill = ongoingUsable as Skill;
+                    var skill = (Skill)ongoingUsable;
                     if (currentPlayer.ActiveTrainer.ActiveMonster.Caracteristics[1].Actual < skill.EnergyPointCost)
                     {
                         return false;
@@ -164,13 +158,13 @@ namespace Core.Model
         }
 
 
-        public bool CheckEnemyEnergy
+        public bool HasEnoughtEnergyEnemy
         {
             get
             {
                 if (ongoingUsable is Skill)
                 {
-                    var skill = ongoingUsable as Skill;
+                    var skill = (Skill)ongoingUsable;
                     if (currentOpponent.ActiveTrainer.ActiveMonster.Caracteristics[1].Actual < skill.EnergyPointCost)
                     {
                         return false;

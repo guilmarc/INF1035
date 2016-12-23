@@ -34,6 +34,10 @@ namespace MonsterIncConsole
             //   Console.WriteLine(Core.Utils.HumanizeRatio()); 
             //}
 
+            Core.Engine.NewGame(Core.Universe.DummyPlayer);
+            Turn turn = new Turn();
+            turn.DoEnemyTurn;
+
             Console.ReadLine();
         }
     }

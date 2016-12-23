@@ -39,7 +39,7 @@ namespace Core
         public static Game LoadGameFromFile(String gameName)
         {
             var filePath = Constants.SavedGamePath + gameName + Constants.SavedGameFileExtension;
-            return Utils.Serializer.Xml.ReadFromXmlFile<Game>(filePath);
+            return Utils.Serializer.Binary.ReadFromBinaryFile<Game>(filePath);
         }
     }
 }
