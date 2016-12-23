@@ -38,16 +38,35 @@ namespace Core.Model
         {
         }
 
+
         public string Run()
         {
             //Exécution de l'attaque du joueur humain
-            RunAttackWithUsable(_currentPlayer, _currentOpponent, this._usable);
-
+            if (this._usable != null)
+            {
+                RunAttackWithUsable(_currentPlayer, _currentOpponent, this._usable);
+            }
+            else
+            {
+                //Mode défensif
+                RunDefense(_currentPlayer);
+            }
+            
             //Exécution de l'attaque ju joueur robot
             var AIUsable = _currentOpponent.PickUsable(_currentPlayer);
             RunAttackWithUsable(_currentOpponent, _currentPlayer, AIUsable);
 
             return _result;
+        }
+
+        public void RunDefense(Player actualPlayer)
+        {
+            //Une défense donne 2x de regénération d'énergie
+            actualPlayer.ActiveTrainer.ActiveMonsters.Energize();
+            actualPlayer.ActiveTrainer.ActiveMonsters.Energize();
+            _combat.Tour++;
+
+            _result += actualPlayer.ActiveTrainer.ActiveMonster.NickName + " is defending\n";
         }
 
         public void RunAttackWithUsable(Player actualPlayer, Player actualOpponent, Usable selectedUsable)

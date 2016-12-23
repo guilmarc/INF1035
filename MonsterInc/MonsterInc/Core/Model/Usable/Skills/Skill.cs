@@ -49,6 +49,7 @@ namespace Core.Model
 
                 target.ActiveTrainer.ActiveMonster.GetCaracteristic(MonsterTemplateCaracteristicType.LifePoints).Actual -= impact;
 
+                player.ActiveTrainer.ActiveMonster.IncrementExperiencePointBy(impact / 10);
             }
 
             //TODO: Ici on pourrait creer un objet d'impact et le retourner à l'interface par delegate ou event
