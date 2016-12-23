@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Core.Database;
 using Core.Model;
+using Microsoft.Win32;
 
 namespace MonsterIncWPF
 {
@@ -168,11 +169,18 @@ namespace MonsterIncWPF
 
         private void MenuSaveBtn_Click(object sender, RoutedEventArgs e)
         {
+            SaveFileDialog d = new SaveFileDialog();
+            d.InitialDirectory = Core.Constants.SavedGamePath;
+            d.ShowDialog();
+            SavedGames.LoadedGame.Save(System.IO.Path.GetFileNameWithoutExtension(d.FileName));
+            MessageBox.Show("Correctly saved");
 
         }
 
         private void MenuQuickSaveBtn_Click(object sender, RoutedEventArgs e)
         {
+            SavedGames.LoadedGame.Save();
+            MessageBox.Show("Correctly saved");
 
         }
     }
