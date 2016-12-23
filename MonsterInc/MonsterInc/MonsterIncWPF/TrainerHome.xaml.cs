@@ -150,6 +150,15 @@ namespace MonsterIncWPF
             listeBeltButtons.Add(BeltBtn5);
         }
 
+        private void MonsterBtn1_Click(object sender, RoutedEventArgs e)
+        {
+            ActiveGrid.Children.Add(new SelectActiveMonster(0) { Visibility = Visibility.Visible, HorizontalAlignment = HorizontalAlignment.Left,  VerticalAlignment =VerticalAlignment.Top, Height = 570, Width = 1014 });
+        }
+
+        private void MonsterBtn2_Click(object sender, RoutedEventArgs e)
+        {
+            ActiveGrid.Children.Add(new SelectActiveMonster(1) { Visibility = Visibility.Visible, HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Top, Height = 570, Width = 1014 });
+        }
 
         private void MenuItemBtn_Click(object sender, RoutedEventArgs e)
         {
