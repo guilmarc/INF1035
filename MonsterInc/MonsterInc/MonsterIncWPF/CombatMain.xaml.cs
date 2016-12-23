@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Core.Model;
 
+
 namespace MonsterIncWPF
 {
     /// <summary>
@@ -167,6 +168,7 @@ namespace MonsterIncWPF
             {
                 Turn tour = new Turn(currentPlayer, ennemyPlayer, gentilTrainer.ActiveMonster.ActiveSkills[AttackList.SelectedIndex], SavedGames.LoadedCombat);
                 string tourFait = tour.DoTurn;
+                
                 CombatTextBlock.Text += tourFait;
                 Refresh();
                 CombatTextScroll.UpdateLayout();
@@ -178,6 +180,26 @@ namespace MonsterIncWPF
                 AttackList.Visibility = Visibility.Collapsed;
 
                 CheckWin();
+            }
+        }
+
+        private void DoDefense()
+        {
+            {
+               // Turn tour = new Turn(currentPlayer, ennemyPlayer, SavedGames.LoadedCombat);
+                //string tourFait = tour.;
+                //CombatTextBlock.Text += tourFait;
+                Refresh();
+                CombatTextScroll.UpdateLayout();
+                CombatTextScroll.ScrollToVerticalOffset(double.MaxValue);
+
+                //cache liste d'attaque
+                AttackButton.IsChecked = false;
+                AttackList.UnselectAll();
+                AttackList.Visibility = Visibility.Collapsed;
+
+                CheckWin();
+
             }
         }
 

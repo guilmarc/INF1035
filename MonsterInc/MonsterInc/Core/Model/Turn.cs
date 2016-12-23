@@ -30,6 +30,13 @@ namespace Core.Model
             this.combat = combat;
         }
 
+        public Turn(Player currentPlayer, Player currentOpponent, Combat combat)
+        {
+            this.currentPlayer = currentPlayer;
+            this.currentOpponent = currentOpponent;
+            this.combat = combat;
+        }
+
         public string DoTurn
         {
             get
@@ -65,6 +72,47 @@ namespace Core.Model
                 combat.Tour++;
 
                 //tour de l'adversaire
+                //resultat += DoEnemyTurn2();
+
+                //opponentUsable = currentOpponent.PickUsable(currentPlayer);
+                //ongoingUsable = opponentUsable;
+                //if (!CheckEnemyEnergy)
+                //{
+                //    resultat += currentOpponent.ActiveTrainer.ActiveMonster.Template.Name +
+                //                " don t have enough energy to use " + opponentUsable + "\n";
+                //    return resultat;
+                //}
+                //opponentUsable.Consume(currentOpponent, currentPlayer);
+
+                //foreach (var scope in usable.Scopes)
+                //{
+
+                //        resultat += (combat.Tour + ":: " + currentOpponent.ActiveTrainer.ActiveMonster.Template.Name + " uses " + opponentUsable + " on " +
+                //            ((scope.Target == Scope.ScopeTarget.Self)
+                //            ? currentOpponent.ActiveTrainer.ActiveMonster.Template.Name
+                //            : currentPlayer.ActiveTrainer.ActiveMonster.NickName) + "\n");
+
+
+                //}
+                //if (currentPlayer.ActiveTrainer.ActiveMonster.Caracteristics[0].Actual < 0)
+                //{
+                //    currentPlayer.ActiveTrainer.ActiveMonster.Caracteristics[0].Actual = 0;
+                //    resultat += currentPlayer.ActiveTrainer.ActiveMonster.NickName + " defeated! \n";
+                //    combat.Tour++;
+                //    return resultat;
+                //}
+                //currentPlayer.ActiveTrainer.ActiveMonster.Energize();
+                //combat.Tour++;
+                return resultat;
+            }
+
+        }
+
+        public string DoEnemyTurn
+        {
+            get
+            {
+                string resultat = "";
                 opponentUsable = currentOpponent.PickUsable(currentPlayer);
                 ongoingUsable = opponentUsable;
                 if (!CheckEnemyEnergy)
@@ -77,12 +125,12 @@ namespace Core.Model
 
                 foreach (var scope in usable.Scopes)
                 {
- 
-                        resultat += (combat.Tour + ":: " + currentOpponent.ActiveTrainer.ActiveMonster.Template.Name + " uses " + opponentUsable + " on " +
-                            ((scope.Target == Scope.ScopeTarget.Self)
-                            ? currentOpponent.ActiveTrainer.ActiveMonster.Template.Name
-                            : currentPlayer.ActiveTrainer.ActiveMonster.NickName) + "\n");
-    
+
+                    resultat += (combat.Tour + ":: " + currentOpponent.ActiveTrainer.ActiveMonster.Template.Name + " uses " + opponentUsable + " on " +
+                        ((scope.Target == Scope.ScopeTarget.Self)
+                        ? currentOpponent.ActiveTrainer.ActiveMonster.Template.Name
+                        : currentPlayer.ActiveTrainer.ActiveMonster.NickName) + "\n");
+
 
                 }
                 if (currentPlayer.ActiveTrainer.ActiveMonster.Caracteristics[0].Actual < 0)
@@ -95,8 +143,7 @@ namespace Core.Model
                 currentPlayer.ActiveTrainer.ActiveMonster.Energize();
                 combat.Tour++;
                 return resultat;
-            }
-
+            } 
         }
 
         public bool CheckEnergy
