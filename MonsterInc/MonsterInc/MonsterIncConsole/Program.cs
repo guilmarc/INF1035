@@ -17,14 +17,14 @@ namespace MonsterIncConsole
 
             var game = Core.Engine.NewGame(Core.Universe.DummyPlayer);
             game.Save();
-
+            game.Save();
             //var newPlayer = new Core.Model.Player();
             //newPlayer.PlayerType = PlayerType.Human;
             Core.Universe.SavedGameFiles.ForEach(x => Console.WriteLine(x));
 
 
-            //var firstSavedGame = Core.Universe.SavedGameFiles[0];
-            //var loadedgame = Core.Engine.LoadGameFromFile(firstSavedGame);
+            var firstSavedGame = Core.Universe.SavedGameFiles[0];
+            var loadedgame = Core.Engine.LoadGameFromFile(firstSavedGame);
 
             Console.Write(Core.Constants.SavedGamePath);
 

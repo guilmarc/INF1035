@@ -17,8 +17,7 @@ namespace Core.Model
 		public ScopeTarget Target { get; set; } = ScopeTarget.Opponent;
 		//public Effect Effect { get; set; }
 
-        //[XmlIgnore]
-		public virtual double Magnitude { get; set; }
+		//public virtual double Magnitude { get; set; }
 
 		public int Duration { get; set; } = 1;
 	}

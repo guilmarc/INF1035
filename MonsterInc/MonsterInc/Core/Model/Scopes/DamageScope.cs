@@ -7,7 +7,6 @@ namespace Core.Model
     [Serializable]
     public class DamageScope : Scope 
 	{
-        //[XmlIgnore]
-		public new int Magnitude { get; set; }
+		public int Magnitude { get; set; }
 	}
 }

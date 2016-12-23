@@ -7,7 +7,6 @@ namespace Core.Model
     [Serializable]
     public class EffectScope : Scope
 	{
-        //[XmlIgnore]
-		public new double Magnitude { get; set; } = 1.0;
+		public double Magnitude { get; set; } = 1.0;
 	}
 }
