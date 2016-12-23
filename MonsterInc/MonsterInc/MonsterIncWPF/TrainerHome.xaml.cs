@@ -36,8 +36,8 @@ namespace MonsterIncWPF
         public TrainerHome(bool affiche)
         {
             InitializeComponent();
-            this.DataContext = SavedGames.LoadedPlayer;
-            Trainer trainer = SavedGames.LoadedPlayer.Trainer;
+            this.DataContext = SavedGames.LoadedGame.HumanPlayer;
+            Trainer trainer = SavedGames.LoadedGame.HumanPlayer.Trainer;
             DifficultyListBox.ItemsSource = DifficultyData.Difficulty;
             InitListes();
 
@@ -164,6 +164,16 @@ namespace MonsterIncWPF
         {
             ActiveGrid.Children.Add(new ItemsForm() { Visibility = Visibility.Visible });
             TrainerHomeGrid.Visibility = Visibility.Collapsed;
+        }
+
+        private void MenuSaveBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MenuQuickSaveBtn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 
