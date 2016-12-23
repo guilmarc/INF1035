@@ -61,6 +61,7 @@
     <Compile Include="Data\HardCodedData\SkillData.cs" />
     <Compile Include="Data\HardCodedData\TrainerData.cs" />
     <Compile Include="Data\XMLDataAdaptor.cs" />
+    <Compile Include="Events\MonsterDefeadedEventArgs.cs" />
     <Compile Include="Exceptions\InvalidUsableChoiceExecption.cs" />
     <Compile Include="Exceptions\UnableToCreateDataFolderException.cs" />
     <Compile Include="Factories\PlayerFactory.cs" />

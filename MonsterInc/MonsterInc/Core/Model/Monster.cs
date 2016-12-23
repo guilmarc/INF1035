@@ -2,14 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Serialization;
+using Core.Events;
+using Core.Exceptions;
 
 namespace Core.Model
 {
-
+    
 	//public delegate void ExperienceLevelChangedHandler(Monster m, EventArgs e);
     [Serializable]
 	public class Monster
 	{
+
+        public event EventHandler<ExperienceLevelChangedEventArgs> ExperienceLevelChanged;
+
         public Monster()
         {
 
@@ -20,13 +25,19 @@ namespace Core.Model
         public MonsterTemplate Template { get; set; }
 
 		//Nom de l'événement qui sera accessible de l'extérieur
-		public event EventHandler<ExperienceLevelChangedEventArgs> ExperienceLevelChanged;
+		//public event EventHandler<ExperienceLevelChangedEventArgs> ExperienceLevelChanged;
 
 		public int ID { get; set; }
 
-		public string NickName { get; set; }
+	    private string _nickName = null;
+	    public string NickName
+	    {
+	        get { return _nickName ?? Template.Name; }
 
-		public int ExperienceLevel { get; set; }
+	        set { _nickName = value; }
+	    }
+
+	    public int ExperienceLevel { get; set; }
 
 		public int ExperiencePoint { get; set; }
 
@@ -62,6 +73,7 @@ namespace Core.Model
 
 	    public void Energize()
         { 
+            if(isAlive)
 	        this.GetCaracteristic(MonsterTemplateCaracteristicType.EnergyPoints).Actual += this.GetCaracteristic(MonsterTemplateCaracteristicType.RegenerationPoints).Actual;
 	    }
 
@@ -90,28 +102,26 @@ namespace Core.Model
 			this.ExperiencePoint += points;
 
 			//Launch Strategy Here
-			int newExperienceLevel = new BaseExperienceLevelStrategy().EvaluateExperienceLevel(this.ExperiencePoint);
+			var newExperienceLevel = new BaseExperienceLevelStrategy().EvaluateExperienceLevel(this.ExperiencePoint);
 
 			if (newExperienceLevel != this.ExperienceLevel)
 			{
 				this.ExperienceLevel = newExperienceLevel;
-				//OnExperienceLevelChanged(this.ExperienceLevel);
+				OnExperienceLevelChanged(this.ExperienceLevel);
 					
 			}
 		}
 
 
 
-		//protected void OnExperienceLevelChanged(int newExperienceLevel)
-		//{
-		//	//TODO: Looper toutes les caractéristiques et mettre à jour le total
-		//	foreach (MonsterCaracteristic caracteristic in this.Caracteristics)
-		//	{
-		//		caracteristic.UpdateWithLevel(newExperienceLevel);
-		//	}
+		protected void OnExperienceLevelChanged(int newExperienceLevel)
+		{
+			foreach (var caracteristic in this.Caracteristics)
+			{
+                caracteristic.InitWithLevel(newExperienceLevel);
+			}
 
-		//	if (ExperienceLevelChanged != null)
-		//		ExperienceLevelChanged(this, new ExperienceLevelChangedEventArgs() { NewExperienceLevel = newExperienceLevel });
-		//}
+            ExperienceLevelChanged?.Invoke(this, new ExperienceLevelChangedEventArgs(newExperienceLevel));
+        }
     }
 }

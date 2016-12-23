@@ -15,10 +15,9 @@ namespace Core.Model
     [Serializable]
     public class Trainer : INotifyPropertyChanged
 	{
-	    private const int INIT_GOLD_VALUE = 1000;
         [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
-        string name;
+        string _name;
 
         public Trainer()
         {
@@ -34,17 +33,17 @@ namespace Core.Model
         {
             get
             {
-                return name;
+                return _name;
             }
 
             set
             {
-                name = value;
+                _name = value;
                 PropertyChanged.OnPropertyCHange(this, "Name");
 
             }
         }
-        int gold = INIT_GOLD_VALUE;
+        int gold = Constants.InitGoldCount;
 
         public int Gold
         {
@@ -70,14 +69,18 @@ namespace Core.Model
 
 		public List<Item> ActiveInventory { get; set; } = new List<Item>();
 
-		public List<Monster> ActiveMonsters { get; set; } = new List<Monster>();
+	    public List<Item> AvailableItems {
+	        get { return Inventory.Where(x => !ActiveInventory.Contains(x)).ToList(); }
+	    }
+
+	    public List<Monster> ActiveMonsters { get; set; } = new List<Monster>();
 
 	    public int LifePoints { get { return GetActualValue(MonsterTemplateCaracteristicType.LifePoints); } }
 
         /// <summary>
         /// Effectue la somme des valeurs actuelles d'une caractéristique donnée
         /// </summary>
-        /// <param name="type"></param>
+        /// <param _name="type"></param>
         /// <returns>Somme des valeurs Actual</returns>
 	    public int GetActualValue(MonsterTemplateCaracteristicType type)
 	    {
