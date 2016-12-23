@@ -25,7 +25,7 @@ namespace MonsterIncWPF
         private ObservableCollection<Item> ActiveInventory;
 
         private ObservableCollection<Item> Inventory;
-
+        private Player player = SavedGames.LoadedGame.HumanPlayer;
         public ItemsForm()
         {
             InitializeComponent();
@@ -49,17 +49,20 @@ namespace MonsterIncWPF
             this.Visibility = Visibility.Hidden;
             var t = SavedGames.mainWindow.AppGrid.Children[SavedGames.trainerHomeForm];
             ((TrainerHome)t).TrainerHomeGrid.Visibility = Visibility.Visible;
+            ((TrainerHome)t).TrainerHomeRefresh();
         }
 
         private void btnItemToActive_Click(object sender, RoutedEventArgs e)
         {
-            if (ActiveInventory.Count < 5)
+            if (ActiveInventory.Count < 5 && ItemsListBox.SelectedIndex != -1)
             {
                 //Item selectedItem = (Item)ItemsListBox.SelectedItem;
                 ActiveInventory.Add((Item)ItemsListBox.SelectedItem);
+                player.ActiveTrainer.ActiveInventory.Add((Item)ItemsListBox.SelectedItem);
+                player.ActiveTrainer.Inventory.Remove((Item)ItemsListBox.SelectedItem);
                 Inventory.RemoveAt(ItemsListBox.SelectedIndex);
 
-                saveToCurrentGame();
+                //saveToCurrentGame();
             }
 
         }

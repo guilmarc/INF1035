@@ -179,6 +179,9 @@ namespace MonsterIncWPF
             if (mechantTrainer.ActiveMonster.Caracteristics[0].Actual == 0 || SavedGames.LoadedCombat.Tour >= 500)
             {
                 CombatTextBlock.Text += "YOU WON!\n";
+                Reward reward = new Reward(SavedGames.LoadedCombat);
+                string textReward = reward.AssignReward();
+                CombatTextBlock.Text += textReward;
                 PreQuit();
             }
             else if (gentilTrainer.ActiveMonster.Caracteristics[0].Actual == 0)

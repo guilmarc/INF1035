@@ -49,9 +49,10 @@ namespace Core.Model
                     currentOpponent.ActiveTrainer.ActiveMonster.Caracteristics[0].Actual = 0;
                     resultat += currentOpponent.ActiveTrainer.ActiveMonster.Template.Name + " defeated! \n";
                     combat.Tour++;
+
                     return resultat;
                 }
-
+                currentOpponent.ActiveTrainer.ActiveMonster.Energize();
                 combat.Tour++;
 
                 //tour de l'adversaire
@@ -71,6 +72,7 @@ namespace Core.Model
                     combat.Tour++;
                     return resultat;
                 }
+                currentPlayer.ActiveTrainer.ActiveMonster.Energize();
                 combat.Tour++;
                 return resultat;
             }

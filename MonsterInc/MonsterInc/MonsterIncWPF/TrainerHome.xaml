@@ -73,11 +73,11 @@
             <Label x:Name="BeltLabel" Content="Belt content :" HorizontalAlignment="Left" Margin="55,406,0,0" VerticalAlignment="Top" Width="244" Height="52" FontWeight="Bold" FontSize="20"/>
             <Label x:Name="BeltNoticeLabel" Content="(Press to assign new item)" HorizontalAlignment="Left" Margin="190,409,0,0" VerticalAlignment="Top" Width="244" Height="52" FontWeight="Light" FontSize="16"/>
             <Grid x:Name="BeltGrid" HorizontalAlignment="Left" Height="90" Margin="55,458,0,0" VerticalAlignment="Top" Width="530">
-                <Button x:Name="BeltBtn1" Content="&lt;Empty>" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="100" Height="80"/>
-                <Button x:Name="BeltBtn2" Content="&lt;Empty>" HorizontalAlignment="Left" Margin="110,5,0,0" VerticalAlignment="Top" Width="100" Height="80"/>
-                <Button x:Name="BeltBtn3" Content="&lt;Empty>" HorizontalAlignment="Left" Margin="215,5,0,0" VerticalAlignment="Top" Width="100" Height="80"/>
-                <Button x:Name="BeltBtn4" Content="&lt;Empty>" HorizontalAlignment="Left" Margin="320,5,0,0" VerticalAlignment="Top" Width="100" Height="80"/>
-                <Button x:Name="BeltBtn5" Content="&lt;Empty>" HorizontalAlignment="Left" Margin="425,5,0,0" VerticalAlignment="Top" Width="100" Height="80"/>
+                <Button x:Name="BeltBtn1" Content="&lt;Empty>" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="100" Height="80" FontSize="10"/>
+                <Button x:Name="BeltBtn2" Content="&lt;Empty>" HorizontalAlignment="Left" Margin="110,5,0,0" VerticalAlignment="Top" Width="100" Height="80" FontSize="10"/>
+                <Button x:Name="BeltBtn3" Content="&lt;Empty>" HorizontalAlignment="Left" Margin="215,5,0,0" VerticalAlignment="Top" Width="100" Height="80" FontSize="10"/>
+                <Button x:Name="BeltBtn4" Content="&lt;Empty>" HorizontalAlignment="Left" Margin="320,5,0,0" VerticalAlignment="Top" Width="100" Height="80" FontSize="10"/>
+                <Button x:Name="BeltBtn5" Content="&lt;Empty>" HorizontalAlignment="Left" Margin="425,5,0,0" VerticalAlignment="Top" Width="100" Height="80" FontSize="10"/>
 
             </Grid>
 

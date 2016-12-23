@@ -62,7 +62,13 @@ namespace MonsterIncWPF
                     listeEnergy[i].Content = "";
                 }
             }
+            TrainerHomeRefresh();
+            
+        }
 
+        public void TrainerHomeRefresh()
+        {
+            Trainer trainer = SavedGames.LoadedGame.HumanPlayer.Trainer;
             int nbActiveItems = trainer.ActiveInventory.Count;
             for (int i = 0; i < 5; i++)
             {
@@ -74,6 +80,7 @@ namespace MonsterIncWPF
 
             }
         }
+
         private void MenuQuitBtn_Click(object sender, RoutedEventArgs e)
         {
             ((MainWindow)System.Windows.Application.Current.MainWindow).Home.Visibility = Visibility.Visible;
@@ -187,8 +194,6 @@ namespace MonsterIncWPF
             MenuPanel.Visibility = Visibility.Visible;
             DifficultyPanel.Visibility = Visibility.Collapsed;
             CombatGrid.Children.Clear();
-            //SavedGames.LoadedCombat = null;
-            //DifficultyListBox.UnselectAll();
         }
     }
 

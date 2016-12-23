@@ -143,5 +143,18 @@ namespace Core.Model
         {
             CurrentOpponent = PickRandomOpponent();
         }
+
+        public int AverageLevel()
+        {
+            Player currentPlayer = Players.Where(x => x.Type == PlayerType.Human).First();
+            int totalLevel = 0;
+            int averageLevel = 0;
+            foreach(Monster monster in currentPlayer.ActiveTrainer.ActiveMonsters)
+            {
+               totalLevel += monster.ExperienceLevel;
+            }
+            averageLevel = totalLevel / currentPlayer.ActiveTrainer.ActiveMonsters.Count;
+            return averageLevel;
+        }
     }
 }
