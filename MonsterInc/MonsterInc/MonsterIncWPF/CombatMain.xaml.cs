@@ -21,26 +21,31 @@ namespace MonsterIncWPF
     /// </summary>
     public partial class CombatMain : UserControl
     {
+        Trainer gentilTrainer = SavedGames.LoadedCombat.Players.Where(x => x.Type == PlayerType.Human).First().Trainer;
+        Trainer mechantTrainer = SavedGames.LoadedCombat.Players.Where(x => x.Type == PlayerType.Robot).First().Trainer;
+        Player gentil = SavedGames.LoadedCombat.Players.Where(x => x.Type == PlayerType.Human).First();
+        Player mechant = SavedGames.LoadedCombat.Players.Where(x => x.Type == PlayerType.Robot).First();
         public CombatMain()
         {
             InitializeComponent();
-            this.DataContext = SavedGames.LoadedCombat;
+            this.DataContext = SavedGames.LoadedCombat;     
+            Refresh();
+            AttackList.DataContext = gentilTrainer.ActiveMonster;
 
-            Trainer gentilTrainer = SavedGames.LoadedCombat.Players.Where(x => x.Type == PlayerType.Human).First().Trainer;
+        }
+
+        public void Refresh()
+        {
             FriendlyMonster.Content = gentilTrainer.ActiveMonster.NickName;
             FriendlyMonsterType.Content = gentilTrainer.ActiveMonster.Template.Name + " - Level : " + gentilTrainer.ActiveMonster.ExperienceLevel;
             FriendlyMonsterLPActual.Content = gentilTrainer.ActiveMonster.Caracteristics[0].Actual + " / " + gentilTrainer.ActiveMonster.Caracteristics[0].Total;
             FriendlyMonsterEPActual.Content = gentilTrainer.ActiveMonster.Caracteristics[1].Actual + " / " + gentilTrainer.ActiveMonster.Caracteristics[1].Total;
 
-            Trainer mechantTrainer = SavedGames.LoadedCombat.Players.Where(x => x.Type == PlayerType.Robot).First().Trainer;
+
             EnemyMonster.Content = mechantTrainer.ActiveMonster.Template.Name;
             EnemyMonsterType.Content = "Level : " + mechantTrainer.ActiveMonster.ExperienceLevel;
             EnemyMonsterLPActual.Content = mechantTrainer.ActiveMonster.Caracteristics[0].Actual + " / " + mechantTrainer.ActiveMonster.Caracteristics[0].Total;
             EnemyMonsterEPActual.Content = mechantTrainer.ActiveMonster.Caracteristics[1].Actual + " / " + mechantTrainer.ActiveMonster.Caracteristics[1].Total;
-
-
-            AttackList.DataContext = gentilTrainer.ActiveMonster;
-
         }
 
 
@@ -60,7 +65,8 @@ namespace MonsterIncWPF
 
         private void DefendButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            gentilTrainer.ActiveMonster.ActiveSkills[0].Consume(gentil,mechant);
+            Refresh();
         }
 
         private void ItemsButton_Checked(object sender, RoutedEventArgs e)
@@ -77,6 +83,7 @@ namespace MonsterIncWPF
             {
                 AttackButton.IsChecked = false;
                 AttackList.Visibility = Visibility.Collapsed;
+                Refresh();
             }
             else
             {
@@ -106,6 +113,7 @@ namespace MonsterIncWPF
             {
                 ChangeButton.IsChecked = false;
                 ChooseMonsterControl.Visibility = Visibility.Collapsed;
+                Refresh();
             }
             else
             {
