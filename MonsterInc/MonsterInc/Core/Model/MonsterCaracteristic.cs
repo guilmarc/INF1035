@@ -4,15 +4,12 @@ namespace Core.Model
     [Serializable]
 	public class MonsterCaracteristic
 	{
-		//readonly MonsterTemplateCaracteristic _monsterTemplateCaracteristic;
-
-		//public MonsterTemplateCaracteristicType Type { get { return _monsterTemplateCaracteristic.Type; } }
 
 	    public MonsterTemplateCaracteristicType Type { get; set; }
 
         public int Total { get; set; }
 
-        int _actual;
+        private int _actual;
         public int Actual
         {
             get
@@ -21,7 +18,7 @@ namespace Core.Model
             }
             set
             {
-                this._actual = value > this.Total ? this.Total : value;
+                this._actual = Math.Max(Math.Min(value, Total), 0);
             }
         }
 
@@ -36,23 +33,18 @@ namespace Core.Model
         {
 
         }
-        public MonsterCaracteristic(MonsterTemplateCaracteristic monsterTemplateCaracteristic, int experienceLevel, double factor)
+        public MonsterCaracteristic(MonsterTemplateCaracteristic monsterTemplateCaracteristic, int experienceLevel, double difficultyFactor)
 		{
 			//Copie des caractéristiques 
             this.Type = monsterTemplateCaracteristic.Type;
-            this.Base = HumanizeValue((int)(monsterTemplateCaracteristic.Base * factor));
-		    this.Progression = HumanizeValue((int)(monsterTemplateCaracteristic.Progression));
+            this.Base = (int)(monsterTemplateCaracteristic.Base * difficultyFactor * Utils.HumanizeRatio());
+		    this.Progression = (int)(monsterTemplateCaracteristic.Progression * Utils.HumanizeRatio());
             this.InitWithLevel(experienceLevel);
 		}
 
-	    public int HumanizeValue(int value)
-	    {
-	        return value; //TODO: Retourer une valeur aléaloire += THRESHOLD 
-	    }
-
 		public void InitWithLevel(int experienceLevel)
 		{
-            //Ici on fait -1 car on je veux pas débuter avec un ExperienceLevel = 0 mais 1
+            //Ici on fait -1 car on veux pas débuter avec un ExperienceLevel = 0 mais 1
 		    this.Total = this.Base + ((experienceLevel - 1) * this.Progression);
 		    this.Actual = this.Total;
 		}

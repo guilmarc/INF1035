@@ -36,7 +36,7 @@ namespace MonsterIncConsole
 
             Core.Engine.NewGame(Core.Universe.DummyPlayer);
             Turn turn = new Turn();
-            turn.DoEnemyTurn;
+            turn.DoEnemyTurn();
 
             Console.ReadLine();
         }

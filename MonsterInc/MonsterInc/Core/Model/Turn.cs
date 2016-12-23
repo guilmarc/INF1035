@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using Core.Events;
 
 namespace Core.Model
 {
     public class Turn
     {
+        public event EventHandler<MonsterDefeadedEventArgs> MonsterDefeated;
+
         public int Position { get; set; }
 
         public Monster DefendingMonster { get; set; }
@@ -16,6 +19,8 @@ namespace Core.Model
         public Usable opponentUsable;
         private Usable ongoingUsable;
         public Combat combat;
+
+        string resultat = "";
 
         public List<Action> Actions { get; set; }
         public static int Tour { get; set; } = 1;
@@ -39,8 +44,7 @@ namespace Core.Model
 
         public string DoTurn()
         {
-            string resultat = "";
-
+            
             //tour du joueur
             ongoingUsable = usable;
             if (!HasEnougthEnergy)
@@ -58,55 +62,26 @@ namespace Core.Model
                                       ? currentPlayer.ActiveTrainer.ActiveMonster.NickName
                                       : currentOpponent.ActiveTrainer.ActiveMonster.Template.Name) + "\n");
             }
-            if (currentOpponent.ActiveTrainer.ActiveMonster.Caracteristics[0].Actual < 0)
+
+
+            currentOpponent.ActiveTrainer.ActiveMonsters.Energize();
+            combat.Tour++;
+
+            if (!currentOpponent.ActiveTrainer.ActiveMonster.isAlive)
             {
-                currentOpponent.ActiveTrainer.ActiveMonster.Caracteristics[0].Actual = 0;
+                this.OnMonsterDefeated(currentOpponent.ActiveTrainer.ActiveMonster);
                 resultat += currentOpponent.ActiveTrainer.ActiveMonster.Template.Name + " defeated! \n";
                 combat.Tour++;
 
                 return resultat;
             }
-            currentOpponent.ActiveTrainer.ActiveMonster.Energize();
-            combat.Tour++;
 
-            //tour de l'adversaire
-            //resultat += DoEnemyTurn2();
-
-            //opponentUsable = currentOpponent.PickUsable(currentPlayer);
-            //ongoingUsable = opponentUsable;
-            //if (!HasEnoughtEnergyEnemy)
-            //{
-            //    resultat += currentOpponent.ActiveTrainer.ActiveMonster.Template.Name +
-            //                " don t have enough energy to use " + opponentUsable + "\n";
-            //    return resultat;
-            //}
-            //opponentUsable.Consume(currentOpponent, currentPlayer);
-
-            //foreach (var scope in usable.Scopes)
-            //{
-
-            //        resultat += (combat.Tour + ":: " + currentOpponent.ActiveTrainer.ActiveMonster.Template.Name + " uses " + opponentUsable + " on " +
-            //            ((scope.Target == Scope.ScopeTarget.Self)
-            //            ? currentOpponent.ActiveTrainer.ActiveMonster.Template.Name
-            //            : currentPlayer.ActiveTrainer.ActiveMonster.NickName) + "\n");
-
-
-            //}
-            //if (currentPlayer.ActiveTrainer.ActiveMonster.Caracteristics[0].Actual < 0)
-            //{
-            //    currentPlayer.ActiveTrainer.ActiveMonster.Caracteristics[0].Actual = 0;
-            //    resultat += currentPlayer.ActiveTrainer.ActiveMonster.NickName + " defeated! \n";
-            //    combat.Tour++;
-            //    return resultat;
-            //}
-            //currentPlayer.ActiveTrainer.ActiveMonster.Energize();
-            //combat.Tour++;
+           
             return resultat;
         }
 
         public string DoEnemyTurn()
         {
-            string resultat = "";
             opponentUsable = currentOpponent.PickUsable(currentPlayer);
             ongoingUsable = opponentUsable;
             if (!HasEnoughtEnergyEnemy)
@@ -127,6 +102,18 @@ namespace Core.Model
 
 
             }
+
+            if (!currentPlayer.ActiveTrainer.ActiveMonster.isAlive)
+            {
+                this.OnMonsterDefeated(currentPlayer.ActiveTrainer.ActiveMonster);
+                resultat += currentPlayer.ActiveTrainer.ActiveMonster.Template.Name + " defeated! \n";
+                combat.Tour++;
+
+                return resultat;
+            }
+
+
+
             if (currentPlayer.ActiveTrainer.ActiveMonster.Caracteristics[0].Actual < 0)
             {
                 currentPlayer.ActiveTrainer.ActiveMonster.Caracteristics[0].Actual = 0;
@@ -134,7 +121,7 @@ namespace Core.Model
                 combat.Tour++;
                 return resultat;
             }
-            currentPlayer.ActiveTrainer.ActiveMonster.Energize();
+            currentPlayer.ActiveTrainer.ActiveMonsters.Energize();
             combat.Tour++;
             return resultat;
         }
@@ -174,7 +161,17 @@ namespace Core.Model
                 return true;
             }
         }
-    
+
+
+        private void OnMonsterDefeated(Monster defeatedMonster)
+        {
+            if (MonsterDefeated != null)
+            {
+                var args = new MonsterDefeadedEventArgs(defeatedMonster);
+                MonsterDefeated(this, args);
+            }
+        }
+
     }
 
 }

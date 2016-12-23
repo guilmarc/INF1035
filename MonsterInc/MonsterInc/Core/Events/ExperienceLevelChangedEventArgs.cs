@@ -1,13 +1,13 @@
 ﻿using System;
-namespace Core
+namespace Core.Events
 {
 	public class ExperienceLevelChangedEventArgs : EventArgs
 	{
 		public int NewExperienceLevel { get; set; }
 
-		//public ExperienceLevelChangedEventArgs(int newExperienceLevel)
-		//{
-		//	this.NewExperienceLevel = newExperienceLevel;
-		//}
+		public ExperienceLevelChangedEventArgs(int newExperienceLevel)
+		{
+			this.NewExperienceLevel = newExperienceLevel;
+		}
 	}
 }

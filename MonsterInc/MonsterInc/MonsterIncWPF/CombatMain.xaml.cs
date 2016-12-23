@@ -167,7 +167,13 @@ namespace MonsterIncWPF
             if (AttackList.SelectedIndex != -1)
             {
                 Turn tour = new Turn(currentPlayer, ennemyPlayer, gentilTrainer.ActiveMonster.ActiveSkills[AttackList.SelectedIndex], SavedGames.LoadedCombat);
-                string tourFait = tour.DoTurn;
+
+                tour.MonsterDefeated += (o, ags) =>
+                {
+                    //TODO: Code ici quand un monstre est mort;
+                };
+
+                string tourFait = tour.DoTurn();
                 
                 CombatTextBlock.Text += tourFait;
                 Refresh();
@@ -186,7 +192,7 @@ namespace MonsterIncWPF
         private void DoDefense()
         {
             {
-               // Turn tour = new Turn(currentPlayer, ennemyPlayer, SavedGames.LoadedCombat);
+                Turn tour = new Turn(currentPlayer, ennemyPlayer, SavedGames.LoadedCombat);
                 //string tourFait = tour.;
                 //CombatTextBlock.Text += tourFait;
                 Refresh();
@@ -208,7 +214,7 @@ namespace MonsterIncWPF
             if (ItemList.SelectedIndex != -1)
             {
                 Turn tour = new Turn(currentPlayer, ennemyPlayer, gentilTrainer.ActiveInventory[ItemList.SelectedIndex], SavedGames.LoadedCombat);
-                string tourFait = tour.DoTurn;
+                string tourFait = tour.DoTurn();
                 CombatTextBlock.Text += tourFait;
                 Refresh();
                 CombatTextScroll.UpdateLayout();
