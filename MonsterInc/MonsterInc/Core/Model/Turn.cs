@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using Core.Events;
 
 namespace Core.Model
 {
     public class Turn
     {
-        public event EventHandler<MonsterDefeadedEventArgs> MonsterDefeated;
-
         public int Position { get; set; }
 
         public Monster DefendingMonster { get; set; }
@@ -19,8 +16,6 @@ namespace Core.Model
         public Usable opponentUsable;
         private Usable ongoingUsable;
         public Combat combat;
-
-        string resultat = "";
 
         public List<Action> Actions { get; set; }
         public static int Tour { get; set; } = 1;
@@ -81,7 +76,8 @@ namespace Core.Model
 
         public string DoTurn()
         {
-            
+            string resultat = "";
+
             //tour du joueur
             ongoingUsable = usable;
             if (!currentPlayer.ActiveTrainer.ActiveMonster.CanUseUsable(ongoingUsable))
@@ -99,33 +95,34 @@ namespace Core.Model
                                       ? currentPlayer.ActiveTrainer.ActiveMonster.NickName
                                       : currentOpponent.ActiveTrainer.ActiveMonster.Template.Name) + "\n");
             }
-
-
-            currentOpponent.ActiveTrainer.ActiveMonsters.Energize();
-            combat.Tour++;
-
-            if (!currentOpponent.ActiveTrainer.ActiveMonster.isAlive)
+            if (currentOpponent.ActiveTrainer.ActiveMonster.Caracteristics[0].Actual < 0)
             {
                 this.OnMonsterDefeated(currentOpponent.ActiveTrainer.ActiveMonster);
+
             }
+            currentOpponent.ActiveTrainer.ActiveMonster.Energize();
+            combat.Tour++;
+
+
 
             return resultat;
         }
 
         public string DoEnemyTurn()
         {
+            string resultat = "";
             opponentUsable = currentOpponent.PickUsable(currentPlayer);
             ongoingUsable = opponentUsable;
             if (!currentOpponent.ActiveTrainer.ActiveMonster.CanUseUsable(opponentUsable))
             {
                 resultat += currentOpponent.ActiveTrainer.ActiveMonster.Template.Name +
-                            " don t have enough energy to use " + opponentUsable + "\n";
+                            " don t have enough energy to use " + opponentUsable + "and skip his turn\n";
                 return resultat;
             }
 
             opponentUsable.Consume(currentOpponent, currentPlayer);
 
-            foreach (var scope in usable.Scopes)
+            foreach (var scope in opponentUsable.Scopes)
             {
 
                 resultat += (combat.Tour + ":: " + currentOpponent.ActiveTrainer.ActiveMonster.Template.Name + " uses " + opponentUsable + " on " +
@@ -133,8 +130,8 @@ namespace Core.Model
                     ? currentOpponent.ActiveTrainer.ActiveMonster.Template.Name
                     : currentPlayer.ActiveTrainer.ActiveMonster.NickName) + "\n");
             }
+           currentPlayer.ActiveTrainer.ActiveMonsters.Energize();
 
-            currentPlayer.ActiveTrainer.ActiveMonsters.Energize();
             combat.Tour++;
 
             if (!currentPlayer.ActiveTrainer.ActiveMonster.isAlive)
@@ -144,17 +141,7 @@ namespace Core.Model
 
             return resultat;
         }
-
-
-        private void OnMonsterDefeated(Monster defeatedMonster)
-        {
-            if (MonsterDefeated != null)
-            {
-                var args = new MonsterDefeadedEventArgs(defeatedMonster);
-                MonsterDefeated(this, args);
-            }
-        }
-
+    
     }
 
 }
