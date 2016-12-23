@@ -1,147 +1,95 @@
 ﻿using System;
 using System.Collections.Generic;
+using Core.Events;
 
 namespace Core.Model
 {
     public class Turn
     {
+        public event EventHandler<MonsterDefeadedEventArgs> MonsterDefeated;
+
         public int Position { get; set; }
 
         public Monster DefendingMonster { get; set; }
         public Monster AttackingMonster { get; set; }
 
-        public Player currentPlayer;
-        public Player currentOpponent;
-        public Usable usable;
-        public Usable opponentUsable;
-        private Usable ongoingUsable;
-        public Combat combat;
+        private Player _currentPlayer;
+        private Player _currentOpponent;
+        private Usable _usable;
+        //private Usable _opponentUsable;
+        //private Usable _ongoingUsable;
+        private Combat _combat;
+
+        private string _result = "";
 
         public List<Action> Actions { get; set; }
         public static int Tour { get; set; } = 1;
 
-
         public Turn() { }
         public Turn(Player currentPlayer, Player currentOpponent, Usable usable, Combat combat)
         {
-            this.currentPlayer = currentPlayer;
-            this.currentOpponent = currentOpponent;
-            this.usable = usable;
-            this.combat = combat;
+            this._currentPlayer = currentPlayer;
+            this._currentOpponent = currentOpponent;
+            this._usable = usable;
+            this._combat = combat;
         }
 
         public Turn(Player currentPlayer, Player currentOpponent, Combat combat) : this(currentPlayer, currentOpponent, null, combat)
         {
         }
 
-        public string RunTurn()
+        public string Run()
         {
-            RunAttackWithUsable(null, null, null);
-            RunAttackWithUsable(null, null, null);
+            //Exécution de l'attaque du joueur humain
+            RunAttackWithUsable(_currentPlayer, _currentOpponent, this._usable);
 
-            return null;
+            //Exécution de l'attaque ju joueur robot
+            var AIUsable = _currentOpponent.PickUsable(_currentPlayer);
+            RunAttackWithUsable(_currentOpponent, _currentPlayer, AIUsable);
+
+            return _result;
         }
 
-        public string RunAttackWithUsable(Player actualPlayer, Player actualOpponent, Usable selectedUsable)
+        public void RunAttackWithUsable(Player actualPlayer, Player actualOpponent, Usable selectedUsable)
         {
+            //Si on tente d'utiliser un Usable sans avoir assez d'énergie, on perd son tour..
             if (!actualPlayer.ActiveTrainer.ActiveMonster.CanUseUsable(selectedUsable))
             {
-                resultat += actualPlayer.ActiveTrainer.ActiveMonster.NickName +
+                _result += actualPlayer.ActiveTrainer.ActiveMonster.NickName +
                             " don t have enough energy to use " + selectedUsable + "\n";
-                return resultat;
+                return ;
             }
 
             selectedUsable.Consume(actualPlayer, actualOpponent);
 
             foreach (var scope in selectedUsable.Scopes)
             {
-                resultat = (combat.Tour + ":: " + actualPlayer.ActiveTrainer.ActiveMonster.NickName + " uses " + selectedUsable + " on " +
+                _result = (_combat.Tour + ":: " + actualPlayer.ActiveTrainer.ActiveMonster.NickName + " uses " + selectedUsable + " on " +
                                   ((scope.Target == Scope.ScopeTarget.Self)
                                       ? actualPlayer.ActiveTrainer.ActiveMonster.NickName
                                       : actualOpponent.ActiveTrainer.ActiveMonster.NickName) + "\n");
             }
 
+            actualPlayer.ActiveTrainer.ActiveMonsters.Energize();
+            _combat.Tour++;
 
-            currentOpponent.ActiveTrainer.ActiveMonsters.Energize();
-            combat.Tour++;
-
-            if (!currentOpponent.ActiveTrainer.ActiveMonster.isAlive)
+            if (!actualPlayer.ActiveTrainer.ActiveMonster.isAlive)
             {
-                this.OnMonsterDefeated(currentOpponent.ActiveTrainer.ActiveMonster);
+                this.OnMonsterDefeated(actualPlayer);
             }
 
-            return resultat;
+            return;
         }
     
-
-        public string DoTurn()
+        private void OnMonsterDefeated(Player defeatedMonsterPlayer)
         {
-            string resultat = "";
-
-            //tour du joueur
-            ongoingUsable = usable;
-            if (!currentPlayer.ActiveTrainer.ActiveMonster.CanUseUsable(ongoingUsable))
+            if (MonsterDefeated != null)
             {
-                resultat += currentPlayer.ActiveTrainer.ActiveMonster.NickName +
-                            " don t have enough energy to use " + usable + "\n";
-                return resultat;
+                var args = new MonsterDefeadedEventArgs(defeatedMonsterPlayer);
+                MonsterDefeated(this, args);
             }
-            usable.Consume(currentPlayer, currentOpponent);
-
-            foreach (var scope in usable.Scopes)
-            {
-                resultat = (combat.Tour + ":: " + currentPlayer.ActiveTrainer.ActiveMonster.NickName + " uses " + usable + " on " +
-                                  ((scope.Target == Scope.ScopeTarget.Self)
-                                      ? currentPlayer.ActiveTrainer.ActiveMonster.NickName
-                                      : currentOpponent.ActiveTrainer.ActiveMonster.Template.Name) + "\n");
-            }
-            if (currentOpponent.ActiveTrainer.ActiveMonster.Caracteristics[0].Actual < 0)
-            {
-                this.OnMonsterDefeated(currentOpponent.ActiveTrainer.ActiveMonster);
-
-            }
-            currentOpponent.ActiveTrainer.ActiveMonster.Energize();
-            combat.Tour++;
-
-
-
-            return resultat;
         }
 
-        public string DoEnemyTurn()
-        {
-            string resultat = "";
-            opponentUsable = currentOpponent.PickUsable(currentPlayer);
-            ongoingUsable = opponentUsable;
-            if (!currentOpponent.ActiveTrainer.ActiveMonster.CanUseUsable(opponentUsable))
-            {
-                resultat += currentOpponent.ActiveTrainer.ActiveMonster.Template.Name +
-                            " don t have enough energy to use " + opponentUsable + "and skip his turn\n";
-                return resultat;
-            }
-
-            opponentUsable.Consume(currentOpponent, currentPlayer);
-
-            foreach (var scope in opponentUsable.Scopes)
-            {
-
-                resultat += (combat.Tour + ":: " + currentOpponent.ActiveTrainer.ActiveMonster.Template.Name + " uses " + opponentUsable + " on " +
-                    ((scope.Target == Scope.ScopeTarget.Self)
-                    ? currentOpponent.ActiveTrainer.ActiveMonster.Template.Name
-                    : currentPlayer.ActiveTrainer.ActiveMonster.NickName) + "\n");
-            }
-           currentPlayer.ActiveTrainer.ActiveMonsters.Energize();
-
-            combat.Tour++;
-
-            if (!currentPlayer.ActiveTrainer.ActiveMonster.isAlive)
-            {
-                this.OnMonsterDefeated(currentPlayer.ActiveTrainer.ActiveMonster);
-            }
-
-            return resultat;
-        }
-    
     }
 
 }

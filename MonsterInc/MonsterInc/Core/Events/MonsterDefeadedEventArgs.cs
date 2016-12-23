@@ -5,11 +5,11 @@ namespace Core.Events
 {
     public class MonsterDefeadedEventArgs : EventArgs
     {
-        public Monster DefeatedMonster { get; private set; }
+        public Player DefeatedMonsterPlayer { get; private set; }
 
-        public MonsterDefeadedEventArgs(Monster defeatedMonster)
+        public MonsterDefeadedEventArgs(Player defeatedMonsterPlayer)
         {
-            this.DefeatedMonster = defeatedMonster;
+            this.DefeatedMonsterPlayer = defeatedMonsterPlayer;
         }
     }
 }
