@@ -35,19 +35,56 @@ namespace Core.Model
             this.combat = combat;
         }
 
-        public Turn(Player currentPlayer, Player currentOpponent, Combat combat)
+        public Turn(Player currentPlayer, Player currentOpponent, Combat combat) : this(currentPlayer, currentOpponent, null, combat)
         {
-            this.currentPlayer = currentPlayer;
-            this.currentOpponent = currentOpponent;
-            this.combat = combat;
         }
+
+        public string RunTurn()
+        {
+            RunAttackWithUsable(null, null, null);
+            RunAttackWithUsable(null, null, null);
+
+            return null;
+        }
+
+        public string RunAttackWithUsable(Player actualPlayer, Player actualOpponent, Usable selectedUsable)
+        {
+            if (!actualPlayer.ActiveTrainer.ActiveMonster.CanUseUsable(selectedUsable))
+            {
+                resultat += actualPlayer.ActiveTrainer.ActiveMonster.NickName +
+                            " don t have enough energy to use " + selectedUsable + "\n";
+                return resultat;
+            }
+
+            selectedUsable.Consume(actualPlayer, actualOpponent);
+
+            foreach (var scope in selectedUsable.Scopes)
+            {
+                resultat = (combat.Tour + ":: " + actualPlayer.ActiveTrainer.ActiveMonster.NickName + " uses " + selectedUsable + " on " +
+                                  ((scope.Target == Scope.ScopeTarget.Self)
+                                      ? actualPlayer.ActiveTrainer.ActiveMonster.NickName
+                                      : actualOpponent.ActiveTrainer.ActiveMonster.NickName) + "\n");
+            }
+
+
+            currentOpponent.ActiveTrainer.ActiveMonsters.Energize();
+            combat.Tour++;
+
+            if (!currentOpponent.ActiveTrainer.ActiveMonster.isAlive)
+            {
+                this.OnMonsterDefeated(currentOpponent.ActiveTrainer.ActiveMonster);
+            }
+
+            return resultat;
+        }
+    
 
         public string DoTurn()
         {
             
             //tour du joueur
             ongoingUsable = usable;
-            if (!HasEnougthEnergy)
+            if (!currentPlayer.ActiveTrainer.ActiveMonster.CanUseUsable(ongoingUsable))
             {
                 resultat += currentPlayer.ActiveTrainer.ActiveMonster.NickName +
                             " don t have enough energy to use " + usable + "\n";
@@ -70,13 +107,8 @@ namespace Core.Model
             if (!currentOpponent.ActiveTrainer.ActiveMonster.isAlive)
             {
                 this.OnMonsterDefeated(currentOpponent.ActiveTrainer.ActiveMonster);
-                resultat += currentOpponent.ActiveTrainer.ActiveMonster.Template.Name + " defeated! \n";
-                combat.Tour++;
-
-                return resultat;
             }
 
-           
             return resultat;
         }
 
@@ -84,12 +116,13 @@ namespace Core.Model
         {
             opponentUsable = currentOpponent.PickUsable(currentPlayer);
             ongoingUsable = opponentUsable;
-            if (!HasEnoughtEnergyEnemy)
+            if (!currentOpponent.ActiveTrainer.ActiveMonster.CanUseUsable(opponentUsable))
             {
                 resultat += currentOpponent.ActiveTrainer.ActiveMonster.Template.Name +
                             " don t have enough energy to use " + opponentUsable + "\n";
                 return resultat;
             }
+
             opponentUsable.Consume(currentOpponent, currentPlayer);
 
             foreach (var scope in usable.Scopes)
@@ -99,67 +132,17 @@ namespace Core.Model
                     ((scope.Target == Scope.ScopeTarget.Self)
                     ? currentOpponent.ActiveTrainer.ActiveMonster.Template.Name
                     : currentPlayer.ActiveTrainer.ActiveMonster.NickName) + "\n");
-
-
             }
+
+            currentPlayer.ActiveTrainer.ActiveMonsters.Energize();
+            combat.Tour++;
 
             if (!currentPlayer.ActiveTrainer.ActiveMonster.isAlive)
             {
                 this.OnMonsterDefeated(currentPlayer.ActiveTrainer.ActiveMonster);
-                resultat += currentPlayer.ActiveTrainer.ActiveMonster.Template.Name + " defeated! \n";
-                combat.Tour++;
-
-                return resultat;
             }
 
-
-
-            if (currentPlayer.ActiveTrainer.ActiveMonster.Caracteristics[0].Actual < 0)
-            {
-                currentPlayer.ActiveTrainer.ActiveMonster.Caracteristics[0].Actual = 0;
-                resultat += currentPlayer.ActiveTrainer.ActiveMonster.NickName + " defeated! \n";
-                combat.Tour++;
-                return resultat;
-            }
-            currentPlayer.ActiveTrainer.ActiveMonsters.Energize();
-            combat.Tour++;
             return resultat;
-        }
-
-
-        public bool HasEnougthEnergy
-        {
-            get
-            {
-                if (ongoingUsable is Skill)
-                {
-                    var skill = (Skill)ongoingUsable;
-                    if (currentPlayer.ActiveTrainer.ActiveMonster.Caracteristics[1].Actual < skill.EnergyPointCost)
-                    {
-                        return false;
-                    }
-                }
-
-                return true;
-            }
-        }
-
-
-        public bool HasEnoughtEnergyEnemy
-        {
-            get
-            {
-                if (ongoingUsable is Skill)
-                {
-                    var skill = (Skill)ongoingUsable;
-                    if (currentOpponent.ActiveTrainer.ActiveMonster.Caracteristics[1].Actual < skill.EnergyPointCost)
-                    {
-                        return false;
-                    }
-                }
-
-                return true;
-            }
         }
 
 

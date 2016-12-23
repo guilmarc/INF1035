@@ -75,6 +75,11 @@ namespace Core.Model
 
 	    public List<Monster> ActiveMonsters { get; set; } = new List<Monster>();
 
+	    public List<Monster> AvailableMonsters
+	    {
+	        get { return Monsters.Where(x => !ActiveMonsters.Contains(x)).ToList(); }
+	    }
+
 	    public int LifePoints { get { return GetActualValue(MonsterTemplateCaracteristicType.LifePoints); } }
 
         /// <summary>

@@ -58,6 +58,15 @@ namespace Core.Model
 	        get { return this.GetCaracteristic(MonsterTemplateCaracteristicType.LifePoints).Actual > 0; }
 	    }
 
+	    public bool CanUseUsable(Usable usable)
+	    {
+	        if (usable is Skill)
+	        {
+	            return ((Skill) usable).EnergyPointCost <= this.GetCaracteristic(MonsterTemplateCaracteristicType.EnergyPoints).Actual;
+	        }
+	        return true;
+	    }
+
 	    public Monster(int id, MonsterTemplate monsterTemplate, double CaracteristicFactor = 1.0)
 		{
 			this.Template = monsterTemplate;
