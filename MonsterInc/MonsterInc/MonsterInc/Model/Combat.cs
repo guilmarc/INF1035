@@ -23,7 +23,8 @@ namespace Core.Model
 
         public List<Player> Players { get; set; } = new List<Player>();
 
-        public static int Tour { get; set; } = 1;
+        public int Tour { get; set; } = 1;
+        public bool Defending = false;
 
         public Combat() { }
 
@@ -141,6 +142,19 @@ namespace Core.Model
         public void AssignFistOpponent()
         {
             CurrentOpponent = PickRandomOpponent();
+        }
+
+        public int AverageLevel()
+        {
+            Player currentPlayer = Players.Where(x => x.Type == PlayerType.Human).First();
+            int totalLevel = 0;
+            int averageLevel = 0;
+            foreach(Monster monster in currentPlayer.ActiveTrainer.ActiveMonsters)
+            {
+               totalLevel += monster.ExperienceLevel;
+            }
+            averageLevel = totalLevel / currentPlayer.ActiveTrainer.ActiveMonsters.Count;
+            return averageLevel;
         }
     }
 }

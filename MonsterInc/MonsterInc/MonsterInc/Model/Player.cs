@@ -64,6 +64,8 @@ namespace Core.Model
 
         public void ResetActiveTrainer()
         {
+            foreach (Monster monstre in ActiveTrainer.ActiveMonsters)
+                monstre.ResetCaracterictics();
             //ActiveTrainer.
         }
 

@@ -22,7 +22,7 @@
             </Grid>
         </DataTemplate>
     </UserControl.Resources>
-    
+
     <Grid Background="White" OpacityMask="White">
         <Label x:Name="FriendlyMonster" Content="nickname" HorizontalAlignment="Left" Margin="50,23,0,0" VerticalAlignment="Top" FontSize="28" FontWeight="Bold"/>
         <Label x:Name="EnemyMonster" Content="nickname" HorizontalAlignment="Right" Margin="0,23,50,0" VerticalAlignment="Top" FontSize="28" FontWeight="Bold"/>
@@ -32,11 +32,13 @@
         <Grid x:Name="ActionGrid" HorizontalAlignment="Left" Height="155" Margin="10,405,0,0" VerticalAlignment="Top" Width="994">
 
             <RadioButton Style="{StaticResource {x:Type ToggleButton}}" x:Name="AttackButton" GroupName="Action" Content="Attack" HorizontalAlignment="Left" Margin="114,10,0,0" VerticalAlignment="Top" Width="270" Height="60" FontSize="20" IsChecked="False" Checked="AttackButton_Checked" Click="AttackButton_OnClick"/>
-            <Button x:Name="DefendButton"  Content="Defend" HorizontalAlignment="Left" Margin="114,83,0,0" VerticalAlignment="Top" Width="270" Height="60" FontSize="20" Click="DefendButton_Click"/>
+            <RadioButton Style="{StaticResource {x:Type ToggleButton}}" x:Name="DefendButton" GroupName="Action" Content="Defend" HorizontalAlignment="Left" Margin="114,83,0,0" VerticalAlignment="Top" Width="270" Height="60" FontSize="20" IsChecked="False" Checked="DefendButton_Checked" Click="DefendButton_Click"/>
             <RadioButton Style="{StaticResource {x:Type ToggleButton}}" x:Name="ItemsButton" GroupName="Action" Content="Items" HorizontalAlignment="Left" Margin="558,10,0,0" VerticalAlignment="Top" Width="270" Height="60" FontSize="20" IsChecked="False" Checked="ItemsButton_Checked" Click="ItemsButton_OnClick"/>
             <RadioButton Style="{StaticResource {x:Type ToggleButton}}" x:Name="ChangeButton" GroupName="Action" Content="Change monster" HorizontalAlignment="Left" Margin="558,83,0,0" VerticalAlignment="Top" Width="270" Height="60" FontSize="20" IsChecked="False" Checked="ChangeButton_Checked" Click="ChangeButton_Click"/>
 
-            <ListBox x:Name="AttackList" HorizontalAlignment="Left" Height="155" Margin="400,0,0,0" VerticalAlignment="Top" Width="428" Visibility="Collapsed" ItemsSource="{Binding ActiveSkills}" ItemTemplate="{StaticResource usableTemplate}"/>
+            <ListBox x:Name="AttackList" HorizontalAlignment="Left" Height="155" Margin="400,0,0,0" VerticalAlignment="Top" Width="428" Visibility="Collapsed" ItemsSource="{Binding ActiveSkills}" ItemTemplate="{StaticResource usableTemplate}" SelectionChanged="DoAttack"/>
+            <Grid x:Name="ChangeMonsterGrid" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="200" Width="550"></Grid>
+//sdfgbcvb vc vcc
             <!--<ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="0,2">
@@ -49,6 +51,7 @@
             </ListBox.ItemTemplate>
             </ListBox>-->
         </Grid>
+
         <Label x:Name="FriendlyMonsterLP" Content="Life : " HorizontalAlignment="Left" Margin="50,102,0,0" VerticalAlignment="Top" FontSize="24"/>
         <Label x:Name="FriendlyMonsterLPActual" Content="" HorizontalAlignment="Left" Margin="141,102,0,0" VerticalAlignment="Top" FontSize="22" Height="42" Width="225"/>
         <Label x:Name="EnemyMonsterLPActual" Content="" HorizontalAlignment="Left" Margin="804,107,0,0" VerticalAlignment="Top" FontSize="22" Height="42" Width="180"/>
@@ -59,15 +62,21 @@
         <Label x:Name="EnemyMonsterEP" Content="Energy : " HorizontalAlignment="Left" Margin="707,131,0,0" VerticalAlignment="Top" FontSize="24"/>
 
         <Separator HorizontalAlignment="Left" Height="100" Margin="50,173,0,0" VerticalAlignment="Top" Width="914"/>
+
+        <Grid>
+            <ScrollViewer  x:Name="CombatTextScroll" Margin="0,228,50,170">
+                <TextBlock x:Name="CombatTextBlock" HorizontalAlignment="Left" Margin="50,0,0,0" TextWrapping="Wrap" Text="Start!" VerticalAlignment="Top" Height="auto" Width="914"/>
+            </ScrollViewer>
+        </Grid>
         <Separator HorizontalAlignment="Left" Height="100" Margin="50,349,0,0" VerticalAlignment="Top" Width="914"/>
-
-        <ScrollViewer Margin="0,228,50,170">
-            <TextBlock x:Name="CombatTextBlock" HorizontalAlignment="Left" Margin="50,0,0,0" TextWrapping="Wrap" Text="Start!" VerticalAlignment="Top" Height="160" Width="914"/>
-        </ScrollViewer>
+        <Grid x:Name="QuitCombatGrid" HorizontalAlignment="Left" Height="155" Margin="50,405,0,0" VerticalAlignment="Top" Width="885" Visibility="Collapsed">
+            <Button x:Name="QuitButton" Content="LEAVE COMBAT" HorizontalAlignment="Left" Margin="333,25,0,0" VerticalAlignment="Top" Width="200" Height="100" FontSize="24" Click="QuitButton_Click"/>
 
 
-        <local:ActiveMonster x:Name="ChooseMonsterControl" HorizontalAlignment="Left" Margin="22,387,0,0" VerticalAlignment="Top" Visibility="Collapsed"/>
-        
+        </Grid>
+
+
+
 
 
 

@@ -37,6 +37,7 @@
         </ListBox>
         <Button x:Name="btnItemToActive" Content="&lt;-" HorizontalAlignment="Left" Margin="476,155,0,0" VerticalAlignment="Top" Width="24" Click="btnItemToActive_Click"/>
         <Button x:Name="btnActiveToItem" Content="->" HorizontalAlignment="Left" Margin="476,191,0,0" VerticalAlignment="Top" Width="24" Click="btnActiveToItem_Click"/>
-
+        <Label x:Name="ActiveLabel" Content="Active Items" HorizontalAlignment="Left" Margin="19,73,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label x:Name="InvetoryLabel" Content="Stored Items" HorizontalAlignment="Left" Margin="505,73,0,0" VerticalAlignment="Top" FontSize="20"/>
     </Grid>
 </UserControl>

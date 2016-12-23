@@ -32,7 +32,7 @@ namespace MonsterIncWPF
 
         public TrainerHome()
         {
-            
+
         }
         public TrainerHome(bool affiche)
         {
@@ -43,10 +43,10 @@ namespace MonsterIncWPF
             InitListes();
 
 
-            int nbActiveMonster = trainer.ActiveMonsters.Count; 
+            int nbActiveMonster = trainer.ActiveMonsters.Count;
             for (int i = 0; i < 5; i++)
             {
-                if (i<nbActiveMonster)
+                if (i < nbActiveMonster)
                 {
                     listeButtons[i].Content = trainer.ActiveMonsters[i].NickName + "\n" + trainer.ActiveMonsters[i].Template.Name;
                     listeLvl[i].Content = trainer.ActiveMonsters[i].ExperienceLevel;
@@ -60,10 +60,16 @@ namespace MonsterIncWPF
                     listeLvl[i].Content = "";
                     listeType[i].Content = "";
                     listeLife[i].Content = "";
-                    listeEnergy[i].Content ="";
+                    listeEnergy[i].Content = "";
                 }
             }
+            TrainerHomeRefresh();
+            
+        }
 
+        public void TrainerHomeRefresh()
+        {
+            Trainer trainer = SavedGames.LoadedGame.HumanPlayer.Trainer;
             int nbActiveItems = trainer.ActiveInventory.Count;
             for (int i = 0; i < 5; i++)
             {
@@ -75,6 +81,7 @@ namespace MonsterIncWPF
 
             }
         }
+
         private void MenuQuitBtn_Click(object sender, RoutedEventArgs e)
         {
             ((MainWindow)System.Windows.Application.Current.MainWindow).Home.Visibility = Visibility.Visible;
@@ -89,6 +96,9 @@ namespace MonsterIncWPF
         private void MenuArenaBtn_Click(object sender, RoutedEventArgs e)
         {
             DifficultyPanel.Visibility = Visibility.Visible;
+            CombatGrid.Children.Clear();
+            SavedGames.LoadedCombat = null;
+            DifficultyListBox.UnselectAll();
             MenuPanel.Visibility = Visibility.Collapsed;
         }
 
@@ -102,18 +112,21 @@ namespace MonsterIncWPF
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
-            MenuPanel.Visibility = Visibility.Visible;
-            DifficultyPanel.Visibility = Visibility.Collapsed;
+            HideDifficulty();
         }
 
         private void DifficultyListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var t = SavedGames.mainWindow.AppGrid.Children[SavedGames.trainerHomeForm];
-            Combat combat = new Combat(SavedGames.LoadedGame, (Core.Model.Difficulty)DifficultyListBox.SelectedValue);
-            
-            SavedGames.LoadedCombat = combat;
-            ((TrainerHome)t).TrainerHomeGrid.Visibility = Visibility.Collapsed;
-            ActiveGrid.Children.Add(new CombatMain { Visibility = Visibility.Visible });
+            if (DifficultyListBox.SelectedIndex != -1)
+            {
+                var t = SavedGames.mainWindow.AppGrid.Children[SavedGames.trainerHomeForm];
+                CombatGrid.Children.Clear();
+                Combat combat = new Combat(SavedGames.LoadedGame, (Core.Model.Difficulty)DifficultyListBox.SelectedValue);
+
+                SavedGames.LoadedCombat = combat;
+                ((TrainerHome)t).TrainerHomeGrid.Visibility = Visibility.Collapsed;
+                CombatGrid.Children.Add(new CombatMain { Visibility = Visibility.Visible });
+            }
         }
 
 
@@ -153,7 +166,7 @@ namespace MonsterIncWPF
 
         private void MonsterBtn1_Click(object sender, RoutedEventArgs e)
         {
-            ActiveGrid.Children.Add(new SelectActiveMonster(0) { Visibility = Visibility.Visible, HorizontalAlignment = HorizontalAlignment.Left,  VerticalAlignment =VerticalAlignment.Top, Height = 570, Width = 1014 });
+            ActiveGrid.Children.Add(new SelectActiveMonster(0) { Visibility = Visibility.Visible, HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Top, Height = 570, Width = 1014 });
         }
 
         private void MonsterBtn2_Click(object sender, RoutedEventArgs e)
@@ -182,6 +195,13 @@ namespace MonsterIncWPF
             SavedGames.LoadedGame.Save();
             MessageBox.Show("Correctly saved");
 
+        }
+
+        public void HideDifficulty()
+        {
+            MenuPanel.Visibility = Visibility.Visible;
+            DifficultyPanel.Visibility = Visibility.Collapsed;
+            CombatGrid.Children.Clear();
         }
     }
 

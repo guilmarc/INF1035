@@ -69,6 +69,7 @@
     <Compile Include="Implementations\IntelligentPickUsableStrategy.cs" />
     <Compile Include="Interfaces\IExperienceLevelStrategy.cs" />
     <Compile Include="Interfaces\IPickUsableStrategy.cs" />
+    <Compile Include="Model\Usable\Defense\Defend.cs" />
     <Compile Include="Utils\Constants.cs" />
     <Compile Include="Utils\Extensions.cs" />
     <Compile Include="Factories\InventoryFactory.cs" />

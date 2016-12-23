@@ -22,7 +22,7 @@ namespace Core.Data
 						Caracteristics = new List<MonsterTemplateCaracteristic> {
 							new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 10, Progression = 2},
 							new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 10, Progression = 2},
-							new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 10, Progression = 2},
+							new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 2, Progression = 2},
 							new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 10, Progression = 2},
 							new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 10, Progression = 2},
 						},
@@ -40,7 +40,7 @@ namespace Core.Data
 						Caracteristics = new List<MonsterTemplateCaracteristic> {
 							new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 20, Progression = 3},
 							new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 20, Progression = 3},
-							new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 20, Progression = 3},
+							new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 4, Progression = 3},
 							new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 20, Progression = 3},
 							new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 20, Progression = 3},
 						}
@@ -55,7 +55,7 @@ namespace Core.Data
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 30, Progression = 4},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 30, Progression = 4},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 30, Progression = 4},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 6, Progression = 4},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 30, Progression = 4},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 30, Progression = 4},
                         }
@@ -70,7 +70,7 @@ namespace Core.Data
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 10, Progression = 2},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 10, Progression = 2},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 10, Progression = 2},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 2, Progression = 2},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 10, Progression = 2},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 10, Progression = 2},
                         }
@@ -85,7 +85,7 @@ namespace Core.Data
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 20, Progression = 3},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 20, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 4, Progression = 3},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 20, Progression = 3},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 20, Progression = 3},
                         }
@@ -100,7 +100,7 @@ namespace Core.Data
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 30, Progression = 4},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 30, Progression = 4},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 30, Progression = 4},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 6, Progression = 4},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 30, Progression = 4},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 30, Progression = 4},
                         }
@@ -115,7 +115,7 @@ namespace Core.Data
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 10, Progression = 2},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 10, Progression = 2},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 10, Progression = 2},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 2, Progression = 2},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 10, Progression = 2},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 10, Progression = 2},
                         }
@@ -130,7 +130,7 @@ namespace Core.Data
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 20, Progression = 3},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 20, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 4, Progression = 3},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 20, Progression = 3},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 20, Progression = 3},
                         }
@@ -145,7 +145,7 @@ namespace Core.Data
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 30, Progression = 4},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 30, Progression = 4},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 30, Progression = 4},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 6, Progression = 4},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 30, Progression = 4},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 30, Progression = 4},
                         }
@@ -160,7 +160,7 @@ namespace Core.Data
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 10, Progression = 2},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 10, Progression = 2},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 10, Progression = 2},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 2, Progression = 2},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 10, Progression = 2},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 10, Progression = 2},
                         }
@@ -175,7 +175,7 @@ namespace Core.Data
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 20, Progression = 3},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 20, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 20, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 4, Progression = 3},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 20, Progression = 3},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 20, Progression = 3},
                         }
@@ -190,7 +190,7 @@ namespace Core.Data
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 30, Progression = 4},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 30, Progression = 4},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 30, Progression = 4},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 6, Progression = 4},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 30, Progression = 4},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 30, Progression = 4},
                         }
@@ -205,7 +205,7 @@ namespace Core.Data
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 25, Progression = 3},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 25, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 25, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 5, Progression = 3},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 25, Progression = 3},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 25, Progression = 3},
                         }
@@ -220,7 +220,7 @@ namespace Core.Data
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 35, Progression = 4},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 35, Progression = 4},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 35, Progression = 4},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 7, Progression = 4},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 35, Progression = 4},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 35, Progression = 4},
                         }
@@ -235,7 +235,7 @@ namespace Core.Data
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 25, Progression = 3},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 25, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 25, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 5, Progression = 3},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 25, Progression = 3},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 25, Progression = 3},
                         }
@@ -250,7 +250,7 @@ namespace Core.Data
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 35, Progression = 4},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 35, Progression = 4},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 35, Progression = 4},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 7, Progression = 4},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 35, Progression = 4},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 35, Progression = 4},
                         }
@@ -265,7 +265,7 @@ namespace Core.Data
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 25, Progression = 3},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 25, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 25, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 5, Progression = 3},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 25, Progression = 3},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 25, Progression = 3},
                         }
@@ -280,7 +280,7 @@ namespace Core.Data
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 35, Progression = 4},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 35, Progression = 4},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 35, Progression = 4},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 7, Progression = 4},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 35, Progression = 4},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 35, Progression = 4},
                         }
@@ -295,7 +295,7 @@ namespace Core.Data
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 25, Progression = 3},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 25, Progression = 3},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 25, Progression = 3},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 5, Progression = 3},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 25, Progression = 3},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 25, Progression = 3},
                         }
@@ -310,7 +310,7 @@ namespace Core.Data
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 35, Progression = 4},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 35, Progression = 4},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 35, Progression = 4},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 7, Progression = 4},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 35, Progression = 4},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 35, Progression = 4},
                         }
@@ -325,7 +325,7 @@ namespace Core.Data
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 40, Progression = 5},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 40, Progression = 5},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 40, Progression = 5},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 8, Progression = 5},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 40, Progression = 5},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 40, Progression = 5},
                         }
@@ -340,7 +340,7 @@ namespace Core.Data
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 40, Progression = 5},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 40, Progression = 5},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 40, Progression = 5},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 8, Progression = 5},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 40, Progression = 5},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 40, Progression = 5},
                         }
@@ -355,7 +355,7 @@ namespace Core.Data
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 40, Progression = 5},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 40, Progression = 5},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 40, Progression = 5},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 8, Progression = 5},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 40, Progression = 5},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 40, Progression = 5},
                         }
@@ -370,7 +370,7 @@ namespace Core.Data
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 40, Progression = 5},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 40, Progression = 5},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 40, Progression = 5},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 8, Progression = 5},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 40, Progression = 5},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 40, Progression = 5},
                         }
@@ -385,7 +385,7 @@ namespace Core.Data
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 40, Progression = 5},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 40, Progression = 5},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 40, Progression = 5},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 8, Progression = 5},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 40, Progression = 5},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 40, Progression = 5},
                         }
@@ -400,7 +400,7 @@ namespace Core.Data
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 40, Progression = 5},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 40, Progression = 5},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 40, Progression = 5},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 8, Progression = 5},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 40, Progression = 5},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 40, Progression = 5},
                         }
@@ -415,7 +415,7 @@ namespace Core.Data
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 40, Progression = 5},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 40, Progression = 5},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 40, Progression = 5},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 8, Progression = 5},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 40, Progression = 5},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 40, Progression = 5},
                         }
@@ -430,7 +430,7 @@ namespace Core.Data
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 40, Progression = 5},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 40, Progression = 5},
-                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 40, Progression = 5},
+                            new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 8, Progression = 5},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.AttackPoints,  Base = 40, Progression = 5},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.DefensePoints,  Base = 40, Progression = 5},
                         }
