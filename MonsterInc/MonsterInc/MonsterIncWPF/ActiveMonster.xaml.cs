@@ -26,7 +26,7 @@ namespace MonsterIncWPF
         List<Label> listeType = new List<Label>();
         List<Label> listeLife = new List<Label>();
         List<Label> listeEnergy = new List<Label>();
-        Trainer trainer = SavedGames.LoadedPlayer.Trainer;
+        Trainer trainer = SavedGames.LoadedGame.HumanPlayer.Trainer;
 
         public ActiveMonster()
         {

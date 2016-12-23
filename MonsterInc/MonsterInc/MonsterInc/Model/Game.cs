@@ -63,10 +63,10 @@ namespace Core.Model
 
 		public void Save()
 		{
-		    SaveWithName(this.Name + "_" + StartTime.ToString("yyyyMMddHHmmss"));
+		    Save(this.Name + "_" + StartTime.ToString("yyyyMMddHHmmss"));
 		}
 
-        public void SaveWithName(string gameName)
+        public void Save(string gameName)
         {
             var filePath = Constants.SavedGamePath + gameName + Constants.SavedGameFileExtension;
             Utils.Serializer.Binary.WriteToBinaryFile(filePath, this);

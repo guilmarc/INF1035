@@ -31,12 +31,12 @@ namespace MonsterIncWPF
 
         public SelectNewMonster(bool affiche)
         {
-            string nomPlayer = SavedGames.LoadedPlayer.Name;
+            string nomPlayer = SavedGames.LoadedGame.HumanPlayer.Name;
             InitializeComponent();
-            SavedGames.LoadedPlayer.Trainer = new Core.Model.Trainer();
+            SavedGames.LoadedGame.HumanPlayer.Trainer = new Core.Model.Trainer();
 
-            SavedGames.LoadedPlayer.Trainer.SelectTempMonsters = new ObservableCollection<Core.Model.Monster>(Core.Universe.InitMonsters);
-            this.DataContext = SavedGames.LoadedPlayer;
+            SavedGames.LoadedGame.HumanPlayer.Trainer.SelectTempMonsters = new ObservableCollection<Core.Model.Monster>(Core.Universe.InitMonsters);
+            this.DataContext = SavedGames.LoadedGame.HumanPlayer;
             ListAffinity.ItemsSource = Enum<Core.Element>.GetNames();
             TrainerTextBox.Text = nomPlayer;
         }
@@ -47,7 +47,7 @@ namespace MonsterIncWPF
 
         private void ListSelectTempMonsters_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            MonsterDetails detailControlOpen = new MonsterDetails(SavedGames.LoadedPlayer.ActiveTrainer.SelectTempMonsters[ListSelectTempMonsters.SelectedIndex]);
+            MonsterDetails detailControlOpen = new MonsterDetails(SavedGames.LoadedGame.HumanPlayer.ActiveTrainer.SelectTempMonsters[ListSelectTempMonsters.SelectedIndex]);
 
             DetailsControl.Content = detailControlOpen;
 
@@ -63,17 +63,17 @@ namespace MonsterIncWPF
                 else if (ListAffinity.SelectedItem == null) MessageBox.Show("Please choose your affinity");
                 else
                 {
-                    SavedGames.LoadedPlayer.Trainer.Affinity = Core.Extensions.ToEnum<Core.Element>(ListAffinity.SelectedValue.ToString());
-                    SavedGames.LoadedPlayer.Trainer.ActiveMonsters = new List<Core.Model.Monster>();
-                    SavedGames.LoadedPlayer.Trainer.ActiveMonsters.Add((Core.Model.Monster)ListSelectTempMonsters.SelectedValue);
-                    SavedGames.LoadedPlayer.Trainer.Name = TrainerTextBox.Text;
-                    SavedGames.LoadedPlayer.Trainer.Monsters = new List<Core.Model.Monster>();
-                    SavedGames.LoadedPlayer.Trainer.Monsters.Add((Core.Model.Monster)ListSelectTempMonsters.SelectedValue);
-                    SavedGames.LoadedPlayer.Trainer.Monsters[0].NickName = MonsterNameTextBox.Text;
-                    SavedGames.LoadedPlayer.Trainer.ActiveMonsters[0] = SavedGames.LoadedPlayer.Trainer.Monsters[0];
-                    SavedGames.LoadedPlayer.Trainer.ActiveMonster = SavedGames.LoadedPlayer.Trainer.Monsters[0];
-                    SavedGames.Games.XmlSerialize(SavedGames.XMLName, true);
-
+                    SavedGames.LoadedGame.HumanPlayer.Trainer.Affinity = Core.Extensions.ToEnum<Core.Element>(ListAffinity.SelectedValue.ToString());
+                    SavedGames.LoadedGame.HumanPlayer.Trainer.ActiveMonsters = new List<Core.Model.Monster>();
+                    SavedGames.LoadedGame.HumanPlayer.Trainer.ActiveMonsters.Add((Core.Model.Monster)ListSelectTempMonsters.SelectedValue);
+                    SavedGames.LoadedGame.HumanPlayer.Trainer.Name = TrainerTextBox.Text;
+                    SavedGames.LoadedGame.HumanPlayer.Trainer.Monsters = new List<Core.Model.Monster>();
+                    SavedGames.LoadedGame.HumanPlayer.Trainer.Monsters.Add((Core.Model.Monster)ListSelectTempMonsters.SelectedValue);
+                    SavedGames.LoadedGame.HumanPlayer.Trainer.Monsters[0].NickName = MonsterNameTextBox.Text;
+                    SavedGames.LoadedGame.HumanPlayer.Trainer.ActiveMonsters[0] = SavedGames.LoadedGame.HumanPlayer.Trainer.Monsters[0];
+                    SavedGames.LoadedGame.HumanPlayer.Trainer.ActiveMonster = SavedGames.LoadedGame.HumanPlayer.Trainer.Monsters[0];
+                    //SavedGames.Games.XmlSerialize(SavedGames.XMLName, true);
+                    SavedGames.LoadedGame.Save();
 
 
 

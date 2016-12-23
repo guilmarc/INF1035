@@ -28,11 +28,11 @@ namespace MonsterIncWPF
         public MainWindow()
         {
             InitializeComponent();
-                SavedGames.Games = new List<Player>();
+                ////SavedGames.Games = new List<Player>();
             try
             {
-                SavedGames.Games = Extensions.XmlToObject<List<Player>>(SavedGames.XMLName,true);
-                ListSavedGames.ItemsSource = SavedGames.Games;
+                //SavedGames.Games = Extensions.XmlToObject<List<Player>>(SavedGames.XMLName,true);
+                ListSavedGames.ItemsSource = Universe.SavedGameFiles;
             }
             catch (Exception ex )// no item yet 
             {
@@ -46,25 +46,28 @@ namespace MonsterIncWPF
 
         private void NewGame_Click(object sender, RoutedEventArgs e)
         {
-            SavedGames.LoadedPlayer = new Core.Model.Player(PlayerName.Text);
-            this.DataContext = SavedGames.LoadedPlayer;
-            SavedGames.LoadedGame = new Game(SavedGames.LoadedPlayer);
-            SavedGames.Games.Add(SavedGames.LoadedPlayer);
-            SavedGames.Games.XmlSerialize(SavedGames.XMLName, true);
+            SavedGames.LoadedGame.HumanPlayer = new Player(PlayerName.Text);
+            SavedGames.LoadedGame = new Game(SavedGames.LoadedGame.HumanPlayer);
+            SavedGames.LoadedGame.Name = SavedGames.LoadedGame.HumanPlayer.Name;
+
+            this.DataContext = SavedGames.LoadedGame.HumanPlayer;
+            SavedGames.LoadedGame.Save();
+
             Home.Visibility = Visibility.Collapsed;
             AppGrid.Children.Add(new SelectNewMonster(true) { Visibility = Visibility.Visible });
         }
 
         private void Load_Click(object sender, RoutedEventArgs e)
         {
-            var selectedPlayer = (Core.Model.Player)ListSavedGames.SelectedItem;
+            string gameName = ListSavedGames.SelectedItem.ToString();
+            SavedGames.LoadedGame = Core.Engine.LoadGameFromFile(gameName);
 
-            SavedGames.LoadedPlayer = SavedGames.Games.Single(x => x.Name == selectedPlayer.Name);
-            this.DataContext = SavedGames.LoadedPlayer;
+            this.DataContext = SavedGames.LoadedGame;
 
             Home.Visibility = Visibility.Collapsed;
             AppGrid.Children.Remove(TrainerHome);
             AppGrid.Children.Add(new TrainerHome(true) { Name = "TrainerHome", Visibility = Visibility.Visible });
+
         }
 
         private enum Action
@@ -73,18 +76,19 @@ namespace MonsterIncWPF
             Load=2
         }
 
-        private void SwitchToNextWindow(Action action)
-        {
-            switch (action)
-            {
-                case Action.New:
-                    var win2 = new SelectNewMonster();
-                    break;
-                case Action.Load:
-                    throw new NotImplementedException();
-            }
 
-            this.Close();
-        }
+        //private void SwitchToNextWindow(Action action)
+        //{
+        //    switch (action)
+        //    {
+        //        case Action.New:
+        //            var win2 = new SelectNewMonster();
+        //            break;
+        //        case Action.Load:
+        //            throw new NotImplementedException();
+        //    }
+
+        //    this.Close();
+        //}
     }
 }

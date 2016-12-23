@@ -3,7 +3,7 @@
   <Class Name="Core.Data.DataAdaptor&lt;T&gt;" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="17.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Data\DataAdaptor.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
@@ -39,14 +39,14 @@
   <Class Name="Core.Data.TrainerData" Collapsed="true">
     <Position X="21" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Data\HardCodedData\TrainerData.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Core.Data.HardCodedDataAdaptor&lt;T&gt;" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="21" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Data\HardCodedDataAdaptor.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
@@ -69,21 +69,21 @@
   <Class Name="Core.Engine" Collapsed="true">
     <Position X="14" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAABAAAAAAQAAAABAEAAQBAAAgAAAEAAAAQAAAAI=</HashCode>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAhAAAAAAQAAAAAAAAAAA=</HashCode>
       <FileName>Engine.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Core.InventoryFactory" Collapsed="true">
     <Position X="12.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Factories\InventoryFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Core.TrainerFactory" Collapsed="true">
     <Position X="12.25" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAGAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
       <FileName>Factories\TrainerFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -97,14 +97,14 @@
   <Class Name="Core.Universe" Collapsed="true">
     <Position X="15.75" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAAAAAACBAAAAAAAAIAQBAACAAEAAAAABAAAAA=</HashCode>
+      <HashCode>EAIAAhAAgAAACBAABAAAAAIAQBAACAAEAAAAABgAAAA=</HashCode>
       <FileName>Universe.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Core.Extensions" Collapsed="true">
     <Position X="17.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAkAAAAACAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <HashCode>AAAAEAAAAACABAAAAAAAAAAAAAQADAQAIAAAAAAAAAE=</HashCode>
       <FileName>Utils\Extensions.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -118,7 +118,7 @@
   <Class Name="Core.Model.MonsterFactory" Collapsed="true">
     <Position X="12.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAACAAAAAAAQAAgAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAgAAAAAAAAAFAAAAAAgIAAAA=</HashCode>
       <FileName>Factories\MonsterFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -129,17 +129,17 @@
       <FileName>Model\Action.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Core.Model.Combat" Collapsed="true">
-    <Position X="15.75" Y="0.5" Width="1.5" />
+  <Class Name="Core.Model.Combat">
+    <Position X="8.5" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAEAAAQAAAQA=</HashCode>
+      <HashCode>AAAgAAAAQAAAAQAAAAAACAAQBAAgAAAAAEAAgQAAARY=</HashCode>
       <FileName>Model\Combat.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Core.Model.Difficulty" Collapsed="true">
     <Position X="21" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>CAAAAAAAIAAEBAgAAAAAAAQAAAAAAEAAAAAAAAAAABA=</HashCode>
+      <HashCode>CAAAAAAAIAAEBAgAAAAEBAQAAAAAAEAAAAAAAAAAABA=</HashCode>
       <FileName>Model\Difficulty.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -150,54 +150,56 @@
       <FileName>Model\ExperienceLevelChangedEventArgs.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Core.Model.Game" Collapsed="true">
-    <Position X="19.25" Y="1.5" Width="1.5" />
+  <Class Name="Core.Model.Game">
+    <Position X="0.5" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAgIAAAAAAAAAAAAAAAAQABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAMAAAAAAAAAAAAAAAAQAJAAgAAAAAAAAAAAAAAY=</HashCode>
       <FileName>Model\Game.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="HumanPlayer" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="Core.Model.Antidote" Collapsed="true">
     <Position X="5.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Model\Items\Antidote.cs</FileName>
+      <FileName>Model\Usable\Items\Antidote.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Core.Model.CaptureBall" Collapsed="true">
     <Position X="7.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Model\Items\CaptureBall.cs</FileName>
+      <FileName>Model\Usable\Items\CaptureBall.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Core.Model.EnergyPotion" Collapsed="true">
     <Position X="9.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Model\Items\EnergyPotion.cs</FileName>
+      <FileName>Model\Usable\Items\EnergyPotion.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Core.Model.Item" Collapsed="true">
     <Position X="5.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAIAAAgACAAAAAAAAQAAAAAQAAAAAAAAAAAAAE=</HashCode>
-      <FileName>Model\Items\Item.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAE=</HashCode>
+      <FileName>Model\Usable\Items\Item.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="Core.Model.LifePotion" Collapsed="true">
     <Position X="0.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Model\Items\LifePotion.cs</FileName>
+      <FileName>Model\Usable\Items\LifePotion.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Core.Model.Revival" Collapsed="true">
     <Position X="3" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Model\Items\Revival.cs</FileName>
+      <FileName>Model\Usable\Items\Revival.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Core.Model.Level" Collapsed="true">
@@ -218,14 +220,14 @@
   <Class Name="Core.Model.Monster" Collapsed="true">
     <Position X="19.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AABAAAAAAEgKgAAAAAIAgAAAEAAAAAEAkAAAAAAAAAA=</HashCode>
+      <HashCode>AABAAAAAAEgKgAAAAAIAgAAAEAgACAEAgAAAAAEAAAA=</HashCode>
       <FileName>Model\Monster.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Core.Model.MonsterCaracteristic" Collapsed="true">
     <Position X="21" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAAAAAAAAAAAAAAEAIAAAAAAAAAAQAAAARAAAAAAQAA=</HashCode>
+      <HashCode>IAAAAAAAAAAAAAAEAIAAAAAAAAAAQIAAARAAAAAAQAA=</HashCode>
       <FileName>Model\MonsterCaracteristic.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -243,12 +245,16 @@
       <FileName>Model\MonsterTemplateCaracteristic.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Core.Model.Player" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="21" Y="3.5" Width="1.5" />
+  <Class Name="Core.Model.Player" BaseTypeListCollapsed="true">
+    <Position X="3.5" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAgACEAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAQAAIABAAAEAAAAAAQAgACEAAAAAQAAAAAAAAA=</HashCode>
       <FileName>Model\Player.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Trainer" />
+      <Property Name="ActiveTrainer" />
+    </ShowAsAssociation>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="Core.Model.Repository" Collapsed="true">
@@ -289,15 +295,14 @@
   <Class Name="Core.Model.Skill" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="15.75" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EAAAAAAAAAAAACAAAAiAAAQAgAAEQAAgAAAAgAQAAAA=</HashCode>
-      <FileName>Model\Skill.cs</FileName>
+      <HashCode>AAAAAAAIAAAAAAAAAAiAAAAAAAAAQAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Model\Usable\Skills\Skill.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="Core.Model.Trainer" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="19.25" Y="4.5" Width="1.5" />
+  <Class Name="Core.Model.Trainer" BaseTypeListCollapsed="true">
+    <Position X="6.5" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gABAAQACAAAAAAQAAAAAAAQAgAAEAQAACAAAAgAIAAE=</HashCode>
+      <HashCode>gCBAAQAiAQAAAAQAAAAAAAQAgAAEAQAACAAAAwgIAAE=</HashCode>
       <FileName>Model\Trainer.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
@@ -312,7 +317,7 @@
   <Interface Name="Core.Data.IDataAdaptor&lt;T&gt;" Collapsed="true">
     <Position X="14" Y="6.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Data\IDataAdaptor.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -349,6 +354,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAQAAQAAAAAAAgAAAAAIAAAAAAAAAAAAAQAAAAA=</HashCode>
       <FileName>Model\MonsterTemplateCaracteristic.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Core.Model.PlayerType" Collapsed="true">
+    <Position X="0.5" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Model\Player.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Font Name="Segoe UI" Size="9" />

@@ -73,6 +73,7 @@ namespace Core.Model
             return new BasicPickUsableStrategy().PickUsable(this, opponent);
         }
 
+        [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
 
         public override string ToString()

@@ -24,7 +24,7 @@
         </DataTemplate>
     </UserControl.Resources>
     <Grid Background="White" OpacityMask="White">
-        <Label x:Name="ItemShopLabel" Content="Item SHOP" HorizontalAlignment="Center" Margin="446,10,422,0" VerticalAlignment="Top" FontSize="26" FontWeight="Bold" Width="146"/>
+        <Label x:Name="ItemShopLabel" Content="Inventory" HorizontalAlignment="Center" Margin="446,10,422,0" VerticalAlignment="Top" FontSize="26" FontWeight="Bold" Width="146"/>
         <Label x:Name="GoldLabel" Content="Golds" HorizontalAlignment="Left" Margin="917,10,0,0" VerticalAlignment="Top"/>
         <Label x:Name="GoldValueLabel" Content="{Binding Trainer.Gold}" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Margin="0,10,102,0" VerticalAlignment="Top" Width="92"/>
         <Button x:Name="BackButton" Content="Back" HorizontalAlignment="Left" Margin="19,16,0,0" VerticalAlignment="Top" Width="90" Height="29" Click="BackButton_Click"/>
@@ -35,6 +35,8 @@
         </ListBox>
         <ListBox x:Name="ItemsListBox" ItemsSource="{Binding Inventory}" ItemTemplate="{StaticResource usableTemplate}" HorizontalAlignment="Left" Height="406" Margin="505,104,0,0" VerticalAlignment="Top" Width="452" >
         </ListBox>
+        <Button x:Name="btnItemToActive" Content="&lt;-" HorizontalAlignment="Left" Margin="476,155,0,0" VerticalAlignment="Top" Width="24" Click="btnItemToActive_Click"/>
+        <Button x:Name="btnActiveToItem" Content="->" HorizontalAlignment="Left" Margin="476,191,0,0" VerticalAlignment="Top" Width="24" Click="btnActiveToItem_Click"/>
 
     </Grid>
 </UserControl>

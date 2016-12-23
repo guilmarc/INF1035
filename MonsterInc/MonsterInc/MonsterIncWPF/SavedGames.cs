@@ -13,11 +13,11 @@ namespace MonsterIncWPF
         public static MainWindow mainWindow = ((MainWindow) System.Windows.Application.Current.MainWindow);
         public static int trainerHomeForm = 0;
 
-        public const string XMLName = "SavedGames";
+        //public const string XMLName = "SavedGames";
 
-        public static List<Player> Games { get; set; } = new List<Core.Model.Player>();
+        //public static List<Player> Games { get; set; } = new List<Core.Model.Player>();
 
-        public static Player LoadedPlayer { get; set; } = new Player();
+        //public static Player LoadedPlayer { get; set; } = new Player();
 
         //public static Core.Model.Player LoadedOpponent { get; set; } = new Player();
 

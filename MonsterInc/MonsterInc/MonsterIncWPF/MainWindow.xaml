@@ -8,21 +8,14 @@
         Title="MainWindow" Height="600" Width="1024">
     <Grid Margin="0,0,2,-1">
         <Grid x:Name="Home">
-            <Label x:Name="NewPlayerLabel" Content="Please enter your name :" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="212,255,0,0"/>
+            <Label x:Name="NewPlayerLabel" Content="Name of the game:" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="212,255,0,0"/>
 
             <!--<TextBox x:Name="PlayerName" Text="{Binding Name}" TextWrapping="Wrap" Margin="212,286,662,250" />-->
             <TextBox x:Name="PlayerName" Text="" TextWrapping="Wrap" Margin="212,286,662,250" />
             <Button x:Name="NewGame" Content="Create Game" Click="NewGame_Click" Margin="220,344,676,187"/>
 
-            <ListBox x:Name="ListSavedGames"   HorizontalAlignment="Center" Height="129" VerticalAlignment="Top" Width="202" Margin="606,271,206,0" SelectedIndex="0" BorderThickness="2" Padding="2" >
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding Name}" Margin="2" />
-                            <!--<TextBlock Text="{Binding Surname}" Margin="2" />-->
-                        </StackPanel>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
+            <ListBox x:Name="ListSavedGames"   HorizontalAlignment="Center" Height="129" VerticalAlignment="Top" Width="202" Margin="606,271,206,0" SelectedIndex="0" BorderThickness="2" Padding="2"  >
+
             </ListBox>
             <Button x:Name="Load" Content="Load Game" Click="Load_Click" Margin="650,417,236,114"/>
 

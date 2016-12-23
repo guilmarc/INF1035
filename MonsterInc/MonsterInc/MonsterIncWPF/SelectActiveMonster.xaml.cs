@@ -22,12 +22,12 @@ namespace MonsterIncWPF
     /// </summary>
     public partial class SelectActiveMonster : UserControl
     {
-        Trainer trainer = SavedGames.LoadedPlayer.Trainer;
+        Trainer trainer = SavedGames.LoadedGame.HumanPlayer.Trainer;
         public SelectActiveMonster()
         {
             InitializeComponent();
             this.DataContext = trainer;
-           // MonsterListBox.ItemsSource = trainer.Monsters.;
+            MonsterListBox.ItemsSource = trainer.Monsters;
 
         }
 

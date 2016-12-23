@@ -16,7 +16,7 @@ namespace Core.Model
     public class Trainer : INotifyPropertyChanged
 	{
 	    private const int INIT_GOLD_VALUE = 1000;
-
+        [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
         string name;
 

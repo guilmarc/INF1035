@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Core.Model;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,15 +22,26 @@ namespace MonsterIncWPF
     /// </summary>
     public partial class ItemsForm : UserControl
     {
+        private ObservableCollection<Item> ActiveInventory;
+
+        private ObservableCollection<Item> Inventory;
+
         public ItemsForm()
         {
             InitializeComponent();
-
             //ActiveItemsListBox
+            this.DataContext = SavedGames.LoadedGame.HumanPlayer;
 
-            this.DataContext = SavedGames.LoadedPlayer;
-            ActiveItemsListBox.ItemsSource = SavedGames.LoadedPlayer.ActiveTrainer.ActiveInventory;
-            ItemsListBox.ItemsSource = Core.Universe.Items;
+            ActiveInventory = new ObservableCollection<Item>
+                (SavedGames.LoadedGame.HumanPlayer.ActiveTrainer.ActiveInventory);
+            ActiveItemsListBox.ItemsSource = ActiveInventory;
+
+            Inventory = new ObservableCollection<Item>
+                (SavedGames.LoadedGame.HumanPlayer.ActiveTrainer.Inventory);
+            ItemsListBox.ItemsSource = Inventory;
+
+
+
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
@@ -36,6 +49,46 @@ namespace MonsterIncWPF
             this.Visibility = Visibility.Hidden;
             var t = SavedGames.mainWindow.AppGrid.Children[SavedGames.trainerHomeForm];
             ((TrainerHome)t).TrainerHomeGrid.Visibility = Visibility.Visible;
+        }
+
+        private void btnItemToActive_Click(object sender, RoutedEventArgs e)
+        {
+            if (ActiveInventory.Count < 5)
+            {
+                //Item selectedItem = (Item)ItemsListBox.SelectedItem;
+                ActiveInventory.Add((Item)ItemsListBox.SelectedItem);
+                Inventory.RemoveAt(ItemsListBox.SelectedIndex);
+
+                saveToCurrentGame();
+            }
+
+        }
+
+
+        private void btnActiveToItem_Click(object sender, RoutedEventArgs e)
+        {
+            //Item selectedItem = (Item)ActiveItemsListBox.SelectedItem;
+            Inventory.Add((Item)ActiveItemsListBox.SelectedItem);
+            ActiveInventory.RemoveAt(ActiveItemsListBox.SelectedIndex);
+
+            saveToCurrentGame();
+        }
+
+        private void saveToCurrentGame()
+        {
+            SavedGames.LoadedGame.HumanPlayer.ActiveTrainer.ActiveInventory.Clear();
+            foreach (Item item in ActiveInventory)
+            {
+                SavedGames.LoadedGame.HumanPlayer.ActiveTrainer.ActiveInventory.Add(item);
+            }
+
+            SavedGames.LoadedGame.HumanPlayer.ActiveTrainer.Inventory.Clear();
+            foreach (Item item in Inventory)
+            {
+                SavedGames.LoadedGame.HumanPlayer.ActiveTrainer.Inventory.Add(item);
+            }
+
+            SavedGames.LoadedGame.Save();
         }
     }
 }

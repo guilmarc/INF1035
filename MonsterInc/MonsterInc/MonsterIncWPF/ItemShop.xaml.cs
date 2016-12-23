@@ -25,9 +25,9 @@ namespace MonsterIncWPF
         {
             //Application.Current.MainWindow = ;
             InitializeComponent();
-            this.DataContext = SavedGames.LoadedPlayer;
+            this.DataContext = SavedGames.LoadedGame.HumanPlayer;
             BuyItemsListBox.ItemsSource = Core.Universe.Items;
-            SellItemsListBox.ItemsSource = SavedGames.LoadedPlayer.Trainer.Inventory;
+            SellItemsListBox.ItemsSource = SavedGames.LoadedGame.HumanPlayer.Trainer.Inventory;
 
         }
 
@@ -115,7 +115,7 @@ namespace MonsterIncWPF
                 int Maxvalue=0;
                 foreach (Item item in ListCart.Items)
                 {
-                    SavedGames.LoadedPlayer.Trainer.BuyItem(item);
+                    SavedGames.LoadedGame.HumanPlayer.Trainer.BuyItem(item);
                     Maxvalue++;
                 }
             }
@@ -133,11 +133,11 @@ namespace MonsterIncWPF
             //int totalRefunds = 0;
             foreach (Item item in SellItemsListBox.SelectedItems)
             {
-                SavedGames.LoadedPlayer.Trainer.SellItem(item);
+                SavedGames.LoadedGame.HumanPlayer.Trainer.SellItem(item);
             }
             SellItemsListBox.ItemsSource =null;
-            SellItemsListBox.ItemsSource = SavedGames.LoadedPlayer.Trainer.Inventory;
-            //SavedGames.LoadedPlayer.ActiveTrainer.Gold += totalRefunds;
+            SellItemsListBox.ItemsSource = SavedGames.LoadedGame.HumanPlayer.Trainer.Inventory;
+            //SavedGames.LoadedGame.HumanPlayer.ActiveTrainer.Gold += totalRefunds;
 
         }
     }
