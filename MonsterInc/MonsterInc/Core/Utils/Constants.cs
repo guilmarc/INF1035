@@ -56,10 +56,7 @@ namespace Core
         {
             if (!Directory.Exists(requestedPath))
             {
-                if (Directory.CreateDirectory(requestedPath) == null)
-                {
-                    throw new UnableToCreateDataFolderException(requestedPath);
-                }
+                Directory.CreateDirectory(requestedPath);
             }
         }
 
