@@ -23,15 +23,15 @@ namespace MonsterIncWPF
     {
         Trainer gentilTrainer = SavedGames.LoadedCombat.Players.Where(x => x.Type == PlayerType.Human).First().Trainer;
         Trainer mechantTrainer = SavedGames.LoadedCombat.Players.Where(x => x.Type == PlayerType.Robot).First().Trainer;
-        Player gentil = SavedGames.LoadedCombat.Players.Where(x => x.Type == PlayerType.Human).First();
-        Player mechant = SavedGames.LoadedCombat.Players.Where(x => x.Type == PlayerType.Robot).First();
+        Player currentPlayer = SavedGames.LoadedCombat.Players.Where(x => x.Type == PlayerType.Human).First();
+        Player ennemyPlayer = SavedGames.LoadedCombat.Players.Where(x => x.Type == PlayerType.Robot).First();
         public CombatMain()
         {
             InitializeComponent();
             this.DataContext = SavedGames.LoadedCombat;
             Refresh();
             AttackList.DataContext = gentilTrainer.ActiveMonster;
-
+            CombatTextBlock.Text = "Start! \n";
         }
 
         public void Refresh()
@@ -47,6 +47,7 @@ namespace MonsterIncWPF
             EnemyMonsterLPActual.Content = mechantTrainer.ActiveMonster.Caracteristics[0].Actual + " / " + mechantTrainer.ActiveMonster.Caracteristics[0].Total;
             EnemyMonsterEPActual.Content = mechantTrainer.ActiveMonster.Caracteristics[1].Actual + " / " + mechantTrainer.ActiveMonster.Caracteristics[1].Total;
 
+            
         }
 
         private void DeleteChooseMonsterControl()
@@ -73,9 +74,15 @@ namespace MonsterIncWPF
 
         private void DefendButton_Checked(object sender, RoutedEventArgs e)
         {
-            gentilTrainer.ActiveMonster.ActiveSkills[0].Consume(gentil, mechant);
+            Player opp = SavedGames.LoadedCombat.PickRandomOpponent();
+            Player moi = SavedGames.LoadedCombat.CurrentPlayer;
+            Turn tour = new Turn(currentPlayer, ennemyPlayer, gentilTrainer.ActiveMonster.ActiveSkills[0], SavedGames.LoadedCombat);// 
+            string tourFait = tour.DoTurn;
+            CombatTextBlock.Text += "\n" + tourFait;
             isChecked = true;
             Refresh();
+            CombatTextScroll.UpdateLayout();
+            CombatTextScroll.ScrollToVerticalOffset(double.MaxValue);
         }
 
         private void DefendButton_Click(object sender, RoutedEventArgs e)
@@ -147,7 +154,52 @@ namespace MonsterIncWPF
             }
         }
 
+        private void DoAttack(object sender, SelectionChangedEventArgs e)
+        {
+            if (AttackList.SelectedIndex != -1)
+            {
+                Turn tour = new Turn(currentPlayer, ennemyPlayer, gentilTrainer.ActiveMonster.ActiveSkills[AttackList.SelectedIndex], SavedGames.LoadedCombat);
+                string tourFait = tour.DoTurn;
+                CombatTextBlock.Text += tourFait;
+                Refresh();
+                CombatTextScroll.UpdateLayout();
+                CombatTextScroll.ScrollToVerticalOffset(double.MaxValue);
 
+                //cache liste d'attaque
+                AttackButton.IsChecked = false;
+                AttackList.UnselectAll();
+                AttackList.Visibility = Visibility.Collapsed;
 
+                CheckWin();
+            }
+        }
+
+        private void CheckWin()
+        {
+            if (mechantTrainer.ActiveMonster.Caracteristics[0].Actual == 0 || SavedGames.LoadedCombat.Tour >= 500)
+            {
+                CombatTextBlock.Text += "YOU WON!\n";
+                PreQuit();
+            }
+            else if (gentilTrainer.ActiveMonster.Caracteristics[0].Actual == 0)
+            {
+                CombatTextBlock.Text += "YOU LOST! :'( \n";
+                PreQuit();
+            }
+        }
+
+        private void PreQuit()
+        {
+            ActionGrid.Visibility = Visibility.Collapsed;
+            QuitCombatGrid.Visibility = Visibility.Visible;
+        }
+
+        private void QuitButton_Click(object sender, RoutedEventArgs e)
+        {
+            currentPlayer.ResetActiveTrainer();
+            var t = SavedGames.mainWindow.AppGrid.Children[SavedGames.trainerHomeForm];
+            ((TrainerHome)t).TrainerHomeGrid.Visibility = Visibility.Visible;
+            ((TrainerHome)t).HideDifficulty();
+        }
     }
 }

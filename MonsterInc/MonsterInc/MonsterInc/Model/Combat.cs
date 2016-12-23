@@ -23,7 +23,8 @@ namespace Core.Model
 
         public List<Player> Players { get; set; } = new List<Player>();
 
-        public static int Tour { get; set; } = 1;
+        public int Tour { get; set; } = 1;
+        public bool Defending = false;
 
         public Combat() { }
 
