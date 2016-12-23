@@ -165,16 +165,7 @@ namespace MonsterIncWPF
             listeBeltButtons.Add(BeltBtn5);
         }
 
-        private void MonsterBtn1_Click(object sender, RoutedEventArgs e)
-        {
-            ActiveGrid.Children.Add(new SelectActiveMonster(0) { Visibility = Visibility.Visible, HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Top, Height = 570, Width = 1014 });
-        }
-
-        private void MonsterBtn2_Click(object sender, RoutedEventArgs e)
-        {
-            ActiveGrid.Children.Add(new SelectActiveMonster(1) { Visibility = Visibility.Visible, HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Top, Height = 570, Width = 1014 });
-        }
-
+       
         private void MenuItemBtn_Click(object sender, RoutedEventArgs e)
         {
             ActiveGrid.Children.Add(new ItemsForm() { Visibility = Visibility.Visible });
@@ -203,6 +194,37 @@ namespace MonsterIncWPF
             MenuPanel.Visibility = Visibility.Visible;
             DifficultyPanel.Visibility = Visibility.Collapsed;
             CombatGrid.Children.Clear();
+        }
+
+        private void MenuMonsterBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("À venir \nutiliser les boutons des 5 monstres actifs pour voir les monstres disponibles");
+        }
+
+        //GROUPE DE MONSTRE ACTIF
+        private void MonsterBtn1_Click(object sender, RoutedEventArgs e)
+        {
+            ActiveGrid.Children.Add(new SelectActiveMonster(0) { Visibility = Visibility.Visible, HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Top, Height = 570, Width = 1014 });
+        }
+
+        private void MonsterBtn2_Click(object sender, RoutedEventArgs e)
+        {
+            ActiveGrid.Children.Add(new SelectActiveMonster(1) { Visibility = Visibility.Visible, HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Top, Height = 570, Width = 1014 });
+        }
+
+        private void MonsterBtn3_Click(object sender, RoutedEventArgs e)
+        {
+            ActiveGrid.Children.Add(new SelectActiveMonster(2) { Visibility = Visibility.Visible, HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Top, Height = 570, Width = 1014 });
+        }
+
+        private void MonsterBtn4_Click(object sender, RoutedEventArgs e)
+        {
+            ActiveGrid.Children.Add(new SelectActiveMonster(3) { Visibility = Visibility.Visible, HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Top, Height = 570, Width = 1014 });
+        }
+
+        private void MonsterBtn5_Click(object sender, RoutedEventArgs e)
+        {
+            ActiveGrid.Children.Add(new SelectActiveMonster(4) { Visibility = Visibility.Visible, HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Top, Height = 570, Width = 1014 });
         }
     }
 

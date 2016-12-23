@@ -15,9 +15,9 @@
 
                 <Button x:Name="MonsterBtn1" Content="" HorizontalAlignment="Left" Margin="5,46,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="MonsterBtn1_Click" />
                 <Button x:Name="MonsterBtn2" Content="&lt;Empty&gt;" HorizontalAlignment="Left" Margin="110,46,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="MonsterBtn2_Click"/>
-                <Button x:Name="MonsterBtn3" Content="&lt;Empty&gt;" HorizontalAlignment="Left" Margin="215,46,0,0" VerticalAlignment="Top" Width="100" Height="100"/>
-                <Button x:Name="MonsterBtn4" Content="&lt;Empty&gt;" HorizontalAlignment="Left" Margin="320,46,0,0" VerticalAlignment="Top" Width="100" Height="100"/>
-                <Button x:Name="MonsterBtn5" Content="&lt;Empty&gt;" HorizontalAlignment="Left" Margin="425,46,-1,0" VerticalAlignment="Top" Width="100" Height="100"/>
+                <Button x:Name="MonsterBtn3" Content="&lt;Empty&gt;" HorizontalAlignment="Left" Margin="215,46,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="MonsterBtn3_Click"/>
+                <Button x:Name="MonsterBtn4" Content="&lt;Empty&gt;" HorizontalAlignment="Left" Margin="320,46,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="MonsterBtn4_Click"/>
+                <Button x:Name="MonsterBtn5" Content="&lt;Empty&gt;" HorizontalAlignment="Left" Margin="425,46,-1,0" VerticalAlignment="Top" Width="100" Height="100" Click="MonsterBtn5_Click"/>
 
                 <Label x:Name="MonsterLevelLabel1" Content="Level : " HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top" Height="26" Width="46"/>
                 <Label x:Name="MonsterElementLabel1" Content="Type : " HorizontalAlignment="Left" Margin="10,170,0,0" VerticalAlignment="Top" Height="26" Width="44"/>
@@ -71,7 +71,7 @@
             </Grid>
 
             <Label x:Name="BeltLabel" Content="Belt content :" HorizontalAlignment="Left" Margin="55,406,0,0" VerticalAlignment="Top" Width="244" Height="52" FontWeight="Bold" FontSize="20"/>
-            <Label x:Name="BeltNoticeLabel" Content="(Press to assign new item)" HorizontalAlignment="Left" Margin="190,409,0,0" VerticalAlignment="Top" Width="244" Height="52" FontWeight="Light" FontSize="16"/>
+            <Label x:Name="BeltNoticeLabel" Content="(Use 'Items' button to change belt content)" HorizontalAlignment="Left" Margin="190,409,0,0" VerticalAlignment="Top" Width="302" Height="52" FontWeight="Light" FontSize="16"/>
             <Grid x:Name="BeltGrid" HorizontalAlignment="Left" Height="90" Margin="55,458,0,0" VerticalAlignment="Top" Width="530">
                 <Button x:Name="BeltBtn1" Content="&lt;Empty>" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="100" Height="80" FontSize="10"/>
                 <Button x:Name="BeltBtn2" Content="&lt;Empty>" HorizontalAlignment="Left" Margin="110,5,0,0" VerticalAlignment="Top" Width="100" Height="80" FontSize="10"/>
@@ -86,19 +86,19 @@
             </Grid>-->
 
             <Label x:Name="GoldLabel" Content="Gold :" HorizontalAlignment="Left" Margin="55,89,0,0" VerticalAlignment="Top" FontSize="18"/>
-            <Label x:Name="WinLabel" Content="Wins :" HorizontalAlignment="Left" Margin="220,89,0,0" VerticalAlignment="Top" FontSize="18"/>
-            <Label x:Name="LossLabel" Content="Loss :" HorizontalAlignment="Left" Margin="381,89,0,0" VerticalAlignment="Top" FontSize="18"/>
+            <Label x:Name="WinLabel" Visibility="Collapsed" Content="Wins :" HorizontalAlignment="Left" Margin="220,89,0,0" VerticalAlignment="Top" FontSize="18"/>
+            <Label x:Name="LossLabel" Visibility="Collapsed" Content="Loss :" HorizontalAlignment="Left" Margin="381,89,0,0" VerticalAlignment="Top" FontSize="18"/>
 
             <Label x:Name="GoldValue" Content="{Binding Trainer.Gold}" HorizontalAlignment="Left" Margin="110,89,0,0" VerticalAlignment="Top" FontSize="18"/>
-            <Label x:Name="WinValue" Content="0" HorizontalAlignment="Left" Margin="280,89,0,0" VerticalAlignment="Top" FontSize="18"/>
-            <Label x:Name="LossValue" Content="0" HorizontalAlignment="Left" Margin="435,89,0,0" VerticalAlignment="Top" FontSize="18"/>
+            <Label x:Name="WinValue" Visibility="Collapsed" Content="0" HorizontalAlignment="Left" Margin="280,89,0,0" VerticalAlignment="Top" FontSize="18"/>
+            <Label x:Name="LossValue" Visibility="Collapsed" Content="0" HorizontalAlignment="Left" Margin="435,89,0,0" VerticalAlignment="Top" FontSize="18"/>
 
         </Grid>
 
         <StackPanel  x:Name="MenuPanel" HorizontalAlignment="Left" Margin="614,0,0,0"  VerticalAlignment="Top"  Width="380" Height="570" Visibility="Visible">
             <!--<Rectangle HorizontalAlignment="Left" Height="550" Margin="10,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="360"/>-->
             <Label x:Name="MenuLabel" Content="MENU" HorizontalAlignment="Center" Margin="73,20,63,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="244" Height="40" FontWeight="Bold" FontSize="26"/>
-            <Button x:Name="MenuMonsterBtn" Content="Monsters" HorizontalAlignment="Center" Margin="10,0,0,0" VerticalAlignment="Top" Width="244" Height="45" FontSize="20"/>
+            <Button x:Name="MenuMonsterBtn" Content="Monsters" HorizontalAlignment="Center" Margin="10,0,0,0" VerticalAlignment="Top" Width="244" Height="45" FontSize="20" Click="MenuMonsterBtn_Click"/>
             <Button x:Name="MenuItemBtn" Content="Items" HorizontalAlignment="Center" Margin="10,10,0,0" VerticalAlignment="Top" Width="244" Height="45" FontSize="20" Click="MenuItemBtn_Click"/>
             <Button x:Name="MenuStoreBtn" Content="Item Shop" HorizontalAlignment="Center" Margin="10,10,0,0" VerticalAlignment="Top" Width="244" Height="45" FontSize="20" Click="MenuStoreBtn_Click"/>
             <Button x:Name="MenuArenaBtn" Content="FIGHT ARENA" HorizontalAlignment="Center" Margin="73,10,63,0" VerticalAlignment="Top" Width="244" Height="161" FontSize="28" Click="MenuArenaBtn_Click"/>
@@ -128,7 +128,7 @@
             <Grid x:Name="CombatGrid">
             </Grid>
             <!--<local:SelectActiveMonster x:Name="SelectActiveMonsterGrid" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="570" Width="1014" Visibility="Collapsed"/>-->
-            
+            <Grid x:Name="MonsterListGrid"/>
             <!--<local:CombatMain x:Name="CombatGrid" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Collapsed"/>-->
             <!--<local:ItemShop x:Name="ItemShopGrid" HorizontalAlignment="Left" VerticalAlignment="Top" Height="570" Width="1014" Visibility="Collapsed"/>-->
 
