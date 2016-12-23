@@ -37,7 +37,7 @@ namespace Core.Model
                 {
                     var damageScope = scope as DamageScope;
                     var strenghtDiff = 
-                    impact = (int)((damageScope.Magnitude + hit) * elementRatio * Utils.HumanizeRatio());
+                    impact = (int)((damageScope.Magnitude + hit) * elementRatio * Utils.HumanizeRatio())/5;
                 }
                 if (scope is EffectScope)
                 {
