@@ -50,7 +50,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MonsterInc\Core.csproj">
+    <ProjectReference Include="..\Core\Core.csproj">
       <Project>{5e7eb5a1-d5a8-4134-87a4-100010d1d169}</Project>
       <Name>Core</Name>
     </ProjectReference>

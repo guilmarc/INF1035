@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Item xsi:type="CaptureBall">
+    <Name>CBall (low grade)</Name>
+    <Description>Low grade capture ball</Description>
+    <Rarity>90</Rarity>
+    <Gold>20</Gold>
+  </Item>
+  <Item xsi:type="CaptureBall">
+    <Name>CBall (medium grade)</Name>
+    <Description>Medium grade capture ball</Description>
+    <Rarity>75</Rarity>
+    <Gold>100</Gold>
+  </Item>
+  <Item xsi:type="CaptureBall">
+    <Name>CBall (high grade)</Name>
+    <Description>High grade capture ball</Description>
+    <Rarity>50</Rarity>
+    <Gold>500</Gold>
+  </Item>
+  <Item xsi:type="CaptureBall">
+    <Name>CBall (perfect grade)</Name>
+    <Description>Perfect capture ball</Description>
+    <Rarity>20</Rarity>
+    <Gold>2000</Gold>
+  </Item>
+  <Item xsi:type="Revival">
+    <Name>Revival Syringe (5 mL)</Name>
+    <Description>Revival Syringe</Description>
+    <Rarity>70</Rarity>
+    <Gold>400</Gold>
+  </Item>
+  <Item xsi:type="Revival">
+    <Name>Revival Syringe (10 mL)</Name>
+    <Description>Large Revival Syringe</Description>
+    <Rarity>30</Rarity>
+    <Gold>1500</Gold>
+  </Item>
+  <Item xsi:type="LifePotion">
+    <Name>Small Life Potion</Name>
+    <Description>Small Life Potion</Description>
+    <Rarity>95</Rarity>
+    <Gold>5</Gold>
+  </Item>
+  <Item xsi:type="LifePotion">
+    <Name>Medium Life Potion</Name>
+    <Description>Medium Life Potion</Description>
+    <Rarity>80</Rarity>
+    <Gold>50</Gold>
+  </Item>
+  <Item xsi:type="LifePotion">
+    <Name>Large Life Potion</Name>
+    <Description>Large Life Potion</Description>
+    <Rarity>60</Rarity>
+    <Gold>200</Gold>
+  </Item>
+  <Item xsi:type="EnergyPotion">
+    <Name>Small Energy Potion</Name>
+    <Description>Small Energy Potion</Description>
+    <Rarity>95</Rarity>
+    <Gold>5</Gold>
+  </Item>
+  <Item xsi:type="EnergyPotion">
+    <Name>Medium Energy Potion</Name>
+    <Description>Medium Energy Potion</Description>
+    <Rarity>80</Rarity>
+    <Gold>50</Gold>
+  </Item>
+  <Item xsi:type="EnergyPotion">
+    <Name>Large Energy Potion</Name>
+    <Description>Large Energy Potion</Description>
+    <Rarity>60</Rarity>
+    <Gold>200</Gold>
+  </Item>
+  <Item xsi:type="Antidote">
+    <Name>Low quality Antidote</Name>
+    <Description>40% chance to remove negative effect</Description>
+    <Rarity>95</Rarity>
+    <Gold>5</Gold>
+  </Item>
+  <Item xsi:type="Antidote">
+    <Name>Medium quality Antidote</Name>
+    <Description>65% chance to remove negative effect</Description>
+    <Rarity>80</Rarity>
+    <Gold>50</Gold>
+  </Item>
+  <Item xsi:type="Antidote">
+    <Name>Good quality Antidote</Name>
+    <Description>90% chance to remove negative effect</Description>
+    <Rarity>40</Rarity>
+    <Gold>200</Gold>
+  </Item>
+</ArrayOfItem>

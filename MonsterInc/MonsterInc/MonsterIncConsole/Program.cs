@@ -23,10 +23,10 @@ namespace MonsterIncConsole
             Core.Universe.SavedGameFiles.ForEach(x => Console.WriteLine(x));
 
 
-            var firstSavedGame = Core.Universe.SavedGameFiles[0];
-            var loadedgame = Core.Engine.LoadGameFromFile(firstSavedGame);
+            //var firstSavedGame = Core.Universe.SavedGameFiles[0];
+            //var loadedgame = Core.Engine.LoadGameFromFile(firstSavedGame);
 
-            Console.Write(loadedgame);
+            Console.Write(Core.Constants.SavedGamePath);
 
 
             //while (true)

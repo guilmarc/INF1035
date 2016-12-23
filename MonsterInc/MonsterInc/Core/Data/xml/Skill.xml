@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfSkill xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Skill>
+    <Name>Roll</Name>
+    <EnergyPointCost>5</EnergyPointCost>
+    <MinimumExperienceLevel>1</MinimumExperienceLevel>
+    <Element>Fire</Element>
+    <ElementRequirement />
+  </Skill>
+  <Skill>
+    <Name>Tornado</Name>
+    <EnergyPointCost>20</EnergyPointCost>
+    <MinimumExperienceLevel>10</MinimumExperienceLevel>
+    <Element>Air</Element>
+    <ElementRequirement>
+      <Element>Air</Element>
+      <Element>Grass</Element>
+    </ElementRequirement>
+  </Skill>
+  <Skill>
+    <Name>FireBolt</Name>
+    <EnergyPointCost>7</EnergyPointCost>
+    <MinimumExperienceLevel>1</MinimumExperienceLevel>
+    <Element>Fire</Element>
+    <ElementRequirement>
+      <Element>Fire</Element>
+      <Element>Lava</Element>
+    </ElementRequirement>
+  </Skill>
+  <Skill>
+    <Name>IceArrow</Name>
+    <EnergyPointCost>10</EnergyPointCost>
+    <MinimumExperienceLevel>5</MinimumExperienceLevel>
+    <Element>Ice</Element>
+    <ElementRequirement>
+      <Element>Ice</Element>
+    </ElementRequirement>
+  </Skill>
+  <Skill>
+    <Name>Kick</Name>
+    <EnergyPointCost>4</EnergyPointCost>
+    <MinimumExperienceLevel>20</MinimumExperienceLevel>
+    <Element>Fire</Element>
+    <ElementRequirement />
+  </Skill>
+  <Skill>
+    <Name>PowerHit</Name>
+    <EnergyPointCost>3</EnergyPointCost>
+    <MinimumExperienceLevel>1</MinimumExperienceLevel>
+    <Element>Fire</Element>
+    <ElementRequirement />
+  </Skill>
+</ArrayOfSkill>
