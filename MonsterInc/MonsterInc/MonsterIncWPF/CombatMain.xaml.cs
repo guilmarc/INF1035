@@ -31,6 +31,7 @@ namespace MonsterIncWPF
             this.DataContext = SavedGames.LoadedCombat;
             Refresh();
             AttackList.DataContext = gentilTrainer.ActiveMonster;
+            ItemList.DataContext = gentilTrainer;
             CombatTextBlock.Text = "Start! \n";
         }
 
@@ -61,9 +62,11 @@ namespace MonsterIncWPF
             DeleteChooseMonsterControl();
             Control controlChooseMonster = (new ActiveMonster() { Visibility = Visibility.Visible, HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Top, Margin = new Thickness(0, -10, 0, 0), Height = 200, Width = 550 });
             ChangeMonsterGrid.Children.Add(controlChooseMonster);
-
+            ItemList.Visibility = Visibility.Collapsed;
             isChecked = true;
         }
+
+
 
 
         private void AttackButton_Checked(object sender, RoutedEventArgs e)
@@ -103,6 +106,8 @@ namespace MonsterIncWPF
 
         private void ItemsButton_Checked(object sender, RoutedEventArgs e)
         {
+            ItemList.Visibility=Visibility.Visible;
+            ItemList.UpdateLayout();
             isChecked = true;
         }
 
@@ -130,6 +135,7 @@ namespace MonsterIncWPF
             {
                 ItemsButton.IsChecked = false;
                 DeleteChooseMonsterControl();
+                ItemList.Visibility = Visibility.Collapsed;
             }
             else
             {
@@ -144,6 +150,7 @@ namespace MonsterIncWPF
             if (ChangeButton.IsChecked == true && !isChecked)
             {
                 ChangeButton.IsChecked = false;
+                ItemList.Visibility = Visibility.Collapsed;
                 DeleteChooseMonsterControl();
                 Refresh();
             }
@@ -169,6 +176,26 @@ namespace MonsterIncWPF
                 AttackButton.IsChecked = false;
                 AttackList.UnselectAll();
                 AttackList.Visibility = Visibility.Collapsed;
+
+                CheckWin();
+            }
+        }
+
+        private void ConsumeItem(object sender, SelectionChangedEventArgs e)
+        {
+            if (ItemList.SelectedIndex != -1)
+            {
+                Turn tour = new Turn(currentPlayer, ennemyPlayer, gentilTrainer.ActiveInventory[ItemList.SelectedIndex], SavedGames.LoadedCombat);
+                string tourFait = tour.DoTurn;
+                CombatTextBlock.Text += tourFait;
+                Refresh();
+                CombatTextScroll.UpdateLayout();
+                CombatTextScroll.ScrollToVerticalOffset(double.MaxValue);
+
+                //cache liste d'items
+                ItemsButton.IsChecked = false;
+                ItemList.UnselectAll();
+                ItemList.Visibility = Visibility.Collapsed;
 
                 CheckWin();
             }

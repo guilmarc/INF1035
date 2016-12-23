@@ -21,6 +21,15 @@
 
             </Grid>
         </DataTemplate>
+        <DataTemplate x:Key="itemTemplate">
+            <Grid Margin="0,2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="{Binding Name}" />
+                <!-- -->
+            </Grid>
+        </DataTemplate>
     </UserControl.Resources>
 
     <Grid Background="White" OpacityMask="White">
@@ -36,9 +45,10 @@
             <RadioButton Style="{StaticResource {x:Type ToggleButton}}" x:Name="ItemsButton" GroupName="Action" Content="Items" HorizontalAlignment="Left" Margin="558,10,0,0" VerticalAlignment="Top" Width="270" Height="60" FontSize="20" IsChecked="False" Checked="ItemsButton_Checked" Click="ItemsButton_OnClick"/>
             <RadioButton Style="{StaticResource {x:Type ToggleButton}}" x:Name="ChangeButton" GroupName="Action" Content="Change monster" HorizontalAlignment="Left" Margin="558,83,0,0" VerticalAlignment="Top" Width="270" Height="60" FontSize="20" IsChecked="False" Checked="ChangeButton_Checked" Click="ChangeButton_Click"/>
 
-            <ListBox x:Name="AttackList" HorizontalAlignment="Left" Height="155" Margin="400,0,0,0" VerticalAlignment="Top" Width="428" Visibility="Collapsed" ItemsSource="{Binding ActiveSkills}" ItemTemplate="{StaticResource usableTemplate}" SelectionChanged="DoAttack"/>
+            <ListBox x:Name="AttackList" HorizontalAlignment="Left" Height="155" Margin="400,0,0,0" VerticalAlignment="Top" Width="428" Visibility="Collapsed"  ItemTemplate="{StaticResource usableTemplate}" ItemsSource="{Binding ActiveSkills}" SelectionChanged="DoAttack"/>
             <Grid x:Name="ChangeMonsterGrid" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="200" Width="550"></Grid>
-//sdfgbcvb vc vcc
+            <Grid x:Name="ItemListGrid" HorizontalAlignment="Left"  Height="155" Margin="114,0,0,0" VerticalAlignment="Top" Width="428"></Grid>
+            <ListBox x:Name="ItemList" HorizontalAlignment="Left" Height="155" Margin="114,0,0,0" VerticalAlignment="Top" Width="428" Visibility="Collapsed" ItemTemplate="{StaticResource itemTemplate}" ItemsSource="{Binding ActiveInventory}" SelectionChanged="ConsumeItem"/>
             <!--<ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="0,2">
