@@ -49,10 +49,7 @@ namespace MonsterIncWPF
             EnemyMonsterLPActual.Content = mechantTrainer.ActiveMonster.Caracteristics[0].Actual + " / " + mechantTrainer.ActiveMonster.Caracteristics[0].Total;
             EnemyMonsterEPActual.Content = mechantTrainer.ActiveMonster.Caracteristics[1].Actual + " / " + mechantTrainer.ActiveMonster.Caracteristics[1].Total;
 
-            ItemList.DataContext = gentilTrainer;
-            ItemList.ItemsSource = gentilTrainer.ActiveInventory;
-            AttackList.DataContext = gentilTrainer.ActiveMonster;
-            AttackList.ItemsSource = gentilTrainer.ActiveMonster.ActiveSkills;
+            
         }
 
         private void DeleteChooseMonsterControl()
@@ -71,36 +68,29 @@ namespace MonsterIncWPF
         }
 
 
+
+
         private void AttackButton_Checked(object sender, RoutedEventArgs e)
         {
-            Refresh();
             AttackList.Visibility = Visibility.Visible;
             isChecked = true;
         }
 
         private void DefendButton_Checked(object sender, RoutedEventArgs e)
         {
-
-            currentPlayer.ActiveTrainer.ActiveMonster.Energize();
-            currentPlayer.ActiveTrainer.ActiveMonster.Caracteristics[0].Actual +=
-                currentPlayer.ActiveTrainer.ActiveMonster.ExperienceLevel + 1;
-            CombatTextBlock.Text += currentPlayer.ActiveTrainer.ActiveMonster.NickName + " is defending\n";
-            isChecked = true;
-            DoEnemyTurn();
-            DefendButton.IsChecked = false;
-            Refresh();
-            CombatTextScroll.UpdateLayout();
-            CombatTextScroll.ScrollToVerticalOffset(double.MaxValue);
+            DoDefense();
         }
 
         private void DefendButton_Click(object sender, RoutedEventArgs e)
         {
             if (DefendButton.IsChecked == true && !isChecked)
             {
+                DefendButton.IsChecked = false;
                 AttackList.Visibility = Visibility.Collapsed;
             }
             else
             {
+                DefendButton.IsChecked = true;
                 AttackList.Visibility = Visibility.Collapsed;
                 isChecked = false;
             }
@@ -109,10 +99,8 @@ namespace MonsterIncWPF
 
         private void ItemsButton_Checked(object sender, RoutedEventArgs e)
         {
-            Refresh();
-            ItemList.UpdateLayout();
             ItemList.Visibility=Visibility.Visible;
-            
+            ItemList.UpdateLayout();
             isChecked = true;
         }
 
@@ -171,7 +159,16 @@ namespace MonsterIncWPF
             if (AttackList.SelectedIndex != -1)
             {
                 Turn tour = new Turn(currentPlayer, ennemyPlayer, gentilTrainer.ActiveMonster.ActiveSkills[AttackList.SelectedIndex], SavedGames.LoadedCombat);
-                string tourFait = tour.DoTurn();
+
+                tour.MonsterDefeated += (o, args) =>
+                {
+                    //TODO: Code ici quand un monstre est mort;
+                    
+                    MessageBox.Show("Monster " + args.DefeatedMonsterPlayer.ActiveTrainer.ActiveMonster + " is dead !");
+                    
+                };
+
+                string tourFait = tour.Run();
                 
                 CombatTextBlock.Text += tourFait;
                 Refresh();
@@ -187,18 +184,21 @@ namespace MonsterIncWPF
             }
         }
 
-        private void DoEnemyTurn()
+        private void DoDefense()
         {
             {
                 Turn tour = new Turn(currentPlayer, ennemyPlayer, SavedGames.LoadedCombat);
-                string tourFait = tour.DoEnemyTurn();
+                string tourFait = tour.Run();
                 CombatTextBlock.Text += tourFait;
                 Refresh();
                 CombatTextScroll.UpdateLayout();
                 CombatTextScroll.ScrollToVerticalOffset(double.MaxValue);
 
                 //cache liste d'attaque
-                DefendButton.IsChecked = false;
+                AttackButton.IsChecked = false;
+                AttackList.UnselectAll();
+                AttackList.Visibility = Visibility.Collapsed;
+
                 CheckWin();
 
             }
@@ -209,7 +209,7 @@ namespace MonsterIncWPF
             if (ItemList.SelectedIndex != -1)
             {
                 Turn tour = new Turn(currentPlayer, ennemyPlayer, gentilTrainer.ActiveInventory[ItemList.SelectedIndex], SavedGames.LoadedCombat);
-                string tourFait = tour.DoTurn();
+                string tourFait = tour.Run();
                 CombatTextBlock.Text += tourFait;
                 Refresh();
                 CombatTextScroll.UpdateLayout();
@@ -219,7 +219,6 @@ namespace MonsterIncWPF
                 ItemsButton.IsChecked = false;
                 ItemList.UnselectAll();
                 ItemList.Visibility = Visibility.Collapsed;
-                ItemList.UpdateLayout();
 
                 CheckWin();
             }
@@ -254,7 +253,6 @@ namespace MonsterIncWPF
             var t = SavedGames.mainWindow.AppGrid.Children[SavedGames.trainerHomeForm];
             ((TrainerHome)t).TrainerHomeGrid.Visibility = Visibility.Visible;
             ((TrainerHome)t).HideDifficulty();
-            ((TrainerHome)t).TrainerHomeRefresh();
         }
     }
 }
