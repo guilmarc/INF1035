@@ -77,11 +77,11 @@ namespace MonsterIncWPF
 
         private void DefendButton_Checked(object sender, RoutedEventArgs e)
         {
-            Player opp = SavedGames.LoadedCombat.PickRandomOpponent();
-            Player moi = SavedGames.LoadedCombat.CurrentPlayer;
-            Turn tour = new Turn(currentPlayer, ennemyPlayer, gentilTrainer.ActiveMonster.ActiveSkills[0], SavedGames.LoadedCombat);// 
-            string tourFait = tour.DoTurn;
-            CombatTextBlock.Text += "\n" + tourFait;
+
+            currentPlayer.ActiveTrainer.ActiveMonster.Energize();
+            currentPlayer.ActiveTrainer.ActiveMonster.Caracteristics[0].Actual +=
+                currentPlayer.ActiveTrainer.ActiveMonster.ExperienceLevel + 1;
+            CombatTextBlock.Text += currentPlayer.ActiveTrainer.ActiveMonster.NickName + " is defending\n";
             isChecked = true;
             Refresh();
             CombatTextScroll.UpdateLayout();
