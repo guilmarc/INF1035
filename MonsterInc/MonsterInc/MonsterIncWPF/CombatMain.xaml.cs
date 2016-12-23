@@ -28,7 +28,7 @@ namespace MonsterIncWPF
         public CombatMain()
         {
             InitializeComponent();
-            this.DataContext = SavedGames.LoadedCombat;     
+            this.DataContext = SavedGames.LoadedCombat;
             Refresh();
             AttackList.DataContext = gentilTrainer.ActiveMonster;
 
@@ -46,32 +46,56 @@ namespace MonsterIncWPF
             EnemyMonsterType.Content = "Level : " + mechantTrainer.ActiveMonster.ExperienceLevel;
             EnemyMonsterLPActual.Content = mechantTrainer.ActiveMonster.Caracteristics[0].Actual + " / " + mechantTrainer.ActiveMonster.Caracteristics[0].Total;
             EnemyMonsterEPActual.Content = mechantTrainer.ActiveMonster.Caracteristics[1].Actual + " / " + mechantTrainer.ActiveMonster.Caracteristics[1].Total;
+
         }
 
+        private void DeleteChooseMonsterControl()
+        {
+            ChangeMonsterGrid.Children.Clear();
+        }
 
         bool isChecked = false;
         private void ChangeButton_Checked(object sender, RoutedEventArgs e)
         {
-            ChooseMonsterControl.Visibility = Visibility.Visible;
+            DeleteChooseMonsterControl();
+            Control controlChooseMonster = (new ActiveMonster() { Visibility = Visibility.Visible, HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Top, Margin = new Thickness(0, -10, 0, 0), Height = 200, Width = 550 });
+            ChangeMonsterGrid.Children.Add(controlChooseMonster);
+
             isChecked = true;
         }
 
-        
+
         private void AttackButton_Checked(object sender, RoutedEventArgs e)
         {
             AttackList.Visibility = Visibility.Visible;
             isChecked = true;
         }
 
+        private void DefendButton_Checked(object sender, RoutedEventArgs e)
+        {
+            gentilTrainer.ActiveMonster.ActiveSkills[0].Consume(gentil, mechant);
+            isChecked = true;
+            Refresh();
+        }
+
         private void DefendButton_Click(object sender, RoutedEventArgs e)
         {
-            gentilTrainer.ActiveMonster.ActiveSkills[0].Consume(gentil,mechant);
+            if (DefendButton.IsChecked == true && !isChecked)
+            {
+                DefendButton.IsChecked = false;
+                AttackList.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                DefendButton.IsChecked = true;
+                AttackList.Visibility = Visibility.Collapsed;
+                isChecked = false;
+            }
             Refresh();
         }
 
         private void ItemsButton_Checked(object sender, RoutedEventArgs e)
         {
-            //AttackList.Visibility = Visibility.Visible;
             isChecked = true;
         }
 
@@ -98,10 +122,11 @@ namespace MonsterIncWPF
             if (ItemsButton.IsChecked == true && !isChecked)
             {
                 ItemsButton.IsChecked = false;
-                //AttackList.Visibility = Visibility.Collapsed;
+                DeleteChooseMonsterControl();
             }
             else
             {
+                DeleteChooseMonsterControl();
                 ItemsButton.IsChecked = true;
                 isChecked = false;
             }
@@ -112,7 +137,7 @@ namespace MonsterIncWPF
             if (ChangeButton.IsChecked == true && !isChecked)
             {
                 ChangeButton.IsChecked = false;
-                ChooseMonsterControl.Visibility = Visibility.Collapsed;
+                DeleteChooseMonsterControl();
                 Refresh();
             }
             else
@@ -122,7 +147,7 @@ namespace MonsterIncWPF
             }
         }
 
-        
+
 
     }
 }

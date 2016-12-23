@@ -22,7 +22,7 @@
             </Grid>
         </DataTemplate>
     </UserControl.Resources>
-    
+
     <Grid Background="White" OpacityMask="White">
         <Label x:Name="FriendlyMonster" Content="nickname" HorizontalAlignment="Left" Margin="50,23,0,0" VerticalAlignment="Top" FontSize="28" FontWeight="Bold"/>
         <Label x:Name="EnemyMonster" Content="nickname" HorizontalAlignment="Right" Margin="0,23,50,0" VerticalAlignment="Top" FontSize="28" FontWeight="Bold"/>
@@ -30,13 +30,20 @@
         <Label x:Name="EnemyMonsterType" Content="name" HorizontalAlignment="Right" Margin="0,60,50,0" VerticalAlignment="Top" FontSize="24"/>
 
         <Grid x:Name="ActionGrid" HorizontalAlignment="Left" Height="155" Margin="10,405,0,0" VerticalAlignment="Top" Width="994">
+            <!--<Grid.ColumnDefinitions>
+                <ColumnDefinition Width="81*"/>
+                <ColumnDefinition Width="899*"/>
+                <ColumnDefinition Width="14*"/>
+            </Grid.ColumnDefinitions>-->
 
             <RadioButton Style="{StaticResource {x:Type ToggleButton}}" x:Name="AttackButton" GroupName="Action" Content="Attack" HorizontalAlignment="Left" Margin="114,10,0,0" VerticalAlignment="Top" Width="270" Height="60" FontSize="20" IsChecked="False" Checked="AttackButton_Checked" Click="AttackButton_OnClick"/>
-            <Button x:Name="DefendButton"  Content="Defend" HorizontalAlignment="Left" Margin="114,83,0,0" VerticalAlignment="Top" Width="270" Height="60" FontSize="20" Click="DefendButton_Click"/>
+            <RadioButton Style="{StaticResource {x:Type ToggleButton}}" x:Name="DefendButton" GroupName="Action" Content="Defend" HorizontalAlignment="Left" Margin="114,83,0,0" VerticalAlignment="Top" Width="270" Height="60" FontSize="20" IsChecked="False" Checked="DefendButton_Checked" Click="DefendButton_Click"/>
             <RadioButton Style="{StaticResource {x:Type ToggleButton}}" x:Name="ItemsButton" GroupName="Action" Content="Items" HorizontalAlignment="Left" Margin="558,10,0,0" VerticalAlignment="Top" Width="270" Height="60" FontSize="20" IsChecked="False" Checked="ItemsButton_Checked" Click="ItemsButton_OnClick"/>
             <RadioButton Style="{StaticResource {x:Type ToggleButton}}" x:Name="ChangeButton" GroupName="Action" Content="Change monster" HorizontalAlignment="Left" Margin="558,83,0,0" VerticalAlignment="Top" Width="270" Height="60" FontSize="20" IsChecked="False" Checked="ChangeButton_Checked" Click="ChangeButton_Click"/>
 
             <ListBox x:Name="AttackList" HorizontalAlignment="Left" Height="155" Margin="400,0,0,0" VerticalAlignment="Top" Width="428" Visibility="Collapsed" ItemsSource="{Binding ActiveSkills}" ItemTemplate="{StaticResource usableTemplate}"/>
+            <Grid x:Name="ChangeMonsterGrid" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="200" Width="550"></Grid>
+            <!--<local:ActiveMonster x:Name="ChooseMonsterControl" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="200" Width="550" Visibility="Collapsed"/>-->
             <!--<ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="0,2">
@@ -59,15 +66,15 @@
         <Label x:Name="EnemyMonsterEP" Content="Energy : " HorizontalAlignment="Left" Margin="707,131,0,0" VerticalAlignment="Top" FontSize="24"/>
 
         <Separator HorizontalAlignment="Left" Height="100" Margin="50,173,0,0" VerticalAlignment="Top" Width="914"/>
-        <Separator HorizontalAlignment="Left" Height="100" Margin="50,349,0,0" VerticalAlignment="Top" Width="914"/>
+        
 
         <ScrollViewer Margin="0,228,50,170">
             <TextBlock x:Name="CombatTextBlock" HorizontalAlignment="Left" Margin="50,0,0,0" TextWrapping="Wrap" Text="Start!" VerticalAlignment="Top" Height="160" Width="914"/>
         </ScrollViewer>
+        <Separator HorizontalAlignment="Left" Height="100" Margin="50,349,0,0" VerticalAlignment="Top" Width="914"/>
 
 
-        <local:ActiveMonster x:Name="ChooseMonsterControl" HorizontalAlignment="Left" Margin="22,387,0,0" VerticalAlignment="Top" Visibility="Collapsed"/>
-        
+
 
 
 

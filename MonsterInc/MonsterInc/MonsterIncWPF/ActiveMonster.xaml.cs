@@ -31,7 +31,10 @@ namespace MonsterIncWPF
         public ActiveMonster()
         {
             InitializeComponent();
-            
+            if (System.ComponentModel.DesignerProperties.GetIsInDesignMode(this))
+            {
+                return;
+            }
             InitListes();
 
             int nbActiveMonster = trainer.ActiveMonsters.Count;
