@@ -11,8 +11,8 @@ namespace Core.Model
         public static event EventHandler GameCompleted;
 
 	    public string Name { get; set; } = "NewGame";
-	    public DateTime StartTime { get; private set; } = DateTime.Now;
-        public DateTime EndTime { get; private set; }
+	    public DateTime StartTime { get; set; } = DateTime.Now;
+        public DateTime EndTime { get; set; }
 	    public Player HumanPlayer { get; set; }
 
 	    /*
@@ -27,7 +27,9 @@ namespace Core.Model
         */
 		//public Player Player { get; set; }
 
-		public List<Combat> Combats { get; set; }
+		//public List<Combat> Combats { get; set; }
+
+	    public Game() {}
 
 	    public Game(int opponentsCount = 2)
 	    {
@@ -69,7 +71,8 @@ namespace Core.Model
         public void Save(string gameName)
         {
             var filePath = Constants.SavedGamePath + gameName + Constants.SavedGameFileExtension;
-            Utils.Serializer.Binary.WriteToBinaryFile(filePath, this);
+            //Utils.Serializer.Binary.WriteToBinaryFile(filePath, this);
+            Utils.Serializer.Xml.WriteToXmlFile(filePath, this);
         }
 	}
 }

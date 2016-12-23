@@ -48,10 +48,8 @@ namespace Core.Model
             get { return Trainer; }
         }
 
-        public Player()
-        {
-            
-        }
+        public Player() {}
+
         public Player(string name):this(name,PlayerType.Human)
         {
             

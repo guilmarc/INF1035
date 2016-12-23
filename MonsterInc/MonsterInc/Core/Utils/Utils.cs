@@ -109,26 +109,14 @@ namespace Core
                 /// <returns>Returns a new instance of the object read from the XML file.</returns>
                 public static T ReadFromXmlFile<T>(string filePath) where T : new()
                 {
-                    TextReader reader = null;
-                    try
+                    using (Stream stream = new FileStream(filePath, FileMode.Open))
                     {
-                        var serializer = new XmlSerializer(typeof(T));
-                        reader = new StreamReader(filePath);
-                        return (T)serializer.Deserialize(reader);
-                    }
-                    finally
-                    {
-                        if (reader != null)
-                            reader.Close();
+                        XmlSerializer serializer = new XmlSerializer(typeof(T));
+                        return (T)serializer.Deserialize(stream);
+
                     }
                 }
-
-
             }
-
-         
         }
-
     }
-
 }
