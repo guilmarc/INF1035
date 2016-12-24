@@ -38,7 +38,6 @@ namespace MonsterIncWPF
         {
             InitializeComponent();
             this.DataContext = SavedGames.LoadedGame.HumanPlayer;
-            Trainer trainer = SavedGames.LoadedGame.HumanPlayer.Trainer;
             DifficultyListBox.ItemsSource = DifficultyData.Difficulty;
             InitListes();   
             TrainerHomeRefresh();

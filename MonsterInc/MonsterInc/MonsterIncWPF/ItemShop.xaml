@@ -28,27 +28,27 @@
         <Label x:Name="GoldLabel" Content="Golds" HorizontalAlignment="Left" Margin="917,10,0,0" VerticalAlignment="Top"/>
         <Label x:Name="GoldValueLabel" Content="{Binding Trainer.Gold}" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Margin="0,10,102,0" VerticalAlignment="Top" Width="92"/>
         <Button x:Name="BackButton" Content="Back" HorizontalAlignment="Left" Margin="19,16,0,0" VerticalAlignment="Top" Width="90" Height="29" Click="BackButton_Click"/>
-        <ListBox x:Name="BuyItemsListBox" HorizontalAlignment="Left" Height="338" Margin="19,99,0,0" VerticalAlignment="Top" Width="452" ItemTemplate="{StaticResource usableTemplate}" SelectionChanged="BuyItemsListBox_SelectionChanged">
-            
-        </ListBox>
-
-
-        <ListBox x:Name="SellItemsListBox" ItemsSource="{Binding Inventory}" ItemTemplate="{StaticResource usableTemplate}" HorizontalAlignment="Left" Height="406" Margin="19,99,0,0" VerticalAlignment="Top" Width="452" Visibility="Collapsed">
-            
-        </ListBox>
-        <RadioButton Style="{StaticResource {x:Type ToggleButton}}" x:Name="BuyButton" GroupName="BuySell" Content="Buy" HorizontalAlignment="Left" Margin="19,79,0,0" VerticalAlignment="Top" Width="75" IsChecked="True" Checked="BuyButton_Checked"/>
-        <RadioButton Style="{StaticResource {x:Type ToggleButton}}" x:Name="SellButton" GroupName="BuySell" Content="Sell" HorizontalAlignment="Left" Margin="94,79,0,0" VerticalAlignment="Top" Width="75" Checked="SellButton_Checked"/>
-        <ListBox x:Name="ListCart" HorizontalAlignment="Left" ItemTemplate="{StaticResource usableTemplate}" Height="338" Margin="536,99,0,0" VerticalAlignment="Top" Width="421" />
-        <Label x:Name="CartLabel" Content="Cart" HorizontalAlignment="Left" Margin="536,73,0,0" VerticalAlignment="Top" Width="74"/>
-        <Label x:Name="TotalLabel" Content="Total :" HorizontalAlignment="Left" Margin="536,442,0,0" VerticalAlignment="Top" Width="74"/>
-        <Label x:Name="TotalLabelValue" Content="0" HorizontalAlignment="Left" Margin="574,442,0,0" VerticalAlignment="Top" Width="74"/>
-
-        <Button x:Name="ConfirmButton" Content="Confirm" HorizontalAlignment="Left" Margin="784,490,0,0" VerticalAlignment="Top" Width="76" Click="ConfirmButton_Click"/>
-        <Button x:Name="ClearButton" Content="Clear cart" HorizontalAlignment="Left" Margin="630,490,0,0" VerticalAlignment="Top" Width="74"/>
-        <Button x:Name="button" Content="Remove" HorizontalAlignment="Left" Margin="476,261,0,0" VerticalAlignment="Top" Width="55" Height="30" Click="button_Click"/>
-        <Button x:Name="SellingButton" Content="Sell" HorizontalAlignment="Left" Margin="784,490,0,0" VerticalAlignment="Top" Width="76" Visibility="Collapsed" Click="SellingButton_Click"/>
-
-
+        
+        <RadioButton Style="{StaticResource {x:Type ToggleButton}}" x:Name="BuyButton" GroupName="BuySell" Content="Buy" HorizontalAlignment="Left" Margin="19,79,0,0" VerticalAlignment="Top" Width="75" IsChecked="False" Checked="BuyButton_Checked"/>
+        <RadioButton Style="{StaticResource {x:Type ToggleButton}}" x:Name="SellButton" GroupName="BuySell" Content="Sell" HorizontalAlignment="Left" Margin="94,79,0,0" VerticalAlignment="Top" Width="75" IsChecked="False" Checked="SellButton_Checked"/>
+               
+        <Grid x:Name="BuyingGrid" Visibility="Visible">
+            <ListBox x:Name="BuyItemsListBox" HorizontalAlignment="Left" Height="338" Margin="19,99,0,0" VerticalAlignment="Top" Width="452" ItemTemplate="{StaticResource usableTemplate}" SelectionChanged="BuyItemsListBox_SelectionChanged"/>
+            <ListBox x:Name="ListCart" HorizontalAlignment="Left" ItemTemplate="{StaticResource usableTemplate}" Height="338" Margin="536,99,0,0" VerticalAlignment="Top" Width="421" />
+            <Label x:Name="CartLabel" Content="Cart" HorizontalAlignment="Left" Margin="536,73,0,0" VerticalAlignment="Top" Width="74"/>
+            <Label x:Name="TotalLabel" Content="Total :" HorizontalAlignment="Left" Margin="536,442,0,0" VerticalAlignment="Top" Width="74"/>
+            <Label x:Name="TotalLabelValue" Content="0" HorizontalAlignment="Left" Margin="574,442,0,0" VerticalAlignment="Top" Width="74"/>
+            <Button x:Name="ConfirmButton" Content="Confirm and buy" HorizontalAlignment="Left" Margin="784,490,0,0" VerticalAlignment="Top" Width="110" Click="ConfirmButton_Click"/>
+            <Button x:Name="ClearButton" Content="Clear cart" HorizontalAlignment="Left" Margin="630,490,0,0" VerticalAlignment="Top" Width="74" Click="ClearButton_Click"/>
+            <Button x:Name="RemoveButton" Content="Remove selected from cart" HorizontalAlignment="Left" Margin="666,448,0,0" VerticalAlignment="Top" Width="165" Height="30" Click="RemoveButton_Click"/>
+        </Grid>
+        
+        <Grid x:Name="SellingGrid" Visibility="Hidden">
+            <Grid x:Name="SellingListGrid" Visibility="Hidden">
+                </Grid>
+            <ListBox x:Name="SellItemsListBox" ItemsSource="{Binding Inventory}" ItemTemplate="{StaticResource usableTemplate}" HorizontalAlignment="Left" Height="406" Margin="19,99,0,0" VerticalAlignment="Top" Width="452"/>
+            <Button x:Name="SellingButton" Content="Sell selected" HorizontalAlignment="Left" Margin="288,525,0,0" VerticalAlignment="Top" Width="76"  Click="SellingButton_Click"/>
+        </Grid>
 
     </Grid>
 </UserControl>

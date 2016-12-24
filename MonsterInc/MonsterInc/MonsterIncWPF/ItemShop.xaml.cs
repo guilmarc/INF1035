@@ -23,76 +23,63 @@ namespace MonsterIncWPF
     {
         public ItemShop()
         {
-            //Application.Current.MainWindow = ;
             InitializeComponent();
             this.DataContext = SavedGames.LoadedGame.HumanPlayer;
             BuyItemsListBox.ItemsSource = Core.Universe.Items;
             SellItemsListBox.ItemsSource = SavedGames.LoadedGame.HumanPlayer.Trainer.Inventory;
-
+            BuyButton.IsChecked = true;
         }
 
         private void SellButton_Checked(object sender, RoutedEventArgs e)
         {
-            if (SellingButton !=null||ConfirmButton !=null) 
-            {
-                SellingButton.Visibility = Visibility.Visible;
-                ConfirmButton.Visibility = Visibility.Collapsed;
-            }
-
-
-            BuyItemsListBox.Visibility = Visibility.Collapsed;
-            SellItemsListBox.Visibility = Visibility.Visible;
+            SellingGrid.UpdateLayout();
+            BuyingGrid.Visibility = Visibility.Hidden;
+            SellingGrid.Visibility = Visibility.Visible;
         }
 
         private void BuyButton_Checked(object sender, RoutedEventArgs e)
         {
-            if (SellingButton != null || ConfirmButton != null)
-            {
-                ConfirmButton.Visibility = Visibility.Visible;
-                SellingButton.Visibility = Visibility.Collapsed;
-            }
-            SellItemsListBox.Visibility = Visibility.Collapsed;
-            BuyItemsListBox.Visibility = Visibility.Visible;
-
+            SellingListGrid.Children.Clear();
+            BuyingGrid.Visibility = Visibility.Visible;
+            SellingGrid.Visibility = Visibility.Hidden;
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             this.Visibility = Visibility.Hidden;
-            //((MainWindow)System.Windows.Application.Current.MainWindow).TrainerHome.TrainerHomeGrid.Visibility = Visibility.Visible;
             var t = SavedGames.mainWindow.AppGrid.Children[SavedGames.trainerHomeForm];
             ((TrainerHome)t).TrainerHomeGrid.Visibility = Visibility.Visible;
-            //((TrainerHome)t).TVisibility = Visibility.Collapsed;
-
+            ((TrainerHome)t).TrainerHomeRefresh();
         }
 
         private void BuyItemsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var t =  (sender as ListBox).SelectedItem as Item;
-            ListCart.Items.Add(t);
+            if (BuyItemsListBox.SelectedIndex != -1)
+            {
+                var t = (sender as ListBox).SelectedItem as Item;
+                ListCart.Items.Add(t);
+                int total = UpdateTotal();
+                BuyItemsListBox.UnselectAll();
+            }
 
-            int total = UpdateTotal();
         }
 
 
         private int UpdateTotal()
         {
-
             int totalCost = 0;
             foreach (Item i in ListCart.Items)
             {
                 totalCost += i.Gold;
             }
-
             TotalLabelValue.Content = totalCost.ToString();
             TotalLabel.Content = totalCost.ToString();
-
             return totalCost;
 
         }
 
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void RemoveButton_Click(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -112,7 +99,7 @@ namespace MonsterIncWPF
             int total = UpdateTotal();
             try
             {
-                int Maxvalue=0;
+                int Maxvalue = 0;
                 foreach (Item item in ListCart.Items)
                 {
                     SavedGames.LoadedGame.HumanPlayer.Trainer.BuyItem(item);
@@ -121,24 +108,30 @@ namespace MonsterIncWPF
             }
             catch (Core.Exceptions.NotEnoughtGoldException ex)
             {
-                ExWindow winError = new ExWindow(ex);
-                winError.Show();
+                MessageBox.Show("Not enough gold to buy all items in cart");
             }
             ListCart.Items.Clear();
             UpdateTotal();
+            this.Visibility = Visibility.Hidden;
+            var t = SavedGames.mainWindow.AppGrid.Children[SavedGames.trainerHomeForm];
+            ((TrainerHome)t).ActiveGrid.Children.Clear();
+            ((TrainerHome)t).ActiveGrid.Children.Add(new ItemShop() { Visibility = Visibility.Visible });
         }
 
         private void SellingButton_Click(object sender, RoutedEventArgs e)
         {
-            //int totalRefunds = 0;
             foreach (Item item in SellItemsListBox.SelectedItems)
             {
                 SavedGames.LoadedGame.HumanPlayer.Trainer.SellItem(item);
             }
-            SellItemsListBox.ItemsSource =null;
+            SellItemsListBox.ItemsSource = null;
             SellItemsListBox.ItemsSource = SavedGames.LoadedGame.HumanPlayer.Trainer.Inventory;
-            //SavedGames.LoadedGame.HumanPlayer.ActiveTrainer.Gold += totalRefunds;
+        }
 
+        private void ClearButton_Click(object sender, RoutedEventArgs e)
+        {
+            ListCart.Items.Clear();
+            UpdateTotal();
         }
     }
 }

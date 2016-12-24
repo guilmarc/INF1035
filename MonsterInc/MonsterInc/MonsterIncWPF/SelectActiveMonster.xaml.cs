@@ -37,14 +37,14 @@ namespace MonsterIncWPF
         {
             InitializeComponent();
             this.DataContext = trainer;
-            MonsterListBox.ItemsSource = trainer.Monsters;
+            MonsterListBox.ItemsSource = trainer.AvailableMonsters;
             this.i = i;
 
         }
 
         private void MonsterListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            MonsterDetails detailControlOpen = new MonsterDetails(trainer.SelectTempMonsters[MonsterListBox.SelectedIndex]);
+            MonsterDetails detailControlOpen = new MonsterDetails((Monster) MonsterListBox.SelectedValue);//(trainer.SelectTempMonsters[MonsterListBox.SelectedIndex]);
 
             MonsterDetailsControl.Content = detailControlOpen;
 
@@ -59,8 +59,10 @@ namespace MonsterIncWPF
         private void OkButton_Click(object sender, RoutedEventArgs e)
         {
             var t = SavedGames.mainWindow.AppGrid.Children[SavedGames.trainerHomeForm];
-            if (i > trainer.ActiveMonsters.Count -1) trainer.ActiveMonsters.Add(trainer.SelectTempMonsters[MonsterListBox.SelectedIndex]);
-            trainer.ActiveMonsters[i] = trainer.SelectTempMonsters[MonsterListBox.SelectedIndex];
+
+            if (i > trainer.ActiveMonsters.Count -1) trainer.ActiveMonsters.Add((Monster)MonsterListBox.SelectedValue);//(trainer.SelectTempMonsters[MonsterListBox.SelectedIndex]);
+            //trainer.ActiveMonsters[i] = trainer.SelectTempMonsters[MonsterListBox.SelectedIndex];
+
             this.Visibility = Visibility.Collapsed;
             ((TrainerHome)t).TrainerHomeRefresh();
             //MainWindow.Refresh();
