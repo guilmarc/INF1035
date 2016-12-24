@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Core.Factories;
 
 namespace Core.Model
 {
@@ -76,7 +77,7 @@ namespace Core.Model
         {
             for (var i = 0; i < opponentsCount; i++)
             {
-                var newOpponent = Universe.GenerateOpponent(humanPlayer, difficulty);
+                var newOpponent = PlayerFactory.GenerateOpponent(humanPlayer, difficulty);
                 this.Players.Add(newOpponent);
             }
         }

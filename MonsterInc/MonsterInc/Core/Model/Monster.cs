@@ -164,5 +164,14 @@ namespace Core.Model
             //Lancement de l'événement
             ExperienceLevelChanged?.Invoke(this, new ExperienceLevelChangedEventArgs(newExperienceLevel));
         }
-    }
+
+        /// <summary>
+        /// Affichage du monstre
+        /// </summary>
+        /// <returns></returns>
+	    public override string ToString()
+	    {
+	        return this.NickName;
+	    }
+	}
 }

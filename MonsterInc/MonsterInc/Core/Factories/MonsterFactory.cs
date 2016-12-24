@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using Core.Model;
 
-namespace Core.Model
+namespace Core.Factories
 {
     /// <summary>
     /// Design pattern Factory : Création des monstres

@@ -11,7 +11,9 @@ using Core.Model;
 
 namespace Core
 {
-
+    /// <summary>
+    /// Méthodes d'extensions utiles
+    /// </summary>
     public static class Extensions
     {
 
@@ -23,104 +25,73 @@ namespace Core
             }
         }
 
-
         /// <summary>
-        /// 
+        /// Conversion en Enum
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="objectToSerialize"></param>
-        /// <param name="nameOfFile"></param>
-        /// <param name="defaultPath">System.Reflection.Assembly.GetExecutingAssembly().Location</param>
+        /// <param name="value"></param>
         /// <returns></returns>
-        public static void XmlSerialize<T>(this T objectToSerialize, string nameOfFile, bool defaultPath )
-        {
-            if (!nameOfFile.ToLower().Contains(".xml"))
-            {
-                nameOfFile = nameOfFile + ".xml";
-            }
-            string directory ="";
-            if (defaultPath)
-            {
-                directory = System.AppDomain.CurrentDomain.BaseDirectory;
-            }
-            string fullPath = $@"{directory}\{nameOfFile}";
-            ///forstring
-            //XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));
-            //StringWriter stringWriter = new StringWriter();
-            //XmlTextWriter xmlWriter = new XmlTextWriter(stringWriter);
-
-            //xmlWriter.Formatting = Formatting.Indented;
-            //xmlSerializer.Serialize(xmlWriter, objectToSerialize);
-
-            //return stringWriter.ToString();
-
-
-
-            //todocument
-            XmlSerializer serialiser = new XmlSerializer(typeof(T));
-            TextWriter Filestream = new StreamWriter(fullPath);
-            serialiser.Serialize(Filestream, objectToSerialize);
-            Filestream.Close();
-
-        }
-
-        public static T XmlToObject<T>(string nameOfFile, bool defaultPath)
-        {
-            if (!nameOfFile.ToLower().Contains(".xml"))
-            {
-                nameOfFile = nameOfFile + ".xml";
-            }
-            string directory = "";
-            if (defaultPath)
-            {
-                directory = System.AppDomain.CurrentDomain.BaseDirectory; 
-            }
-            string fullPath = $@"{directory}\{nameOfFile}";
-
-            T returnObject = default(T);
-            StreamReader xmlStream = new StreamReader(fullPath);
-
-            Type[] types = new Type[] { typeof(T), typeof(Core.Model.DamageScope) };
-            XmlSerializer serializer = new XmlSerializer(typeof(T), types);
-            returnObject = (T)serializer.Deserialize(xmlStream);
-            xmlStream.Close();
-            return returnObject;
-        }
-
         public static T ToEnum<T>(this string value)
         {
             return (T) Enum.Parse(typeof(T), value, true);
         }
         
-
+        /// <summary>
+        /// Retoure un élément au hasard dans la liste
+        /// </summary>
         private static readonly Random _random = new Random();
         public static T Random<T>(this List<T> objects)
         {
             return objects.Count == 0 ? default(T) : objects[_random.Next(objects.Count - 1)];
         }
 
+        /// <summary>
+        /// Retoune seulement les monstes en vie dans la liste
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
         public static List<Monster> Alive(this List<Monster> list)
         {
             return list.Where(x => x.GetCaracteristic(MonsterTemplateCaracteristicType.LifePoints).Actual > 0).ToList();
         }
 
+        /// <summary>
+        /// Réinitialisations des caractéristiques des monstres dans la liste
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
         public static int Reset(this List<Monster> list)
         {
             list.ForEach(x => x.ResetCaracterictics());
             return list.Count;
         }
 
+        /// <summary>
+        /// Réénergisation des monstres dans la liste
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
         public static int Energize(this List<Monster> list)
         {
             list.ForEach(x => x.Energize());
             return list.Count;
         }
 
+        /// <summary>
+        /// Moyenne des points d'expériences des monstres dans la liste
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
         public static int AverageExperiencePoints(this List<Monster> list)
         {
             return (int)list.Average(x => x.ExperiencePoint);
         }
 
+        /// <summary>
+        /// Moyenne des niveau d'expérience des monstres dans la liste
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
         public static int AverageExperienceLevel(this List<Monster> list)
         {
             return (int)list.Average(x => x.ExperienceLevel);

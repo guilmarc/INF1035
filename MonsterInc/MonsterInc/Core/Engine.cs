@@ -12,11 +12,15 @@ namespace Core
     /// </summary>
     public static class Engine
     {
-        static Engine()
-        {
-            
-        }
+        /// <summary>
+        /// Constructeur statique
+        /// </summary>
+        static Engine(){}
        
+        /// <summary>
+        /// Exécution d'une simulation de partie
+        /// Sera complété après la remise (défi personnel)
+        /// </summary>
         public static void RunDummyGame()
         {
             Console.WriteLine("Test d'écriture à la console");
@@ -26,17 +30,22 @@ namespace Core
             new Game(Universe.DummyPlayer).Run();
         }
 
+        /// <summary>
+        /// Création d'une nouvelle partie à partir d'un joueur
+        /// </summary>
+        /// <param name="player"></param>
+        /// <returns></returns>
         public static Game NewGame(Player player)
         {
             return new Game(player);
         }
 
-        public static void ConsumeUsable(Player player, Player opponent, Usable usable)
-        {
-            usable.Consume(player, opponent);
-        }
-
-        public static Game LoadGameFromFile(String gameName)
+        /// <summary>
+        /// Chargement d'une partie à partir d'un fichier
+        /// </summary>
+        /// <param name="gameName"></param>
+        /// <returns></returns>
+        public static Game LoadGameFromFile(string gameName)
         {
             var filePath = Constants.SavedGamePath + gameName + Constants.SavedGameFileExtension;
             return Utils.Serializer.Binary.ReadFromBinaryFile<Game>(filePath);

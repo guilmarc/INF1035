@@ -1,6 +1,9 @@
 ﻿using System;
 namespace Core.Model
 {
+    /// <summary>
+    /// Liste des caractéristique d'un template de monstres
+    /// </summary>
 	public enum MonsterTemplateCaracteristicType
 	{
 		LifePoints,
@@ -10,14 +13,25 @@ namespace Core.Model
 		DefensePoints
 	}
 
+    /// <summary>
+    /// Classe servant à sauvegarder des métriques de caractéristiques
+    /// </summary>
     [Serializable]
     public class MonsterTemplateCaracteristic
 	{
-		//public string Name { get; set; }
+		/// <summary>
+        /// Type de la caractéristique (typage)
+        /// </summary>
 		public MonsterTemplateCaracteristicType Type { get; set; }
 
-		public int Base { get; set; }					//Valeur de base de cette caractérsitique
+        /// <summary>
+        /// Valeur de base (initiale) de cette caractéristique
+        /// </summary>
+		public int Base { get; set; }					
 
-		public int Progression { get; set; }            //Progression du niveau de base à chaque gain de niveau d'expérience
+        /// <summary>
+        /// Niveau de progression de la caractérique modulée par le niveau d'Expérience
+        /// </summary>
+		public int Progression { get; set; }            
 	}
 }

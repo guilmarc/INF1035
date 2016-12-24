@@ -11,9 +11,14 @@ namespace Core.Model
     public class Game
 	{
 
-        public static event EventHandler GameCompleted;
-
+        /// <summary>
+        /// Nom de la partie
+        /// </summary>
 	    public string Name { get; set; } = null;
+
+        /// <summary>
+        /// Date et heure de début de la partie
+        /// </summary>
 	    public DateTime StartTime { get; set; } = DateTime.Now;
 
         /// <summary>
@@ -26,7 +31,6 @@ namespace Core.Model
         /// </summary>
         public Player HumanPlayer { get; set; }
 
-	    
         /// <summary>
         /// Constructeur vide nécessaire à la sérialisation
         /// </summary>

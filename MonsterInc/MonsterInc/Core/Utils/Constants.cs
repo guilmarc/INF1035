@@ -4,6 +4,9 @@ using System;
 
 namespace Core
 {
+    /// <summary>
+    /// Constantes systèmes paramétrables
+    /// </summary>
     public static class Constants
     {
         public const int ActiveInventoryCount = 5;
@@ -50,7 +53,7 @@ namespace Core
         }
 
         /// <summary>
-        /// Création d'un répertoire au besoin, retourne une exception si erreur lors de la création
+        /// Création d'un répertoire au besoin
         /// </summary>
         /// <param name="requestedPath"></param>
         private static void CreatePathIfNotExist(string requestedPath)

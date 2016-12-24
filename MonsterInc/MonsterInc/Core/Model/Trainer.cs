@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
-using MonsterInc;
+using Core.Model;
 using System.Xml.Serialization;
 using Core.Exceptions;
 
 namespace Core.Model
 {
+    /// <summary>
+    /// Classe des entraîneurs de monstres
+    /// Dans une version future, un joueur pourra avoir plusieurs entraîneurs 
+    /// </summary>
     [Serializable]
     public class Trainer : INotifyPropertyChanged
 	{

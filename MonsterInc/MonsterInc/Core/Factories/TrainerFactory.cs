@@ -4,7 +4,7 @@
  using Core.Data.Static;
 using Core.Model;
 
-namespace Core
+namespace Core.Factories
 {
     public static class TrainerFactory
     {

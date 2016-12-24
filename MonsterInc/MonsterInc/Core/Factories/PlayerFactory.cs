@@ -1,7 +1,7 @@
 ﻿using Core;
 using Core.Model;
 
-namespace MonsterInc.Factories
+namespace Core.Factories
 {
     public static class PlayerFactory
     {

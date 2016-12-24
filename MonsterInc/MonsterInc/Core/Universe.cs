@@ -7,18 +7,22 @@ using System.Linq;
 using System.Xml.Serialization;
 
 using Core.Data;
- using Core.Exceptions;
- using Core.Model;
-using MonsterInc.Factories;
+using Core.Exceptions;
+using Core.Model;
+using Core.Factories;
 
 namespace Core
 {
 
-
+    /// <summary>
+    /// Classe représent l'univers du jeu (les éléments)
+    /// </summary>
     public static class Universe
     {
 
-        //Variable de cache de donnée
+        /// <summary>
+        /// Variables de cache
+        /// </summary>
         private static List<MonsterTemplate> _monsterTemplates;
         private static List<Item> _items;
         private static List<Monster> _initMonsters;
@@ -26,7 +30,9 @@ namespace Core
         private static Player _dummyPlayer;
         private static List<Skill> _skills;
 
-
+        /// <summary>
+        /// Matrice des forces d'attaque modulées par éléments
+        /// </summary>
         public static readonly int[,] ElementMatrix =
         {
             {50, 100, 50, 180, 20, 140, 200, 180}, //Fire
@@ -39,28 +45,9 @@ namespace Core
             {100, 100, 20, 200, 250, 50, 250, 50} //Lightning
         };
 
-
-/*
-        public static void LoadMonsterTemplatesFromXML()
-        {
-            XmlSerializer serialiser = new XmlSerializer(typeof(List<MonsterTemplate>));
-            TextReader Filestream = new StreamReader(@"MonsterTemplates.xml");
-            MonsterTemplates = serialiser.Deserialize(Filestream) as List<MonsterTemplate>;
-        }
-
-        public static void SaveMonsterTemplatesToXML()
-        {
-            //var xml = new XElement("MonsterTemplates", MonsterTemplates.Select(t => new XElement("MonsterTemplate", t)));
-
-            //Console.WriteLine(xml.ToString());
-
-            XmlSerializer serialiser = new XmlSerializer(typeof(List<MonsterTemplate>));
-            TextWriter Filestream = new StreamWriter(@"MonsterTemplates.xml");
-            serialiser.Serialize(Filestream, MonsterTemplates);
-            Filestream.Close();
-        }
-*/
-
+        /// <summary>
+        /// Liste des templates de monstres selon l'adapteur de donnée connecté
+        /// </summary>
         public static List<MonsterTemplate> MonsterTemplates
         {
             get
@@ -69,6 +56,9 @@ namespace Core
             }
         }
 
+        /// <summary>
+        /// Liste des items selon l'adapteur de donnée connecté
+        /// </summary>
         public static List<Item> Items
         {
             get
@@ -77,16 +67,25 @@ namespace Core
             }
         }
 
+        /// <summary>
+        /// Liste des difficultés selon l'adapteur de donnée connecté
+        /// </summary>
         public static List<Difficulty> Difficulties
         {
             get { return _difficulties = _difficulties ?? new DataAdaptor<Difficulty>().GetObjects(); }
         }
 
+        /// <summary>
+        /// Liste des habiletés selon l'adapteur de donnée connecté
+        /// </summary>
         public static List<Skill> Skills
         {
             get { return _skills = _skills ?? new DataAdaptor<Skill>().GetObjects(); }
         }
-
+        
+        /// <summary>
+        /// Liste des monstres initiaux disponibles
+        /// </summary>
         public static List<Monster> InitMonsters
         {
             get
@@ -95,6 +94,9 @@ namespace Core
             }
         }
 
+        /// <summary>
+        /// Joueur simulé disponible en test ou lors d'une partie simulée
+        /// </summary>
         public static Player DummyPlayer
         {
             get
@@ -103,6 +105,9 @@ namespace Core
             }
         }
 
+        /// <summary>
+        /// Liste des nom de parties sauvegardées disponibles
+        /// </summary>
         public static List<String> SavedGameFiles
         {
             get
@@ -115,11 +120,6 @@ namespace Core
 
                 return new List<string>(array);
             }
-        }
-
-        public static Player GenerateOpponent(Player player, Difficulty difficulty)
-        {
-            return PlayerFactory.GenerateOpponent(player, difficulty);
         }
     }
 }

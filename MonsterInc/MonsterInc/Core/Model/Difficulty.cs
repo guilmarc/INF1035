@@ -55,7 +55,7 @@ namespace Core.Model
         /// Affichage de l'objet
         /// </summary>
         /// <returns></returns>
-        public string ToString()
+        public override string ToString()
         {
             return Name;
         }

@@ -4,7 +4,7 @@
 using System.Linq;
 using Core.Model;
 
-namespace Core
+namespace Core.Factories
 {
     /// <summary>
     /// Design pattern Factory : Création des items
