@@ -83,7 +83,7 @@ namespace Core.Model
 
             foreach (var scope in selectedUsable.Scopes)
             {
-                _result = (_combat.Tour + ":: " + actualPlayer.ActiveTrainer.ActiveMonster.NickName + " uses " + selectedUsable + " on " +
+                _result += (_combat.Tour + ":: " + actualPlayer.ActiveTrainer.ActiveMonster.NickName + " uses " + selectedUsable + " on " +
                                   ((scope.Target == Scope.ScopeTarget.Self)
                                       ? actualPlayer.ActiveTrainer.ActiveMonster.NickName
                                       : actualOpponent.ActiveTrainer.ActiveMonster.NickName) + "\n");
@@ -96,8 +96,6 @@ namespace Core.Model
             {
                 this.OnMonsterDefeated(actualPlayer);
             }
-
-            return;
         }
     
         private void OnMonsterDefeated(Player defeatedMonsterPlayer)

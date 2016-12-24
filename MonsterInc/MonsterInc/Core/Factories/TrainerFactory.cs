@@ -1,7 +1,7 @@
 ﻿
  using System;
  using System.Linq;
- using Core.Data;
+ using Core.Data.Static;
 using Core.Model;
 
 namespace Core
