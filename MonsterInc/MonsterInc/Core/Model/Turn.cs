@@ -50,7 +50,7 @@ namespace Core.Model
         /// <param name="currentOpponent"></param>
         /// <param name="usable"></param>
         /// <param name="combat"></param>
-        public Turn(Player currentPlayer, Player currentOpponent, Usable usable, Combat combat)
+        public Turn(Player currentPlayer, Player currentOpponent,  Combat combat, Usable usable)
         {
             this._currentPlayer = currentPlayer;
             this._currentOpponent = currentOpponent;
@@ -64,7 +64,7 @@ namespace Core.Model
         /// <param name="currentPlayer"></param>
         /// <param name="currentOpponent"></param>
         /// <param name="combat"></param>
-        public Turn(Player currentPlayer, Player currentOpponent, Combat combat) : this(currentPlayer, currentOpponent, null, combat)
+        public Turn(Player currentPlayer, Player currentOpponent, Combat combat) : this(currentPlayer, currentOpponent, combat, null)
         {
         }
 

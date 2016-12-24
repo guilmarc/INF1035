@@ -60,15 +60,17 @@ namespace MonsterIncWPF
         bool isChecked = false;
         private void ChangeButton_Checked(object sender, RoutedEventArgs e)
         {
+            OpenMonsterChooser();
+        }
+
+        private void OpenMonsterChooser()
+        {
             DeleteChooseMonsterControl();
             Control controlChooseMonster = (new ActiveMonster() { Visibility = Visibility.Visible, HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Top, Margin = new Thickness(0, -10, 0, 0), Height = 200, Width = 550 });
             ChangeMonsterGrid.Children.Add(controlChooseMonster);
             ItemList.Visibility = Visibility.Collapsed;
             isChecked = true;
         }
-
-
-
 
         private void AttackButton_Checked(object sender, RoutedEventArgs e)
         {
@@ -154,73 +156,63 @@ namespace MonsterIncWPF
             }
         }
 
+        private void DoAction(Usable usable)
+        {
+            Turn tour = new Turn(currentPlayer, ennemyPlayer, SavedGames.LoadedCombat, usable);
+
+            tour.MonsterDefeated += (o, args) =>
+            {
+                MessageBox.Show("Monster " + args.DefeatedMonsterPlayer.ActiveTrainer.ActiveMonster + " is dead !");
+                if (args.DefeatedMonsterPlayer.Type == PlayerType.Human)
+                {
+                    OpenMonsterChooser();
+                }
+            };
+
+            string tourFait = tour.Run();
+
+            CombatTextBlock.Text += tourFait;
+            Refresh();
+            CombatTextScroll.UpdateLayout();
+            CombatTextScroll.ScrollToVerticalOffset(double.MaxValue);
+
+            CheckWin();
+        }
+
         private void DoAttack(object sender, SelectionChangedEventArgs e)
         {
             if (AttackList.SelectedIndex != -1)
             {
-                Turn tour = new Turn(currentPlayer, ennemyPlayer, gentilTrainer.ActiveMonster.ActiveSkills[AttackList.SelectedIndex], SavedGames.LoadedCombat);
-
-                tour.MonsterDefeated += (o, args) =>
-                {
-                    //TODO: Code ici quand un monstre est mort;
-                    
-                    MessageBox.Show("Monster " + args.DefeatedMonsterPlayer.ActiveTrainer.ActiveMonster + " is dead !");
-                    
-                };
-
-                string tourFait = tour.Run();
-                
-                CombatTextBlock.Text += tourFait;
-                Refresh();
-                CombatTextScroll.UpdateLayout();
-                CombatTextScroll.ScrollToVerticalOffset(double.MaxValue);
+                DoAction(gentilTrainer.ActiveMonster.ActiveSkills[AttackList.SelectedIndex]);
 
                 //cache liste d'attaque
                 AttackButton.IsChecked = false;
                 AttackList.UnselectAll();
                 AttackList.Visibility = Visibility.Collapsed;
-
-                CheckWin();
             }
         }
 
         private void DoDefense()
         {
-            {
-                Turn tour = new Turn(currentPlayer, ennemyPlayer, SavedGames.LoadedCombat);
-                string tourFait = tour.Run();
-                CombatTextBlock.Text += tourFait;
-                Refresh();
-                CombatTextScroll.UpdateLayout();
-                CombatTextScroll.ScrollToVerticalOffset(double.MaxValue);
+            DoAction(null);
 
-                //cache liste d'attaque
-                AttackButton.IsChecked = false;
-                AttackList.UnselectAll();
-                AttackList.Visibility = Visibility.Collapsed;
+            //cache liste d'attaque
+            AttackButton.IsChecked = false;
+            AttackList.UnselectAll();
+            AttackList.Visibility = Visibility.Collapsed;
 
-                CheckWin();
-
-            }
         }
 
         private void ConsumeItem(object sender, SelectionChangedEventArgs e)
         {
             if (ItemList.SelectedIndex != -1)
             {
-                Turn tour = new Turn(currentPlayer, ennemyPlayer, gentilTrainer.ActiveInventory[ItemList.SelectedIndex], SavedGames.LoadedCombat);
-                string tourFait = tour.Run();
-                CombatTextBlock.Text += tourFait;
-                Refresh();
-                CombatTextScroll.UpdateLayout();
-                CombatTextScroll.ScrollToVerticalOffset(double.MaxValue);
+                DoAction(gentilTrainer.ActiveInventory[ItemList.SelectedIndex]);
 
                 //cache liste d'items
                 ItemsButton.IsChecked = false;
                 ItemList.UnselectAll();
                 ItemList.Visibility = Visibility.Collapsed;
-
-                CheckWin();
             }
         }
 

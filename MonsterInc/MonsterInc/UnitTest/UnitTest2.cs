@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Core;
 using Core.Model;
+using Core.Factories;
 using System.Diagnostics;
 
 namespace UnitTest

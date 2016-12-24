@@ -32,6 +32,7 @@ namespace Core.Model
             int random = rnd.Next(1, 100); // creates a number between 1 and 99
             if (random <= chance) success = true;
 
+            //On ne permet pas de capturer le dernier monstre de l'humain
             if (success && opponent.Type == PlayerType.Human && opponent.ActiveTrainer.ActiveMonsters.Count == 1)
                 success = false;
 
@@ -39,8 +40,10 @@ namespace Core.Model
             if (success)
             {
                 Monster monster = opponent.ActiveTrainer.ActiveMonster;
-                //monster.NickName = monster.Template.Name;
+
+                //Capturé dans la liste de monstres non-actifs
                 player.ActiveTrainer.Monsters.Add(monster);
+
                 if (opponent.ActiveTrainer.ActiveMonsters.Count == 1)
                 {
                     opponent.ActiveTrainer.ActiveMonster.Caracteristics[0].Actual = 0;
@@ -51,6 +54,7 @@ namespace Core.Model
                     opponent.ActiveTrainer.ActiveMonster = opponent.ActiveTrainer.ActiveMonsters[0];
                 }
             }
+
             this.InventoryDeduction(player);
 
         }
