@@ -74,6 +74,9 @@ namespace MonsterIncWPF
 
         private void AttackButton_Checked(object sender, RoutedEventArgs e)
         {
+            AttackList.ItemsSource = null;
+            AttackList.ItemsSource = gentilTrainer.ActiveMonster.ActiveSkills;
+            AttackList.UpdateLayout();
             AttackList.Visibility = Visibility.Visible;
             isChecked = true;
         }
@@ -245,6 +248,7 @@ namespace MonsterIncWPF
             var t = SavedGames.mainWindow.AppGrid.Children[SavedGames.trainerHomeForm];
             ((TrainerHome)t).TrainerHomeGrid.Visibility = Visibility.Visible;
             ((TrainerHome)t).HideDifficulty();
+            ((TrainerHome)t).TrainerHomeRefresh();
         }
     }
 }

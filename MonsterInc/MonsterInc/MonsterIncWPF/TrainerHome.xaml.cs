@@ -12,7 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Core.Database;
+using Core;
+using Core.Data;
+using Core.Data.Static;
 using Core.Model;
 using Microsoft.Win32;
 
@@ -38,7 +40,7 @@ namespace MonsterIncWPF
         {
             InitializeComponent();
             this.DataContext = SavedGames.LoadedGame.HumanPlayer;
-            DifficultyListBox.ItemsSource = DifficultyData.Difficulty;
+            DifficultyListBox.ItemsSource = Universe.Difficulties;//DifficultyData.Difficulty;
             InitListes();   
             TrainerHomeRefresh();
             

@@ -38,10 +38,7 @@ namespace MonsterIncWPF
             {
                 string normal = "if empty collection" + ex.Message;
             }
-            //if (SavedGames.Games == null)
-           // {
-                
-            //}
+
         }
 
         private void NewGame_Click(object sender, RoutedEventArgs e)
@@ -67,7 +64,6 @@ namespace MonsterIncWPF
             Home.Visibility = Visibility.Collapsed;
             AppGrid.Children.Remove(TrainerHome);
             AppGrid.Children.Add(new TrainerHome(true) { Name = "TrainerHome", Visibility = Visibility.Visible });
-
         }
 
         private enum Action

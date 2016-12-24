@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Core;
+using Core.Model;
 
 namespace MonsterIncWPF
 {
@@ -22,32 +23,29 @@ namespace MonsterIncWPF
     /// </summary>
     public partial class SelectNewMonster : UserControl
     {
-
-
-
         public SelectNewMonster()
         {
         }
 
+        ObservableCollection<Core.Model.Monster> selectTempMonsters = new ObservableCollection<Core.Model.Monster>(Core.Universe.InitMonsters);
         public SelectNewMonster(bool affiche)
         {
             string nomPlayer = SavedGames.LoadedGame.HumanPlayer.Name;
             InitializeComponent();
             SavedGames.LoadedGame.HumanPlayer.Trainer = new Core.Model.Trainer();
 
-            SavedGames.LoadedGame.HumanPlayer.Trainer.SelectTempMonsters = new ObservableCollection<Core.Model.Monster>(Core.Universe.InitMonsters);
+            //SavedGames.LoadedGame.HumanPlayer.Trainer.SelectTempMonsters = new ObservableCollection<Core.Model.Monster>(Core.Universe.InitMonsters);
+            //selectTempMonsters = new ObservableCollection<Core.Model.Monster>(Core.Universe.InitMonsters);
             this.DataContext = SavedGames.LoadedGame.HumanPlayer;
-            ListAffinity.ItemsSource = Enum<Core.Element>.GetNames();
+
+            ListSelectTempMonsters.ItemsSource = selectTempMonsters;
+            ListAffinity.ItemsSource = Enum<Element>.GetNames();
             TrainerTextBox.Text = nomPlayer;
         }
 
-        //private Core.Model.Trainer trainer = new Core.Model.Trainer("Jean", 0);
-        //private MonsterDetails detailControlOpen;
-
-
         private void ListSelectTempMonsters_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            MonsterDetails detailControlOpen = new MonsterDetails(SavedGames.LoadedGame.HumanPlayer.ActiveTrainer.SelectTempMonsters[ListSelectTempMonsters.SelectedIndex]);
+            MonsterDetails detailControlOpen = new MonsterDetails(selectTempMonsters[ListSelectTempMonsters.SelectedIndex]);
 
             DetailsControl.Content = detailControlOpen;
 
@@ -63,7 +61,7 @@ namespace MonsterIncWPF
                 else if (ListAffinity.SelectedItem == null) MessageBox.Show("Please choose your affinity");
                 else
                 {
-                    SavedGames.LoadedGame.HumanPlayer.Trainer.Affinity = Core.Extensions.ToEnum<Core.Element>(ListAffinity.SelectedValue.ToString());
+                    SavedGames.LoadedGame.HumanPlayer.Trainer.Affinity = Core.Extensions.ToEnum<Element>(ListAffinity.SelectedValue.ToString());
                     SavedGames.LoadedGame.HumanPlayer.Trainer.ActiveMonsters = new List<Core.Model.Monster>();
                     SavedGames.LoadedGame.HumanPlayer.Trainer.ActiveMonsters.Add((Core.Model.Monster)ListSelectTempMonsters.SelectedValue);
                     SavedGames.LoadedGame.HumanPlayer.Trainer.Name = TrainerTextBox.Text;
@@ -75,34 +73,20 @@ namespace MonsterIncWPF
                     //SavedGames.Games.XmlSerialize(SavedGames.XMLName, true);
                     SavedGames.LoadedGame.Save();
 
-
-
                     this.Visibility = Visibility.Collapsed;
 
                     SavedGames.trainerHomeForm = ((MainWindow)System.Windows.Application.Current.MainWindow).AppGrid.Children.Add(new TrainerHome(true) { Name = "TrainerHome2", Visibility = Visibility.Visible });
-
-
                 }
-
-
             }
             catch (Exception ex)
             {
                 var a = "plante ici";
                 throw;
             }
-
-
-
-
-            //Core.Engine.Trainer = trainer;
-
-
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
-            //DependencyObject parentObject = VisualTreeHelper.GetParent(this);
             ((MainWindow)System.Windows.Application.Current.MainWindow).Home.Visibility = Visibility.Visible;
             this.Visibility = Visibility.Collapsed;
         }
