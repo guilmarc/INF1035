@@ -106,7 +106,7 @@ namespace MonsterIncWPF
                     Maxvalue++;
                 }
             }
-            catch (Core.Exceptions.NotEnoughtGoldException ex)
+            catch (Core.Exceptions.NotEnoughtGoldException)
             {
                 MessageBox.Show("Not enough gold to buy all items in cart");
             }

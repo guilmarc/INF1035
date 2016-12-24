@@ -71,10 +71,14 @@ namespace MonsterIncWPF
         private void btnActiveToItem_Click(object sender, RoutedEventArgs e)
         {
             //Item selectedItem = (Item)ActiveItemsListBox.SelectedItem;
-            Inventory.Add((Item)ActiveItemsListBox.SelectedItem);
-            ActiveInventory.RemoveAt(ActiveItemsListBox.SelectedIndex);
+           if ( ActiveItemsListBox.SelectedIndex != -1 )
+            {
+                Inventory.Add((Item)ActiveItemsListBox.SelectedItem);
+                ActiveInventory.RemoveAt(ActiveItemsListBox.SelectedIndex);
 
-            saveToCurrentGame();
+                saveToCurrentGame();
+            }
+
         }
 
         private void saveToCurrentGame()

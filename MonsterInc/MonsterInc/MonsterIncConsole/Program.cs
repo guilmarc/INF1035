@@ -9,32 +9,14 @@ namespace MonsterIncConsole
 {
     class Program
     {
+
+        /// <summary>
+        /// La version console est utilisée seulement pour les tests
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             //Core.Engine.RunDummyGame();
-
-            Core.Data.XmlGenerator.GenerateAllXml();
-
-            var game = Core.Engine.NewGame(Core.Universe.DummyPlayer);
-            game.Save();
-            game.Save();
-            //var newPlayer = new Core.Model.Player();
-            //newPlayer.PlayerType = PlayerType.Human;
-            Core.Universe.SavedGameFiles.ForEach(x => Console.WriteLine(x));
-
-
-            var firstSavedGame = Core.Universe.SavedGameFiles[0];
-            var loadedgame = Core.Engine.LoadGameFromFile(firstSavedGame);
-
-            Console.Write(Core.Constants.SavedGamePath);
-
-
-            //while (true)
-            //{
-            //   Console.WriteLine(Core.Utils.HumanizeRatio()); 
-            //}
-
-
             Console.ReadLine();
         }
     }

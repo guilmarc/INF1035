@@ -87,7 +87,15 @@ namespace Core.Model
             
             //Exécution de l'attaque du joueur robot
             var AIUsable = _currentOpponent.PickUsable(_currentPlayer);
-            RunAttackWithUsable(_currentOpponent, _currentPlayer, AIUsable);
+            if (AIUsable != null)
+            {
+                RunAttackWithUsable(_currentOpponent, _currentPlayer, AIUsable);
+            }
+            else
+            {
+                RunDefense(_currentOpponent);
+            }
+
 
             return _result;
         }

@@ -179,7 +179,7 @@ namespace MonsterIncWPF
             CombatTextScroll.UpdateLayout();
             CombatTextScroll.ScrollToVerticalOffset(double.MaxValue);
 
-            CheckWin();
+            
         }
 
         private void DoAttack(object sender, SelectionChangedEventArgs e)
@@ -192,6 +192,8 @@ namespace MonsterIncWPF
                 AttackButton.IsChecked = false;
                 AttackList.UnselectAll();
                 AttackList.Visibility = Visibility.Collapsed;
+
+                CheckWin();
             }
         }
 
@@ -204,18 +206,27 @@ namespace MonsterIncWPF
             AttackList.UnselectAll();
             AttackList.Visibility = Visibility.Collapsed;
 
+            CheckWin();
+
         }
 
         private void ConsumeItem(object sender, SelectionChangedEventArgs e)
         {
             if (ItemList.SelectedIndex != -1)
             {
-                DoAction(gentilTrainer.ActiveInventory[ItemList.SelectedIndex]);
+                //Safety pipe
+                if (ItemList.SelectedIndex < gentilTrainer.ActiveInventory.Count)
+                {
+                    DoAction(gentilTrainer.ActiveInventory[ItemList.SelectedIndex]);
 
-                //cache liste d'items
-                ItemsButton.IsChecked = false;
-                ItemList.UnselectAll();
-                ItemList.Visibility = Visibility.Collapsed;
+                    //cache liste d'items
+                    ItemsButton.IsChecked = false;
+                    ItemList.UnselectAll();
+                    ItemList.Visibility = Visibility.Collapsed;
+
+                    CheckWin();
+                }
+
             }
         }
 

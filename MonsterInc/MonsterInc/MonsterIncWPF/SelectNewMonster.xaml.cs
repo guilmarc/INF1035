@@ -78,10 +78,9 @@ namespace MonsterIncWPF
                     SavedGames.trainerHomeForm = ((MainWindow)System.Windows.Application.Current.MainWindow).AppGrid.Children.Add(new TrainerHome(true) { Name = "TrainerHome2", Visibility = Visibility.Visible });
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                var a = "plante ici";
-                throw;
+
             }
         }
 
