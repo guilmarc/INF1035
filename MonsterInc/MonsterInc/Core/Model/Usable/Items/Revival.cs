@@ -11,13 +11,10 @@ namespace Core.Model
     {
 
         public override void Consume(Player player, Player opponent)
-        {
-            
+        {  
             var carac  = player.ActiveTrainer.ActiveMonster.Caracteristics.First(x => x.Type == MonsterTemplateCaracteristicType.LifePoints);
             carac.Actual = 1;
             base.Consume(player, opponent);
-
-
         }
     }
 }

@@ -2,8 +2,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Core.Data
+namespace Core.Data.Static
 {
+    /// <summary>
+    /// Classe de données hardcodées temporaires (non utilisée en mode runtime)
+    /// </summary>
     public static class TrainerData
     {
         public static List<string> TrainerNames

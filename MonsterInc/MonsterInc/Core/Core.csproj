@@ -53,25 +53,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\DataAdaptor.cs" />
-    <Compile Include="Data\HardCodedData\DifficultyData.cs" />
-    <Compile Include="Data\HardCodedDataAdaptor.cs" />
-    <Compile Include="Data\HardCodedData\PlayerData.cs" />
+    <Compile Include="Data\Static\DifficultyData.cs" />
+    <Compile Include="Data\StaticDataAdaptor.cs" />
+    <Compile Include="Data\Static\PlayerData.cs" />
     <Compile Include="Data\IDataAdaptor.cs" />
-    <Compile Include="Data\HardCodedData\ItemData.cs" />
-    <Compile Include="Data\HardCodedData\SkillData.cs" />
-    <Compile Include="Data\HardCodedData\TrainerData.cs" />
+    <Compile Include="Data\Static\ItemData.cs" />
+    <Compile Include="Data\Static\SkillData.cs" />
+    <Compile Include="Data\Static\TrainerData.cs" />
     <Compile Include="Data\XMLDataAdaptor.cs" />
     <Compile Include="Events\MonsterDefeadedEventArgs.cs" />
-    <Compile Include="Exceptions\InvalidUsableChoiceExecption.cs" />
+    <Compile Include="Exceptions\InvalidUsableChoiceException.cs" />
     <Compile Include="Exceptions\UnableToCreateDataFolderException.cs" />
     <Compile Include="Factories\PlayerFactory.cs" />
+    <Compile Include="Implementations\IntelligentExperienceLevelStrategy.cs" />
     <Compile Include="Model\Impact.cs" />
     <Compile Include="Implementations\BaseExperienceLevelStrategy.cs" />
     <Compile Include="Implementations\BasicPickUsableStrategy.cs" />
     <Compile Include="Implementations\IntelligentPickUsableStrategy.cs" />
     <Compile Include="Interfaces\IExperienceLevelStrategy.cs" />
     <Compile Include="Interfaces\IPickUsableStrategy.cs" />
-    <Compile Include="Model\Usable\Defense\Defend.cs" />
     <Compile Include="Utils\Constants.cs" />
     <Compile Include="Utils\Extensions.cs" />
     <Compile Include="Factories\InventoryFactory.cs" />
@@ -98,7 +98,7 @@
     <Compile Include="Universe.cs" />
     <Compile Include="Model\Usable\Items\Item.cs" />
     <Compile Include="Model\MonsterTemplate.cs" />
-    <Compile Include="Data\HardCodedData\MonsterTemplateData.cs" />
+    <Compile Include="Data\Static\MonsterTemplateData.cs" />
     <Compile Include="Model\MonsterTemplateCaracteristic.cs" />
     <Compile Include="Data\XmlGenerator.cs" />
     <Compile Include="Model\Scopes\Scope.cs" />
@@ -109,7 +109,6 @@
     <Compile Include="Model\Trainer.cs" />
     <Compile Include="Model\Reward.cs" />
     <Compile Include="Model\Usable\Usable.cs" />
-    <Compile Include="Interfaces\IActionable.cs" />
     <Compile Include="Factories\TrainerFactory.cs" />
     <Compile Include="Utils\Serializer\Binary.cs" />
     <Compile Include="Utils\Serializer\Json.cs" />

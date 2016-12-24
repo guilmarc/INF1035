@@ -12,6 +12,9 @@ namespace Core.Data
     /// </summary>
     public static class XmlGenerator
     {
+        /// <summary>
+        /// Méthode principale de génération des fichiers Xml
+        /// </summary>
         public static void GenerateAllXml()
         {
             GenerateXml<Difficulty>();
@@ -22,16 +25,17 @@ namespace Core.Data
             GenerateXml<Trainer>();
         }
 
-        //TODO: Changer les méthodes statiques par un Generic
-        //https://dzone.com/articles/c-%E2%80%93-generic-serialization
-
+        /// <summary>
+        /// Génération d'un fichier Xml contenant les object de type en paramètre
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
         private static void GenerateXml<T>()
         {
-            var filePath = Constants.UniverseDataPath + typeof(T).Name + Constants.SavedGameFileExtension;
+            var filePath = Constants.UniverseDataPath + typeof(T).Name + ".xml";
             using (var stream = new System.IO.StreamWriter(filePath))
             {
                 var serializer = new XmlSerializer(typeof(List<T>));
-                serializer.Serialize(stream, new HardCodedDataAdaptor<T>().GetObjects());
+                serializer.Serialize(stream, new StaticDataAdaptor<T>().GetObjects());
             }
         }
     }

@@ -4,7 +4,7 @@ using Core.Model;
 namespace Core
 {
     /// <summary>
-    /// On va coder cette stratégie intelligente
+    /// On va coder cette stratégie intelligente après la prochaine session :)
     /// </summary>
     public class IntelligentPickUsableStrategy : IPickUsableStrategy
     {

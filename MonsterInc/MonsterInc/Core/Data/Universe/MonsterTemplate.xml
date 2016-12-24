@@ -14,7 +14,7 @@
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
         <Type>RegenerationPoints</Type>
-        <Base>10</Base>
+        <Base>2</Base>
         <Progression>2</Progression>
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
@@ -30,6 +30,7 @@
     </Caracteristics>
     <Skills />
     <Name>Fire Ball</Name>
+    <Description>Little cute fire monster</Description>
     <Category>Ball</Category>
     <BaseLevel>1</BaseLevel>
     <Rarity>100</Rarity>
@@ -49,7 +50,7 @@
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
         <Type>RegenerationPoints</Type>
-        <Base>20</Base>
+        <Base>4</Base>
         <Progression>3</Progression>
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
@@ -65,6 +66,7 @@
     </Caracteristics>
     <Skills />
     <Name>Fire Titan</Name>
+    <Description>Normal fire monster</Description>
     <Category>Titan</Category>
     <BaseLevel>20</BaseLevel>
     <Rarity>80</Rarity>
@@ -84,7 +86,7 @@
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
         <Type>RegenerationPoints</Type>
-        <Base>30</Base>
+        <Base>6</Base>
         <Progression>4</Progression>
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
@@ -100,6 +102,7 @@
     </Caracteristics>
     <Skills />
     <Name>Giant Fire Titan</Name>
+    <Description>Huge fire monster</Description>
     <Category>GiantTitan</Category>
     <BaseLevel>40</BaseLevel>
     <Rarity>35</Rarity>
@@ -119,7 +122,7 @@
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
         <Type>RegenerationPoints</Type>
-        <Base>10</Base>
+        <Base>2</Base>
         <Progression>2</Progression>
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
@@ -135,6 +138,7 @@
     </Caracteristics>
     <Skills />
     <Name>Earth Ball</Name>
+    <Description>Little cute ball monster</Description>
     <Category>Ball</Category>
     <BaseLevel>1</BaseLevel>
     <Rarity>100</Rarity>
@@ -154,7 +158,7 @@
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
         <Type>RegenerationPoints</Type>
-        <Base>20</Base>
+        <Base>4</Base>
         <Progression>3</Progression>
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
@@ -170,6 +174,7 @@
     </Caracteristics>
     <Skills />
     <Name>Earth Titan</Name>
+    <Description>Medium earth monster</Description>
     <Category>Titan</Category>
     <BaseLevel>20</BaseLevel>
     <Rarity>80</Rarity>
@@ -189,7 +194,7 @@
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
         <Type>RegenerationPoints</Type>
-        <Base>30</Base>
+        <Base>6</Base>
         <Progression>4</Progression>
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
@@ -205,6 +210,7 @@
     </Caracteristics>
     <Skills />
     <Name>Giant Earth Titan</Name>
+    <Description>Don't thrust me, I'm mad !</Description>
     <Category>GiantTitan</Category>
     <BaseLevel>40</BaseLevel>
     <Rarity>35</Rarity>
@@ -224,7 +230,7 @@
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
         <Type>RegenerationPoints</Type>
-        <Base>10</Base>
+        <Base>2</Base>
         <Progression>2</Progression>
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
@@ -240,6 +246,7 @@
     </Caracteristics>
     <Skills />
     <Name>Water Ball</Name>
+    <Description>Water little monster</Description>
     <Category>Ball</Category>
     <BaseLevel>1</BaseLevel>
     <Rarity>100</Rarity>
@@ -259,7 +266,7 @@
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
         <Type>RegenerationPoints</Type>
-        <Base>20</Base>
+        <Base>4</Base>
         <Progression>3</Progression>
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
@@ -275,6 +282,7 @@
     </Caracteristics>
     <Skills />
     <Name>Water Titan</Name>
+    <Description>I love water !</Description>
     <Category>Titan</Category>
     <BaseLevel>20</BaseLevel>
     <Rarity>80</Rarity>
@@ -294,7 +302,7 @@
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
         <Type>RegenerationPoints</Type>
-        <Base>30</Base>
+        <Base>6</Base>
         <Progression>4</Progression>
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
@@ -310,6 +318,7 @@
     </Caracteristics>
     <Skills />
     <Name>Giant Water Titan</Name>
+    <Description>Water Water Water Water</Description>
     <Category>GiantTitan</Category>
     <BaseLevel>40</BaseLevel>
     <Rarity>35</Rarity>
@@ -329,7 +338,7 @@
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
         <Type>RegenerationPoints</Type>
-        <Base>10</Base>
+        <Base>2</Base>
         <Progression>2</Progression>
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
@@ -345,6 +354,7 @@
     </Caracteristics>
     <Skills />
     <Name>Air Ball</Name>
+    <Description>Little air ball cute monster</Description>
     <Category>Ball</Category>
     <BaseLevel>1</BaseLevel>
     <Rarity>100</Rarity>
@@ -364,7 +374,7 @@
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
         <Type>RegenerationPoints</Type>
-        <Base>20</Base>
+        <Base>4</Base>
         <Progression>3</Progression>
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
@@ -380,6 +390,7 @@
     </Caracteristics>
     <Skills />
     <Name>Air Titan</Name>
+    <Description>Medium air ball monster</Description>
     <Category>Titan</Category>
     <BaseLevel>20</BaseLevel>
     <Rarity>80</Rarity>
@@ -399,7 +410,7 @@
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
         <Type>RegenerationPoints</Type>
-        <Base>30</Base>
+        <Base>6</Base>
         <Progression>4</Progression>
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
@@ -415,6 +426,7 @@
     </Caracteristics>
     <Skills />
     <Name>Giant Air Titan</Name>
+    <Description>Huge air ball cute monster</Description>
     <Category>GiantTitan</Category>
     <BaseLevel>40</BaseLevel>
     <Rarity>35</Rarity>
@@ -434,7 +446,7 @@
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
         <Type>RegenerationPoints</Type>
-        <Base>25</Base>
+        <Base>5</Base>
         <Progression>3</Progression>
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
@@ -450,6 +462,7 @@
     </Caracteristics>
     <Skills />
     <Name>Magma Titan</Name>
+    <Description>Who am I ?</Description>
     <Category>Titan</Category>
     <BaseLevel>30</BaseLevel>
     <Rarity>50</Rarity>
@@ -469,7 +482,7 @@
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
         <Type>RegenerationPoints</Type>
-        <Base>35</Base>
+        <Base>7</Base>
         <Progression>4</Progression>
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
@@ -485,6 +498,7 @@
     </Caracteristics>
     <Skills />
     <Name>Giant Magma Titan</Name>
+    <Description>Feeling Hothothot</Description>
     <Category>GiantTitan</Category>
     <BaseLevel>60</BaseLevel>
     <Rarity>10</Rarity>
@@ -504,7 +518,7 @@
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
         <Type>RegenerationPoints</Type>
-        <Base>25</Base>
+        <Base>5</Base>
         <Progression>3</Progression>
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
@@ -520,6 +534,7 @@
     </Caracteristics>
     <Skills />
     <Name>Grass Titan</Name>
+    <Description>Grasshopper</Description>
     <Category>Titan</Category>
     <BaseLevel>30</BaseLevel>
     <Rarity>50</Rarity>
@@ -539,7 +554,7 @@
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
         <Type>RegenerationPoints</Type>
-        <Base>35</Base>
+        <Base>7</Base>
         <Progression>4</Progression>
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
@@ -555,6 +570,7 @@
     </Caracteristics>
     <Skills />
     <Name>Giant Grass Titan</Name>
+    <Description>That is personnal</Description>
     <Category>GiantTitan</Category>
     <BaseLevel>60</BaseLevel>
     <Rarity>10</Rarity>
@@ -574,7 +590,7 @@
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
         <Type>RegenerationPoints</Type>
-        <Base>25</Base>
+        <Base>5</Base>
         <Progression>3</Progression>
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
@@ -590,6 +606,7 @@
     </Caracteristics>
     <Skills />
     <Name>Ice Titan</Name>
+    <Description>Cold as ice</Description>
     <Category>Titan</Category>
     <BaseLevel>30</BaseLevel>
     <Rarity>50</Rarity>
@@ -609,7 +626,7 @@
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
         <Type>RegenerationPoints</Type>
-        <Base>35</Base>
+        <Base>7</Base>
         <Progression>4</Progression>
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
@@ -625,6 +642,7 @@
     </Caracteristics>
     <Skills />
     <Name>Giant Ice Titan</Name>
+    <Description>Super dupper mega monster</Description>
     <Category>GiantTitan</Category>
     <BaseLevel>60</BaseLevel>
     <Rarity>10</Rarity>
@@ -644,7 +662,7 @@
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
         <Type>RegenerationPoints</Type>
-        <Base>25</Base>
+        <Base>5</Base>
         <Progression>3</Progression>
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
@@ -660,6 +678,7 @@
     </Caracteristics>
     <Skills />
     <Name>Lightning Titan</Name>
+    <Description>Bright as light</Description>
     <Category>Titan</Category>
     <BaseLevel>30</BaseLevel>
     <Rarity>50</Rarity>
@@ -679,7 +698,7 @@
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
         <Type>RegenerationPoints</Type>
-        <Base>35</Base>
+        <Base>7</Base>
         <Progression>4</Progression>
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
@@ -695,6 +714,7 @@
     </Caracteristics>
     <Skills />
     <Name>Giant Lightning Titan</Name>
+    <Description>Buzz Lightning</Description>
     <Category>GiantTitan</Category>
     <BaseLevel>60</BaseLevel>
     <Rarity>10</Rarity>
@@ -714,7 +734,7 @@
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
         <Type>RegenerationPoints</Type>
-        <Base>40</Base>
+        <Base>8</Base>
         <Progression>5</Progression>
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
@@ -730,6 +750,7 @@
     </Caracteristics>
     <Skills />
     <Name>Four Heads Dragon (Fire)</Name>
+    <Description>Gonna kill ya</Description>
     <Category>Dragon</Category>
     <BaseLevel>20</BaseLevel>
     <Rarity>50</Rarity>
@@ -749,7 +770,7 @@
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
         <Type>RegenerationPoints</Type>
-        <Base>40</Base>
+        <Base>8</Base>
         <Progression>5</Progression>
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
@@ -765,6 +786,7 @@
     </Caracteristics>
     <Skills />
     <Name>Four Heads Dragon (Water)</Name>
+    <Description>You will never see me</Description>
     <Category>Dragon</Category>
     <BaseLevel>20</BaseLevel>
     <Rarity>50</Rarity>
@@ -784,7 +806,7 @@
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
         <Type>RegenerationPoints</Type>
-        <Base>40</Base>
+        <Base>8</Base>
         <Progression>5</Progression>
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
@@ -800,6 +822,7 @@
     </Caracteristics>
     <Skills />
     <Name>Four Heads Dragon (Earth)</Name>
+    <Description>Big big big monster</Description>
     <Category>Dragon</Category>
     <BaseLevel>20</BaseLevel>
     <Rarity>50</Rarity>
@@ -819,7 +842,7 @@
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
         <Type>RegenerationPoints</Type>
-        <Base>40</Base>
+        <Base>8</Base>
         <Progression>5</Progression>
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
@@ -835,6 +858,7 @@
     </Caracteristics>
     <Skills />
     <Name>Four Heads Dragon (Air)</Name>
+    <Description>I need potatoes</Description>
     <Category>Dragon</Category>
     <BaseLevel>20</BaseLevel>
     <Rarity>50</Rarity>
@@ -854,7 +878,7 @@
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
         <Type>RegenerationPoints</Type>
-        <Base>40</Base>
+        <Base>8</Base>
         <Progression>5</Progression>
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
@@ -870,6 +894,7 @@
     </Caracteristics>
     <Skills />
     <Name>Ultimate Four Heads Dragon (Lava)</Name>
+    <Description>I'm kadaboum</Description>
     <Category>Dragon</Category>
     <BaseLevel>20</BaseLevel>
     <Rarity>50</Rarity>
@@ -889,7 +914,7 @@
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
         <Type>RegenerationPoints</Type>
-        <Base>40</Base>
+        <Base>8</Base>
         <Progression>5</Progression>
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
@@ -905,6 +930,7 @@
     </Caracteristics>
     <Skills />
     <Name>Ultimate Four Heads Dragon (Grass)</Name>
+    <Description>Green Green Greeeeeeeeeeen</Description>
     <Category>Dragon</Category>
     <BaseLevel>20</BaseLevel>
     <Rarity>50</Rarity>
@@ -924,7 +950,7 @@
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
         <Type>RegenerationPoints</Type>
-        <Base>40</Base>
+        <Base>8</Base>
         <Progression>5</Progression>
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
@@ -940,6 +966,7 @@
     </Caracteristics>
     <Skills />
     <Name>Ultimate Four Heads Dragon (Ice)</Name>
+    <Description>Je déteste Caillou</Description>
     <Category>Dragon</Category>
     <BaseLevel>20</BaseLevel>
     <Rarity>50</Rarity>
@@ -959,7 +986,7 @@
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
         <Type>RegenerationPoints</Type>
-        <Base>40</Base>
+        <Base>8</Base>
         <Progression>5</Progression>
       </MonsterTemplateCaracteristic>
       <MonsterTemplateCaracteristic>
@@ -975,6 +1002,7 @@
     </Caracteristics>
     <Skills />
     <Name>Ultimate Four Heads Dragon (Lightning)</Name>
+    <Description>Super killer !</Description>
     <Category>Dragon</Category>
     <BaseLevel>20</BaseLevel>
     <Rarity>50</Rarity>

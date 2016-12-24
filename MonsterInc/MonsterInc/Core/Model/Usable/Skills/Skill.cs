@@ -5,19 +5,39 @@ using System.Xml.Serialization;
 
 namespace Core.Model
 {
+    /// <summary>
+    /// Représente une habilité d'une monstre
+    /// </summary>
     [Serializable]
     [XmlInclude(typeof(Item))]
     [XmlInclude(typeof(Skill))]
     public class Skill : Usable
 	{
+        /// <summary>
+        /// Coût d'utilisation en points d'énergie
+        /// </summary>
 		public int EnergyPointCost { get; set; }
 
+        /// <summary>
+        /// Niveau d'expérience minimal à son utilisation
+        /// </summary>
 		public int MinimumExperienceLevel { get; set; }
 
+        /// <summary>
+        /// Élément lié à cette habilité
+        /// </summary>
 	    public Element Element { get; set; }
 
+        /// <summary>
+        /// Éléments requis pour pouvoir utiser cette habilité
+        /// </summary>
         public List<Element> ElementRequirement { get; set; } = new List<Element>(); // OK si un des éléments est dans la liste, et OK si liste vide
 
+        /// <summary>
+        /// Utilisation de l'habilité
+        /// </summary>
+        /// <param name="player"></param>
+        /// <param name="opponent"></param>
         public override void Consume(Player player, Player opponent)
         {
             foreach (var scope in Scopes)

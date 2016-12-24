@@ -14,17 +14,6 @@ using MonsterInc.Factories;
 namespace Core
 {
 
-    public enum Element
-    {
-        Fire = 0,
-        Lava,
-        Earth,
-        Grass,
-        Water,
-        Ice,
-        Air,
-        Lightning
-    }
 
     public static class Universe
     {
@@ -91,7 +80,7 @@ namespace Core
         public static List<Difficulty> Difficulties
         {
             get { return _difficulties = _difficulties ?? new DataAdaptor<Difficulty>().GetObjects(); }
-            set { new XMLDataAdaptor<Skill>().SetObjects(value); }
+            set { new XmlDataAdaptor<Skill>().SetObjects(value); }
         }
 
         public static List<Skill> Skills

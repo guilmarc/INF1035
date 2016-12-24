@@ -92,7 +92,7 @@ namespace Core.Model
             actualPlayer.ActiveTrainer.ActiveMonsters.Energize();
             _combat.Tour++;
 
-            if (!actualPlayer.ActiveTrainer.ActiveMonster.isAlive)
+            if (!actualPlayer.ActiveTrainer.ActiveMonster.IsAlive)
             {
                 this.OnMonsterDefeated(actualPlayer);
             }

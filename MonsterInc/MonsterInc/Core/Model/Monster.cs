@@ -12,52 +12,74 @@ namespace Core.Model
     [Serializable]
 	public class Monster
 	{
-
+        /// <summary>
+        /// Événement déclanché lors d'un changement de niveau d'expérience
+        /// </summary>
         public event EventHandler<ExperienceLevelChangedEventArgs> ExperienceLevelChanged;
+        
+        /// <summary>
+        /// Constructeur par défaut nécessaire à la sérialisation 
+        /// </summary>
+        public Monster() {}
 
-        public Monster()
-        {
-
-        }
-		public static int MAX_EXP_LEVEL = 20;
-
-        [XmlIgnore]
+        //[XmlIgnore]
+        /// <summary>
+        /// Template sur lequel se base ce monstre
+        /// </summary>
         public MonsterTemplate Template { get; set; }
 
-		//Nom de l'événement qui sera accessible de l'extérieur
-		//public event EventHandler<ExperienceLevelChangedEventArgs> ExperienceLevelChanged;
-
+        /// <summary>
+        /// Numéro unique associé au monstre
+        /// </summary>
 		public int ID { get; set; }
 
+        /// <summary>
+        /// Surnom donné à un monstre
+        /// </summary>
 	    private string _nickName = null;
 	    public string NickName
 	    {
 	        get { return _nickName ?? Template.Name; }
-
 	        set { _nickName = value; }
 	    }
 
+        /// <summary>
+        /// Niveau d'expérience du monstre
+        /// </summary>
 	    public int ExperienceLevel { get; set; }
 
+        /// <summary>
+        /// Points d'expériences du monstre
+        /// </summary>
 		public int ExperiencePoint { get; set; }
 
+        /// <summary>
+        /// Caractéristiques du monstre
+        /// </summary>
 		public List<MonsterCaracteristic> Caracteristics { get; set; } = new List<MonsterCaracteristic>();
 
+        /// <summary>
+        /// Liste des skills actuellement disponible par le monstre
+        /// </summary>
         [XmlIgnore]
         public List<Skill> ActiveSkills
 	    {
-	        get
-	        {
-                //Console.WriteLine(this.Template.Element.ToString());
-                return Universe.Skills.Where(x => this.ExperienceLevel >= x.MinimumExperienceLevel).Where(y => (y.ElementRequirement.Count == 0) || y.ElementRequirement.Contains(this.Template.Element)).ToList();
-	        }
+	        get { return Universe.Skills.Where(x => this.ExperienceLevel >= x.MinimumExperienceLevel).Where(y => (y.ElementRequirement.Count == 0) || y.ElementRequirement.Contains(this.Template.Element)).ToList();}
 	    }
 
-	    public bool isAlive
+        /// <summary>
+        /// État du monstre (vivant ou mort)
+        /// </summary>
+	    public bool IsAlive
 	    {
 	        get { return this.GetCaracteristic(MonsterTemplateCaracteristicType.LifePoints).Actual > 0; }
 	    }
 
+        /// <summary>
+        /// Méthode retournant si un Usable est présentement accessible par le monstre
+        /// </summary>
+        /// <param name="usable"></param>
+        /// <returns></returns>
 	    public bool CanUseUsable(Usable usable)
 	    {
 	        if (usable is Skill)
@@ -67,31 +89,40 @@ namespace Core.Model
 	        return true;
 	    }
 
+
+        /// <summary>
+        /// Constructeur obligatoire pour un monstre
+        /// </summary>
+        /// <param name="id">Numéro unique du monstre à créer</param>
+        /// <param name="monsterTemplate">Template de monstre à instancié</param>
+        /// <param name="CaracteristicFactor">Augmentation ou diminution des valeurs selon le niveau de difficulté</param>
 	    public Monster(int id, MonsterTemplate monsterTemplate, double CaracteristicFactor = 1.0)
 		{
 			this.Template = monsterTemplate;
 
 			this.ExperienceLevel = monsterTemplate.BaseLevel;
 
-			//Selon la demande de Adam, on relie les caractéristique avec le template
 			foreach (var monsterTemplateCaracteristic in monsterTemplate.Caracteristics)
 			{
 				this.Caracteristics.Add( new MonsterCaracteristic(monsterTemplateCaracteristic, this.ExperienceLevel, CaracteristicFactor) );
 			}
 		}
 
+        /// <summary>
+        /// Réénergiser le monstre actif (tour par tour)
+        /// </summary>
 	    public void Energize()
         { 
-            if(isAlive)
+            if(IsAlive)
 	        this.GetCaracteristic(MonsterTemplateCaracteristicType.EnergyPoints).Actual += this.GetCaracteristic(MonsterTemplateCaracteristicType.RegenerationPoints).Actual;
 	    }
 
+        /// <summary>
+        /// Réinitialisation des caractéristiques du monstre à chaque combat
+        /// </summary>
 	    public void ResetCaracterictics()
 	    {
-	        foreach (var caracterictic in this.Caracteristics)
-	        {
-	            caracterictic.InitWithLevel(this.ExperienceLevel);
-	        }
+            this.Caracteristics.ForEach(x => x.InitWithLevel(this.ExperienceLevel));
 	    }
 
 		/// <summary>
@@ -104,32 +135,33 @@ namespace Core.Model
 			return Caracteristics.FirstOrDefault(c => c.Type == type);
 		}
 
-
+        /// <summary>
+        /// Incrémentation des points d'expérience
+        /// </summary>
+        /// <param name="points"></param>
 		public void IncrementExperiencePointBy(int points)
 		{
 			//On incrémente les points d'expérience selon le nombre de points demandés		                             
 			this.ExperiencePoint += points;
 
-			//Launch Strategy Here
+			//Utilisation de la stratégie d'augmentation (Strategy Pattern)
 			var newExperienceLevel = new BaseExperienceLevelStrategy().EvaluateExperienceLevel(this.ExperiencePoint);
 
 			if (newExperienceLevel != this.ExperienceLevel)
 			{
 				this.ExperienceLevel = newExperienceLevel;
-				OnExperienceLevelChanged(this.ExperienceLevel);
-					
+				OnExperienceLevelChanged(this.ExperienceLevel);	
 			}
 		}
 
-
-
+        /// <summary>
+        /// Comportement de l'événement lors du changement de niveau d'expérience
+        /// </summary>
+        /// <param name="newExperienceLevel"></param>
 		protected void OnExperienceLevelChanged(int newExperienceLevel)
-		{
-			foreach (var caracteristic in this.Caracteristics)
-			{
-                caracteristic.InitWithLevel(newExperienceLevel);
-			}
-
+        {
+            this.Caracteristics.ForEach(x => x.InitWithLevel(newExperienceLevel));
+            //Lancement de l'événement
             ExperienceLevelChanged?.Invoke(this, new ExperienceLevelChangedEventArgs(newExperienceLevel));
         }
     }

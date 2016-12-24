@@ -3,7 +3,9 @@ using System.Xml.Serialization;
 
 namespace Core.Model
 {
-
+    /// <summary>
+    /// Scope basé sur un un effet à valeur relative
+    /// </summary>
     [Serializable]
     public class EffectScope : Scope
 	{

@@ -19,7 +19,7 @@ namespace Core
             InitActiveMonsters(newTrainer);
             InitActiveMonster(newTrainer);
 
-            InventoryFactory.GenerateInventoryForTrainer(newTrainer);
+            InventoryFactory.GenerateRandomInventoryForTrainer(newTrainer);
             InitActiveInventory(newTrainer);
 
             return newTrainer;
@@ -39,7 +39,7 @@ namespace Core
             InitActiveMonsters(newTrainer);
             InitActiveMonster(newTrainer);
 
-            InventoryFactory.GenerateInventoryForTrainer(newTrainer);
+            InventoryFactory.GenerateRandomInventoryForTrainer(newTrainer);
             InitActiveInventory(newTrainer);
 
             return newTrainer;

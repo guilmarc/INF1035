@@ -115,6 +115,16 @@ namespace Core
             list.ForEach(x => x.Energize());
             return list.Count;
         }
+
+        public static int AverageExperiencePoints(this List<Monster> list)
+        {
+            return (int)list.Average(x => x.ExperiencePoint);
+        }
+
+        public static int AverageExperienceLevel(this List<Monster> list)
+        {
+            return (int)list.Average(x => x.ExperienceLevel);
+        }
     }
 }
 

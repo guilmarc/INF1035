@@ -2,6 +2,13 @@
 <ArrayOfSkill xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Skill>
     <Name>Roll</Name>
+    <Scopes>
+      <Scope xsi:type="DamageScope">
+        <Target>Opponent</Target>
+        <Duration>1</Duration>
+        <Magnitude>10</Magnitude>
+      </Scope>
+    </Scopes>
     <EnergyPointCost>5</EnergyPointCost>
     <MinimumExperienceLevel>1</MinimumExperienceLevel>
     <Element>Fire</Element>
@@ -9,6 +16,13 @@
   </Skill>
   <Skill>
     <Name>Tornado</Name>
+    <Scopes>
+      <Scope xsi:type="DamageScope">
+        <Target>Opponent</Target>
+        <Duration>1</Duration>
+        <Magnitude>30</Magnitude>
+      </Scope>
+    </Scopes>
     <EnergyPointCost>20</EnergyPointCost>
     <MinimumExperienceLevel>10</MinimumExperienceLevel>
     <Element>Air</Element>
@@ -19,6 +33,13 @@
   </Skill>
   <Skill>
     <Name>FireBolt</Name>
+    <Scopes>
+      <Scope xsi:type="DamageScope">
+        <Target>Opponent</Target>
+        <Duration>1</Duration>
+        <Magnitude>15</Magnitude>
+      </Scope>
+    </Scopes>
     <EnergyPointCost>7</EnergyPointCost>
     <MinimumExperienceLevel>1</MinimumExperienceLevel>
     <Element>Fire</Element>
@@ -29,6 +50,13 @@
   </Skill>
   <Skill>
     <Name>IceArrow</Name>
+    <Scopes>
+      <Scope xsi:type="DamageScope">
+        <Target>Opponent</Target>
+        <Duration>1</Duration>
+        <Magnitude>25</Magnitude>
+      </Scope>
+    </Scopes>
     <EnergyPointCost>10</EnergyPointCost>
     <MinimumExperienceLevel>5</MinimumExperienceLevel>
     <Element>Ice</Element>
@@ -38,6 +66,13 @@
   </Skill>
   <Skill>
     <Name>Kick</Name>
+    <Scopes>
+      <Scope xsi:type="DamageScope">
+        <Target>Opponent</Target>
+        <Duration>1</Duration>
+        <Magnitude>12</Magnitude>
+      </Scope>
+    </Scopes>
     <EnergyPointCost>4</EnergyPointCost>
     <MinimumExperienceLevel>20</MinimumExperienceLevel>
     <Element>Fire</Element>
@@ -45,6 +80,13 @@
   </Skill>
   <Skill>
     <Name>PowerHit</Name>
+    <Scopes>
+      <Scope xsi:type="DamageScope">
+        <Target>Opponent</Target>
+        <Duration>1</Duration>
+        <Magnitude>8</Magnitude>
+      </Scope>
+    </Scopes>
     <EnergyPointCost>3</EnergyPointCost>
     <MinimumExperienceLevel>1</MinimumExperienceLevel>
     <Element>Fire</Element>

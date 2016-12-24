@@ -3,90 +3,195 @@
   <Item xsi:type="CaptureBall">
     <Name>CBall (low grade)</Name>
     <Description>Low grade capture ball</Description>
+    <Scopes>
+      <Scope xsi:type="EffectScope">
+        <Target>Opponent</Target>
+        <Duration>1</Duration>
+        <Magnitude>0.2</Magnitude>
+      </Scope>
+    </Scopes>
     <Rarity>90</Rarity>
     <Gold>20</Gold>
   </Item>
   <Item xsi:type="CaptureBall">
     <Name>CBall (medium grade)</Name>
     <Description>Medium grade capture ball</Description>
+    <Scopes>
+      <Scope xsi:type="EffectScope">
+        <Target>Opponent</Target>
+        <Duration>1</Duration>
+        <Magnitude>0.4</Magnitude>
+      </Scope>
+    </Scopes>
     <Rarity>75</Rarity>
     <Gold>100</Gold>
   </Item>
   <Item xsi:type="CaptureBall">
     <Name>CBall (high grade)</Name>
     <Description>High grade capture ball</Description>
+    <Scopes>
+      <Scope xsi:type="EffectScope">
+        <Target>Opponent</Target>
+        <Duration>1</Duration>
+        <Magnitude>0.6</Magnitude>
+      </Scope>
+    </Scopes>
     <Rarity>50</Rarity>
     <Gold>500</Gold>
   </Item>
   <Item xsi:type="CaptureBall">
     <Name>CBall (perfect grade)</Name>
     <Description>Perfect capture ball</Description>
+    <Scopes>
+      <Scope xsi:type="EffectScope">
+        <Target>Opponent</Target>
+        <Duration>1</Duration>
+        <Magnitude>0.8</Magnitude>
+      </Scope>
+    </Scopes>
     <Rarity>20</Rarity>
     <Gold>2000</Gold>
   </Item>
   <Item xsi:type="Revival">
     <Name>Revival Syringe (5 mL)</Name>
     <Description>Revival Syringe</Description>
+    <Scopes>
+      <Scope xsi:type="EffectScope">
+        <Target>Self</Target>
+        <Duration>1</Duration>
+        <Magnitude>0.5</Magnitude>
+      </Scope>
+    </Scopes>
     <Rarity>70</Rarity>
     <Gold>400</Gold>
   </Item>
   <Item xsi:type="Revival">
     <Name>Revival Syringe (10 mL)</Name>
     <Description>Large Revival Syringe</Description>
+    <Scopes>
+      <Scope xsi:type="EffectScope">
+        <Target>Self</Target>
+        <Duration>1</Duration>
+        <Magnitude>0.8</Magnitude>
+      </Scope>
+    </Scopes>
     <Rarity>30</Rarity>
     <Gold>1500</Gold>
   </Item>
   <Item xsi:type="LifePotion">
     <Name>Small Life Potion</Name>
     <Description>Small Life Potion</Description>
+    <Scopes>
+      <Scope xsi:type="EffectScope">
+        <Target>Self</Target>
+        <Duration>1</Duration>
+        <Magnitude>0.3</Magnitude>
+      </Scope>
+    </Scopes>
     <Rarity>95</Rarity>
     <Gold>5</Gold>
   </Item>
   <Item xsi:type="LifePotion">
     <Name>Medium Life Potion</Name>
     <Description>Medium Life Potion</Description>
+    <Scopes>
+      <Scope xsi:type="EffectScope">
+        <Target>Self</Target>
+        <Duration>1</Duration>
+        <Magnitude>0.6</Magnitude>
+      </Scope>
+    </Scopes>
     <Rarity>80</Rarity>
     <Gold>50</Gold>
   </Item>
   <Item xsi:type="LifePotion">
     <Name>Large Life Potion</Name>
     <Description>Large Life Potion</Description>
+    <Scopes>
+      <Scope xsi:type="EffectScope">
+        <Target>Self</Target>
+        <Duration>1</Duration>
+        <Magnitude>0.9</Magnitude>
+      </Scope>
+    </Scopes>
     <Rarity>60</Rarity>
     <Gold>200</Gold>
   </Item>
   <Item xsi:type="EnergyPotion">
     <Name>Small Energy Potion</Name>
     <Description>Small Energy Potion</Description>
+    <Scopes>
+      <Scope xsi:type="EffectScope">
+        <Target>Self</Target>
+        <Duration>1</Duration>
+        <Magnitude>0.015</Magnitude>
+      </Scope>
+    </Scopes>
     <Rarity>95</Rarity>
     <Gold>5</Gold>
   </Item>
   <Item xsi:type="EnergyPotion">
     <Name>Medium Energy Potion</Name>
     <Description>Medium Energy Potion</Description>
+    <Scopes>
+      <Scope xsi:type="EffectScope">
+        <Target>Self</Target>
+        <Duration>1</Duration>
+        <Magnitude>0.05</Magnitude>
+      </Scope>
+    </Scopes>
     <Rarity>80</Rarity>
     <Gold>50</Gold>
   </Item>
   <Item xsi:type="EnergyPotion">
     <Name>Large Energy Potion</Name>
     <Description>Large Energy Potion</Description>
+    <Scopes>
+      <Scope xsi:type="EffectScope">
+        <Target>Self</Target>
+        <Duration>1</Duration>
+        <Magnitude>0.15</Magnitude>
+      </Scope>
+    </Scopes>
     <Rarity>60</Rarity>
     <Gold>200</Gold>
   </Item>
   <Item xsi:type="Antidote">
     <Name>Low quality Antidote</Name>
     <Description>40% chance to remove negative effect</Description>
+    <Scopes>
+      <Scope xsi:type="EffectScope">
+        <Target>Self</Target>
+        <Duration>1</Duration>
+        <Magnitude>0.4</Magnitude>
+      </Scope>
+    </Scopes>
     <Rarity>95</Rarity>
     <Gold>5</Gold>
   </Item>
   <Item xsi:type="Antidote">
     <Name>Medium quality Antidote</Name>
     <Description>65% chance to remove negative effect</Description>
+    <Scopes>
+      <Scope xsi:type="EffectScope">
+        <Target>Self</Target>
+        <Duration>1</Duration>
+        <Magnitude>0.65</Magnitude>
+      </Scope>
+    </Scopes>
     <Rarity>80</Rarity>
     <Gold>50</Gold>
   </Item>
   <Item xsi:type="Antidote">
     <Name>Good quality Antidote</Name>
     <Description>90% chance to remove negative effect</Description>
+    <Scopes>
+      <Scope xsi:type="EffectScope">
+        <Target>Self</Target>
+        <Duration>1</Duration>
+        <Magnitude>0.9</Magnitude>
+      </Scope>
+    </Scopes>
     <Rarity>40</Rarity>
     <Gold>200</Gold>
   </Item>

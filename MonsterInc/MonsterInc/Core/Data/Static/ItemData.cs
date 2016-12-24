@@ -1,8 +1,11 @@
 ﻿using System.Collections.Generic;
 using Core.Model;
 
-namespace Core.Data
+namespace Core.Data.Static
 {
+    /// <summary>
+    /// Classe de données hardcodées temporaires (non utilisée en mode runtime)
+    /// </summary>
     public static class ItemData
     {
         public static List<Item> Items

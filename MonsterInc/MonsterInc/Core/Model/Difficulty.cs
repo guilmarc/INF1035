@@ -6,10 +6,19 @@ using System.Threading.Tasks;
 
 namespace Core.Model
 {
+    /// <summary>
+    /// Classe des niveau de difficulté
+    /// </summary>
     public class Difficulty
     {
+        /// <summary>
+        /// Numéro de la difficulté
+        /// </summary>
         public int DifficultyNumber { get; set; }
 
+        /// <summary>
+        /// Nom du niveau de difficulté
+        /// </summary>
         public string Name { get; set; }
 
         /// <summary>
@@ -42,9 +51,11 @@ namespace Core.Model
         /// </summary>
         public double CaracteristicFactor { get; set; }
 
-        public int GoldReward { get; set; }
-
-        public string toString()
+        /// <summary>
+        /// Affichage de l'objet
+        /// </summary>
+        /// <returns></returns>
+        public string ToString()
         {
             return Name;
         }

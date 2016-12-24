@@ -3,6 +3,9 @@ using Core.Model;
 
 namespace Core
 {
+    /// <summary>
+    /// Implémentation d'une stratégie de base de sélection de Usable
+    /// </summary>
     public class BasicPickUsableStrategy : IPickUsableStrategy
     {
         public Usable PickUsable(Player player, Player opponent)

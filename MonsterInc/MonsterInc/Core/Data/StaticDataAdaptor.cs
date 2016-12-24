@@ -1,12 +1,20 @@
 ﻿
 using System;
 using System.Collections.Generic;
-using Core.Database;
+using Core.Data.Static;
 
 namespace Core.Data
 {
-    public class HardCodedDataAdaptor<T> : IDataAdaptor<T>
+    /// <summary>
+    /// Implémantation d'un adapteur de données lié à des données statiques en code
+    /// </summary>
+    /// <typeparam name="T">Type de liste à obtenir</typeparam>
+    public class StaticDataAdaptor<T> : IDataAdaptor<T>
     {
+        /// <summary>
+        /// Retourne une liste typée selon le type demandé
+        /// </summary>
+        /// <returns></returns>
         public List<T> GetObjects()
         {
             switch (typeof(T).Name)

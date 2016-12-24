@@ -6,10 +6,16 @@ using Core.Model;
 
 namespace Core
 {
+    /// <summary>
+    /// Design pattern Factory : Création des items
+    /// </summary>
     public static class InventoryFactory
     {
-
-        public static void GenerateInventoryForTrainer(Trainer trainer)
+        /// <summary>
+        /// Génère un inventaire aléatoire pour un entraîneur selon l'or disponible
+        /// </summary>
+        /// <param name="trainer"></param>
+        public static void GenerateRandomInventoryForTrainer(Trainer trainer)
         {
             Item item;
             do
@@ -21,11 +27,13 @@ namespace Core
                 }
 
             } while ( item != null );
-
-            System.Diagnostics.Debug.WriteLine("Inventory Generated2 !");
-            Console.WriteLine("Inventory Generated !");
         }
 
+        /// <summary>
+        /// Sélectionne un item en magasin selon l'or disponible et le niveau de rareté de l'item
+        /// </summary>
+        /// <param name="Gold"></param>
+        /// <returns></returns>
         private static Item PickRandomItemWithGold(int Gold)
         {
             var availableItems = Universe.Items.Where(t => t.Gold <= Gold).ToList();

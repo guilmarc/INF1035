@@ -1,5 +1,8 @@
 ﻿namespace Core
 {
+    /// <summary>
+    /// Stratégie de base pour la sélection du niveau d'expérience
+    /// </summary>
     public class BaseExperienceLevelStrategy : IExperienceLevelStrategy
     {
 

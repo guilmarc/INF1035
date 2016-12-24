@@ -5,8 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using Core.Model;
 
-namespace Core.Database
+namespace Core.Data.Static
 {
+
+    /// <summary>
+    /// Classe de données hardcodées temporaires (non utilisée en mode runtime)
+    /// </summary>
     public class DifficultyData
     {
         public static List<Difficulty> Difficulty

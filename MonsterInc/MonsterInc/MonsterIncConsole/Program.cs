@@ -13,7 +13,7 @@ namespace MonsterIncConsole
         {
             //Core.Engine.RunDummyGame();
 
-            //Core.Data.XmlGenerator.GenerateAllXml();
+            Core.Data.XmlGenerator.GenerateAllXml();
 
             var game = Core.Engine.NewGame(Core.Universe.DummyPlayer);
             game.Save();
@@ -34,9 +34,6 @@ namespace MonsterIncConsole
             //   Console.WriteLine(Core.Utils.HumanizeRatio()); 
             //}
 
-            Core.Engine.NewGame(Core.Universe.DummyPlayer);
-            Turn turn = new Turn();
-            turn.DoEnemyTurn();
 
             Console.ReadLine();
         }

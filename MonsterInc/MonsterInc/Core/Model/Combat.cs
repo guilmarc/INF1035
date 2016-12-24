@@ -4,27 +4,59 @@ using System.Linq;
 
 namespace Core.Model
 {
-
+    /// <summary>
+    /// Classe responsable d'un combat
+    /// </summary>
     public class Combat
     {
+        /// <summary>
+        /// Partie en lien avec ce combat
+        /// </summary>
         Game _game;
+
+        /// <summary>
+        /// Récompense liée à ce combat
+        /// </summary>
         public Reward Reward { get; set; }
 
-        public List<Turn> Turns { get; set; }
-
+        /// <summary>
+        /// Niveau de difficulté choisi pour ce combat
+        /// </summary>
         public Difficulty Difficulty { get; set; }
 
+        /// <summary>
+        /// Représente le joueur qui a actuellement la main
+        /// </summary>
         public Player CurrentPlayer { get; set; }
 
+        /// <summary>
+        /// Représente l'adversaire choisi par le joueur qui à la main
+        /// </summary>
         public Player CurrentOpponent { get; set; }
 
+        /// <summary>
+        /// Liste des joueurs dans ce combat.  Le code du Core prévoir être en mesure d'injecter
+        /// autant de joueur humain ou robot que voulu
+        /// Cela sera complété après la remise de ce travail pratique
+        /// </summary>
         public List<Player> Players { get; set; } = new List<Player>();
 
+        /// <summary>
+        /// Numéro du tour en cours (round)
+        /// </summary>
         public int Tour { get; set; } = 1;
-        public bool Defending = false;
 
+        /// <summary>
+        /// Constructeur par défaut nécessaire à la sérialisation
+        /// </summary>
         public Combat() { }
 
+        /// <summary>
+        /// Constructeur obligatoire pour un combat
+        /// </summary>
+        /// <param name="game"></param>
+        /// <param name="difficulty"></param>
+        /// <param name="opponentsCount"></param>
         public Combat(Game game, Difficulty difficulty, int opponentsCount = 1)
         {
             this._game = game;
@@ -50,7 +82,8 @@ namespace Core.Model
         }
 
         /// <summary>
-        /// Méthode principale d'exécution d'un combat
+        /// Méthode principale d'exécution d'un combat.  Ce code va plus loin que les exigences de ce travail pratique
+        /// Il sera complété après la remise (défi personnel)
         /// </summary>
 	    public void Run()
         {
@@ -107,9 +140,14 @@ namespace Core.Model
             captureOpponentsItems(winner);
         }
 
+
+        /// <summary>
+        /// Cette méthode permet au joueur gagnant de capturer les items de l'adversaire mort
+        /// </summary>
+        /// <param name="player"></param>
         public void captureOpponentsItems(Player player)
         {
-            //TODO: Mettre le code de capture de tous les opponents ici
+            //TODO: Sera finalement géré par l'interface utilisateur pour l'instant
         }
 
 
@@ -121,7 +159,6 @@ namespace Core.Model
             get { return Players.Where(x => x != CurrentPlayer).Sum(y => y.ActiveTrainer.LifePoints); }
         }
 
-
         /// <summary>
         /// Sélectionne un opposant au hasard parmis la liste.
         /// S'il y a qu'un seul opposant, retournera toujours le même 
@@ -129,8 +166,7 @@ namespace Core.Model
         /// <returns></returns>
         public Player PickRandomOpponent()
         {
-            var availableOpponents = Players.Where(x => x != CurrentPlayer).ToList();
-            return availableOpponents[Utils.Random(availableOpponents.Count)];
+            return Players.Where(x => x != CurrentPlayer).ToList().Random();
         }
 
         /// <summary>
@@ -141,17 +177,13 @@ namespace Core.Model
             CurrentOpponent = PickRandomOpponent();
         }
 
+        /// <summary>
+        /// Niveau moyen d'expérience de monstres du joueur humain
+        /// </summary>
+        /// <returns></returns>
         public int AverageLevel()
         {
-            Player currentPlayer = Players.Where(x => x.Type == PlayerType.Human).First();
-            int totalLevel = 0;
-            int averageLevel = 0;
-            foreach(Monster monster in currentPlayer.ActiveTrainer.ActiveMonsters)
-            {
-               totalLevel += monster.ExperienceLevel;
-            }
-            averageLevel = totalLevel / currentPlayer.ActiveTrainer.ActiveMonsters.Count;
-            return averageLevel;
+            return _game.HumanPlayer.ActiveTrainer.ActiveMonsters.AverageExperienceLevel();
         }
     }
 }

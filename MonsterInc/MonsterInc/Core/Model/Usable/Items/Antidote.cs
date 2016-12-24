@@ -12,10 +12,8 @@ namespace Core.Model
 
         public override void Consume(Player player, Player opponent)
         {
-            //player.ActiveTrainer.
-
-
-            //throw new NotImplementedException();
+            //TODO: Code this
+            InventoryDeduction(player);
         }
     }
 }

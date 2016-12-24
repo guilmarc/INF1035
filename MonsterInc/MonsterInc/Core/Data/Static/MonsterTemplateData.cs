@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using Core.Model;
 
-namespace Core.Data
+namespace Core.Data.Static
 {
-	//Simulation du fichier XML des MonsterTemplate
+	/// <summary>
+    /// Classe de données hardcodées temporaires (non utilisée en mode runtime)
+    /// </summary>
 	public static class MonsterTemplateData
 	{
 		public static List<MonsterTemplate> MonsterTemplates
@@ -19,6 +21,7 @@ namespace Core.Data
 						BaseLevel = 1,
 						Rarity = 100,
 						Element = Element.Fire,
+                        Description = "Little cute fire monster",
 						Caracteristics = new List<MonsterTemplateCaracteristic> {
 							new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 10, Progression = 2},
 							new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 10, Progression = 2},
@@ -37,7 +40,8 @@ namespace Core.Data
 						BaseLevel = 20,
 						Rarity = 80,
 						Element = Element.Fire,
-						Caracteristics = new List<MonsterTemplateCaracteristic> {
+                        Description = "Normal fire monster",
+                        Caracteristics = new List<MonsterTemplateCaracteristic> {
 							new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 20, Progression = 3},
 							new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 20, Progression = 3},
 							new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.RegenerationPoints,  Base = 4, Progression = 3},
@@ -52,6 +56,7 @@ namespace Core.Data
                         BaseLevel = 40,
                         Rarity = 35,
                         Element = Element.Fire,
+                        Description = "Huge fire monster",
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 30, Progression = 4},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 30, Progression = 4},
@@ -67,6 +72,7 @@ namespace Core.Data
                         BaseLevel = 1,
                         Rarity = 100,
                         Element = Element.Earth,
+                        Description = "Little cute ball monster",
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 10, Progression = 2},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 10, Progression = 2},
@@ -82,6 +88,7 @@ namespace Core.Data
                         BaseLevel = 20,
                         Rarity = 80,
                         Element = Element.Earth,
+                        Description = "Medium earth monster",
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 20, Progression = 3},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 20, Progression = 3},
@@ -97,6 +104,7 @@ namespace Core.Data
                         BaseLevel = 40,
                         Rarity = 35,
                         Element = Element.Earth,
+                        Description = "Don't thrust me, I'm mad !",
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 30, Progression = 4},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 30, Progression = 4},
@@ -112,6 +120,7 @@ namespace Core.Data
                         BaseLevel = 1,
                         Rarity = 100,
                         Element = Element.Water,
+                        Description = "Water little monster",
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 10, Progression = 2},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 10, Progression = 2},
@@ -127,6 +136,7 @@ namespace Core.Data
                         BaseLevel = 20,
                         Rarity = 80,
                         Element = Element.Water,
+                        Description = "I love water !",
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 20, Progression = 3},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 20, Progression = 3},
@@ -142,6 +152,7 @@ namespace Core.Data
                         BaseLevel = 40,
                         Rarity = 35,
                         Element = Element.Water,
+                        Description = "Water Water Water Water",
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 30, Progression = 4},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 30, Progression = 4},
@@ -157,6 +168,7 @@ namespace Core.Data
                         BaseLevel = 1,
                         Rarity = 100,
                         Element = Element.Air,
+                        Description = "Little air ball cute monster",
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 10, Progression = 2},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 10, Progression = 2},
@@ -172,6 +184,7 @@ namespace Core.Data
                         BaseLevel = 20,
                         Rarity = 80,
                         Element = Element.Air,
+                        Description = "Medium air ball monster",
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 20, Progression = 3},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 20, Progression = 3},
@@ -187,6 +200,7 @@ namespace Core.Data
                         BaseLevel = 40,
                         Rarity = 35,
                         Element = Element.Air,
+                        Description = "Huge air ball cute monster",
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 30, Progression = 4},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 30, Progression = 4},
@@ -202,6 +216,7 @@ namespace Core.Data
                         BaseLevel = 30,
                         Rarity = 50,
                         Element = Element.Lava,
+                        Description = "Who am I ?",
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 25, Progression = 3},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 25, Progression = 3},
@@ -217,6 +232,7 @@ namespace Core.Data
                         BaseLevel = 60,
                         Rarity = 10,
                         Element = Element.Lava,
+                        Description = "Feeling Hothothot",
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 35, Progression = 4},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 35, Progression = 4},
@@ -232,6 +248,7 @@ namespace Core.Data
                         BaseLevel = 30,
                         Rarity = 50,
                         Element = Element.Grass,
+                        Description = "Grasshopper",
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 25, Progression = 3},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 25, Progression = 3},
@@ -247,6 +264,7 @@ namespace Core.Data
                         BaseLevel = 60,
                         Rarity = 10,
                         Element = Element.Grass,
+                        Description = "That is personnal",
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 35, Progression = 4},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 35, Progression = 4},
@@ -262,6 +280,7 @@ namespace Core.Data
                         BaseLevel = 30,
                         Rarity = 50,
                         Element = Element.Ice,
+                        Description = "Cold as ice",
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 25, Progression = 3},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 25, Progression = 3},
@@ -277,6 +296,7 @@ namespace Core.Data
                         BaseLevel = 60,
                         Rarity = 10,
                         Element = Element.Ice,
+                        Description = "Super dupper mega monster",
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 35, Progression = 4},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 35, Progression = 4},
@@ -292,6 +312,7 @@ namespace Core.Data
                         BaseLevel = 30,
                         Rarity = 50,
                         Element = Element.Lightning,
+                        Description = "Bright as light",
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 25, Progression = 3},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 25, Progression = 3},
@@ -307,6 +328,7 @@ namespace Core.Data
                         BaseLevel = 60,
                         Rarity = 10,
                         Element = Element.Lightning,
+                        Description = "Buzz Lightning",
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 35, Progression = 4},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 35, Progression = 4},
@@ -322,6 +344,7 @@ namespace Core.Data
                         BaseLevel = 20,
                         Rarity = 50,
                         Element = Element.Fire,
+                        Description = "Gonna kill ya",
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 40, Progression = 5},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 40, Progression = 5},
@@ -337,6 +360,7 @@ namespace Core.Data
                         BaseLevel = 20,
                         Rarity = 50,
                         Element = Element.Water,
+                        Description = "You will never see me",
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 40, Progression = 5},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 40, Progression = 5},
@@ -352,6 +376,7 @@ namespace Core.Data
                         BaseLevel = 20,
                         Rarity = 50,
                         Element = Element.Earth,
+                        Description = "Big big big monster",
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 40, Progression = 5},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 40, Progression = 5},
@@ -367,6 +392,7 @@ namespace Core.Data
                         BaseLevel = 20,
                         Rarity = 50,
                         Element = Element.Air,
+                        Description = "I need potatoes",
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 40, Progression = 5},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 40, Progression = 5},
@@ -382,6 +408,7 @@ namespace Core.Data
                         BaseLevel = 20,
                         Rarity = 50,
                         Element = Element.Lava,
+                        Description = "I'm kadaboum",
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 40, Progression = 5},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 40, Progression = 5},
@@ -397,6 +424,7 @@ namespace Core.Data
                         BaseLevel = 20,
                         Rarity = 50,
                         Element = Element.Grass,
+                        Description = "Green Green Greeeeeeeeeeen",
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 40, Progression = 5},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 40, Progression = 5},
@@ -412,6 +440,7 @@ namespace Core.Data
                         BaseLevel = 20,
                         Rarity = 50,
                         Element = Element.Ice,
+                        Description = "Je déteste Caillou",
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 40, Progression = 5},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 40, Progression = 5},
@@ -427,6 +456,7 @@ namespace Core.Data
                         BaseLevel = 20,
                         Rarity = 50,
                         Element = Element.Lightning,
+                        Description = "Super killer !",
                         Caracteristics = new List<MonsterTemplateCaracteristic> {
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.LifePoints,  Base = 40, Progression = 5},
                             new MonsterTemplateCaracteristic { Type = MonsterTemplateCaracteristicType.EnergyPoints,  Base = 40, Progression = 5},

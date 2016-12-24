@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Core.Exceptions
 {
+    /// <summary>
+    /// Lancée lorsqu'un entrraîneur tente d'acheter un item trop cher pour lui
+    /// </summary>
     public class NotEnoughtGoldException : Exception
     {
         public NotEnoughtGoldException()

@@ -10,6 +10,7 @@ namespace Core
         public const int InitGoldCount = 1000;
         public const int MaxActiveMonstersCount = 5;
         public const float HumanizeFactor = 0.2f;
+        public const int MonsterMaxExperienceLevel = 100;
         public const string SavedGameFileExtension = ".game";
         private const string SavedGameFolderName = "Data\\Games\\";
         private const string UniverseDataFolderName = "Data\\Universe\\";
